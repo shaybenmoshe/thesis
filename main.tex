@@ -2,6 +2,7 @@
 \usepackage{fontspec}
 \usepackage{amsmath, amsthm, amssymb}
 \usepackage{amsthm}
+\usepackage{eucal}
 \usepackage[top=2cm,bottom=2cm,left=2.5cm,right=2cm]{geometry}
 %\usepackage[papersize={11.4cm,8.5cm},top=0.3cm,bottom=0.3cm,left=0.3cm,right=0.3cm]{geometry}
 
@@ -13,20 +14,38 @@
 \setlength{\parindent}{0em}
 \setlength{\parskip}{0.6em}
 
-\newtheorem*{theorem*}{Theorem}
-\newtheorem*{lemma*}{Lemma}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
 
 \theoremstyle{definition}
-\newtheorem*{definition*}{Definition}
+\newtheorem{definition}{Definition}
 
 \theoremstyle{remark}
 \newtheorem*{remark*}{Remark}
 \newtheorem*{example*}{Example}
+\newtheorem*{question*}{Question}
 
 \newcommand{\ncmd}{\newcommand}
 
+\ncmd{\mbb}[1]{\mathbb{#1}}
+\ncmd{\mrm}[1]{\mathrm{#1}}
+\ncmd{\mcl}[1]{\mathcal{#1}}
+\ncmd{\mfk}[1]{\mathfrak{#1}}
+
 %\ncmd{\todo}[1]{}
 \ncmd{\todo}[1]{\textbf{TODO #1}}
+
+\ncmd{\K}[1]{\mrm{K}\left(#1\right)}
+\ncmd{\E}[1]{\mrm{E}\left(#1\right)}
+\ncmd{\id}[1]{\mrm{id}_{#1}}
+\ncmd{\Ch}[1]{\mrm{Ch}\left(#1\right)}
+\ncmd{\Chperf}[1]{\mrm{Ch}_\mrm{perf}\left(#1\right)}
+\ncmd{\Mod}[1]{\mrm{Mod}_{#1}}
+\ncmd{\Sp}{\mrm{Sp}}
+\ncmd{\Spfin}{\Sp^\mrm{fin}}
+
+\DeclareMathOperator{\spec}{Spec}
+\DeclareMathOperator{\supp}{Supp}
 
 \title{Thesis}
 \author{Shay Ben Moshe}
@@ -35,6 +54,6 @@
 \begin{document}
 	\maketitle
 	
-	Starting
+	\input{chromatic.tex}
 
 \end{document}

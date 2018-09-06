@@ -1,0 +1,75 @@
+\section{Overview Chromatic Homotopy Theory}
+
+Chromatic homotopy theory is an organizing principle for stable homotopy theory.
+Our goal is to motivate the introduction of Morava K-Theory $\K{n}$ and Morava E-Theory $\E{n}$, and other variants of Morava E-Theory $\E{k,\Gamma}$, and their connection to formal group laws.
+There are different views on what chromatic homotopy theory is.
+
+
+\subsection{The Balmer Spectrum}
+
+We will start with an algebraic motivation.
+Let $R$ be a noetherian ring.
+Consider the symmetric monoidal stable $\infty$-category $\Ch{R}$ of chain complexes on $R$. \todo{be more specific}
+It is then natural to ask how much information about $R$ is encoded in the category $\Ch{R}$.
+We will try to recover $\spec{R}$, as a topological space, from $\Ch{R}$.
+
+\begin{remark*}
+	Balmer's work actually recovers the structure sheaf as well. \todo{reference}
+\end{remark*}
+
+\begin{definition}
+	A \emph{perfect complex} is a complex that is quasi-isomorphic to a bounded complex of finitely-generated projective modules.
+	These objects are the compact objects in $\Ch{R}$, thus they can be defined categorically.
+	Their full subcategory is denoted by $\Chperf{R}$.
+\end{definition}
+
+\begin{definition}
+	Let $\mcl{C}$ be some symmetric monoidal stable $\infty$-category.
+	A full subcategory $\mcl{T}$ is \emph{thick} if:
+	\begin{itemize}
+		\item $0 \in \mcl{T}$,
+		\item it is closed under cofibers (that is if $a \to b \to c$ is a cofiber sequence in $\mcl{C}$ and $a, b \in \mcl{T}$, then $c \in \mcl{T}$),
+		\item it is closed under retracts.
+	\end{itemize}
+\end{definition}
+
+\begin{example*}
+	Consider the case $\mcl{C} = \Chperf{R}$ (e.g. over $\mbb{Z}$, bounded chain complexes of finitely-generated free abelian groups).
+	Let $K_\bullet \in \Ch{R}$, and define
+	$\mcl{T}_{K_\bullet} = \left\{ A_\bullet \in \Chperf{R} \mid A_\bullet \otimes K_\bullet = 0 \right\}$.
+	We claim that $\mcl{T}_{K_\bullet}$ is thick.
+	Clearly $0 \in \mcl{T}_{K_\bullet}$.
+	Let $A_\bullet \to B_\bullet$ be a morphism between two complexes in $\mcl{T}$. The cofiber of $A_\bullet \to B_\bullet$ is the pushout $B_\bullet \times_{A_\bullet} 0$. Since tensor is left, tensoring the cofiber with $K_\bullet$ is given by the pushout
+	$\left(B_\bullet \otimes K_\bullet\right) \times_{A_\bullet \otimes K_\bullet} \left(0 \otimes K_\bullet\right) = 0 \times_0 0 = 0$, therefore the cofiber is indeed in $\mcl{T}$.
+	Lastly, if $A_\bullet \to B_\bullet \to A_\bullet$ is the identity and $B_\bullet \otimes K_\bullet$, we get that $\id{A_\bullet \otimes K_\bullet}$ factors through $0$, which implies that $A_\bullet \otimes K_\bullet$ is $0$, so that $A_\bullet \in \mcl{T}$.
+\end{example*}
+
+\begin{definition}
+	A thick subcategory $\mcl{T}$ is an \emph{ideal} if $a \in \mcl{T}, b \in \mcl{C} \implies a \otimes b \in \mcl{T}$.
+	Furthermore, it is a \emph{prime ideal} if it is a proper subcategory, and $a \otimes b \in \mcl{T} \implies a \in \mcl{T} \textrm{ or } b \in \mcl{T}$.
+	The \emph{spectrum} of the category is defined similarly to the classical spectrum of a ring:
+	As a set, $\spec{\mcl{C}} = \left\{ \mcl{P}\textrm{ prime ideal} \right\}$.
+	For any family of objects $S \subseteq \mcl{C}$ we define $V\left(S\right) = \left\{ \mcl{P} \in \spec{\mcl{C}} \mid S \cap \mcl{P} = \emptyset \right\}$.
+	We topologize $\spec{\mcl{C}}$ with the Zariski topology by declaring those to be the closed subsets.
+	We also denote $\supp\left(a\right) = V\left(\left\{ a\right\}\right)$.
+\end{definition}
+
+\begin{theorem}
+	There is a homeomorphism $\spec{R} \to \spec\left(\Chperf{R}\right)$,
+	given by $\mfk{p} \mapsto \mcl{T}_\mfk{p} = \left\{ A_\bullet \mid \left(A_\bullet\right)_\mfk{p} = 0 \right\}$.
+\end{theorem}
+\todo{reference}
+
+Now, recall that $\Ch{R} \cong \Mod{\mrm{H}R}$, therefore we can reinterpret the above theorem as $\spec{R} \cong \spec\left( \Mod{\mrm{H}R}^\mrm{comp} \right)$ (where the $\mrm{comp}$ denotes the compact objects in the category).
+We shall turn this theorem into a definition:
+
+\begin{definition}
+	Let $R$ be an $\mbb{E}_\infty$ ring spectrum.
+	We define the \emph{spectrum} of $R$ to be
+	$\spec{R} = \spec\left( \Mod{R}^\mrm{comp} \right)$.
+\end{definition}
+
+A natural question to ask then is what is $\spec{\mbb{S}}$.
+Recall that $\Mod{\mbb{S}} = \Sp$, the category of spectra, and that the compact objects in spectra are the finite spectra $\Spfin$.
+So, unwinding the definitions, the question can rephrased as finding the prime ideals in $\Spfin$, and their topology.
+Chromatic homotopy theory provides an answer to this question.
