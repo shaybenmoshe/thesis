@@ -1,8 +1,9 @@
-\section{Overview Chromatic Homotopy Theory}
+\section{Overview Of Chromatic Homotopy Theory}
 
-Chromatic homotopy theory is an organizing principle for stable homotopy theory.
-Our goal is to motivate the introduction of Morava K-Theory $\K{n}$ and Morava E-Theory $\E{n}$, and other variants of Morava E-Theory $\E{k,\Gamma}$, and their connection to formal group laws.
+Our goal is to motivate the introduction of Morava K-theory $\K[n]$ and Morava E-theory $\E{n}$, and other variants of Morava E-theory $\E{k,\Gamma}$, and their connection to formal group laws.
 There are different views on what chromatic homotopy theory is.
+\todo{write some more}
+
 
 
 \subsection{The Balmer Spectrum}
@@ -54,17 +55,58 @@ We will try to recover $\spec{R}$, as a topological space, from $\Ch{R}$.
 	We also denote $\supp\left(a\right) = V\left(\left\{ a\right\}\right)$.
 \end{definition}
 
+\begin{example*}
+	We continue the example of $\mcl{T}_{K_\bullet}$.
+	Clearly if $A_\bullet \otimes K_\bullet = 0$ then also $A_\bullet \otimes B_\bullet \otimes K_\bullet = 0$, so it is an ideal.
+	Let $\mfk{p}$ be a prime ideal in $R$ in the usual sense, and take $K_\bullet = R_\mfk{p}$ (concentrated at degree $0$),
+	then $A_\bullet \otimes K_\bullet = \left(A_\bullet\right)_\mfk{p}$ (level-wise localization).
+	Now, assume that
+	$
+	0
+	= \left(A_\bullet \otimes B_\bullet\right)_\mfk{p}
+	= \left(A_\bullet\right)_\mfk{p} \otimes_{R_\mfk{p}} \left(B_\bullet\right)_\mfk{p}
+	$
+	Assume by negation that $\left(A_\bullet\right)_\mfk{p}, \left(B_\bullet\right)_\mfk{p} \neq 0$,
+	i.e. $\left(A_n\right)_\mfk{p}, \left(B_m\right)_\mfk{p} \neq 0$ but $\left(A_n\right)_\mfk{p} \otimes_{R_\mfk{p}} \left(B_m\right)_\mfk{p} = 0$ for some $n,m$.
+	Well, localization of projective is projective, and a projective over a local ring is free, and clearly if the tensor of two free modules vanish then one of them vanishes, so $\left(A_n\right)_\mfk{p} = 0$ or $\left(B_m\right)_\mfk{p} = 0$, which is a contradiction.
+	Therefore $\mcl{T}_\mfk{p}$ is a prime ideal.
+\end{example*}
+
 \begin{theorem}
-	There is a homeomorphism $\spec{R} \to \spec\left(\Chperf{R}\right)$,
-	given by $\mfk{p} \mapsto \mcl{T}_\mfk{p} = \left\{ A_\bullet \mid \left(A_\bullet\right)_\mfk{p} = 0 \right\}$.
+	The map $\spec{R} \to \spec\left(\Chperf{R}\right)$,
+	given by $\mfk{p} \mapsto \mcl{T}_\mfk{p} = \left\{ A_\bullet \mid \left(A_\bullet\right)_\mfk{p} = 0 \right\}$
+	is a homeomorphism.
 \end{theorem}
 \todo{reference}
 
-Now, recall that $\Ch{R} \cong \Mod{\mrm{H}R}$, therefore we can reinterpret the above theorem as $\spec{R} \cong \spec\left( \Mod{\mrm{H}R}^\mrm{comp} \right)$ (where the $\mrm{comp}$ denotes the compact objects in the category).
+\begin{proposition}
+	Prime ideals pullback:
+	Let $F: \mcl{C} \to \mcl{D}$ be an exact symmetric monoidal functor between two symmetric monoidal stable $\infty$-categories,
+	and let $\mcl{P}$ be a prime ideal in $\mcl{D}$, then $F^*\mcl{P} = \left\{ a \in \mcl{C} \mid F\left(a\right) \in \mcl{P} \right\}$ is a prime ideal.
+\end{proposition}
+
+\begin{proof}
+	Clearly $F\left(0\right) = 0 \in \mcl{P}$ since $F$ is exact, so $0 \in F^*\mcl{P}$.
+	Since $F$ is exact, it sends cofibers to cofibers, so for $a,b \in F^*\mcl{P}$, i.e. $F\left(a\right), F\left(b\right) \in \mcl{P}$, and a map $a \to b$ we get
+	$
+	F\left(\cofib\left(a \to b\right)\right)
+	= \cofib\left(F\left(a\right) \to F\left(b\right)\right)
+	= \cofib\left(F\left(a\right) \to F\left(b\right)\right)
+	\in \mcl{P}
+	$.
+	Let $a \to b \to a$ be a retract, that is the composition is the identity, s.t. $b \in F^*\mcl{P}$. We know that $F\left(a\right) \to F\left(b\right) \to F\left(a\right)$ is also a retract by functoriality, thus $F\left(a\right) \in \mcl{P}$, that is $a \in F^*\mcl{P}$.
+	We conclude that $F^*\mcl{P}$ is indeed a thick subcategory.
+	
+	Let $a \in F^*\mcl{P}, b \in \mcl{C}$, since $F$ is monoidal, $F\left(a \otimes b\right) = F\left(a\right) \otimes F\left(b\right) \in \mcl{P}$, so $a \otimes b \in F^*\mcl{P}$, that is $F^*\mcl{P}$ is an ideal.
+	
+	Lastly, assume that $a \otimes b \in F^*\mcl{P}$, again since $F$ is monoidal, $F\left(a \otimes b\right) = F\left(a\right) \otimes F\left(b\right) \in \mcl{P}$, so $a \in F^*\mcl{P}$ or $b \in F^*\mcl{P}$, that is $F^*\mcl{P}$ is a prime ideal.
+\end{proof}
+
+Now, recall that $\Ch{R} \cong \Mod{\H	H{R}}$, therefore we can reinterpret the above theorem as $\spec{R} \cong \spec\left( \Mod{\HH{R}}^\mrm{comp} \right)$ (where the $\mrm{comp}$ denotes the compact objects in the category).
 We shall turn this theorem into a definition:
 
 \begin{definition}
-	Let $R$ be an $\mbb{E}_\infty$ ring spectrum.
+	Let $R$ be an $E_\infty$ ring spectrum.
 	We define the \emph{spectrum} of $R$ to be
 	$\spec{R} = \spec\left( \Mod{R}^\mrm{comp} \right)$.
 \end{definition}
@@ -73,3 +115,223 @@ A natural question to ask then is what is $\spec{\mbb{S}}$.
 Recall that $\Mod{\mbb{S}} = \Sp$, the category of spectra, and that the compact objects in spectra are the finite spectra $\Spfin$.
 So, unwinding the definitions, the question can rephrased as finding the prime ideals in $\Spfin$, and their topology.
 Chromatic homotopy theory provides an answer to this question.
+
+
+
+\subsection{$\MU$ And Complex Orientations}
+
+Throughout this section, let $E$ be a multiplicative cohomology theory (that is, equipped with a map $E \otimes E \to E$ which is associative and unital up to homotopy).
+
+Consider the map $S^2 \to \BU[1]$ classifying the universal complex line bundle.
+Concretely, under the identifications $S^2 \cong \CP{1}$ and $\BU[1] \cong \CP{\infty}$, this map can be realized as the inclusion $\CP{1} \subseteq \CP{\infty}$.
+This map induces a map
+$
+\tilde{E}^2\left(\BU[1]\right)
+\to \tilde{E}^2\left(S^2\right)
+\cong \tilde{E}^0\left(S^0\right)
+\cong E^0\left(*\right)
+= E_0
+$.
+Since $E$ is unital, there is a canonical generator $1 \in E_0$.
+
+\begin{definition}
+	$E$ is called \emph{complex oriented} if the map $\tilde{E}^2\left(\BU[1]\right) \to E_0$ is surjective, equivalently, if $1$ is in the image of that map.
+	A choice of a lift $x \in \tilde{E}^2\left(\BU[1]\right)$ of $1 \in E_0$ is called a \emph{complex orientation}.
+\end{definition}
+
+\begin{example*}
+	Let $R$ be some ring, and consider $\HH{R}$.
+	It is known that
+	$\HH{R}^*\left(\CP{n}\right) \cong R \left[x\right] / \left(x^{n+1}\right)$
+	and
+	$\HH{R}^*\left(\CP{\infty}\right) \cong R \left[\left[x\right]\right]$,
+	where $\left|x\right| = 2$,
+	and the maps induced by the inclusions of projective spaces maps $x$ to $x$.
+	Therefore we see that $x \in \HH{R}^2\left(\BU[1]\right)$ is mapped to $x \in \HH{R}^2\left(S^2\right) = \mbb{Z}\left\{x\right\}$, which is mapped to the generator of the reduced part of $\HH{R}^0\left(S^0\right) = R \oplus R$.
+	Therefore $x$ is a complex orientation for $\HH{R}$.
+\end{example*}
+
+\begin{example*}
+	Let $\K$ be complex K-theory, then we know that $\K_* = \mbb{Z}\left[\beta^{\pm 1}\right]$ where $\beta$ is the Bott element, with $\left|\beta\right| = 2$.
+	It is also known (by Atiyah-Hirzebruch spectral sequence) that
+	$\K^*\left(\CP{n}\right) \cong \K_* \left[t\right] / \left(t^{n+1}\right)$
+	and
+	$\K^*\left(\CP{\infty}\right) \cong \K_* \left[\left[t\right]\right]$
+	(here $\left|t\right| = 0$),
+	where the maps induced by the inclusions of projective spaces maps $t$ to $t$.
+	We deduce that $\beta t \in \K^2\left(\BU[1]\right)$ is mapped to $\beta t \in \K^2\left(S^2\right) = \mbb{Z}\left\{\beta t\right\}$, which is mapped to $t \in \K^0\left(S^0\right) = \mbb{Z}\left\{t\right\}$, which is indeed the generator of the reduced part.
+	Therefore $x = \beta t$ is complex orientation for $\K$.
+	\todo{write the reduced thing more clearly}
+\end{example*}
+
+\begin{example*}
+	Recall that $\MU$ is constructed as the colimit $\MU = \colim \MU[n]$.
+	Also, $\MU[1] \cong \Sigma^{\infty-2} \BU[1]$.
+	Therefore we get a canonical map $\Sigma^{\infty-2} \BU[1] \to \MU$, which gives a cohomology class $x_{\MU} \in \MU^2\left(\BU[1]\right)$.
+\end{example*}
+
+\begin{proposition}[\todo{reference}]
+	$x_{\MU}$ is indeed a complex orientation for $\MU$.
+\end{proposition}
+
+\begin{theorem}
+	$\MU$ is the universal complex oriented cohomology theory:
+	Let $E$ be a multiplicative cohomology theory, then there is a bijection between (homotopy classes of) multiplicative maps $\MU \to E$ and complex orientations on $E$.
+	The bijection is given in one direction by pulling back $x_{\MU}$ along a multiplicative map.
+\end{theorem}
+
+Assume that $E$ is complex oriented with a complex orientation $x$.
+
+\begin{theorem}[{\cite[4.1.4]{Rav86}}]
+	As $E_*$-algebras,
+	$E^*\left(\BU[1]\right) \cong E^*\left[\left[x\right]\right]$
+	and
+	$E^*\left(\BU[1] \times \BU[1]\right) \cong E^*\left[\left[y,z\right]\right]$.
+\end{theorem}
+\todo{maybe indicate the use of AHSS}
+
+The tensor product of complex line bundles is classified by a universal map $\BU[1] \times \BU[1] \to \BU[1]$.
+Therefore we get a map $E^*\left(\BU[1]\right) \to E^*\left(\BU[1] \times \BU[1]\right)$, which is completely determined by the image of $x \in E^*\left[\left[x\right]\right]$ in $E^*\left[\left[y,z\right]\right]$ as above.
+Therefore, a choice of a complex orientation on $E$ gives rise to an element $F_E\left(y,z\right) \in E^*\left[\left[y,z\right]\right]$.
+
+\begin{proposition}[{\cite[4.1.4]{Rav86}}]
+	$F_E$ is a formal group law on $E_*$.
+	We call the height of $F_E$ the \emph{height} of $E$.
+\end{proposition}
+
+\begin{example*}
+	Consider again $\HH{R}$.
+	It is known that the tensor of complex line bundles induces the map
+	$
+	R\left[\left[x\right]\right]
+	= \HH{R}^*\left(\BU[1]\right)
+	\to \HH{R}^*\left(\BU[1] \times \BU[1]\right)
+	= R\left[\left[y,z\right]\right]
+	$
+	given by $x \mapsto y + z$.
+	This is the additive formal group law.
+	It is immediate that $\left[p\right] = p x$.
+	So for $R = \mbb{Q}$ we get that the height of $\HH{\mbb{Q}}$ is 0, while for $R = \mbb{F}_p$ we have $p x = 0$ so the height of $\HH{\mbb{F}_p}$ is $\infty$.
+\end{example*}
+
+\begin{example*}
+	We return to the example of complex $\K$-theory.
+	It is known that the tensor of complex line bundles induces the map
+	$
+	\K_*\left[\left[t\right]\right]
+	= \K^*\left(\BU[1]\right)
+	\to \K^*\left(\BU[1] \times \BU[1]\right)
+	= \K_*\left[\left[u,v\right]\right]
+	$
+	given by $t \mapsto u + v + u v$.
+	Note that to comply with the definition of the formal group law, we should use the isomorphism
+	$\K^*\left(\BU[1]\right) \cong \K_* \left[\left[x\right]\right]$,
+	i.e. the element $x = \beta t$.
+	We get that $x = \beta t \mapsto \beta u + \beta v + \beta u v = y + z + \beta^{-1} y z = F_{\K}\left(y,z\right)$.
+	By induction we prove that the $n$-series is $\left[n\right]\left(x\right) = \beta \left(1 + \beta^{-1} x\right)^n - \beta$.
+	This is clear for $n = 1$, and we have:
+	\begin{align*} 
+		\left[n+1\right]\left(x\right)
+		&= x + \left[n\right]\left(x\right) + \beta^{-1} x \left[n\right]\left(x\right)\\
+		&= x + \beta \left(1 + \beta^{-1} x\right)^n - \beta + x \left(1 + \beta^{-1} x\right)^n - x\\
+		&= \beta \left(1 + \beta^{-1} x\right) \left(1 + \beta^{-1} x\right)^n - \beta\\
+		&= \beta \left(1 + \beta^{-1} x\right)^{n+1} - \beta
+	\end{align*}
+\end{example*}
+
+\begin{example*}
+	By taking the cofiber of the multiplication-by-$p$ map, we get a spectrum $\K/p$, mod-$p$ K-theory, with coefficients $\left(\K/p\right)_* = \mathbb{F}_p \left[\beta^{\pm 1}\right]$.
+	It is evident that $F_{\K/p}\left(y,z\right) = y + z + \beta^{-1} y z$ as well.
+	From the result above, it follows that
+	$
+	\left[p\right]\left(x\right)
+	= \beta \left(1 + \beta^{-1} x\right)^p - \beta
+	= \beta \left(1^p + \beta^{-p} x^p\right) - \beta
+	= \beta^{-p} x^p
+	$
+	which shows that the height is exactly $1$.
+\end{example*}
+
+A formal group law on $E_*$ is the same data as a map from the Lazard ring $L$, so the complex orientation gives a map $L \to E_*$.
+In particular, since $\MU$ is complex oriented, there is a canonical map $L \to \MU_*$.
+
+\begin{theorem}[{Quillen, \cite[4.1.6]{Rav86}}]
+	The canonical map $L \to \MU_*$ is an isomorphism.
+\end{theorem}
+
+
+
+\subsection{$\BP$, Morava K-Theory And Morava E-Theory}
+
+A good principle in homotopy theory (and many other areas in math) is to do study it one prime at a time.
+This is possible in homotopy theory due to the arithmetic square \todo{reference}.
+So, let us fix a prime $p$.
+It turns out that once we $p$-localize $\MU$ to $\MU_{\left(p\right)}$, it splits:
+
+\begin{theorem}[{\cite[4.1.12]{Rav86}}]
+	There exists an associative commutative ring spectrum $\BP$ (which depends on the prime $p$), which is a retract of $\MU_{\left(p\right)}$.
+	The homotopy groups of $\BP$ are $\BP_* = \mbb{Z}_{\left(p\right)}\left[v_1, v_2, \dotsc\right]$ where $\left|v_n\right| = 2\left(p^n-1\right)$.
+\end{theorem}
+
+For convenience we denote $v_0 = p$ (and indeed $\left|v_0\right| = 2\left(p^0-1\right) = 0$).
+Since $\BP$ is a retract of $\MU$ it comes with a map $\MU \to \BP$, that is a complex orientation.
+
+\begin{proposition}[\todo{reference}]
+	The $p$-series of the formal group law associated to $\BP$ is
+	$\left[p\right]\left(x\right) = \sum v_n x^{p^n}$.
+\end{proposition}
+
+Once we have $\BP$, we can turn to the definition of Morava K-theory and Morava E-theory
+
+\begin{definition}
+	Let $0 < n < \infty$.
+	\emph{Morava K-theory} at height $n$ (and prime $p$, which is omitted in the notation), denoted by $\K[n]$, is the spectrum obtained by killing $p=v_0, \dotsc, v_{n-1}, v_{n+1}, \dotsc$ in $\BP$ and inverting $v_n$.
+	Therefore $\K[n]_* = \mbb{F}_p\left[v_n^{\pm 1}\right]$.
+	We also define $\K{0} = \HH{\mbb{Q}}$ and $\K{\infty} = \HH{\mbb{F}_p}$.
+	Similarly, \emph{Morava E-theory} at height $n$ (and prime $p$), denoted by $\E{n}$, is the spectrum obtained by killing $v_{n+1}, v_{n+2}, \dotsc$ in $\BP$ and inverting $v_n$.
+	Therefore $\E{n}_* = \mbb{Z}_{\left(p\right)}\left[v_1, v_2, \dotsc v_{n-1}, v_n^{\pm 1}\right]$.
+\end{definition}
+
+Since Morava K-theory and E-theory are obtained from $\BP$ by cofibers and filtered colimits, they are equipped with a map from $\BP$, so they are also equipped with a complex orientation.
+It is then evident that the $p$-series associated to the formal group laws of $\K[n]$ and $\E{n}$ are $v_n x^{p^n}$ and $v_0 x + \dotsc v_n x^{p^n}$ respectively, and are therefore of height exactly $n$ and height $\leq n$ respectively.
+(Note that by the example of $\HH{R}$, this is also true for $\K[0]$ and $\K[\infty]$.)
+
+We want to describe some properties of Morava K-theory.
+To do so we first need some definitions.
+
+\begin{definition}
+	Let $R$ be an evenly graded ring.
+	$R$ is called a \emph{graded field} if every non-zero homogenus element is invertible, equivalently it is a field $F$ concentrated at degree 0, or $F\left[\beta^{\pm1}\right]$ for $\beta$ of positive even degree.
+	An $A_\infty$ ring spectrum $E$ is a \emph{field} if $E_*$ is a graded field.
+\end{definition}
+
+\begin{example*}
+	Clearly $K\left(n\right)$ for $0 \leq n \leq \infty$ is a field.
+\end{example*}
+
+\begin{proposition}
+	A field $E$ is has Kunneth, i.e. $E_*\left(X\otimes Y\right)\cong E_*\left(X\right)\otimes_{E_*}E_*\left(Y\right)$ for any spectra X,Y.
+\end{proposition}
+
+\begin{proposition}[{\cite[24]{Lur}}]
+	Let $E \neq 0$ be a complex oriented cohomology theory, whose formal group law has height exactly $n$, then $E \otimes \K[n] \neq 0$.
+	Let $E$ be a field s.t. $E \otimes \K[n] \neq 0$, then $E$ admits the structure of a $\K[n]$-module.
+	(Here $0 \leq n \leq \infty$.)
+\end{proposition}
+
+\begin{example*}
+	As we have seen before mod-$p$ K-theory, $\K/p$, has height exactly $1$ and coefficients $\left(\K/p\right)_* = \mathbb{F}_p \left[\beta^{\pm 1}\right]$.
+	It is also known that $\K$, and $\K/p$, are $A_\infty$ ring spectra, from which it follows that $\K/p$ is a field.
+	Therefore, we deduce that $\K/p$ is a $\K[1]$-module.
+	Since $\left|\beta\right| = 2$ and $\left|v_1\right| = 2\left(p-1\right)$ it is free of rank $p-1$.
+\end{example*}
+
+From this we also deduce some form of uniqueness for Morava K-theory:
+
+\begin{corollary*}
+	Let $E$ be a field with $E_* \cong \mbb{F}_p\left[v_n^{\pm 1}\right]$, which is also complex oriented with height exactly $n$, then $E \cong \K[n]$ (as spectra).
+\end{corollary*}
+
+
+
+\subsection{The Balmer Spectrum $\spec \mbb{S}_{\left(p\right)}$ And $\spec \mbb{S}$}

@@ -16,6 +16,7 @@
 
 \newtheorem{theorem}{Theorem}
 \newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
 
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}
@@ -24,6 +25,7 @@
 \newtheorem*{remark*}{Remark}
 \newtheorem*{example*}{Example}
 \newtheorem*{question*}{Question}
+\newtheorem*{corollary*}{Corollary}
 
 \newcommand{\ncmd}{\newcommand}
 
@@ -35,7 +37,7 @@
 %\ncmd{\todo}[1]{}
 \ncmd{\todo}[1]{\textbf{TODO #1}}
 
-\ncmd{\K}[1]{\mrm{K}\left(#1\right)}
+\ncmd{\K}[1][]{\ifstrempty{#1}{\mrm{K}}{\mrm{K}\left(#1\right)}}
 \ncmd{\E}[1]{\mrm{E}\left(#1\right)}
 \ncmd{\id}[1]{\mrm{id}_{#1}}
 \ncmd{\Ch}[1]{\mrm{Ch}\left(#1\right)}
@@ -43,9 +45,16 @@
 \ncmd{\Mod}[1]{\mrm{Mod}_{#1}}
 \ncmd{\Sp}{\mrm{Sp}}
 \ncmd{\Spfin}{\Sp^\mrm{fin}}
+\ncmd{\MU}[1][]{\ifstrempty{#1}{\mrm{MU}}{\mrm{MU}\left(#1\right)}}
+\ncmd{\BU}[1][]{\ifstrempty{#1}{\mrm{BU}}{\mrm{BU}\left(#1\right)}}
+\ncmd{\CP}[1]{{\mbb{C}\mrm{P}}^{#1}}
+\ncmd{\BP}{\mrm{BP}}
+\ncmd{\HH}[1]{\mrm{H}#1}
 
 \DeclareMathOperator{\spec}{Spec}
 \DeclareMathOperator{\supp}{Supp}
+\DeclareMathOperator{\colim}{colim}
+\DeclareMathOperator{\cofib}{cofib}
 
 \title{Thesis}
 \author{Shay Ben Moshe}
@@ -55,5 +64,8 @@
 	\maketitle
 	
 	\input{chromatic.tex}
+	
+	\bibliography{refs}{}
+	\bibliographystyle{alpha}
 
 \end{document}
