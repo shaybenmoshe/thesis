@@ -24,9 +24,9 @@
 \newtheorem{definition}[equation]{Definition}
 
 \theoremstyle{remark}
-\newtheorem*{remark*}{Remark}
-\newtheorem*{example*}{Example}
-\newtheorem*{question*}{Question}
+\newtheorem{remark}[equation]{Remark}
+\newtheorem{example}[equation]{Example}
+\newtheorem{question}[equation]{Question}
 
 \newcommand{\ncmd}{\newcommand}
 
@@ -46,11 +46,14 @@
 \ncmd{\Mod}[1]{\mrm{Mod}_{#1}}
 \ncmd{\Sp}{\mrm{Sp}}
 \ncmd{\Spfin}{\Sp^\mrm{fin}}
+\ncmd{\Spfintor}{\Spfin_{\mrm{tor}}}
 \ncmd{\MU}[1][]{\ifstrempty{#1}{\mrm{MU}}{\mrm{MU}\left(#1\right)}}
 \ncmd{\BU}[1][]{\ifstrempty{#1}{\mrm{BU}}{\mrm{BU}\left(#1\right)}}
 \ncmd{\CP}[1]{{\mbb{C}\mrm{P}}^{#1}}
 \ncmd{\BP}{\mrm{BP}}
 \ncmd{\HH}[1]{\mrm{H}#1}
+\renewcommand{\SS}{\mbb{S}}
+\ncmd{\ZZ}{\mbb{Z}}
 
 \DeclareMathOperator{\spec}{Spec}
 \DeclareMathOperator{\supp}{Supp}

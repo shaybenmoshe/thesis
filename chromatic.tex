@@ -12,11 +12,11 @@ We will start with an algebraic motivation.
 Let $R$ be a noetherian ring.
 Consider the symmetric monoidal stable $\infty$-category $\Ch{R}$ of chain complexes on $R$. \todo{be more specific}
 It is then natural to ask how much information about $R$ is encoded in the category $\Ch{R}$.
-We will try to recover $\spec{R}$, as a topological space, from $\Ch{R}$.
+We will try to recover $\spec R$, as a topological space, from $\Ch{R}$.
 
-\begin{remark*}
+\begin{remark}
 	Balmer's work actually recovers the structure sheaf as well. \todo{reference}
-\end{remark*}
+\end{remark}
 
 \begin{definition}
 	A \emph{perfect complex} is a complex that is quasi-isomorphic to a bounded complex of finitely-generated projective modules.
@@ -34,8 +34,8 @@ We will try to recover $\spec{R}$, as a topological space, from $\Ch{R}$.
 	\end{itemize}
 \end{definition}
 
-\begin{example*}
-	Consider the case $\mcl{C} = \Chperf{R}$ (e.g. over $\mbb{Z}$, bounded chain complexes of finitely-generated free abelian groups).
+\begin{example}
+	Consider the case $\mcl{C} = \Chperf{R}$ (e.g. over $\ZZ$, bounded chain complexes of finitely-generated free abelian groups).
 	Let $K_\bullet \in \Ch{R}$, and define
 	$\mcl{T}_{K_\bullet} = \left\{ A_\bullet \in \Chperf{R} \mid A_\bullet \otimes K_\bullet = 0 \right\}$.
 	We claim that $\mcl{T}_{K_\bullet}$ is thick.
@@ -43,19 +43,19 @@ We will try to recover $\spec{R}$, as a topological space, from $\Ch{R}$.
 	Let $A_\bullet \to B_\bullet$ be a morphism between two complexes in $\mcl{T}$. The cofiber of $A_\bullet \to B_\bullet$ is the pushout $B_\bullet \times_{A_\bullet} 0$. Since tensor is left, tensoring the cofiber with $K_\bullet$ is given by the pushout
 	$\left(B_\bullet \otimes K_\bullet\right) \times_{A_\bullet \otimes K_\bullet} \left(0 \otimes K_\bullet\right) = 0 \times_0 0 = 0$, therefore the cofiber is indeed in $\mcl{T}$.
 	Lastly, if $A_\bullet \to B_\bullet \to A_\bullet$ is the identity and $B_\bullet \otimes K_\bullet$, we get that $\id{A_\bullet \otimes K_\bullet}$ factors through $0$, which implies that $A_\bullet \otimes K_\bullet$ is $0$, so that $A_\bullet \in \mcl{T}$.
-\end{example*}
+\end{example}
 
 \begin{definition}
 	A thick subcategory $\mcl{T}$ is an \emph{ideal} if $a \in \mcl{T}, b \in \mcl{C} \implies a \otimes b \in \mcl{T}$.
 	Furthermore, it is a \emph{prime ideal} if it is a proper subcategory, and $a \otimes b \in \mcl{T} \implies a \in \mcl{T} \textrm{ or } b \in \mcl{T}$.
 	The \emph{spectrum} of the category is defined similarly to the classical spectrum of a ring:
-	As a set, $\spec{\mcl{C}} = \left\{ \mcl{P}\textrm{ prime ideal} \right\}$.
-	For any family of objects $S \subseteq \mcl{C}$ we define $V\left(S\right) = \left\{ \mcl{P} \in \spec{\mcl{C}} \mid S \cap \mcl{P} = \emptyset \right\}$.
-	We topologize $\spec{\mcl{C}}$ with the Zariski topology by declaring those to be the closed subsets.
+	As a set, $\spec \mcl{C} = \left\{ \mcl{P}\textrm{ prime ideal} \right\}$.
+	For any family of objects $S \subseteq \mcl{C}$ we define $V\left(S\right) = \left\{ \mcl{P} \in \spec \mcl{C} \mid S \cap \mcl{P} = \emptyset \right\}$.
+	We topologize $\spec \mcl{C}$ with the Zariski topology by declaring those to be the closed subsets.
 	We also denote $\supp\left(a\right) = V\left(\left\{ a\right\}\right)$.
 \end{definition}
 
-\begin{example*}
+\begin{example}
 	We continue the example of $\mcl{T}_{K_\bullet}$.
 	Clearly if $A_\bullet \otimes K_\bullet = 0$ then also $A_\bullet \otimes B_\bullet \otimes K_\bullet = 0$, so it is an ideal.
 	Let $\mfk{p}$ be a prime ideal in $R$ in the usual sense, and take $K_\bullet = R_\mfk{p}$ (concentrated at degree $0$),
@@ -70,10 +70,10 @@ We will try to recover $\spec{R}$, as a topological space, from $\Ch{R}$.
 	i.e. $\left(A_n\right)_\mfk{p}, \left(B_m\right)_\mfk{p} \neq 0$ but $\left(A_n\right)_\mfk{p} \otimes_{R_\mfk{p}} \left(B_m\right)_\mfk{p} = 0$ for some $n,m$.
 	Well, localization of projective is projective, and a projective over a local ring is free, and clearly if the tensor of two free modules vanish then one of them vanishes, so $\left(A_n\right)_\mfk{p} = 0$ or $\left(B_m\right)_\mfk{p} = 0$, which is a contradiction.
 	Therefore $\mcl{T}_\mfk{p}$ is a prime ideal.
-\end{example*}
+\end{example}
 
 \begin{theorem}
-	The map $\spec{R} \to \spec\left(\Chperf{R}\right)$,
+	The map $\spec R \to \spec\left(\Chperf{R}\right)$,
 	given by $\mfk{p} \mapsto \mcl{T}_\mfk{p} = \left\{ A_\bullet \mid \left(A_\bullet\right)_\mfk{p} = 0 \right\}$
 	is a homeomorphism.
 \end{theorem}
@@ -102,17 +102,17 @@ We will try to recover $\spec{R}$, as a topological space, from $\Ch{R}$.
 	Lastly, assume that $a \otimes b \in F^*\mcl{P}$, again since $F$ is monoidal, $F\left(a \otimes b\right) = F\left(a\right) \otimes F\left(b\right) \in \mcl{P}$, so $a \in F^*\mcl{P}$ or $b \in F^*\mcl{P}$, that is $F^*\mcl{P}$ is a prime ideal.
 \end{proof}
 
-Now, recall that $\Ch{R} \cong \Mod{\HH{R}}$, therefore we can reinterpret the above theorem as $\spec{R} \cong \spec\left( \Mod{\HH{R}}^\mrm{comp} \right)$ (where the $\mrm{comp}$ denotes the compact objects in the category).
+Now, recall that $\Ch{R} \cong \Mod{\HH{R}}$, therefore we can reinterpret the above theorem as $\spec R \cong \spec\left( \Mod{\HH{R}}^\mrm{comp} \right)$ (where the $\mrm{comp}$ denotes the compact objects in the category).
 We shall turn this theorem into a definition:
 
 \begin{definition}
-	Let $R$ be an $E_\infty$ ring spectrum.
+	Let $R$ be an $\mbb{E}_\infty$-ring.
 	We define the \emph{spectrum} of $R$ to be
-	$\spec{R} = \spec\left( \Mod{R}^\mrm{comp} \right)$.
+	$\spec R = \spec\left( \Mod{R}^\mrm{comp} \right)$.
 \end{definition}
 
-A natural question to ask then is what is $\spec{\mbb{S}}$.
-Recall that $\Mod{\mbb{S}} = \Sp$, the category of spectra, and that the compact objects in spectra are the finite spectra $\Spfin$.
+A natural question to ask then is what is $\spec \SS$.
+Recall that $\Mod{\SS} = \Sp$, the category of spectra, and that the compact objects in spectra are the finite spectra $\Spfin$.
 So, unwinding the definitions, the question can rephrased as finding the prime ideals in $\Spfin$, and their topology.
 Chromatic homotopy theory provides an answer to this question.
 
@@ -139,7 +139,7 @@ Since $E$ is unital, there is a canonical generator $1 \in E_0$.
 	A choice of a lift $x \in \tilde{E}^2\left(\BU[1]\right)$ of $1 \in E_0$ is called a \emph{complex orientation}.
 \end{definition}
 
-\begin{example*}
+\begin{example}
 	Let $R$ be some ring, and consider $\HH{R}$.
 	It is known that
 	$\HH{R}^*\left(\CP{n}\right) \cong R \left[x\right] / \left(x^{n+1}\right)$
@@ -147,28 +147,28 @@ Since $E$ is unital, there is a canonical generator $1 \in E_0$.
 	$\HH{R}^*\left(\CP{\infty}\right) \cong R \left[\left[x\right]\right]$,
 	where $\left|x\right| = 2$,
 	and the maps induced by the inclusions of projective spaces maps $x$ to $x$.
-	Therefore we see that $x \in \HH{R}^2\left(\BU[1]\right)$ is mapped to $x \in \HH{R}^2\left(S^2\right) = \mbb{Z}\left\{x\right\}$, which is mapped to the generator of the reduced part of $\HH{R}^0\left(S^0\right) = R \oplus R$.
+	Therefore we see that $x \in \HH{R}^2\left(\BU[1]\right)$ is mapped to $x \in \HH{R}^2\left(S^2\right) = \ZZ\left\{x\right\}$, which is mapped to the generator of the reduced part of $\HH{R}^0\left(S^0\right) = R \oplus R$.
 	Therefore $x$ is a complex orientation for $\HH{R}$.
-\end{example*}
+\end{example}
 
-\begin{example*}
-	Let $\K$ be complex K-theory, then we know that $\K_* = \mbb{Z}\left[\beta^{\pm 1}\right]$ where $\beta$ is the Bott element, with $\left|\beta\right| = 2$.
+\begin{example}
+	Let $\K$ be complex K-theory, then we know that $\K_* = \ZZ\left[\beta^{\pm 1}\right]$ where $\beta$ is the Bott element, with $\left|\beta\right| = 2$.
 	It is also known (by Atiyah-Hirzebruch spectral sequence) that
 	$\K^*\left(\CP{n}\right) \cong \K_* \left[t\right] / \left(t^{n+1}\right)$
 	and
 	$\K^*\left(\CP{\infty}\right) \cong \K_* \left[\left[t\right]\right]$
 	(here $\left|t\right| = 0$),
 	where the maps induced by the inclusions of projective spaces maps $t$ to $t$.
-	We deduce that $\beta t \in \K^2\left(\BU[1]\right)$ is mapped to $\beta t \in \K^2\left(S^2\right) = \mbb{Z}\left\{\beta t\right\}$, which is mapped to $t \in \K^0\left(S^0\right) = \mbb{Z}\left\{t\right\}$, which is indeed the generator of the reduced part.
+	We deduce that $\beta t \in \K^2\left(\BU[1]\right)$ is mapped to $\beta t \in \K^2\left(S^2\right) = \ZZ\left\{\beta t\right\}$, which is mapped to $t \in \K^0\left(S^0\right) = \ZZ\left\{t\right\}$, which is indeed the generator of the reduced part.
 	Therefore $x = \beta t$ is complex orientation for $\K$.
 	\todo{write the reduced thing more clearly}
-\end{example*}
+\end{example}
 
-\begin{example*}
+\begin{example}
 	Recall that $\MU$ is constructed as the colimit $\MU = \colim \MU[n]$.
 	Also, $\MU[1] \cong \Sigma^{\infty-2} \BU[1]$.
 	Therefore we get a canonical map $\Sigma^{\infty-2} \BU[1] \to \MU$, which gives a cohomology class $x_{\MU} \in \MU^2\left(\BU[1]\right)$.
-\end{example*}
+\end{example}
 
 \begin{proposition}[\todo{reference}]
 	$x_{\MU}$ is indeed a complex orientation for $\MU$.
@@ -199,7 +199,7 @@ Therefore, a choice of a complex orientation on $E$ gives rise to an element $F_
 	We call the height of $F_E$ the \emph{height} of $E$.
 \end{proposition}
 
-\begin{example*}
+\begin{example}
 	Consider again $\HH{R}$.
 	It is known that the tensor of complex line bundles induces the map
 	$
@@ -212,9 +212,9 @@ Therefore, a choice of a complex orientation on $E$ gives rise to an element $F_
 	This is the additive formal group law.
 	It is immediate that $\left[p\right] = p x$.
 	So for $R = \mbb{Q}$ we get that the height of $\HH{\mbb{Q}}$ is 0, while for $R = \mbb{F}_p$ we have $p x = 0$ so the height of $\HH{\mbb{F}_p}$ is $\infty$.
-\end{example*}
+\end{example}
 
-\begin{example*}
+\begin{example}
 	We return to the example of complex $\K$-theory.
 	It is known that the tensor of complex line bundles induces the map
 	$
@@ -237,9 +237,9 @@ Therefore, a choice of a complex orientation on $E$ gives rise to an element $F_
 		&= \beta \left(1 + \beta^{-1} x\right) \left(1 + \beta^{-1} x\right)^n - \beta\\
 		&= \beta \left(1 + \beta^{-1} x\right)^{n+1} - \beta
 	\end{align*}
-\end{example*}
+\end{example}
 
-\begin{example*}
+\begin{example}
 	By taking the cofiber of the multiplication-by-$p$ map, we get a spectrum $\K/p$, mod-$p$ K-theory, with coefficients $\left(\K/p\right)_* = \mathbb{F}_p \left[\beta^{\pm 1}\right]$.
 	It is evident that $F_{\K/p}\left(y,z\right) = y + z + \beta^{-1} y z$ as well.
 	From the result above, it follows that
@@ -250,7 +250,7 @@ Therefore, a choice of a complex orientation on $E$ gives rise to an element $F_
 	= \beta^{-p} x^p
 	$
 	which shows that the height is exactly $1$.
-\end{example*}
+\end{example}
 
 A formal group law on $E_*$ is the same data as a map from the Lazard ring $L$, so the complex orientation gives a map $L \to E_*$.
 In particular, since $\MU$ is complex oriented, there is a canonical map $L \to \MU_*$.
@@ -270,7 +270,7 @@ It turns out that once we $p$-localize $\MU$ to $\MU_{\left(p\right)}$, it split
 
 \begin{theorem}[{\cite[4.1.12]{Rav86}}]
 	There exists an associative commutative ring spectrum $\BP$ (which depends on the prime $p$), which is a retract of $\MU_{\left(p\right)}$.
-	The homotopy groups of $\BP$ are $\BP_* = \mbb{Z}_{\left(p\right)}\left[v_1, v_2, \dotsc\right]$ where $\left|v_n\right| = 2\left(p^n-1\right)$.
+	The homotopy groups of $\BP$ are $\BP_* = \ZZ_{\left(p\right)}\left[v_1, v_2, \dotsc\right]$ where $\left|v_n\right| = 2\left(p^n-1\right)$.
 \end{theorem}
 
 For convenience we denote $v_0 = p$ (and indeed $\left|v_0\right| = 2\left(p^0-1\right) = 0$).
@@ -289,7 +289,7 @@ Once we have $\BP$, we can turn to the definition of Morava K-theory and Morava 
 	Therefore $\K[n]_* = \mbb{F}_p\left[v_n^{\pm 1}\right]$.
 	We also define $\K[0] = \HH{\mbb{Q}}$ and $\K[\infty] = \HH{\mbb{F}_p}$.
 	Similarly, \emph{Morava E-theory} at height $n$ and prime $p$, denoted by $\E{p,n}$ or $\E{n}$, is the spectrum obtained by killing $v_{n+1}, v_{n+2}, \dotsc$ in $\BP$ and inverting $v_n$.
-	Therefore $\E{n}_* = \mbb{Z}_{\left(p\right)}\left[v_1, v_2, \dotsc v_{n-1}, v_n^{\pm 1}\right]$.
+	Therefore $\E{n}_* = \ZZ_{\left(p\right)}\left[v_1, v_2, \dotsc v_{n-1}, v_n^{\pm 1}\right]$.
 \end{definition}
 
 Since Morava K-theory and E-theory are obtained from $\BP$ by cofibers and filtered colimits, they are equipped with a map from $\BP$, so they are also equipped with a complex orientation.
@@ -302,12 +302,12 @@ To do so we first need some definitions.
 \begin{definition}
 	Let $R$ be an evenly graded ring.
 	$R$ is called a \emph{graded field} if every non-zero homogenus element is invertible, equivalently it is a field $F$ concentrated at degree 0, or $F\left[\beta^{\pm1}\right]$ for $\beta$ of positive even degree.
-	An $A_\infty$ ring spectrum $E$ is a \emph{field} if $E_*$ is a graded field.
+	An $\mbb{A}_\infty$-ring $E$ is a \emph{field} if $E_*$ is a graded field.
 \end{definition}
 
-\begin{example*}
+\begin{example}
 	Clearly $K\left(n\right)$ for $0 \leq n \leq \infty$ is a field.
-\end{example*}
+\end{example}
 
 \begin{proposition}
 	A field $E$ is has Kunneth, i.e. $E_*\left(X\otimes Y\right)\cong E_*\left(X\right)\otimes_{E_*}E_*\left(Y\right)$ for any spectra X,Y.
@@ -319,12 +319,12 @@ To do so we first need some definitions.
 	(Here $0 \leq n \leq \infty$.)
 \end{proposition}
 
-\begin{example*}
+\begin{example}
 	As we have seen before mod-$p$ K-theory, $\K/p$, has height exactly $1$ and coefficients $\left(\K/p\right)_* = \mathbb{F}_p \left[\beta^{\pm 1}\right]$.
 	It is also known that $\K$, and $\K/p$, are $A_\infty$ ring spectra, from which it follows that $\K/p$ is a field.
 	Therefore, we deduce that $\K/p$ is a $\K[1]$-module.
 	Since $\left|\beta\right| = 2$ and $\left|v_1\right| = 2\left(p-1\right)$ it is free of rank $p-1$.
-\end{example*}
+\end{example}
 
 From this we also deduce some form of uniqueness for Morava K-theory:
 
@@ -334,11 +334,11 @@ From this we also deduce some form of uniqueness for Morava K-theory:
 
 
 
-\subsection{The Balmer Spectrum $\spec \mbb{S}_{\left(p\right)}$ And $\spec \mbb{S}$}
+\subsection{The Balmer Spectrum $\spec \SS_{\left(p\right)}$ And $\spec \SS$}
 
-We are now in a position to state the answer for $\spec \mbb{S}$.
-However, it will be easier to state it first for $\spec \mbb{S}_{\left(p\right)}$, and then pullback prime ideals.
-We know that $\Mod{\mbb{S}_{\left(p\right)}} = \Sp_{\left(p\right)}$, and the compact objects there are $\Spfin_{\left(p\right)}$, the $p$-localizations of finite spectra.
+We are now in a position to state the answer for $\spec \SS$.
+However, it will be easier to state it first for $\spec \SS_{\left(p\right)}$, and then pullback prime ideals.
+We know that $\Mod{\SS_{\left(p\right)}} = \Sp_{\left(p\right)}$, and the compact objects there are $\Spfin_{\left(p\right)}$, the $p$-localizations of finite spectra.
 
 \begin{proposition}
 	Let
@@ -384,7 +384,7 @@ We know that $\Mod{\mbb{S}_{\left(p\right)}} = \Sp_{\left(p\right)}$, and the co
 
 \begin{proof}
 	Let $X$ be non-contractible.
-	Then $\HH{\mbb{Z}}_*\left(X\right) \neq 0$.
+	Then $\HH{\ZZ}_*\left(X\right) \neq 0$.
 	Let $m$ be the first non-zero degree.
 	Using the universal coefficient theorem and the fact that the spectrum is $p$-local we get that $\left(\HH{\mbb{F}_p}\right)_m\left(X\right) \neq 0$, thus $\left(\HH{\mbb{F}_p}\right)_*\left(X\right) \neq 0$.
 	Since $X$ is finite, $\left(\HH{\mbb{F}_p}\right)_*\left(X\right)$ is bounded.
@@ -414,12 +414,12 @@ We know that $\Mod{\mbb{S}_{\left(p\right)}} = \Sp_{\left(p\right)}$, and the co
 	If $\mcl{T}$ is a thick subcategory of $\Spfin_{\left(p\right)}$, then $\mcl{T} = \mcl{C}_{\geq n}$ for some $n = 0,1,2,\dotsc,\infty$.
 \end{theorem}
 
-\begin{remark*}
+\begin{remark}
 	The proof relies on a major theorem called the Nilpotence Theorem.
-\end{remark*}
+\end{remark}
 
 \begin{corollary}
-	$\spec \mbb{S}_{\left(p\right)} = \left\{ \mcl{C}_{\geq 1}, \mcl{C}_{\geq 2}, \dotsc, \mcl{C}_{\geq \infty} \right\}$,
+	$\spec \SS_{\left(p\right)} = \left\{ \mcl{C}_{\geq 1}, \mcl{C}_{\geq 2}, \dotsc, \mcl{C}_{\geq \infty} \right\}$,
 	and the topology is such that the closed subsets are chains
 	$\left\{ \mcl{C}_{\geq k}, \mcl{C}_{\geq k+1}, \dotsc, \mcl{C}_{\geq \infty} \right\}$
 	for some $k \geq 1$.
@@ -429,17 +429,59 @@ We know that $\Mod{\mbb{S}_{\left(p\right)}} = \Sp_{\left(p\right)}$, and the co
 	Follows immediately from the previous results.
 \end{proof}
 
-We now want to move to finding $\spec \mbb{S}$.
+We now want to move to finding $\spec \SS$.
 Note that the $p$-localization functor $L_{\left(p\right)}$ is a Bousfield localization.
 As such it is left (its right adjoint is the inclusion), and in particular preserves cofibers.
 It also clearly sends $0$ to $0$, i.e. reduced.
-Now, since $L_{\left(p\right)}$ is smashing, i.e. $L_{\left(p\right)} X = X \otimes \mbb{S}_{\left(p\right)}$, we also get that it is symmetric monoidal.
+Now, since $L_{\left(p\right)}$ is smashing, i.e. $L_{\left(p\right)} X = X \otimes \SS_{\left(p\right)}$, we also get that it is symmetric monoidal.
 As we have seen in \ref{primes-pullback}, under these conditions we can pullback primes.
 Therefore
 $
-L_{\left(p\right)}^* \mcl{C}_{p, \geq n}
-=
-\left\{
-	X \in
+\mcl{P}_{p, \geq n}
+= L_{\left(p\right)}^* \mcl{C}_{p, \geq n}
+= \left\{
+	X \in \Spfin
+	\mid
+	\K[n-1]_*\left(X_{\left(p\right)}\right) = 0
 \right\}
 $
+and
+$
+\mcl{P}_{p, \geq \infty}
+= L_{\left(p\right)}^* \mcl{C}_{p, \geq \infty}
+= \left\{
+	X \in \Spfin
+	\mid
+	X_{\left(p\right)} = 0
+\right\}
+$
+are prime ideals.
+Note that
+$
+\mcl{P}_{p, \geq 1}
+= \left\{
+	X \in \Spfin
+	\mid
+	{\HH{\mbb{Q}}}_*\left(X_{\left(p\right)}\right) = 0
+\right\}
+= \left\{
+	X \in \Spfin
+	\mid
+	{\HH{\mbb{Q}}}_*\left(X\right) = 0
+\right\}
+$
+\todo{explain}
+so it is independent of $p$, and we will denote it by $\Spfintor$.
+
+\begin{theorem}[\todo{explain/reference}]
+	$
+	\spec \SS
+	= \left\{\Spfintor\right\}
+	\cup \bigcup_p \left\{\mcl{P}_{p, \geq 2}, \dotsc, \mcl{P}_{p, \geq \infty}\right\}
+	$,
+	and the topology is such that the closed subsets finite unioins of chains
+	$\left\{ \mcl{P}_{\geq k}, \mcl{P}_{\geq k+1}, \dotsc, \mcl{P}_{\geq \infty} \right\}$
+	for some $k \geq 1$ (i.e. they may include $\Spfintor$).
+	\todo{diagram}
+\end{theorem}
+\todo{regarding the topology, maybe I should prove that the pullback is also continous?}
