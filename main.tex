@@ -1,7 +1,6 @@
 \documentclass{article}
 \usepackage{fontspec}
 \usepackage{amsmath, amsthm, amssymb}
-\usepackage{amsthm}
 \usepackage{eucal}
 \usepackage[top=2cm,bottom=2cm,left=2.5cm,right=2cm]{geometry}
 %\usepackage[papersize={11.4cm,8.5cm},top=0.3cm,bottom=0.3cm,left=0.3cm,right=0.3cm]{geometry}
@@ -14,18 +13,20 @@
 \setlength{\parindent}{0em}
 \setlength{\parskip}{0.6em}
 
-\newtheorem{theorem}{Theorem}
-\newtheorem{lemma}{Lemma}
-\newtheorem{proposition}{Proposition}
+\numberwithin{equation}{subsection}
+
+\newtheorem{theorem}[equation]{Theorem}
+\newtheorem{lemma}[equation]{Lemma}
+\newtheorem{proposition}[equation]{Proposition}
+\newtheorem{corollary}[equation]{Corollary}
 
 \theoremstyle{definition}
-\newtheorem{definition}{Definition}
+\newtheorem{definition}[equation]{Definition}
 
 \theoremstyle{remark}
 \newtheorem*{remark*}{Remark}
 \newtheorem*{example*}{Example}
 \newtheorem*{question*}{Question}
-\newtheorem*{corollary*}{Corollary}
 
 \newcommand{\ncmd}{\newcommand}
 

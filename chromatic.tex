@@ -79,15 +79,15 @@ We will try to recover $\spec{R}$, as a topological space, from $\Ch{R}$.
 \end{theorem}
 \todo{reference}
 
-\begin{proposition}
+\begin{proposition}\label{primes-pullback}
 	Prime ideals pullback:
-	Let $F: \mcl{C} \to \mcl{D}$ be an exact symmetric monoidal functor between two symmetric monoidal stable $\infty$-categories,
+	Let $F: \mcl{C} \to \mcl{D}$ be a reduced symmetric monoidal functor that preserves cofibers, between two symmetric monoidal stable $\infty$-categories,
 	and let $\mcl{P}$ be a prime ideal in $\mcl{D}$, then $F^*\mcl{P} = \left\{ a \in \mcl{C} \mid F\left(a\right) \in \mcl{P} \right\}$ is a prime ideal.
 \end{proposition}
 
 \begin{proof}
-	Clearly $F\left(0\right) = 0 \in \mcl{P}$ since $F$ is exact, so $0 \in F^*\mcl{P}$.
-	Since $F$ is exact, it sends cofibers to cofibers, so for $a,b \in F^*\mcl{P}$, i.e. $F\left(a\right), F\left(b\right) \in \mcl{P}$, and a map $a \to b$ we get
+	Clearly $F\left(0\right) = 0 \in \mcl{P}$ since $F$ is reduced, so $0 \in F^*\mcl{P}$.
+	Since $F$ preserves cofibers, for $a,b \in F^*\mcl{P}$, i.e. $F\left(a\right), F\left(b\right) \in \mcl{P}$, and a map $a \to b$ we get
 	$
 	F\left(\cofib\left(a \to b\right)\right)
 	= \cofib\left(F\left(a\right) \to F\left(b\right)\right)
@@ -102,7 +102,7 @@ We will try to recover $\spec{R}$, as a topological space, from $\Ch{R}$.
 	Lastly, assume that $a \otimes b \in F^*\mcl{P}$, again since $F$ is monoidal, $F\left(a \otimes b\right) = F\left(a\right) \otimes F\left(b\right) \in \mcl{P}$, so $a \in F^*\mcl{P}$ or $b \in F^*\mcl{P}$, that is $F^*\mcl{P}$ is a prime ideal.
 \end{proof}
 
-Now, recall that $\Ch{R} \cong \Mod{\H	H{R}}$, therefore we can reinterpret the above theorem as $\spec{R} \cong \spec\left( \Mod{\HH{R}}^\mrm{comp} \right)$ (where the $\mrm{comp}$ denotes the compact objects in the category).
+Now, recall that $\Ch{R} \cong \Mod{\HH{R}}$, therefore we can reinterpret the above theorem as $\spec{R} \cong \spec\left( \Mod{\HH{R}}^\mrm{comp} \right)$ (where the $\mrm{comp}$ denotes the compact objects in the category).
 We shall turn this theorem into a definition:
 
 \begin{definition}
@@ -285,10 +285,10 @@ Once we have $\BP$, we can turn to the definition of Morava K-theory and Morava 
 
 \begin{definition}
 	Let $0 < n < \infty$.
-	\emph{Morava K-theory} at height $n$ (and prime $p$, which is omitted in the notation), denoted by $\K[n]$, is the spectrum obtained by killing $p=v_0, \dotsc, v_{n-1}, v_{n+1}, \dotsc$ in $\BP$ and inverting $v_n$.
+	\emph{Morava K-theory} at height $n$ and prime $p$, denoted by $\K[p,n]$ or $\K[n]$ when the prime is clear, is the spectrum obtained by killing $p=v_0, \dotsc, v_{n-1}, v_{n+1}, \dotsc$ in $\BP$ and inverting $v_n$.
 	Therefore $\K[n]_* = \mbb{F}_p\left[v_n^{\pm 1}\right]$.
-	We also define $\K{0} = \HH{\mbb{Q}}$ and $\K{\infty} = \HH{\mbb{F}_p}$.
-	Similarly, \emph{Morava E-theory} at height $n$ (and prime $p$), denoted by $\E{n}$, is the spectrum obtained by killing $v_{n+1}, v_{n+2}, \dotsc$ in $\BP$ and inverting $v_n$.
+	We also define $\K[0] = \HH{\mbb{Q}}$ and $\K[\infty] = \HH{\mbb{F}_p}$.
+	Similarly, \emph{Morava E-theory} at height $n$ and prime $p$, denoted by $\E{p,n}$ or $\E{n}$, is the spectrum obtained by killing $v_{n+1}, v_{n+2}, \dotsc$ in $\BP$ and inverting $v_n$.
 	Therefore $\E{n}_* = \mbb{Z}_{\left(p\right)}\left[v_1, v_2, \dotsc v_{n-1}, v_n^{\pm 1}\right]$.
 \end{definition}
 
@@ -328,10 +328,118 @@ To do so we first need some definitions.
 
 From this we also deduce some form of uniqueness for Morava K-theory:
 
-\begin{corollary*}
+\begin{corollary}
 	Let $E$ be a field with $E_* \cong \mbb{F}_p\left[v_n^{\pm 1}\right]$, which is also complex oriented with height exactly $n$, then $E \cong \K[n]$ (as spectra).
-\end{corollary*}
+\end{corollary}
 
 
 
 \subsection{The Balmer Spectrum $\spec \mbb{S}_{\left(p\right)}$ And $\spec \mbb{S}$}
+
+We are now in a position to state the answer for $\spec \mbb{S}$.
+However, it will be easier to state it first for $\spec \mbb{S}_{\left(p\right)}$, and then pullback prime ideals.
+We know that $\Mod{\mbb{S}_{\left(p\right)}} = \Sp_{\left(p\right)}$, and the compact objects there are $\Spfin_{\left(p\right)}$, the $p$-localizations of finite spectra.
+
+\begin{proposition}
+	Let
+	$
+	\mcl{T}_E
+	= \ker E_*
+	= \left\{ X \in \Spfin_{\left(p\right)} \mid E_{*}\left(X\right)=0 \right\}$
+	(equivalently $X \otimes E = 0$) i.e. the $E$-acyclics, then $\mcl{T}_E$ is thick.
+\end{proposition}
+
+\begin{proof}
+	The exact same proof from $\Chperf{R}$ works.
+\end{proof}
+
+\begin{definition}
+	We define $\mcl{C}_{p, \geq n} = \mcl{T}_{\K[n-1]}$, the $\K[n-1]$-acyclics.
+	By the above it is thick.
+	Also, $\mcl{C}_{p, \geq 0} = \Spfin_{\left(p\right)}$ and $\mcl{C}_{p, \geq\infty} = \left\{ 0\right\}$ , which are trivially thick.
+	When the prime is clear, we will denote by $\mcl{C}_{\geq n}$.
+\end{definition}
+
+\begin{proposition}[{\cite[26]{Lur}}]
+	For $X \in \Spfin_{\left(p\right)}$, if $\K[n]_{*}\left(X\right) = 0$ then $\K[n-1]_*\left(X\right) = 0$.
+\end{proposition}
+
+\begin{definition}
+	We say that a spectrum $X \in \Spfin_{\left(p\right)}$ is of \emph{type} $n$ (possibly $\infty$), if its first non-zero Morava K-theory homology is $\K[n]$.
+\end{definition}
+
+\begin{corollary}
+	$\mcl{C}_{\geq n}$ is the full subcategory of finite $p$-local spectra of type $\geq n$ (i.e. $\left\{ X \in \Spfin_{\left(p\right)} \mid \forall m<n: \K[m]_*\left(X\right) = 0 \right\}$).
+	Thus clearly $\mcl{C}_{\geq n+1} \subseteq \mcl{C}_{\geq n}$.
+\end{corollary}
+
+\begin{proposition}[\todo{reference}]
+	The inclusions are proper $\mcl{C}_{\geq n+1} \subsetneq \mcl{C}_{\geq n}$.
+\end{proposition}
+
+\begin{proposition}
+	If $X \in \Spfin_{\left(p\right)}$ is not contractible, then $X$ has a finite type.
+	Therefore $\bigcap_{n < \infty} \mcl{C}_{\geq n} = \left\{0\right\} = \mcl{C}_{\geq \infty}$.
+\end{proposition}
+
+\begin{proof}
+	Let $X$ be non-contractible.
+	Then $\HH{\mbb{Z}}_*\left(X\right) \neq 0$.
+	Let $m$ be the first non-zero degree.
+	Using the universal coefficient theorem and the fact that the spectrum is $p$-local we get that $\left(\HH{\mbb{F}_p}\right)_m\left(X\right) \neq 0$, thus $\left(\HH{\mbb{F}_p}\right)_*\left(X\right) \neq 0$.
+	Since $X$ is finite, $\left(\HH{\mbb{F}_p}\right)_*\left(X\right)$ is bounded.
+	Atiyah-Hirzebruch spectral sequence for $X$ with cohomology $\K[n]$ has $E^2$-page given by
+	$
+	E_{p,q}^2
+	= 
+	H_p\left(X; \K[n]_q(*)\right)
+	$.
+	Since $\K[n]_q = \mbb{F}_p$ for $q = 0 \mod 2\left(p^n-1\right)$ and $0$ otherwise,
+	we see that the rows $q = 0 \mod 2\left(p^n-1\right)$ are $\left(\HH{\mbb{F}_p}\right)_*\left(X\right)$, and the others are $0$.
+	Therefore if we take $n$ such that the period $2\left(p^n-1\right)$ is larger then the bound on $\left(\HH{\mbb{F}_p}\right)_*\left(X\right)$, then all differentials have either source or target $0$.
+	Thus, the spectral sequence collapses at the $E^2$-page, and since $\left(\HH{\mbb{F}_p}\right)_*\left(X\right) \neq 0$, we ge that $\K[n]\left(X\right) \neq 0$, i.e. $X$ has type $<n$.
+\end{proof}
+
+\begin{proposition}
+	$\mcl{C}_{\geq n}$ is a prime ideal (note that $\mcl{C}_{\geq 0}$ is not a proper subcategory, thus only for $n=1,2,\dotsc,\infty$).
+\end{proposition}
+
+\begin{proof}
+	For X,Y by Kunneth we have $\K[n-1]_*\left(X \otimes  Y\right) = \K[n-1]_*\left(X\right) \otimes \K[n-1]_*\left(Y\right)$.
+	Therefore, if $X \in \mcl{C}_{\geq n}$, i.e. the homology vanishes, then so does the homology of $X \otimes Y$, i.e. $X \otimes Y \in \mcl{C}_{\geq n}$, so $\mcl{C}_{\geq n}$ is an ideal.
+	If $X \otimes Y\in \mcl{C}_{\geq n}$ then the homology of the product vanishes, therefore one in the right side must vanish (they are graded vector spaces), so $\mcl{C}_{\geq n}$ is a prime ideal.
+\end{proof}
+
+\begin{theorem}[Thick Subcategory Theorem \cite{HS}]
+	If $\mcl{T}$ is a thick subcategory of $\Spfin_{\left(p\right)}$, then $\mcl{T} = \mcl{C}_{\geq n}$ for some $n = 0,1,2,\dotsc,\infty$.
+\end{theorem}
+
+\begin{remark*}
+	The proof relies on a major theorem called the Nilpotence Theorem.
+\end{remark*}
+
+\begin{corollary}
+	$\spec \mbb{S}_{\left(p\right)} = \left\{ \mcl{C}_{\geq 1}, \mcl{C}_{\geq 2}, \dotsc, \mcl{C}_{\geq \infty} \right\}$,
+	and the topology is such that the closed subsets are chains
+	$\left\{ \mcl{C}_{\geq k}, \mcl{C}_{\geq k+1}, \dotsc, \mcl{C}_{\geq \infty} \right\}$
+	for some $k \geq 1$.
+\end{corollary}
+
+\begin{proof}
+	Follows immediately from the previous results.
+\end{proof}
+
+We now want to move to finding $\spec \mbb{S}$.
+Note that the $p$-localization functor $L_{\left(p\right)}$ is a Bousfield localization.
+As such it is left (its right adjoint is the inclusion), and in particular preserves cofibers.
+It also clearly sends $0$ to $0$, i.e. reduced.
+Now, since $L_{\left(p\right)}$ is smashing, i.e. $L_{\left(p\right)} X = X \otimes \mbb{S}_{\left(p\right)}$, we also get that it is symmetric monoidal.
+As we have seen in \ref{primes-pullback}, under these conditions we can pullback primes.
+Therefore
+$
+L_{\left(p\right)}^* \mcl{C}_{p, \geq n}
+=
+\left\{
+	X \in
+\right\}
+$
