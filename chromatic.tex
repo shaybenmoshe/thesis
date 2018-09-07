@@ -1,4 +1,4 @@
-\section{Overview Of Chromatic Homotopy Theory}
+\section{Overview of Chromatic Homotopy Theory}
 
 Our goal is to motivate the introduction of Morava K-theory $\K[n]$ and Morava E-theory $\E{n}$, and other variants of Morava E-theory $\E{k,\Gamma}$, and their connection to formal group laws.
 There are different views on what chromatic homotopy theory is.
@@ -118,7 +118,7 @@ Chromatic homotopy theory provides an answer to this question.
 
 
 
-\subsection{$\MU$ And Complex Orientations}
+\subsection{$\MU$ and Complex Orientations}
 
 Throughout this section, let $E$ be a multiplicative cohomology theory (that is, equipped with a map $E \otimes E \to E$ which is associative and unital up to homotopy).
 
@@ -255,13 +255,13 @@ Therefore, a choice of a complex orientation on $E$ gives rise to an element $F_
 A formal group law on $E_*$ is the same data as a map from the Lazard ring $L$, so the complex orientation gives a map $L \to E_*$.
 In particular, since $\MU$ is complex oriented, there is a canonical map $L \to \MU_*$.
 
-\begin{theorem}[{Quillen, \cite[4.1.6]{Rav86}}]
+\begin{theorem}[{Quillen, \cite[4.1.6]{Rav86}}]\label{quillen-theorem}
 	The canonical map $L \to \MU_*$ is an isomorphism.
 \end{theorem}
 
 
 
-\subsection{$\BP$, Morava K-Theory And Morava E-Theory}
+\subsection{$\BP$, Morava K-Theory and Morava E-Theory}
 
 A good principle in homotopy theory (and many other areas in math) is to do study it one prime at a time.
 This is possible in homotopy theory due to the arithmetic square \todo{reference}.
@@ -334,7 +334,7 @@ From this we also deduce some form of uniqueness for Morava K-theory:
 
 
 
-\subsection{The Balmer Spectrum $\spec \SS_{\left(p\right)}$ And $\spec \SS$}
+\subsection{The Balmer Spectrum $\spec \SS_{\left(p\right)}$ and $\spec \SS$}
 
 We are now in a position to state the answer for $\spec \SS$.
 However, it will be easier to state it first for $\spec \SS_{\left(p\right)}$, and then pullback prime ideals.
@@ -354,10 +354,10 @@ We know that $\Mod{\SS_{\left(p\right)}} = \Sp_{\left(p\right)}$, and the compac
 \end{proof}
 
 \begin{definition}
-	We define $\mcl{C}_{p, \geq n} = \mcl{T}_{\K[n-1]}$, the $\K[n-1]$-acyclics.
+	We define $\mcl{C}_{p, n} = \mcl{T}_{\K[n]}$, the $\K[n]$-acyclics.
 	By the above it is thick.
-	Also, $\mcl{C}_{p, \geq 0} = \Spfin_{\left(p\right)}$ and $\mcl{C}_{p, \geq\infty} = \left\{ 0\right\}$ , which are trivially thick.
-	When the prime is clear, we will denote by $\mcl{C}_{\geq n}$.
+	Also, $\mcl{C}_{p, \infty} = \left\{ 0\right\}$ , which are trivially thick.
+	When the prime is clear, we will denote by $\mcl{C}_n$.
 \end{definition}
 
 \begin{proposition}[{\cite[26]{Lur}}]
@@ -369,17 +369,17 @@ We know that $\Mod{\SS_{\left(p\right)}} = \Sp_{\left(p\right)}$, and the compac
 \end{definition}
 
 \begin{corollary}
-	$\mcl{C}_{\geq n}$ is the full subcategory of finite $p$-local spectra of type $\geq n$ (i.e. $\left\{ X \in \Spfin_{\left(p\right)} \mid \forall m<n: \K[m]_*\left(X\right) = 0 \right\}$).
-	Thus clearly $\mcl{C}_{\geq n+1} \subseteq \mcl{C}_{\geq n}$.
+	$\mcl{C}_n$ is the full subcategory of finite $p$-local spectra of type $> n$ (i.e. $\left\{ X \in \Spfin_{\left(p\right)} \mid \forall m \leq n: \K[m]_*\left(X\right) = 0 \right\}$).
+	Thus clearly $\mcl{C}_{n+1} \subseteq \mcl{C}_n$.
 \end{corollary}
 
 \begin{proposition}[\todo{reference}]
-	The inclusions are proper $\mcl{C}_{\geq n+1} \subsetneq \mcl{C}_{\geq n}$.
+	The inclusions are proper $\mcl{C}_{n+1} \subsetneq \mcl{C}_n$.
 \end{proposition}
 
 \begin{proposition}
 	If $X \in \Spfin_{\left(p\right)}$ is not contractible, then $X$ has a finite type.
-	Therefore $\bigcap_{n < \infty} \mcl{C}_{\geq n} = \left\{0\right\} = \mcl{C}_{\geq \infty}$.
+	Therefore $\bigcap_{n < \infty} \mcl{C}_n = \left\{0\right\} = \mcl{C}_\infty$.
 \end{proposition}
 
 \begin{proof}
@@ -401,17 +401,17 @@ We know that $\Mod{\SS_{\left(p\right)}} = \Sp_{\left(p\right)}$, and the compac
 \end{proof}
 
 \begin{proposition}
-	$\mcl{C}_{\geq n}$ is a prime ideal (note that $\mcl{C}_{\geq 0}$ is not a proper subcategory, thus only for $n=1,2,\dotsc,\infty$).
+	$\mcl{C}_n$ is a prime ideal.
 \end{proposition}
 
 \begin{proof}
 	For X,Y by Kunneth we have $\K[n-1]_*\left(X \otimes  Y\right) = \K[n-1]_*\left(X\right) \otimes \K[n-1]_*\left(Y\right)$.
-	Therefore, if $X \in \mcl{C}_{\geq n}$, i.e. the homology vanishes, then so does the homology of $X \otimes Y$, i.e. $X \otimes Y \in \mcl{C}_{\geq n}$, so $\mcl{C}_{\geq n}$ is an ideal.
-	If $X \otimes Y\in \mcl{C}_{\geq n}$ then the homology of the product vanishes, therefore one in the right side must vanish (they are graded vector spaces), so $\mcl{C}_{\geq n}$ is a prime ideal.
+	Therefore, if $X \in \mcl{C}_n$, i.e. the homology vanishes, then so does the homology of $X \otimes Y$, i.e. $X \otimes Y \in \mcl{C}_n$, so $\mcl{C}_n$ is an ideal.
+	If $X \otimes Y\in \mcl{C}_n$ then the homology of the product vanishes, therefore one in the right side must vanish (they are graded vector spaces), so $\mcl{C}_n$ is a prime ideal.
 \end{proof}
 
 \begin{theorem}[Thick Subcategory Theorem \cite{HS}]
-	If $\mcl{T}$ is a thick subcategory of $\Spfin_{\left(p\right)}$, then $\mcl{T} = \mcl{C}_{\geq n}$ for some $n = 0,1,2,\dotsc,\infty$.
+	If $\mcl{T}$ is a proper thick subcategory of $\Spfin_{\left(p\right)}$, then $\mcl{T} = \mcl{C}_n$ for some $0 \leq n \leq \infty$.
 \end{theorem}
 
 \begin{remark}
@@ -419,10 +419,10 @@ We know that $\Mod{\SS_{\left(p\right)}} = \Sp_{\left(p\right)}$, and the compac
 \end{remark}
 
 \begin{corollary}
-	$\spec \SS_{\left(p\right)} = \left\{ \mcl{C}_{\geq 1}, \mcl{C}_{\geq 2}, \dotsc, \mcl{C}_{\geq \infty} \right\}$,
+	$\spec \SS_{\left(p\right)} = \left\{ \mcl{C}_0, \mcl{C}_1, \dotsc, \mcl{C}_\infty \right\}$,
 	and the topology is such that the closed subsets are chains
-	$\left\{ \mcl{C}_{\geq k}, \mcl{C}_{\geq k+1}, \dotsc, \mcl{C}_{\geq \infty} \right\}$
-	for some $k \geq 1$.
+	$\left\{ \mcl{C}_k, \mcl{C}_{k+1}, \dotsc, \mcl{C}_\infty \right\}$
+	for some $0 \leq k \leq \infty$.
 \end{corollary}
 
 \begin{proof}
@@ -437,18 +437,18 @@ Now, since $L_{\left(p\right)}$ is smashing, i.e. $L_{\left(p\right)} X = X \oti
 As we have seen in \ref{primes-pullback}, under these conditions we can pullback primes.
 Therefore
 $
-\mcl{P}_{p, \geq n}
-= L_{\left(p\right)}^* \mcl{C}_{p, \geq n}
+\mcl{P}_{p, n}
+= L_{\left(p\right)}^* \mcl{C}_{p, n}
 = \left\{
 	X \in \Spfin
 	\mid
-	\K[n-1]_*\left(X_{\left(p\right)}\right) = 0
+	\K[n]_*\left(X_{\left(p\right)}\right) = 0
 \right\}
 $
 and
 $
-\mcl{P}_{p, \geq \infty}
-= L_{\left(p\right)}^* \mcl{C}_{p, \geq \infty}
+\mcl{P}_{p, \infty}
+= L_{\left(p\right)}^* \mcl{C}_{p, \infty}
 = \left\{
 	X \in \Spfin
 	\mid
@@ -458,7 +458,7 @@ $
 are prime ideals.
 Note that
 $
-\mcl{P}_{p, \geq 1}
+\mcl{P}_{p, 0}
 = \left\{
 	X \in \Spfin
 	\mid
@@ -477,11 +477,44 @@ so it is independent of $p$, and we will denote it by $\Spfintor$.
 	$
 	\spec \SS
 	= \left\{\Spfintor\right\}
-	\cup \bigcup_p \left\{\mcl{P}_{p, \geq 2}, \dotsc, \mcl{P}_{p, \geq \infty}\right\}
+	\cup \bigcup_p \left\{\mcl{P}_{p, 1}, \dotsc, \mcl{P}_{p, \infty}\right\}
 	$,
 	and the topology is such that the closed subsets finite unioins of chains
-	$\left\{ \mcl{P}_{\geq k}, \mcl{P}_{\geq k+1}, \dotsc, \mcl{P}_{\geq \infty} \right\}$
-	for some $k \geq 1$ (i.e. they may include $\Spfintor$).
+	$\left\{ \mcl{P}_{p, k}, \mcl{P}_{p, k+1}, \dotsc, \mcl{P}_{p, \infty} \right\}$
+	for some $0 \leq k \leq \infty$ (i.e. they may include $\Spfintor$).
 	\todo{diagram}
 \end{theorem}
-\todo{regarding the topology, maybe I should prove that the pullback is also continous?}
+\todo{regarding the topology, maybe I should prove that the pullback is also continuous?}
+
+
+
+\subsection{The Stacky Point of View and the Relationship Between Morava K-Theory and Morava E-Theory}
+
+First we will describe, without being precise, another point of view on what chromatic homotopy theory is about.
+
+There is a stack of formal groups, denoted by $\Mfg$.
+It can be described as the stack that sends a ring $R$ to the groupoid of formal group laws, with isomorphisms between them.
+Quillen theorem \ref{quillen-theorem} tells us that $\MU_*$ is the Lazard ring, that is the universal ring that carries the universal formal group law.
+It turns out that this theorem has a second part, which says that $\left(\MU \otimes \MU\right)_*$ is the universal ring that carries two formal group laws and an isomorphism between them.
+Therefore, $\Mfg$ is represented by $\left(\MU_*, \left(\MU \otimes \MU\right)_*\right)$.
+
+The geometric points of the stack $\Mfg$ are describe precisely the same as $\spec \SS$, that is because for an algebraically closed field of characteristic $0$ there is a unique (up to isomorphism) formal group law which is of height $0$ namely the additive formal group law, and for characteristic $p$ there is a unique (up to isomorphism) formal group law of each height $1 \leq n \leq \infty$.
+
+For a spectrum $X$, $\MU_*\left(X\right)$ is a $\left(\MU_*, \left(\MU \otimes \MU\right)_*\right)$-comodule, which is the same as a sheaf over $\Mfg$.
+From this point of view, chromatic homotopy theory lets us study a spectrum by decomposing it over the stack $\Mfg$.
+
+We can restrict ourselves to the stack only over rings of characteristic $p$, $\Mfgp$, which is then represented by $\left(\left(\MU_{\left(p\right)}\right)_*, \left(\MU_{\left(p\right)} \otimes \MU_{\left(p\right)}\right)_*\right)$. \todo{I think it's true, is it?}
+Similarly to $\MU$, $\BP$ is universal ring with the universal $p$-typical formal group law, and $\left(\BP \otimes \BP\right)_*$ is the universal ring with two $p$-typical formal group laws and an isomorphism between them \todo{I didn't say this before}.
+Since every formal group law is isomorphic to a $p$-typical one, we know that the stack $\Mfgp$ is also represented by $\left(\BP_*, \left(\BP \otimes \BP\right)_*\right)$.
+
+It is now reasonable that $\K[n]$, obtained from $\BP$ by killing the $v_m$'s for $m \neq n$ and inverting $v_n$, sees the $n$-th level, and that $\E{n}$ obtained in the same way but only killing $v_m$ for $m > n$, sees the levels $\leq n$.
+\todo{I didn't interpret the $v_n$'s before as coefficients in the $p$-series which determines the height}
+
+Let us now claim a precise statement, formalizing this description.
+
+\begin{theorem}[\todo{reference}]
+	$\E{n}$ and $\K[0] \oplus \cdots \oplus \K[n]$ are Bousfield equivalent.
+	That is, they have the same acyclics, locals, and their localization functors are the same.
+\end{theorem}
+
+\todo{chromatic square and chromatic tower, maybe another subsection?}
