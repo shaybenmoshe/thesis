@@ -334,7 +334,7 @@ From this we also deduce some form of uniqueness for Morava K-theory:
 
 
 
-\subsection{The Balmer Spectrum $\spec \SS_{\left(p\right)}$ and $\spec \SS$}
+\subsection{$\spec \SS_{\left(p\right)}$ and $\spec \SS$}
 
 We are now in a position to state the answer for $\spec \SS$.
 However, it will be easier to state it first for $\spec \SS_{\left(p\right)}$, and then pullback prime ideals.
@@ -518,3 +518,37 @@ Let us now claim a precise statement, formalizing this description.
 \end{theorem}
 
 \todo{chromatic square and chromatic tower, maybe another subsection?}
+
+
+
+\subsection{Landweber Exact Functor Theorem and Deformation Theory}
+
+As we have seen, a complex orientation on a cohomology theory, which is described by a map $\MU \to E$, has an associated formal group law, which is described by the map $L = \MU_* \to E_*$.
+One can ask whether the converse is true, namely given a ring $R$ and a formal group law $F$ given by $L \to R$, is there a complex oriented cohomology theory whose coefficients are $R$ and the associated formal group law is $F$.
+
+A strategy is to define $E_{R,F}\left(X\right) = \MU\left(X\right) \otimes_{\MU_*} R$.
+Unfortunately, this is not always a homology theory.
+However there is a condition which one can check which guarantees that it is.
+
+\begin{definition}
+	$R$ is called \emph{Landweber flat} if for every prime $p$, the sequence $p = v_0, v_1, v_2, \dotsc$ is regular,
+	that is, for each $n$, $v_n$ is not a zero divisor in $R/\left(v_0, v_1, \dotsc, v_{n-1}\right)$.
+\end{definition}
+
+\begin{theorem}[Landweber Exact Functor Theorem (LEFT) \todo{reference}]
+	If $R$ is Landweber flat, then $E_{R,F}$ defined above is a homology theory.
+	Moreover, there are no phantom maps between such spectra, so $E_{R,F}$ is represented by a spectrum.
+	This spectrum is complex oriented, has coefficients $R$ and associated formal group law $F$.
+\end{theorem}
+
+\begin{example}
+	Morava E-theory is Landweber flat.
+	Morava K-theory and $\HH{\ZZ}$ are not.
+	\todo{elaborate? reference?}
+\end{example}
+
+The Morava E-theory we have considered until now $\E[n]$, also called Johnson-Wilson spectrum was constructed from $\BP$.
+As we noted, it is Landweber flat, which indicated that there is another approach to constructing it.
+Indeed there is such a way, which will be called the Lubin-Tate spectrum.
+
+Let $k$ be a perfect field of characteristic $p$ (i.e. the Frobenius is an isomorphism), and $\Gamma$ a formal group law over $k$.
