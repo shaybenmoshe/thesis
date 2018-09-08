@@ -266,10 +266,17 @@ In particular, since $\MU$ is complex oriented, there is a canonical map $L \to 
 A good principle in homotopy theory (and many other areas in math) is to do study it one prime at a time.
 This is possible in homotopy theory due to the arithmetic square \todo{reference}.
 So, let us fix a prime $p$.
-It turns out that once we $p$-localize $\MU$ to $\MU_{\left(p\right)}$, it splits:
+We can form $\MU_{\left(p\right)}$, the $p$-localization of $\MU$.
 
-\begin{theorem}[{\cite[4.1.12]{Rav86}}]
-	There exists an associative commutative ring spectrum $\BP$ (which depends on the prime $p$), which is a retract of $\MU_{\left(p\right)}$.
+\begin{theorem}[{\cite[II 15]{Ada}}]
+	There exists a map of ring spectra $\varepsilon: \MU_{\left(p\right)} \to \MU_{\left(p\right)}$ (which depends on the prime $p$), which is an idempotent $\varepsilon^2 = \varepsilon$ (moreover, once the action on homotopy groups is specified, it is unique).
+\end{theorem}
+
+The map $\varepsilon: \MU_{\left(p\right)} \to \MU_{\left(p\right)}$ gives a cohomology operation, for every $X$ we have $\varepsilon^*: \MU_{\left(p\right)}^*\left(X\right) \to \MU_{\left(p\right)}^*\left(X\right)$.
+Denote by $\BP_{\left(p\right)}^*\left(X\right)$ the image of $\varepsilon^*$.
+
+\begin{theorem}[{\cite[II 16]{Ada}, \cite[4.1.12]{Rav86}}]
+	$\BP$ is a cohomology theory, represented by an associative commutative ring spectrum $\BP$ (which depends on the prime $p$), which is a retract of $\MU_{\left(p\right)}$.
 	The homotopy groups of $\BP$ are $\BP_* = \ZZ_{\left(p\right)}\left[v_1, v_2, \dotsc\right]$ where $\left|v_n\right| = 2\left(p^n-1\right)$.
 \end{theorem}
 
