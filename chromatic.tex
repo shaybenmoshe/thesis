@@ -617,3 +617,20 @@ Lubin and Tate \cite{LT} considered a moduli problem associated to $\Gamma/k$, d
 	This shows that $\Def[\varphi]: \Def[R, \mfk{m}] \to \Def[S, \mfk{n}]$ is indeed a functor.
 	Moreover, it is clear that $\Def[{\id[R]}]$ is the identity and compositions are sent to compositions, which shows that $\Def: \mrm{CompRing} \to \mrm{Grpds}$ is indeed a functor.
 \end{proof}
+
+\begin{theorem}[{\cite[{4.4 and 5.10}]{Rez}, originally due to \cite{LT}}]
+	The functor $\Def$ lands in discrete groupoids (i.e. $\Def[R, \mfk{m}]$ has $0$ or $1$ morphisms between objects).
+	Furthermore the functor $\Def$ is co-represented, that is there exists a \emph{universal deformation}, and the complete local ring can be chosen (non-canonically) to be $\Wk$.
+\end{theorem}
+
+Let us unravel what that means.
+First note that the quotient of $\Wk$ by the maximal ideal $\left(p, u_1, \dotsc, u_{n-1}\right)$ is $k$.
+The universal deformation can be chosen such that the formal group law over it $\Gamma_U$ over $\Wk$ satisfies $\pi^* \Gamma_U$ is $\Gamma$.
+The universality means that for $\left(R, \mfk{m}\right)$, the assignment
+$$
+\hom_{\mrm{CompRing}}\left(\Wk, R\right) \to \Def[R, \mfk{m}], \quad
+\varphi \mapsto \varphi^* \Gamma_U
+$$
+is an equivalence.
+
+\todo{more about the witt vectors?}
