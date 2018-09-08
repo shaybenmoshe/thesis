@@ -141,7 +141,7 @@ Since $E$ is unital, there is a canonical generator $1 \in E_0$.
 	A choice of a lift $x \in \tilde{E}^2\left(\BU[1]\right)$ of $1 \in E_0$ is called a \emph{complex orientation}.
 \end{definition}
 
-\begin{example}
+\begin{example}\label{HR-1}
 	Let $R$ be some ring, and consider $\HH{R}$.
 	It is known that
 	$\HH{R}^*\left(\CP{n}\right) \cong R \left[x\right] / \left(x^{n+1}\right)$
@@ -201,8 +201,8 @@ Therefore, a choice of a complex orientation on $E$ gives rise to an element $F_
 	We call the height of $F_E$ the \emph{height} of $E$.
 \end{proposition}
 
-\begin{example}
-	Consider again $\HH{R}$.
+\begin{example}\label{HR-2}
+	We continue with $\HH{R}$ from \ref{HR-1}.
 	It is known that the tensor of complex line bundles induces the map
 	$
 	R\left[\left[x\right]\right]
@@ -283,13 +283,13 @@ Denote by $\BP_{\left(p\right)}^*\left(X\right)$ the image of $\varepsilon^*$.
 
 \begin{theorem}[{\cite[II 16]{Ada}, \cite[4.1.12]{Rav86}}]
 	$\BP$ is a cohomology theory, represented by an associative commutative ring spectrum $\BP$ (which depends on the prime $p$), which is a retract of $\MU_{\left(p\right)}$.
-	The homotopy groups of $\BP$ are $\BP_* = \ZZ_{\left(p\right)}\left[v_1, \dotsc\right]$ where $\left|v_n\right| = 2\left(p^n-1\right)$.
+	The homotopy groups of $\BP$ are $\BP_* = \ZZ_{\left(p\right)}\left[v_1, v_2, \dotsc\right]$ where $\left|v_n\right| = 2\left(p^n-1\right)$.
 \end{theorem}
 
 For convenience we denote $v_0 = p$ (and indeed $\left|v_0\right| = 2\left(p^0-1\right) = 0$).
 Since $\BP$ is a retract of $\MU$ it comes with a map $\MU \to \BP$, that is a complex orientation.
 
-\begin{proposition}[\todo{reference}]
+\begin{proposition}\label{bp-p-series}[\todo{reference}]
 	The $p$-series of the formal group law associated to $\BP$ is
 	$\left[p\right]\left(x\right) = \sum v_n x^{p^n}$.
 \end{proposition}
@@ -306,8 +306,12 @@ Once we have $\BP$, we can turn to the definition of Morava K-theory and Morava 
 \end{definition}
 
 Since Morava K-theory and E-theory are obtained from $\BP$ by cofibers and filtered colimits, they are equipped with a map from $\BP$, so they are also equipped with a complex orientation.
-It is then evident that the $p$-series associated to the formal group laws of $\K[n]$ and $\E{n}$ are $v_n x^{p^n}$ and $v_0 x + \dotsc v_n x^{p^n}$ respectively, and are therefore of height exactly $n$ and height $\leq n$ respectively.
-(Note that by the example of $\HH{R}$, this is also true for $\K[0]$ and $\K[\infty]$.)
+Then, from \ref{bp-p-series}, we get:
+
+\begin{corollary}\label{k-e-p-series}
+	The $p$-series associated to the formal group laws of $\K[n]$ and $\E{n}$ are $v_n x^{p^n}$ and $v_0 x + \dotsc v_n x^{p^n}$ respectively, and are therefore of height exactly $n$ and height $\leq n$ respectively.
+	(Note that by the example of $\HH{R}$, this is also true for $\K[0]$ and $\K[\infty]$.)
+\end{corollary}
 
 We want to describe some properties of Morava K-theory.
 To do so we first need some definitions.
@@ -492,7 +496,7 @@ so it is independent of $p$, and we will denote it by $\Spfintor$.
 	= \left\{\Spfintor\right\}
 	\cup \bigcup_p \left\{\mcl{P}_{p, 1}, \dotsc, \mcl{P}_{p, \infty}\right\}
 	$,
-	and the topology is such that the closed subsets finite unioins of chains
+	and the topology is such that the closed subsets finite unions of chains
 	$\left\{ \mcl{P}_{p, k}, \mcl{P}_{p, k+1}, \dotsc, \mcl{P}_{p, \infty} \right\}$
 	for some $0 \leq k \leq \infty$ (i.e. they may include $\Spfintor$).
 	\todo{diagram}
@@ -521,7 +525,6 @@ Similarly to $\MU$, $\BP$ is universal ring with the universal $p$-typical forma
 Since every formal group law is isomorphic to a $p$-typical one, we know that the stack $\Mfgp$ is also represented by $\left(\BP_*, \left(\BP \otimes \BP\right)_*\right)$.
 
 It is now reasonable that $\K[n]$, obtained from $\BP$ by killing the $v_m$'s for $m \neq n$ and inverting $v_n$, sees the $n$-th level, and that $\E{n}$ obtained in the same way but only killing $v_m$ for $m > n$, sees the levels $\leq n$.
-\todo{I didn't interpret the $v_n$'s before as coefficients in the $p$-series which determines the height}
 
 Let us now claim a precise statement, formalizing this description.
 
@@ -545,9 +548,13 @@ Unfortunately, this is not always a homology theory.
 However there is a condition which one can check which guarantees that it is.
 
 \begin{definition}
-	$L \to R$ is called \emph{Landweber flat} if for every prime $p$, the sequence $p = v_0, v_1, v_2, \dotsc$ is regular,
-	that is, for each $n$, $v_n$ is not a zero divisor in $R/\left(v_0, v_1, \dotsc, v_{n-1}\right)$.
+	$L \to R$ is called \emph{Landweber flat} if for every prime $p$, the image of the sequence $p = v_0, v_1, v_2, \dotsc$ in $R$, which are the coefficients of the $p$-series, is regular.
+	That is, for each $p$ and $n \geq 0$, $v_n$ is not a zero divisor in $R/\left(v_0, v_1, \dotsc, v_{n-1}\right)$.
 \end{definition}
+
+\begin{remark}\label{landweber-flat-helper}
+	If $p$ is invertible in $R$, then $p$ is invertible, and $R/p$ is already $0$, so we don't need to check $v_1, v_2, \dotsc$.
+\end{remark}
 
 \begin{theorem}[{Landweber Exact Functor Theorem (LEFT), \cite[15, 16]{Lur}}]\label{LEFT}
 	If $L \to R$ is Landweber flat, then $E_{R,F}$ defined above is a homology theory.
@@ -568,15 +575,26 @@ However there is a condition which one can check which guarantees that it is.
 	The formal group law, as we have seen, is given by $F_{\K_p^\wedge}\left(y,z\right) = y + z + \beta^{-1} y z$.
 	We claim that $F_{\K_p^\wedge}/\K_p^\wedge$ is Landweber flat.
 	Clearly $p = v_0$ is invertible in $\ZZ_p^\wedge\left[\beta^{\pm 1}\right]$, thus not a zero divisor.
-	As we have seen in \ref{cmplx-thy-3}, mod-$p$ the $p$-series is $\beta^{-\left(p-1\right)} x^p$, so that $v_1 = \beta^{-\left(p-1\right)}$ which is not a zero divisor.
+	As we have seen in \ref{cmplx-thy-3}, mod-$p$ the $p$-series is $\beta^{-\left(p-1\right)} x^p$, so that $v_1 = \beta^{-\left(p-1\right)}$ which is not a zero divisor $\Fp\left[\beta^{\pm 1}\right]$.
 	Modulo $v_1$ the ring is already $0$, and we are done.
+	For other primes, by \ref{landweber-flat-helper} we are done.
 	Therefore, by \ref{LEFT-even} we get that $\K_p^\wedge \cong E_{\K_p^\wedge, F_{\K_p^\wedge}}$.
 \end{example}
 
 \begin{example}
-	Morava E-theory is Landweber flat.
-	Morava K-theory and $\HH{\ZZ}$ are not.
-	\todo{elaborate? reference?}
+	Morava E-theory is Landweber flat, since by \ref{k-e-p-series}, the $p$-series has coefficients $p = v_0, v_1, \dotsc, v_n$.
+	$p$ is not a zero divisor in $\E{n}_* = \ZZ_{\left(p\right)}\left[v_1, \dotsc v_{n-1}, v_n^{\pm 1}\right]$.
+	Then $v_i$ is not a zero divisor in $\E{n}_*/\left(p, v_1, \dotsc, v_{i-1}\right) \cong \Fp\left[v_i, \dotsc v_{n-1}, v_n^{\pm 1}\right]$.
+	After $v_n$ the ring becomes $0$ and we are done.
+	For other primes, by \ref{landweber-flat-helper} we are done.
+\end{example}
+
+\begin{example}
+	Morava K-theory $\K[n]$ for $n > 0$ is not Landweber flat since $p = v_0$ is not invertible in $\K[n]_* = \Fp\left[v_n^{\pm 1}\right]$.
+\end{example}
+
+\begin{example}
+	$\HH{\ZZ}$ is not Landweber flat since although $p = v_0$ is invertible, as we have seen in \ref{HR-2} the $p$-series is $px$, so $v_1$ is $0$ in $\ZZ/p = \Fp$, which is a zero divisor.
 \end{example}
 
 We can also ask the following question: given complex oriented cohomology theory $\MU \to E$, such that $L \to E_*$ is Landweber flat, is $E_{R,F}$ equivalent to $E$?
@@ -662,6 +680,11 @@ Lubin and Tate \cite{LT} considered a moduli problem associated to $\Gamma/k$, d
 	Moreover, it is clear that $\Def[{\id[R]}]$ is the identity and compositions are sent to compositions, which shows that $\Def: \mrm{CompRing} \to \mrm{Grpds}$ is indeed a functor.
 \end{proof}
 
+\begin{remark}
+	We recall quickly that the Witt vectors $\Wk$ is a ring of characteristic $0$, with maximal ideal $\left(p\right)$, and residue field $\Wk/p \cong k$.
+	For example, $\WW{\Fp} = \ZZ_p^\wedge$.
+\end{remark}
+
 \begin{theorem}[{\cite[{4.4, 5.10}]{Rez}, originally due to \cite{LT}}]
 	The functor $\Def$ lands in discrete groupoids (i.e. $\Def[R, \mfk{m}]$ has $0$ or $1$ morphisms between objects).
 	Furthermore the functor $\Def$ is co-represented, that is there exists a \emph{universal deformation}, and the complete local ring can be chosen (non-canonically) to be $\Wkui$.
@@ -676,8 +699,6 @@ $$
 \varphi \mapsto \varphi^* \Gamma_U
 $$
 is an equivalence.
-
-\todo{more about the witt vectors?}
 
 Now, we can form the graded ring $\Wkuiu$ where $\left|u\right| = 2$.
 We can define the formal group law $\left(u \Gamma_U\right) \left(x, y\right) = u^{-1} \Gamma_U \left(u y, u z\right)$, which is of degree $-2$, thus we get a map $L \to \Wkuiu$.
