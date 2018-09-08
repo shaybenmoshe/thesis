@@ -153,7 +153,7 @@ Since $E$ is unital, there is a canonical generator $1 \in E_0$.
 	Therefore $x$ is a complex orientation for $\HH{R}$.
 \end{example}
 
-\begin{example}
+\begin{example}\label{cmplx-thy-1}
 	Let $\K$ be complex K-theory, then we know that $\K_* = \ZZ\left[\beta^{\pm 1}\right]$ where $\beta$ is the Bott element, with $\left|\beta\right| = 2$.
 	It is also known (by Atiyah-Hirzebruch spectral sequence) that
 	$\K^*\left(\CP{n}\right) \cong \K_* \left[t\right] / \left(t^{n+1}\right)$
@@ -213,11 +213,11 @@ Therefore, a choice of a complex orientation on $E$ gives rise to an element $F_
 	given by $x \mapsto y + z$.
 	This is the additive formal group law.
 	It is immediate that $\left[p\right] = p x$.
-	So for $R = \mbb{Q}$ we get that the height of $\HH{\mbb{Q}}$ is 0, while for $R = \mbb{F}_p$ we have $p x = 0$ so the height of $\HH{\mbb{F}_p}$ is $\infty$.
+	So for $R = \mbb{Q}$ we get that the height of $\HH{\mbb{Q}}$ is 0, while for $R = \Fp$ we have $p x = 0$ so the height of $\HH{\Fp}$ is $\infty$.
 \end{example}
 
-\begin{example}
-	We return to the example of complex K-theory.
+\begin{example}\label{cmplx-thy-2}
+	We return to the example of complex K-theory \ref{cmplx-thy-1}.
 	It is known that the tensor of complex line bundles induces the map
 	$
 	\K_*\left[\left[t\right]\right]
@@ -243,7 +243,7 @@ Therefore, a choice of a complex orientation on $E$ gives rise to an element $F_
 
 \todo{consider discussing the computation of $\BU[1]$, maybe as part of complex K-theory example?}
 
-\begin{example}
+\begin{example}\label{cmplx-thy-3}
 	By taking the cofiber of the multiplication-by-$p$ map, we get a spectrum $\K/p$, mod-$p$ K-theory, with coefficients $\left(\K/p\right)_* = \mathbb{F}_p \left[\beta^{\pm 1}\right]$.
 	It is evident that $F_{\K/p}\left(y,z\right) = y + z + \beta^{-1} y z$ as well.
 	From the result above, it follows that
@@ -251,7 +251,7 @@ Therefore, a choice of a complex orientation on $E$ gives rise to an element $F_
 	\left[p\right]\left(x\right)
 	= \beta \left(1 + \beta^{-1} x\right)^p - \beta
 	= \beta \left(1^p + \beta^{-p} x^p\right) - \beta
-	= \beta^{-p} x^p
+	= \beta^{-\left(p-1\right)} x^p
 	$
 	which shows that the height is exactly $1$.
 \end{example}
@@ -297,8 +297,8 @@ Once we have $\BP$, we can turn to the definition of Morava K-theory and Morava 
 \begin{definition}
 	Let $0 < n < \infty$.
 	\emph{Morava K-theory} at height $n$ and prime $p$, denoted by $\K[p,n]$ or $\K[n]$ when the prime is clear, is the spectrum obtained by killing $p=v_0, \dotsc, v_{n-1}, v_{n+1}, \dotsc$ in $\BP$ and inverting $v_n$.
-	Therefore $\K[n]_* = \mbb{F}_p\left[v_n^{\pm 1}\right]$.
-	We also define $\K[0] = \HH{\mbb{Q}}$ and $\K[\infty] = \HH{\mbb{F}_p}$.
+	Therefore $\K[n]_* = \Fp\left[v_n^{\pm 1}\right]$.
+	We also define $\K[0] = \HH{\mbb{Q}}$ and $\K[\infty] = \HH{\Fp}$.
 	Similarly, \emph{Morava E-theory} at height $n$ and prime $p$, denoted by $\E{p,n}$ or $\E{n}$, is the spectrum obtained by killing $v_{n+1}, v_{n+2}, \dotsc$ in $\BP$ and inverting $v_n$.
 	Therefore $\E{n}_* = \ZZ_{\left(p\right)}\left[v_1, \dotsc v_{n-1}, v_n^{\pm 1}\right]$.
 \end{definition}
@@ -340,7 +340,7 @@ To do so we first need some definitions.
 From this we also deduce some form of uniqueness for Morava K-theory:
 
 \begin{corollary}
-	Let $E$ be a field with $E_* \cong \mbb{F}_p\left[v_n^{\pm 1}\right]$, which is also complex oriented with height exactly $n$, then $E \cong \K[n]$ (as spectra).
+	Let $E$ be a field with $E_* \cong \Fp\left[v_n^{\pm 1}\right]$, which is also complex oriented with height exactly $n$, then $E \cong \K[n]$ (as spectra).
 \end{corollary}
 
 
@@ -397,18 +397,18 @@ We know that $\Mod{\SS_{\left(p\right)}} = \Sp_{\left(p\right)}$, and the compac
 	Let $X$ be non-contractible.
 	Then $\HH{\ZZ}_*\left(X\right) \neq 0$.
 	Let $m$ be the first non-zero degree.
-	Using the universal coefficient theorem and the fact that the spectrum is $p$-local we get that $\left(\HH{\mbb{F}_p}\right)_m\left(X\right) \neq 0$, thus $\left(\HH{\mbb{F}_p}\right)_*\left(X\right) \neq 0$.
-	Since $X$ is finite, $\left(\HH{\mbb{F}_p}\right)_*\left(X\right)$ is bounded.
+	Using the universal coefficient theorem and the fact that the spectrum is $p$-local we get that $\left(\HH{\Fp}\right)_m\left(X\right) \neq 0$, thus $\left(\HH{\Fp}\right)_*\left(X\right) \neq 0$.
+	Since $X$ is finite, $\left(\HH{\Fp}\right)_*\left(X\right)$ is bounded.
 	Atiyah-Hirzebruch spectral sequence for $X$ with cohomology $\K[n]$ has $E^2$-page given by
 	$
 	E_{p,q}^2
 	= 
-	H_p\left(X; \K[n]_q(*)\right)
+	H_p\left(X; \K[n]_q\right)
 	$.
-	Since $\K[n]_q = \mbb{F}_p$ for $q = 0 \mod 2\left(p^n-1\right)$ and $0$ otherwise,
-	we see that the rows $q = 0 \mod 2\left(p^n-1\right)$ are $\left(\HH{\mbb{F}_p}\right)_*\left(X\right)$, and the others are $0$.
-	Therefore if we take $n$ such that the period $2\left(p^n-1\right)$ is larger then the bound on $\left(\HH{\mbb{F}_p}\right)_*\left(X\right)$, then all differentials have either source or target $0$.
-	Thus, the spectral sequence collapses at the $E^2$-page, and since $\left(\HH{\mbb{F}_p}\right)_*\left(X\right) \neq 0$, we ge that $\K[n]\left(X\right) \neq 0$, i.e. $X$ has type $<n$.
+	Since $\K[n]_q = \Fp$ for $q = 0 \mod 2\left(p^n-1\right)$ and $0$ otherwise,
+	we see that the rows $q = 0 \mod 2\left(p^n-1\right)$ are $\left(\HH{\Fp}\right)_*\left(X\right)$, and the others are $0$.
+	Therefore if we take $n$ such that the period $2\left(p^n-1\right)$ is larger then the bound on $\left(\HH{\Fp}\right)_*\left(X\right)$, then all differentials have either source or target $0$.
+	Thus, the spectral sequence collapses at the $E^2$-page, and since $\left(\HH{\Fp}\right)_*\left(X\right) \neq 0$, we ge that $\K[n]\left(X\right) \neq 0$, i.e. $X$ has type $<n$.
 \end{proof}
 
 \begin{proposition}
@@ -532,13 +532,13 @@ Let us now claim a precise statement, formalizing this description.
 
 
 
-\subsection{Landweber Exact Functor Theorem and Deformation Theory}
+\subsection{Landweber Exact Functor Theorem}
 
 As we have seen, a complex orientation on a cohomology theory, which is described by a map $\MU \to E$, has an associated formal group law, which is described by the map $L = \MU_* \to E_*$.
 Note that this formal group law is of degree $-2$, by virtue of the grading on $L = \MU_*$ \todo{say more?}.
 One can ask whether the converse is true, namely given a graded ring $R$ and a formal group law $F$ of degree $-2$ given by $L \to R$, is there a complex oriented cohomology theory whose coefficients are $R$ and the associated formal group law is $F$.
 
-A strategy is to define $E_{R,F}\left(X\right) = \MU\left(X\right) \otimes_{\MU_*} R$.
+A strategy is to define $\left(E_{R,F}\right)_*\left(X\right) = \MU_*\left(X\right) \otimes_{\MU_*} R$.
 Unfortunately, this is not always a homology theory.
 However there is a condition which one can check which guarantees that it is.
 
@@ -547,17 +547,56 @@ However there is a condition which one can check which guarantees that it is.
 	that is, for each $n$, $v_n$ is not a zero divisor in $R/\left(v_0, v_1, \dotsc, v_{n-1}\right)$.
 \end{definition}
 
-\begin{theorem}[Landweber Exact Functor Theorem (LEFT) \todo{reference}]\label{LEFT}
+\begin{theorem}[{Landweber Exact Functor Theorem (LEFT), \cite[15, 16]{Lur}}]\label{LEFT}
 	If $L \to R$ is Landweber flat, then $E_{R,F}$ defined above is a homology theory.
 	Moreover, there are no phantom maps between such spectra, so $E_{R,F}$ is represented by a spectrum.
 	This spectrum is complex oriented, has coefficients $R$ and associated formal group law $F$.
 \end{theorem}
+
+\begin{example}\label{cmplx-thy-4}
+	We return to complex K-theory, from \ref{cmplx-thy-1} and \ref{cmplx-thy-2}.
+	We can take the completion at the element $p \in \K_*$, which gives the spectrum $\K_p^\wedge$.
+	This spectrum has coefficients
+	$
+	\left(\K_p^\wedge\right)_*
+	= \left(\K_*\right)_p^\wedge
+	= \left(\ZZ\left[\beta^{\pm 1}\right]\right)_p^\wedge
+	= \ZZ_p^\wedge\left[\beta^{\pm 1}\right]
+	$.
+	The formal group law, as we have seen, is given by $F_{\K_p^\wedge}\left(y,z\right) = y + z + \beta^{-1} y z$.
+	We claim that $F_{\K_p^\wedge}/\K_p^\wedge$ is Landweber flat.
+	Clearly $p = v_0$ is invertible in $\ZZ_p^\wedge\left[\beta^{\pm 1}\right]$, thus not a zero divisor.
+	As we have seen in \ref{cmplx-thy-3}, mod-$p$ the $p$-series is $\beta^{-\left(p-1\right)} x^p$, so that $v_1 = \beta^{-\left(p-1\right)}$ which is not a zero divisor.
+	Modulo $v_1$ the ring is already $0$, and we are done.
+	Therefore, by \ref{LEFT-even} we get that $\K_p^\wedge \cong E_{\K_p^\wedge, F_{\K_p^\wedge}}$.
+\end{example}
 
 \begin{example}
 	Morava E-theory is Landweber flat.
 	Morava K-theory and $\HH{\ZZ}$ are not.
 	\todo{elaborate? reference?}
 \end{example}
+
+We can also ask the following question: given complex oriented cohomology theory $\MU \to E$, such that $L \to E_*$ is Landweber flat, is $E_{R,F}$ equivalent to $E$?
+The answer is yes, at least in some cases.
+
+\begin{theorem}\label{LEFT-even}
+	Let $E$ be as above, which is also evenly graded (i.e. $E_*$ is an evenly graded ring), then there is an equivalence $E_{R,F} \to E$.
+\end{theorem}
+
+\begin{proof}
+	This is a slight variation on \cite[18, proposition 11]{Lur}.
+	First note that for every spectrum $X$ we have $\MU \otimes X \to E \otimes X$, which induces $\MU_*\left(X\right) \to E_*\left(X\right)$, a map of $\MU_*$-modules.
+	Moreover, since $E_* \to E_*\left(X\right)$ is a map of $E_*$-module, the map $\MU_* \to E_*$ makes it a map of $\MU_*$-modules.
+	Together this gives a map $\left(E_{R,F}\right)_*\left(X\right) = \MU_*\left(X\right) \otimes_{\MU_*} E_* \to E_*\left(X\right)$.
+	This map is a map of homology theories. \todo{should I explain why?}
+	By \cite[17, theorem 6]{Lur} \todo{does it follow?}, this map lifts to a map of spectra $E_{R,F} \to E$.
+	Since by construction when $X = \SS$ the map above is $E_* \to E_*$ which is an isomorphism, we see that the map $E_{R,F} \to E$ is an equivalence.
+\end{proof}
+
+
+
+\subsection{Lubin-Tate Deformation Theory}
 
 The Morava E-theory we have considered until now $\E{n}$, also called Johnson-Wilson spectrum was constructed from $\BP$.
 As we noted, it is Landweber flat, which indicates that there is another approach to constructing it.
@@ -621,7 +660,7 @@ Lubin and Tate \cite{LT} considered a moduli problem associated to $\Gamma/k$, d
 	Moreover, it is clear that $\Def[{\id[R]}]$ is the identity and compositions are sent to compositions, which shows that $\Def: \mrm{CompRing} \to \mrm{Grpds}$ is indeed a functor.
 \end{proof}
 
-\begin{theorem}[{\cite[{4.4 and 5.10}]{Rez}, originally due to \cite{LT}}]
+\begin{theorem}[{\cite[{4.4, 5.10}]{Rez}, originally due to \cite{LT}}]
 	The functor $\Def$ lands in discrete groupoids (i.e. $\Def[R, \mfk{m}]$ has $0$ or $1$ morphisms between objects).
 	Furthermore the functor $\Def$ is co-represented, that is there exists a \emph{universal deformation}, and the complete local ring can be chosen (non-canonically) to be $\Wkui$.
 \end{theorem}
@@ -639,7 +678,7 @@ is an equivalence.
 \todo{more about the witt vectors?}
 
 Now, we can form the graded ring $\Wkuiu$ where $\left|u\right| = 2$.
-We can define the formal group law $u \Gamma_U \left(x, y\right) = u^{-1} \Gamma_U \left(u y, u z\right)$, which is of degree $-2$, thus we get a map $L \to \Wkuiu$.
+We can define the formal group law $\left(u \Gamma_U\right) \left(x, y\right) = u^{-1} \Gamma_U \left(u y, u z\right)$, which is of degree $-2$, thus we get a map $L \to \Wkuiu$.
 
 \begin{proposition}[{\cite[{6.9}]{Rez}}]
 	$L \to \Wkuiu$ is Landweber flat.
@@ -650,6 +689,27 @@ Using LEFT \ref{LEFT}, we immediately get:
 \begin{corollary}
 	There is a complex oriented cohomology theory $\E{k, \Gamma} = E_{\Wkuiu, u \Gamma_U}$, called Lubin-Tate spectrum, with coefficients $\E{k, \Gamma}_* = \Wkuiu$ and associated formal group law $u \Gamma_U$.
 \end{corollary}
+
+\begin{example}
+	We continue the complex K-theory saga from \ref{cmplx-thy-4}.
+	Take the field $k = \Fp$ and the formal group law $\Gamma\left(y, z\right) = y + z + y z$, of height $n = 1$.
+	By the above construction, the ring of the universal deformation is $\WW{\Fp} = \ZZ_p^\wedge$.
+	The universal formal group law of the universal deformation is again $\Gamma_U \left(y, z\right) = y + z + y z$.\todo{show}
+	We look at the ring $\ZZ_p^\wedge\left[u^{\pm1}\right]$, and at the formal group law over it
+	$
+	\left(u\Gamma_U\right) \left(y, z\right)
+	= u^{-1} \left(u y + u z + u^2 y z\right)
+	= y + z + u y z
+	$.
+	It is the clear that the isomorphism $\ZZ_p^\wedge\left[u^{\pm1}\right] \to \ZZ_p^\wedge\left[\beta^{\pm1}\right]$, sends $u\Gamma_U$ to $F_{\K_p^\wedge}$.
+	It follows that
+	$
+	\K_p^\wedge
+	\cong E_{\K_p^\wedge, F_{\K_p^\wedge}}
+	\cong \E{\Fp, \Gamma}
+	$,
+	i.e. $p$-complete K-theory $\K_p^\wedge$ is a Lubin-Tate spectrum at height $1$.
+\end{example}
 
 This concludes the construction of the Lubin-Tate variant of Morava E-theory.
 To compare this version with the previous, we define another variant of Morava E-theory.
