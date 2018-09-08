@@ -38,17 +38,18 @@
 %\ncmd{\todo}[1]{}
 \ncmd{\todo}[1]{\textbf{TODO #1}}
 
-\ncmd{\K}[1][]{\ifstrempty{#1}{\mrm{K}}{\mrm{K}\left(#1\right)}}
+\ncmd{\prnt}[1]{\ifstrempty{#1}{}{\left(#1\right)}}
+\ncmd{\K}[1][]{\mrm{K}\prnt{#1}}
 \ncmd{\E}[1]{\mrm{E}\left(#1\right)}
-\ncmd{\id}[1]{\mrm{id}_{#1}}
+\ncmd{\id}[1][]{\mrm{id}\ifstrempty{#1}{}{_{#1}}}
 \ncmd{\Ch}[1]{\mrm{Ch}\left(#1\right)}
 \ncmd{\Chperf}[1]{\mrm{Ch}_\mrm{perf}\left(#1\right)}
 \ncmd{\Mod}[1]{\mrm{Mod}_{#1}}
 \ncmd{\Sp}{\mrm{Sp}}
 \ncmd{\Spfin}{\Sp^\mrm{fin}}
 \ncmd{\Spfintor}{\Spfin_{\mrm{tor}}}
-\ncmd{\MU}[1][]{\ifstrempty{#1}{\mrm{MU}}{\mrm{MU}\left(#1\right)}}
-\ncmd{\BU}[1][]{\ifstrempty{#1}{\mrm{BU}}{\mrm{BU}\left(#1\right)}}
+\ncmd{\MU}[1][]{\mrm{MU}\prnt{#1}}
+\ncmd{\BU}[1][]{\mrm{BU}\prnt{#1}}
 \ncmd{\CP}[1]{{\mbb{C}\mrm{P}}^{#1}}
 \ncmd{\BP}{\mrm{BP}}
 \ncmd{\HH}[1]{\mrm{H}#1}
@@ -56,6 +57,8 @@
 \ncmd{\ZZ}{\mbb{Z}}
 \ncmd{\Mfg}{\mcl{M}_{\mrm{fg}}}
 \ncmd{\Mfgp}{\mcl{M}_{\mrm{fg},p}}
+\ncmd{\Def}[1][]{\mrm{Def}\prnt{#1}}
+\ncmd{\FGL}[1]{\mrm{FGL}\left(#1\right)}
 
 \DeclareMathOperator{\spec}{Spec}
 \DeclareMathOperator{\supp}{Supp}

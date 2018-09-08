@@ -42,7 +42,7 @@ We will try to recover $\spec R$, as a topological space, from $\Ch{R}$.
 	Clearly $0 \in \mcl{T}_{K_\bullet}$.
 	Let $A_\bullet \to B_\bullet$ be a morphism between two complexes in $\mcl{T}$. The cofiber of $A_\bullet \to B_\bullet$ is the pushout $B_\bullet \times_{A_\bullet} 0$. Since tensor is left, tensoring the cofiber with $K_\bullet$ is given by the pushout
 	$\left(B_\bullet \otimes K_\bullet\right) \times_{A_\bullet \otimes K_\bullet} \left(0 \otimes K_\bullet\right) = 0 \times_0 0 = 0$, therefore the cofiber is indeed in $\mcl{T}$.
-	Lastly, if $A_\bullet \to B_\bullet \to A_\bullet$ is the identity and $B_\bullet \otimes K_\bullet$, we get that $\id{A_\bullet \otimes K_\bullet}$ factors through $0$, which implies that $A_\bullet \otimes K_\bullet$ is $0$, so that $A_\bullet \in \mcl{T}$.
+	Lastly, if $A_\bullet \to B_\bullet \to A_\bullet$ is the identity and $B_\bullet \otimes K_\bullet$, we get that $\id[A_\bullet \otimes K_\bullet]$ factors through $0$, which implies that $A_\bullet \otimes K_\bullet$ is $0$, so that $A_\bullet \in \mcl{T}$.
 \end{example}
 
 \begin{definition}
@@ -557,7 +557,63 @@ However there is a condition which one can check which guarantees that it is.
 \end{example}
 
 The Morava E-theory we have considered until now $\E{n}$, also called Johnson-Wilson spectrum was constructed from $\BP$.
-As we noted, it is Landweber flat, which indicated that there is another approach to constructing it.
-Indeed there is such a way, which will be called the Lubin-Tate spectrum.
+As we noted, it is Landweber flat, which indicates that there is another approach to constructing it.
+Indeed there is a way to construct a related spectrum, which will be called the Lubin-Tate spectrum.
 
-Let $k$ be a perfect field of characteristic $p$ (i.e. the Frobenius is an isomorphism), and $\Gamma$ a formal group law over $k$.
+To that end, we first define the category $\mrm{CompRing}$ as the category of complete local rings.
+The objects are complete local rings $\left(R, \mfk{m}\right)$, we also denote by $\pi: R \to R/\mfk{m}$ the projection.
+Morphisms $\varphi: \left(R, \mfk{m}\right) \to \left(S, \mfk{n}\right)$ are local homomorphisms, i.e. a homomorphism $\varphi: R \to S$ s.t. $\varphi\left(\mfk{m}\right) \subseteq \mfk{n}$.
+In particular it induces a homomorphism $\varphi/\mfk{m}: R/\mfk{m} \to S/\mfk{n}$, which satisfies $\varphi/\mfk{m} \circ \pi_R = \pi_S \circ \varphi$.
+
+We fix $k$ be a perfect field of characteristic $p$ (i.e. the Frobenius is an isomorphism), and $\Gamma$ a formal group law over $k$ of height $n < \infty$.
+Lubin and Tate \cite{LT} considered a moduli problem associated to $\Gamma/k$, described by a functor $\Def: \mrm{CompRing} \to \mrm{Grpds}$.
+
+\begin{definition}
+	Let $\left(R, \mfk{m}\right)$ be a complete local ring and denote by $\pi: R \to R/\mfk{m}$ the quotient.
+	A \emph{deformation} of $\Gamma/k$ to $\left(R, \mfk{m}\right)$, is $\left(G, i\right)$, where $G$ is a formal group law over $R$, $i: k \to R/\mfk{m}$ is a homomorphism of fields, such that $i^* \Gamma = \pi^* G$.
+	A \emph{$\star$-isomorphism} between two deformations to $\left(R, \mfk{m}\right)$, $f: \left(G_1, i_1\right) \to \left(G_2, i_2\right)$, is defined only when $i_1 = i_2$, and consists of an isomorphism $f: G_1 \to G_2$, such that $\pi^* f: i^*\Gamma = \pi^* G_1 \to \pi^* G_2 \to i^*\Gamma$ is the identity, i.e. $f\left(x\right) = x \mod \mfk{m}$.
+	These assemble to a groupoid $\Def[R, \mfk{m}]$, whose objects are deformations to $\left(R, \mfk{m}\right)$, and morphisms are $\star$-isomorphisms.
+\end{definition}
+
+\begin{remark}
+	$\Def[R, \mfk{m}]$ can be seen as the pullback of the groupoids $\FGL{R}$ and $\coprod_{i: k \to R/\mfk{m}} \left\{\Gamma\right\}$ over $\FGL{R/\mfk{m}}$ (where the maps are $G \mapsto q^* G$ and $i \mapsto i^* \Gamma$ respectively).
+\end{remark}
+
+\begin{proposition}[/definition]
+	The construction $\Def[R, \mfk{m}]$ is functorial.
+\end{proposition}
+
+\begin{proof}
+	Let $\varphi: \left(R, \mfk{m}\right) \to \left(S, \mfk{n}\right)$ be a local homomorphism.
+	
+	For a deformation $\left(G, i\right)$ to $\left(R, \mfk{m}\right)$, we define
+	$
+	\Def[\varphi]\left(G, i\right)
+	= \left(\varphi^* G, \varphi/\mfk{m} \circ i\right)
+	$.
+	Note that $\varphi^* G$ is a formal group law over $S$, and $\varphi/\mfk{m} \circ i: k \to R/\mfk{m} \to S/\mfk{n}$ is a homomorphism.
+	Moreover,
+	$
+	\left(\varphi/\mfk{m} \circ i\right)^* \Gamma
+	= \left(\varphi/\mfk{m}\right)^* i^* \Gamma
+	= \left(\varphi/\mfk{m}\right)^* \pi_R^* G
+	= \left(\varphi/\mfk{m} \circ \pi_R\right)^* G
+	= \left(\pi_S \circ \varphi\right)^* G
+	= \pi_S^* \varphi^* G
+	$,
+	which shows that $\Def[\varphi]\left(G, i\right)$ is a deformation to $\left(S, \mfk{n}\right)$.
+	
+	For a $\star$-isomorphism $f: \left(G_1, i\right) \to \left(G_2, i\right)$, which is the data of an isomorphism $f: G_1 \to G_2$ such that $\pi_R^* f = \id[i^*\Gamma]$ is the identity, we need to define a $\star$-isomorphism $\Def[\varphi]\left(G, i_1\right) \to \Def[\varphi]\left(G, i_2\right)$.
+	Take it to be the isomorphism $\varphi^* f: \varphi^* G_1 \to \varphi^* G_2$, which satisfies
+	$
+	\pi_S^* \varphi^* f
+	= \left(\varphi/\mfk{m}\right)^* \pi_R^* f
+	= \left(\varphi/\mfk{m}\right)^* \id[i^*\Gamma]
+	= \id[\left(\varphi/\mfk{m}\right)^* i^*\Gamma]
+	= \id[\left(\varphi/\mfk{m} \circ i \right)^*\Gamma]
+	$.
+	The identity $\id[G]: \left(G, i\right) \to \left(G, i\right)$ is clearly sent to $\idotsint[\varphi^* G]$, and compositions are sent to compositions.
+	
+	This shows that $\Def[\varphi]: \Def[R, \mfk{m}] \to \Def[S, \mfk{n}]$ is indeed a functor.
+	Moreover, it is clear that $\Def[{\id[R]}]$ is the identity and compositions are sent to compositions, which shows that $\Def: \mrm{CompRing} \to \mrm{Grpds}$ is indeed a functor.
+\end{proof}
