@@ -29,44 +29,46 @@ We will try to recover $\spec R$, as a topological space, from $\Ch{R}$.
 	A full subcategory $\mcl{T}$ is \emph{thick} if:
 	\begin{itemize}
 		\item $0 \in \mcl{T}$,
-		\item it is closed under cofibers (that is if $a \to b \to c$ is a cofiber sequence in $\mcl{C}$ and $a, b \in \mcl{T}$, then $c \in \mcl{T}$),
+		\item it is closed under cofibers,
 		\item it is closed under retracts.
 	\end{itemize}
 \end{definition}
 
 \begin{example}
 	Consider the case $\mcl{C} = \Chperf{R}$ (e.g. over $\ZZ$, bounded chain complexes of finitely-generated free abelian groups).
-	Let $K_\bullet \in \Ch{R}$, and define
-	$\mcl{T}_{K_\bullet} = \left\{ A_\bullet \in \Chperf{R} \mid A_\bullet \otimes K_\bullet = 0 \right\}$.
-	We claim that $\mcl{T}_{K_\bullet}$ is thick.
-	Clearly $0 \in \mcl{T}_{K_\bullet}$.
-	Let $A_\bullet \to B_\bullet$ be a morphism between two complexes in $\mcl{T}$. The cofiber of $A_\bullet \to B_\bullet$ is the pushout $B_\bullet \times_{A_\bullet} 0$. Since tensor is left, tensoring the cofiber with $K_\bullet$ is given by the pushout
-	$\left(B_\bullet \otimes K_\bullet\right) \times_{A_\bullet \otimes K_\bullet} \left(0 \otimes K_\bullet\right) = 0 \times_0 0 = 0$, therefore the cofiber is indeed in $\mcl{T}$.
-	Lastly, if $A_\bullet \to B_\bullet \to A_\bullet$ is the identity and $B_\bullet \otimes K_\bullet$, we get that $\id[A_\bullet \otimes K_\bullet]$ factors through $0$, which implies that $A_\bullet \otimes K_\bullet$ is $0$, so that $A_\bullet \in \mcl{T}$.
+	Let $K \in \Ch{R}$, and define
+	$\mcl{T}_K = \left\{ A \in \Chperf{R} \mid A \otimes K = 0 \right\}$.
+	We claim that $\mcl{T}_K$ is thick.
+	Clearly $0 \in \mcl{T}_K$.
+	Let $A \to B$ be a morphism between two complexes in $\mcl{T}$. The cofiber of $A \to B$ is the pushout $B \times_{A} 0$. Since tensor is left, tensoring the cofiber with $K$ is given by the pushout
+	$\left(B \otimes K\right) \times_{A \otimes K} \left(0 \otimes K\right) = 0 \times_0 0 = 0$, therefore the cofiber is indeed in $\mcl{T}$.
+	Lastly, if $A \to B \to A$ is the identity and $B \otimes K$, we get that $\id[A \otimes K]$ factors through $0$, which implies that $A \otimes K$ is $0$, so that $A \in \mcl{T}$.
 \end{example}
 
 \begin{definition}
-	A thick subcategory $\mcl{T}$ is an \emph{ideal} if $a \in \mcl{T}, b \in \mcl{C} \implies a \otimes b \in \mcl{T}$.
-	Furthermore, it is a \emph{prime ideal} if it is a proper subcategory, and $a \otimes b \in \mcl{T} \implies a \in \mcl{T} \textrm{ or } b \in \mcl{T}$.
+	A thick subcategory $\mcl{T}$ is an \emph{ideal} if $A \in \mcl{T}, B \in \mcl{C} \implies A \otimes B \in \mcl{T}$.
+	Furthermore, it is a \emph{prime ideal} if it is a proper subcategory, and $A \otimes B \in \mcl{T} \implies A \in \mcl{T} \textrm{ or } B \in \mcl{T}$.
 	The \emph{spectrum} of the category is defined similarly to the classical spectrum of a ring:
 	As a set, $\spec \mcl{C} = \left\{ \mcl{P}\textrm{ prime ideal} \right\}$.
 	For any family of objects $S \subseteq \mcl{C}$ we define $V\left(S\right) = \left\{ \mcl{P} \in \spec \mcl{C} \mid S \cap \mcl{P} = \emptyset \right\}$.
 	We topologize $\spec \mcl{C}$ with the Zariski topology by declaring those to be the closed subsets.
-	We also denote $\supp\left(a\right) = V\left(\left\{ a\right\}\right)$.
+	We also denote $\supp\left(A\right) = V\left(\left\{ A \right\}\right)$.
 \end{definition}
 
 \begin{example}
-	We continue the example of $\mcl{T}_{K_\bullet}$.
-	Clearly if $A_\bullet \otimes K_\bullet = 0$ then also $A_\bullet \otimes B_\bullet \otimes K_\bullet = 0$, so it is an ideal.
-	Let $\mfk{p}$ be a prime ideal in $R$ in the usual sense, and take $K_\bullet = R_\mfk{p}$ (concentrated at degree $0$),
-	then $A_\bullet \otimes K_\bullet = \left(A_\bullet\right)_\mfk{p}$ (level-wise localization).
-	Now, assume that
+	We continue the example of $\mcl{T}_K$.
+	Clearly if $A \otimes K = 0$ then also $A \otimes B \otimes K = 0$, so it is an ideal.
+	Let $\mfk{p}$ be a prime ideal in $R$ in the usual sense, and take $K = R_\mfk{p}$ (concentrated at degree $0$),
+	then $A \otimes K = A_\mfk{p}$ (level-wise localization).
+	\todo{consider actually proving}
+	We will omit the proof that $\mcl{T}_K$ is a prime, but we shall prove something weaker, namely only the case where $A,B$ are bounded complexes of finitely generate projective modules (and not merely quasi-isomorphic to such complexes).
+	Assume then that
 	$
 	0
-	= \left(A_\bullet \otimes B_\bullet\right)_\mfk{p}
-	= \left(A_\bullet\right)_\mfk{p} \otimes_{R_\mfk{p}} \left(B_\bullet\right)_\mfk{p}
+	= \left(A \otimes B\right)_\mfk{p}
+	= A_\mfk{p} \otimes_{R_\mfk{p}} B_\mfk{p}
 	$
-	Assume by negation that $\left(A_\bullet\right)_\mfk{p}, \left(B_\bullet\right)_\mfk{p} \neq 0$,
+	Assume by negation that $A_\mfk{p}, B_\mfk{p} \neq 0$,
 	i.e. $\left(A_n\right)_\mfk{p}, \left(B_m\right)_\mfk{p} \neq 0$ but $\left(A_n\right)_\mfk{p} \otimes_{R_\mfk{p}} \left(B_m\right)_\mfk{p} = 0$ for some $n,m$.
 	Well, localization of projective is projective, and a projective over a local ring is free, and clearly if the tensor of two free modules vanish then one of them vanishes, so $\left(A_n\right)_\mfk{p} = 0$ or $\left(B_m\right)_\mfk{p} = 0$, which is a contradiction.
 	Therefore $\mcl{T}_\mfk{p}$ is a prime ideal.
@@ -74,7 +76,7 @@ We will try to recover $\spec R$, as a topological space, from $\Ch{R}$.
 
 \begin{theorem}
 	The map $\spec R \to \spec\left(\Chperf{R}\right)$,
-	given by $\mfk{p} \mapsto \mcl{T}_\mfk{p} = \left\{ A_\bullet \mid \left(A_\bullet\right)_\mfk{p} = 0 \right\}$
+	given by $\mfk{p} \mapsto \mcl{T}_\mfk{p} = \left\{ A \mid A_\mfk{p} = 0 \right\}$
 	is a homeomorphism.
 \end{theorem}
 \todo{reference}
@@ -82,24 +84,24 @@ We will try to recover $\spec R$, as a topological space, from $\Ch{R}$.
 \begin{proposition}\label{primes-pullback}
 	Prime ideals pullback:
 	Let $F: \mcl{C} \to \mcl{D}$ be a reduced symmetric monoidal functor that preserves cofibers, between two symmetric monoidal stable $\infty$-categories,
-	and let $\mcl{P}$ be a prime ideal in $\mcl{D}$, then $F^*\mcl{P} = \left\{ a \in \mcl{C} \mid F\left(a\right) \in \mcl{P} \right\}$ is a prime ideal.
+	and let $\mcl{P}$ be a prime ideal in $\mcl{D}$, then $F^*\mcl{P} = \left\{ A \in \mcl{C} \mid F\left(A\right) \in \mcl{P} \right\}$ is a prime ideal.
 \end{proposition}
 
 \begin{proof}
 	Clearly $F\left(0\right) = 0 \in \mcl{P}$ since $F$ is reduced, so $0 \in F^*\mcl{P}$.
-	Since $F$ preserves cofibers, for $a,b \in F^*\mcl{P}$, i.e. $F\left(a\right), F\left(b\right) \in \mcl{P}$, and a map $a \to b$ we get
+	Since $F$ preserves cofibers, for $A,B \in F^*\mcl{P}$, i.e. $F\left(A\right), F\left(B\right) \in \mcl{P}$, and a map $A \to B$ we get
 	$
-	F\left(\cofib\left(a \to b\right)\right)
-	= \cofib\left(F\left(a\right) \to F\left(b\right)\right)
-	= \cofib\left(F\left(a\right) \to F\left(b\right)\right)
+	F\left(\cofib\left(A \to B\right)\right)
+	= \cofib\left(F\left(A\right) \to F\left(B\right)\right)
+	= \cofib\left(F\left(A\right) \to F\left(B\right)\right)
 	\in \mcl{P}
 	$.
-	Let $a \to b \to a$ be a retract, that is the composition is the identity, s.t. $b \in F^*\mcl{P}$. We know that $F\left(a\right) \to F\left(b\right) \to F\left(a\right)$ is also a retract by functoriality, thus $F\left(a\right) \in \mcl{P}$, that is $a \in F^*\mcl{P}$.
+	Let $A \to B \to A$ be a retract, that is the composition is the identity, s.t. $B \in F^*\mcl{P}$. We know that $F\left(A\right) \to F\left(B\right) \to F\left(A\right)$ is also a retract by functoriality, thus $F\left(A\right) \in \mcl{P}$, that is $A \in F^*\mcl{P}$.
 	We conclude that $F^*\mcl{P}$ is indeed a thick subcategory.
 	
-	Let $a \in F^*\mcl{P}, b \in \mcl{C}$, since $F$ is monoidal, $F\left(a \otimes b\right) = F\left(a\right) \otimes F\left(b\right) \in \mcl{P}$, so $a \otimes b \in F^*\mcl{P}$, that is $F^*\mcl{P}$ is an ideal.
+	Let $A \in F^*\mcl{P}, B \in \mcl{C}$, since $F$ is monoidal, $F\left(A \otimes B\right) = F\left(A\right) \otimes F\left(B\right) \in \mcl{P}$, so $A \otimes B \in F^*\mcl{P}$, that is $F^*\mcl{P}$ is an ideal.
 	
-	Lastly, assume that $a \otimes b \in F^*\mcl{P}$, again since $F$ is monoidal, $F\left(a \otimes b\right) = F\left(a\right) \otimes F\left(b\right) \in \mcl{P}$, so $a \in F^*\mcl{P}$ or $b \in F^*\mcl{P}$, that is $F^*\mcl{P}$ is a prime ideal.
+	Lastly, assume that $A \otimes B \in F^*\mcl{P}$, again since $F$ is monoidal, $F\left(A \otimes B\right) = F\left(A\right) \otimes F\left(B\right) \in \mcl{P}$, so $A \in F^*\mcl{P}$ or $B \in F^*\mcl{P}$, that is $F^*\mcl{P}$ is a prime ideal.
 \end{proof}
 
 Now, recall that $\Ch{R} \cong \Mod{\HH{R}}$, therefore we can reinterpret the above theorem as $\spec R \cong \spec\left( \Mod{\HH{R}}^\mrm{comp} \right)$ (where the $\mrm{comp}$ denotes the compact objects in the category).
