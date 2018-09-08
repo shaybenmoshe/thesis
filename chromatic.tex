@@ -279,7 +279,7 @@ Denote by $\BP_{\left(p\right)}^*\left(X\right)$ the image of $\varepsilon^*$.
 
 \begin{theorem}[{\cite[II 16]{Ada}, \cite[4.1.12]{Rav86}}]
 	$\BP$ is a cohomology theory, represented by an associative commutative ring spectrum $\BP$ (which depends on the prime $p$), which is a retract of $\MU_{\left(p\right)}$.
-	The homotopy groups of $\BP$ are $\BP_* = \ZZ_{\left(p\right)}\left[v_1, v_2, \dotsc\right]$ where $\left|v_n\right| = 2\left(p^n-1\right)$.
+	The homotopy groups of $\BP$ are $\BP_* = \ZZ_{\left(p\right)}\left[v_1, \dotsc\right]$ where $\left|v_n\right| = 2\left(p^n-1\right)$.
 \end{theorem}
 
 For convenience we denote $v_0 = p$ (and indeed $\left|v_0\right| = 2\left(p^0-1\right) = 0$).
@@ -298,7 +298,7 @@ Once we have $\BP$, we can turn to the definition of Morava K-theory and Morava 
 	Therefore $\K[n]_* = \mbb{F}_p\left[v_n^{\pm 1}\right]$.
 	We also define $\K[0] = \HH{\mbb{Q}}$ and $\K[\infty] = \HH{\mbb{F}_p}$.
 	Similarly, \emph{Morava E-theory} at height $n$ and prime $p$, denoted by $\E{p,n}$ or $\E{n}$, is the spectrum obtained by killing $v_{n+1}, v_{n+2}, \dotsc$ in $\BP$ and inverting $v_n$.
-	Therefore $\E{n}_* = \ZZ_{\left(p\right)}\left[v_1, v_2, \dotsc v_{n-1}, v_n^{\pm 1}\right]$.
+	Therefore $\E{n}_* = \ZZ_{\left(p\right)}\left[v_1, \dotsc v_{n-1}, v_n^{\pm 1}\right]$.
 \end{definition}
 
 Since Morava K-theory and E-theory are obtained from $\BP$ by cofibers and filtered colimits, they are equipped with a map from $\BP$, so they are also equipped with a complex orientation.
@@ -533,19 +533,20 @@ Let us now claim a precise statement, formalizing this description.
 \subsection{Landweber Exact Functor Theorem and Deformation Theory}
 
 As we have seen, a complex orientation on a cohomology theory, which is described by a map $\MU \to E$, has an associated formal group law, which is described by the map $L = \MU_* \to E_*$.
-One can ask whether the converse is true, namely given a ring $R$ and a formal group law $F$ given by $L \to R$, is there a complex oriented cohomology theory whose coefficients are $R$ and the associated formal group law is $F$.
+Note that this formal group law is of degree $-2$, by virtue of the grading on $L = \MU_*$ \todo{say more?}.
+One can ask whether the converse is true, namely given a graded ring $R$ and a formal group law $F$ of degree $-2$ given by $L \to R$, is there a complex oriented cohomology theory whose coefficients are $R$ and the associated formal group law is $F$.
 
 A strategy is to define $E_{R,F}\left(X\right) = \MU\left(X\right) \otimes_{\MU_*} R$.
 Unfortunately, this is not always a homology theory.
 However there is a condition which one can check which guarantees that it is.
 
 \begin{definition}
-	$R$ is called \emph{Landweber flat} if for every prime $p$, the sequence $p = v_0, v_1, v_2, \dotsc$ is regular,
+	$L \to R$ is called \emph{Landweber flat} if for every prime $p$, the sequence $p = v_0, v_1, v_2, \dotsc$ is regular,
 	that is, for each $n$, $v_n$ is not a zero divisor in $R/\left(v_0, v_1, \dotsc, v_{n-1}\right)$.
 \end{definition}
 
-\begin{theorem}[Landweber Exact Functor Theorem (LEFT) \todo{reference}]
-	If $R$ is Landweber flat, then $E_{R,F}$ defined above is a homology theory.
+\begin{theorem}[Landweber Exact Functor Theorem (LEFT) \todo{reference}]\label{LEFT}
+	If $L \to R$ is Landweber flat, then $E_{R,F}$ defined above is a homology theory.
 	Moreover, there are no phantom maps between such spectra, so $E_{R,F}$ is represented by a spectrum.
 	This spectrum is complex oriented, has coefficients $R$ and associated formal group law $F$.
 \end{theorem}
@@ -620,17 +621,48 @@ Lubin and Tate \cite{LT} considered a moduli problem associated to $\Gamma/k$, d
 
 \begin{theorem}[{\cite[{4.4 and 5.10}]{Rez}, originally due to \cite{LT}}]
 	The functor $\Def$ lands in discrete groupoids (i.e. $\Def[R, \mfk{m}]$ has $0$ or $1$ morphisms between objects).
-	Furthermore the functor $\Def$ is co-represented, that is there exists a \emph{universal deformation}, and the complete local ring can be chosen (non-canonically) to be $\Wk$.
+	Furthermore the functor $\Def$ is co-represented, that is there exists a \emph{universal deformation}, and the complete local ring can be chosen (non-canonically) to be $\Wkui$.
 \end{theorem}
 
 Let us unravel what that means.
-First note that the quotient of $\Wk$ by the maximal ideal $\left(p, u_1, \dotsc, u_{n-1}\right)$ is $k$.
-The universal deformation can be chosen such that the formal group law over it $\Gamma_U$ over $\Wk$ satisfies $\pi^* \Gamma_U$ is $\Gamma$.
+First note that the quotient of $\Wkui$ by the maximal ideal $\left(p, u_1, \dotsc, u_{n-1}\right)$ is $k$.
+The universal deformation can be chosen such that the formal group law over it $\Gamma_U$ over $\Wkui$ satisfies $\pi^* \Gamma_U$ is $\Gamma$.
 The universality means that for $\left(R, \mfk{m}\right)$, the assignment
 $$
-\hom_{\mrm{CompRing}}\left(\Wk, R\right) \to \Def[R, \mfk{m}], \quad
+\hom_{\mrm{CompRing}}\left(\Wkui, R\right) \to \Def[R, \mfk{m}], \quad
 \varphi \mapsto \varphi^* \Gamma_U
 $$
 is an equivalence.
 
 \todo{more about the witt vectors?}
+
+Now, we can form the graded ring $\Wkuiu$ where $\left|u\right| = 2$.
+We can define the formal group law $u \Gamma_U \left(x, y\right) = u^{-1} \Gamma_U \left(u y, u z\right)$, which is of degree $-2$, thus we get a map $L \to \Wkuiu$.
+
+\begin{proposition}[{\cite[{6.9}]{Rez}}]
+	$L \to \Wkuiu$ is Landweber flat.
+\end{proposition}
+
+Using LEFT \ref{LEFT}, we immediately get:
+
+\begin{corollary}
+	There is a complex oriented cohomology theory $\E{k, \Gamma} = E_{\Wkuiu, u \Gamma_U}$, called Lubin-Tate spectrum, with coefficients $\E{k, \Gamma}_* = \Wkuiu$ and associated formal group law $u \Gamma_U$.
+\end{corollary}
+
+This concludes the construction of the Lubin-Tate variant of Morava E-theory.
+To compare this version with the previous, we define another variant of Morava E-theory.
+
+\begin{definition}
+	Let $I \leq \E{n}_* = \ZZ_{\left(p\right)}\left[v_1, \dotsc v_{n-1}, v_n^{\pm 1}\right]$ be the ideal $I = \left(p = v_0, v_1, \dotsc v_{n-1}\right)$.
+	We define the spectrum $\widehat{\E{n}} = \E{n}_I^\wedge$, called completed Johnson-Wilson spectrum.
+\end{definition}
+
+\begin{theorem}
+	The following three forms of Morava E-theory are Bousfield equivalent:
+	\begin{enumerate}
+		\item Johnson-Wilson $\E{n}$,
+		\item completed Johnson-Wilson $\widehat{\E{n}}$,
+		\item Lubin-Tate $\E{k, \Gamma}$.
+	\end{enumerate}
+\end{theorem}
+\todo{reference Hovey Strickland Morava K-Theories and Localization 5.3}
