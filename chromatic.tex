@@ -118,9 +118,9 @@ Chromatic homotopy theory provides an answer to this question.
 
 
 
-\subsection{$\MU$ and Complex Orientations}
+\subsection{\texorpdfstring{$\MU$}{MU} and Complex Orientations}
 
-Throughout this section, let $E$ be a multiplicative cohomology theory (that is, equipped with a map $E \otimes E \to E$ which is associative and unital up to homotopy).
+Throughout this section, let $E$ be a multiplicative cohomology theory (that is, equipped with a map $E \otimes E \to E$ and $1 \in E_0$, which is associative and unital after taking homotopy groups).
 
 Consider the map $S^2 \to \BU[1]$ classifying the universal complex line bundle.
 Concretely, under the identifications $S^2 \cong \CP{1}$ and $\BU[1] \cong \CP{\infty}$, this map can be realized as the inclusion $\CP{1} \subseteq \CP{\infty}$.
@@ -170,8 +170,8 @@ Since $E$ is unital, there is a canonical generator $1 \in E_0$.
 	Therefore we get a canonical map $\Sigma^{\infty-2} \BU[1] \to \MU$, which gives a cohomology class $x_{\MU} \in \MU^2\left(\BU[1]\right)$.
 \end{example}
 
-\begin{proposition}[\todo{reference}]
-	$x_{\MU}$ is indeed a complex orientation for $\MU$.
+\begin{proposition}[{\cite[4.1.3]{Rav86}}]
+	$x_{\MU}$ is a complex orientation for $\MU$.
 \end{proposition}
 
 \begin{theorem}
@@ -215,7 +215,7 @@ Therefore, a choice of a complex orientation on $E$ gives rise to an element $F_
 \end{example}
 
 \begin{example}
-	We return to the example of complex $\K$-theory.
+	We return to the example of complex K-theory.
 	It is known that the tensor of complex line bundles induces the map
 	$
 	\K_*\left[\left[t\right]\right]
@@ -239,6 +239,8 @@ Therefore, a choice of a complex orientation on $E$ gives rise to an element $F_
 	\end{align*}
 \end{example}
 
+\todo{consider discussing the computation of $\BU[1]$, maybe as part of complex K-theory example?}
+
 \begin{example}
 	By taking the cofiber of the multiplication-by-$p$ map, we get a spectrum $\K/p$, mod-$p$ K-theory, with coefficients $\left(\K/p\right)_* = \mathbb{F}_p \left[\beta^{\pm 1}\right]$.
 	It is evident that $F_{\K/p}\left(y,z\right) = y + z + \beta^{-1} y z$ as well.
@@ -261,7 +263,7 @@ In particular, since $\MU$ is complex oriented, there is a canonical map $L \to 
 
 
 
-\subsection{$\BP$, Morava K-Theory and Morava E-Theory}
+\subsection{\texorpdfstring{$\BP$}{BP}, Morava K-Theory and Morava E-Theory}
 
 A good principle in homotopy theory (and many other areas in math) is to do study it one prime at a time.
 This is possible in homotopy theory due to the arithmetic square \todo{reference}.
@@ -341,7 +343,7 @@ From this we also deduce some form of uniqueness for Morava K-theory:
 
 
 
-\subsection{$\spec \SS_{\left(p\right)}$ and $\spec \SS$}
+\subsection{\texorpdfstring{$\spec \SS_{\left(p\right)}$}{spec S(p)} and \texorpdfstring{$\spec \SS$}{spec S}}
 
 We are now in a position to state the answer for $\spec \SS$.
 However, it will be easier to state it first for $\spec \SS_{\left(p\right)}$, and then pullback prime ideals.
@@ -554,7 +556,7 @@ However there is a condition which one can check which guarantees that it is.
 	\todo{elaborate? reference?}
 \end{example}
 
-The Morava E-theory we have considered until now $\E[n]$, also called Johnson-Wilson spectrum was constructed from $\BP$.
+The Morava E-theory we have considered until now $\E{n}$, also called Johnson-Wilson spectrum was constructed from $\BP$.
 As we noted, it is Landweber flat, which indicated that there is another approach to constructing it.
 Indeed there is such a way, which will be called the Lubin-Tate spectrum.
 
