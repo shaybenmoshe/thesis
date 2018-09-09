@@ -161,8 +161,8 @@ Since $E$ is unital, there is a canonical generator $1 \in E_0$.
 	$\K^*\left(\CP{\infty}\right) \cong \K_* \left[\left[t\right]\right]$
 	(here $\left|t\right| = 0$),
 	where the maps induced by the inclusions of projective spaces maps $t$ to $t$.
-	We deduce that $\beta t \in \K^2\left(\BU[1]\right)$ is mapped to $\beta t \in \K^2\left(S^2\right) = \ZZ\left\{\beta t\right\}$, which is mapped to $t \in \K^0\left(S^0\right) = \ZZ\left\{t\right\}$, which is indeed the generator of the reduced part.
-	Therefore $x = \beta t$ is complex orientation for $\K$.
+	We deduce that $\beta^{-1} t \in \K^2\left(\BU[1]\right)$ is mapped to $\beta^{-1} t \in \K^2\left(S^2\right) = \ZZ\left\{\beta^{-1} t\right\}$, which is mapped to $t \in \K^0\left(S^0\right) = \ZZ\left\{t\right\}$, which is indeed the generator of the reduced part.
+	Therefore $x = \beta^{-1} t$ is complex orientation for $\K$.
 	\todo{write the reduced thing more clearly}
 \end{example}
 
@@ -229,15 +229,15 @@ Therefore, a choice of a complex orientation on $E$ gives rise to an element $F_
 	Note that to comply with the definition of the formal group law, we should use the isomorphism
 	$\K^*\left(\BU[1]\right) \cong \K_* \left[\left[x\right]\right]$,
 	i.e. the element $x = \beta t$.
-	We get that $x = \beta t \mapsto \beta u + \beta v + \beta u v = y + z + \beta^{-1} y z = F_{\K}\left(y,z\right)$.
-	By induction we prove that the $n$-series is $\left[n\right]\left(x\right) = \beta \left(1 + \beta^{-1} x\right)^n - \beta$.
+	We get that $x = \beta^{-1} t \mapsto \beta^{-1} u + \beta^{-1} v + \beta^{-1} u v = y + z + \beta y z = F_{\K}\left(y,z\right)$.
+	By induction we prove that the $n$-series is $\left[n\right]\left(x\right) = \beta^{-1} \left(1 + \beta x\right)^n - \beta^{-1}$.
 	This is clear for $n = 1$, and we have:
 	\begin{align*} 
 		\left[n+1\right]\left(x\right)
-		&= x + \left[n\right]\left(x\right) + \beta^{-1} x \left[n\right]\left(x\right)\\
-		&= x + \beta \left(1 + \beta^{-1} x\right)^n - \beta + x \left(1 + \beta^{-1} x\right)^n - x\\
-		&= \beta \left(1 + \beta^{-1} x\right) \left(1 + \beta^{-1} x\right)^n - \beta\\
-		&= \beta \left(1 + \beta^{-1} x\right)^{n+1} - \beta
+		&= x + \left[n\right]\left(x\right) + \beta x \left[n\right]\left(x\right)\\
+		&= x + \beta^{-1} \left(1 + \beta x\right)^n - \beta^{-1} + x \left(1 + \beta x\right)^n - x\\
+		&= \beta^{-1} \left(1 + \beta x\right) \left(1 + \beta x\right)^n - \beta^{-1}\\
+		&= \beta^{-1} \left(1 + \beta x\right)^{n+1} - \beta^{-1}
 	\end{align*}
 \end{example}
 
@@ -245,13 +245,13 @@ Therefore, a choice of a complex orientation on $E$ gives rise to an element $F_
 
 \begin{example}\label{cmplx-thy-3}
 	By taking the cofiber of the multiplication-by-$p$ map, we get a spectrum $\K/p$, mod-$p$ K-theory, with coefficients $\left(\K/p\right)_* = \mathbb{F}_p \left[\beta^{\pm 1}\right]$.
-	It is evident that $F_{\K/p}\left(y,z\right) = y + z + \beta^{-1} y z$ as well.
+	It is evident that $F_{\K/p}\left(y,z\right) = y + z + \beta y z$ as well.
 	From the result above, it follows that
 	$
 	\left[p\right]\left(x\right)
-	= \beta \left(1 + \beta^{-1} x\right)^p - \beta
-	= \beta \left(1^p + \beta^{-p} x^p\right) - \beta
-	= \beta^{-\left(p-1\right)} x^p
+	= \beta^{-1} \left(1 + \beta x\right)^p - \beta^{-1}
+	= \beta^{-1} \left(1^p + \beta^p x^p\right) - \beta^{-1}
+	= \beta^{p-1} x^p
 	$
 	which shows that the height is exactly $1$.
 \end{example}
@@ -572,10 +572,10 @@ However there is a condition which one can check which guarantees that it is.
 	= \left(\ZZ\left[\beta^{\pm 1}\right]\right)_p^\wedge
 	= \ZZ_p^\wedge\left[\beta^{\pm 1}\right]
 	$.
-	The formal group law, as we have seen, is given by $F_{\K_p^\wedge}\left(y,z\right) = y + z + \beta^{-1} y z$.
+	The formal group law, as we have seen, is given by $F_{\K_p^\wedge}\left(y,z\right) = y + z + \beta y z$.
 	We claim that $F_{\K_p^\wedge}/\K_p^\wedge$ is Landweber flat.
 	Clearly $p = v_0$ is invertible in $\ZZ_p^\wedge\left[\beta^{\pm 1}\right]$, thus not a zero divisor.
-	As we have seen in \ref{cmplx-thy-3}, mod-$p$ the $p$-series is $\beta^{-\left(p-1\right)} x^p$, so that $v_1 = \beta^{-\left(p-1\right)}$ which is not a zero divisor $\Fp\left[\beta^{\pm 1}\right]$.
+	As we have seen in \ref{cmplx-thy-3}, mod-$p$ the $p$-series is $\beta^{p-1} x^p$, so that $v_1 = \beta^{p-1}$ which is not a zero divisor $\Fp\left[\beta^{\pm 1}\right]$.
 	Modulo $v_1$ the ring is already $0$, and we are done.
 	For other primes, by \ref{landweber-flat-helper} we are done.
 	Therefore, by \ref{LEFT-even} we get that $\K_p^\wedge \cong E_{\K_p^\wedge, F_{\K_p^\wedge}}$.
@@ -724,7 +724,7 @@ Using LEFT \ref{LEFT}, we immediately get:
 	= u^{-1} \left(u y + u z + u^2 y z\right)
 	= y + z + u y z
 	$.
-	It is the clear that the isomorphism $\ZZ_p^\wedge\left[u^{\pm1}\right] \to \ZZ_p^\wedge\left[\beta^{\pm1}\right]$, sends $u\Gamma_U$ to $F_{\K_p^\wedge}$.
+	It is then clear that the isomorphism $\ZZ_p^\wedge\left[u^{\pm1}\right] \to \ZZ_p^\wedge\left[\beta^{\pm1}\right]$, sends $u\Gamma_U$ to $F_{\K_p^\wedge}$.
 	It follows that
 	$
 	\K_p^\wedge
