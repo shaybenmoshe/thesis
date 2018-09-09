@@ -49,7 +49,13 @@
 \ncmd{\Spfin}{\Sp^\mrm{fin}}
 \ncmd{\Spfintor}{\Spfin_{\mrm{tor}}}
 \ncmd{\MU}[1][]{\mrm{MU}\prnt{#1}}
-\ncmd{\BU}[1][]{\mrm{BU}\prnt{#1}}
+\ncmd{\BB}[1][]{{\mrm{B}#1}}
+\ncmd{\UU}[1][]{\mrm{U}\prnt{#1}}
+\ncmd{\BU}[1][]{\BB[\UU]\prnt{#1}}
+\ncmd{\BG}{\BB[G]}
+\ncmd{\EG}{\mrm{EG}}
+\ncmd{\RG}{\mrm{R}\left(G\right)}
+\ncmd{\RGI}{{\RG}_I^\wedge}
 \ncmd{\CP}[1]{{\mbb{C}\mrm{P}}^{#1}}
 \ncmd{\BP}{\mrm{BP}}
 \ncmd{\HH}[1]{\mrm{H}#1}
@@ -64,6 +70,7 @@
 \ncmd{\Wk}{\WW{k}}
 \ncmd{\Wkui}[1][n-1]{\Wk\left[\left[u_1, \dotsc, u_{#1}\right]\right]}
 \ncmd{\Wkuiu}[1][n-1]{\Wkui[#1]\left[u^{\pm 1}\right]}
+\ncmd{\KG}{\K_G}
 
 \DeclareMathOperator{\spec}{Spec}
 \DeclareMathOperator{\supp}{Supp}
@@ -80,6 +87,7 @@
 	\tableofcontents
 	
 	\input{chromatic.tex}
+	\input{atiyah-segal.tex}
 	
 	\bibliography{refs}{}
 	\bibliographystyle{alpha}

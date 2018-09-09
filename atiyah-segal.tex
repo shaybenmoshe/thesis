@@ -1,0 +1,63 @@
+\section{Atiyah-Segal}
+
+We now leave the realm of chromatic homotopy theory.
+One aspect of algebraic topology is to try to capture properties of spaces using algebraic invariants.
+One of the most fruitful such invariants is complex K-theory $\K$, and one of the most important spaces in homotopy theory is $\BG$, so it is natural to ask for a description of $\K\left(\BG\right)$ (by Bott periodicity, we will consider only $\K = \K^0$).
+Atiyah and Segal \cite{AS} gave a description of this, and more, in the case that $G$ is a compact Lie group, in terms of representations.
+
+From now we fix a compact Lie group $G$.
+Also, a representation means a unitary representation.
+
+\subsection{The Atiyah-Segal Theorem}
+
+We denote by $\RG$ the \emph{representation ring} of $G$, that is the collection of virtual representations of $G$ (which can be written is as a formal difference $V - U$) where the addition is given by direct sum and the product is given by tensor product.
+This is an augmented ring $\varepsilon: \RG \to \ZZ$ by the virtual dimension (i.e. $\varepsilon\left(V-U\right) = \dim\left(V-U\right) = \dim V - \dim U$).
+The \emph{augmentation ideal} is $I = \ker \varepsilon = \left\{ V - U \in \RG \mid 0 = \dim(V-U) \right\}$.
+
+\begin{theorem}[{\cite{AS}}]
+	$\K\left(\BG\right) \cong \RGI$.
+\end{theorem}
+
+We will not prove the theorem, but we will indicate some of the key ingredients.
+
+First of all, to show that objects are isomorphic, we need a map.
+Before giving the map actually used in the proof, we describe an easier way to see where this map comes from.
+Recall that $\K\left(X\right) \cong \left[X, \BU \times \ZZ\right]$.
+We write $\BU \to \BU \times \ZZ$ for the map that is the identity on the first coordinate and $0$ on the second.
+The data of a representation of $G$ is the same thing as a homomorphism $G \to \UU$.
+Since $\BB$ is a functor, we get a map $\BG \to \BU$, and by composing with $\BU \to \BU \times \ZZ$, we indeed get a map $\BG \to \BU \times \ZZ$, that is, and element of $\K\left(\BG\right)$.
+Therefore we get a map $\RG \to \K\left(\BG\right)$.
+The theorem is that it is a ring homomorphism which exhibits $\K\left(\BG\right)$ as the completion of $\RG$ at $I$.
+
+There is an alternative description of this map.
+In \cite{Seg}, Segal described equivariant K-theory $\KG$.
+This is a variant of K-theory, which assigns to a $G$-space the ring of virtual $G$-bundles, that is bundles equipped with an action of $G$, compatible with the action on the base $G$-space.
+Note that this is no longer a homotopy invariant, since it also takes into account the action of $G$.
+First we note the following:
+
+\begin{proposition}
+	$\KG\left(*\right) = \RG$ (where $*$ denotes the trivial $G$-space)
+\end{proposition}
+
+\begin{proof}
+	This is by definition, since a vector bundle over a point is just a vector space, and it is equipped with a $G$ action.
+\end{proof}
+
+For any $G$-space $X$, the projection map $\mrm{pr}: X \to X/G$ allows us to pullback vector bundles on $X/G$, to $G$-bundles on $X$, that is it induces a map $\mrm{pr}^*: \K\left(X/G\right) \to \KG\left(X\right)$.
+
+\begin{proposition}[{\cite[2.1]{Seg}}]
+	If $G$ acts \emph{freely} on $X$, then there is an inverse to $\mrm{pr}^*$, so $\K\left(X/G\right) \cong \KG\left(X\right)$.
+	The inverse is given by taking a bundle $E \to X$ to $E/G \to X/G$.
+\end{proposition}
+
+Now, we have a map of $G$-spaces given by $\EG \to *$.
+By the above we get:
+$$
+\RG
+\cong \KG\left(*\right)
+\to \KG\left(\EG\right)
+\cong \K\left(\EG/G\right)
+= \K\left(\BG\right)
+$$
+This is again the map we need, which exhibits $\K\left(\BG\right)$ as the $I$-completion of $\RG$.
+Atiyah and Segal use this map and variants to show the theorem.
