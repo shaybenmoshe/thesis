@@ -509,20 +509,20 @@ so it is independent of $p$, and we will denote it by $\Spfintor$.
 
 First we will describe, without being precise, another point of view on what chromatic homotopy theory is about.
 
-There is a stack of formal groups, denoted by $\Mfg$.
+There is a stack of formal groups with strict isomorphisms, denoted by $\Mfgs$.
 It can be described as the stack that sends a ring $R$ to the groupoid of formal group laws, with isomorphisms between them.
 Quillen theorem \ref{quillen-theorem} tells us that $\MU_*$ is the Lazard ring, that is the universal ring that carries the universal formal group law.
 It turns out that this theorem has a second part, which says that $\left(\MU \otimes \MU\right)_*$ is the universal ring that carries two formal group laws and an isomorphism between them.
-Therefore, $\Mfg$ is represented by $\left(\MU_*, \left(\MU \otimes \MU\right)_*\right)$.
+Therefore, $\Mfgs$ is represented by $\left(\MU_*, \left(\MU \otimes \MU\right)_*\right)$.
 
-The geometric points of the stack $\Mfg$ are describe precisely the same as $\spec \SS$, that is because for an algebraically closed field of characteristic $0$ there is a unique (up to isomorphism) formal group law which is of height $0$ namely the additive formal group law, and for characteristic $p$ there is a unique (up to isomorphism) formal group law of each height $1 \leq n \leq \infty$.
+The geometric points of the stack $\Mfgs$ are describe precisely the same as $\spec \SS$, that is because for an algebraically closed field of characteristic $0$ there is a unique (up to isomorphism) formal group law which is of height $0$ namely the additive formal group law, and for characteristic $p$ there is a unique (up to isomorphism) formal group law of each height $1 \leq n \leq \infty$.
 
-For a spectrum $X$, $\MU_*\left(X\right)$ is a $\left(\MU_*, \left(\MU \otimes \MU\right)_*\right)$-comodule, which is the same as a sheaf over $\Mfg$.
-From this point of view, chromatic homotopy theory lets us study a spectrum by decomposing it over the stack $\Mfg$.
+For a spectrum $X$, $\MU_*\left(X\right)$ is a $\left(\MU_*, \left(\MU \otimes \MU\right)_*\right)$-comodule, which is the same as a sheaf over $\Mfgs$.
+From this point of view, chromatic homotopy theory lets us study a spectrum by decomposing it over the stack $\Mfgs$.
 
-We can restrict ourselves to the stack only over rings of characteristic $p$, $\Mfgp$, which is then represented by $\left(\left(\MU_{\left(p\right)}\right)_*, \left(\MU_{\left(p\right)} \otimes \MU_{\left(p\right)}\right)_*\right)$. \todo{I think it's true, is it?}
+We can restrict ourselves to the stack only over rings of characteristic $p$, $\Mfgsp$, which is then represented by $\left(\left(\MU_{\left(p\right)}\right)_*, \left(\MU_{\left(p\right)} \otimes \MU_{\left(p\right)}\right)_*\right)$. \todo{I think it's true, is it?}
 Similarly to $\MU$, $\BP$ is universal ring with the universal $p$-typical formal group law, and $\left(\BP \otimes \BP\right)_*$ is the universal ring with two $p$-typical formal group laws and an isomorphism between them \todo{I didn't say this before}.
-Since every formal group law is isomorphic to a $p$-typical one, we know that the stack $\Mfgp$ is also represented by $\left(\BP_*, \left(\BP \otimes \BP\right)_*\right)$.
+Since every formal group law is isomorphic to a $p$-typical one, we know that the stack $\Mfgsp$ is also represented by $\left(\BP_*, \left(\BP \otimes \BP\right)_*\right)$.
 
 It is now reasonable that $\K[n]$, obtained from $\BP$ by killing the $v_m$'s for $m \neq n$ and inverting $v_n$, sees the $n$-th level, and that $\E{n}$ obtained in the same way but only killing $v_m$ for $m > n$, sees the levels $\leq n$.
 
