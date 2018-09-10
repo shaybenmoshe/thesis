@@ -97,8 +97,8 @@ Specifically the trace map $\chi: \RG \to \ZZ\left[\chi_{\rho_i}\right]$, define
 
 We also recall that characters are class functions, that is, they are constant on conjugacy classes.
 Let $L$ be some field containing all the values of all characters.
-Then a natural place to study characters is in the ring of class functions $\cl{G;L}$, the functions $G \to L$ which are constant.
-Therefore we get that there is an injection $\chi: \RG \to \cl{G;L}$.
+Then a natural place to study characters is in the ring of class functions with values in $L$, denote by $\cl{G;L}$.
+We can of course extend the range of the trace map to get an injection $\chi: \RG \to \cl{G;L}$.
 The first classical theorem regarding the relationship between characters and class functions is:
 
 \begin{theorem}\label{char-1}
@@ -110,13 +110,14 @@ The first classical theorem regarding the relationship between characters and cl
 \end{proof}
 
 By definition the value of a character is the trace of a linear transformation $\chi_\rho\left(g\right) = \tr \rho\left(g\right) = \sum \lambda_i$ where $\lambda_i$ are the eigenvalues (which exist since the representation is unitary).
-Since $g^{\left|G\right|} = e$, we get $\rho\left(g^{\left|G\right|}\right) = \rho\left(e\right) = \id$, but then we get that the eigenvalues of $\rho\left(g^{\left|G\right|}\right)$ are on the one hand $\lambda_i^{\left|G\right|}$ and on the other hand they are all $1$.
-Therefore $L = \mbb{Q}^\mrm{ab} = \mbb{Q}\left(\zeta_\infty\right)$ is always a valid choice for $L$.
+Since $g^{\left|G\right|} = e$, we get $\rho\left(g^{\left|G\right|}\right) = \rho\left(e\right) = \id$, but then we get that the eigenvalues of $\rho\left(g^{\left|G\right|}\right)$ are on the one hand $\lambda_i^{\left|G\right|}$ and on the other hand they are all $1$, which means that all the eigenvalues are roots of unity.
+Therefore $L = \mbb{Q}^\mrm{ab} = \mbb{Q}\left(\zeta_\infty\right)$ is always a valid choice for $L$ (regardless of $G$).
 To be concrete, we will take this choice.
 
 The Galois group of $\mbb{Q}^\mrm{ab}$ is $\Gal\left(\Qab / \mbb{Q}\right) \cong {\hat\ZZ}^\times$.
 For every $m \in {\hat\ZZ}^\times$ we also denote by $m \in \Gal\left(\Qab / \mbb{Q}\right)$ the corresponding element, which can be described as the homomorphism which raises a root of unity to the power of $m$.
-Then, for every such $m$ we have that
+Similarly it acts on $G$ by taking $g$ to $g^m$.
+Then, for every such $m$ and $g$ we have that
 $
 \chi_\rho\left(g^m\right)
 = \tr \rho\left(g\right)
@@ -124,8 +125,8 @@ $
 = m. \left(\sum \lambda_i\right)
 = m. \left(\chi_\rho\left(g\right)\right)
 $.
-We replace $g$ with $g^{m^{-1}}$ ($m$ is invertible), and rewrite this as $\chi_\rho\left(g^m\right) = m. \left(\chi_\rho\left(g^{m^{-1}}\right)\right)$.
-Similarly, to this we can define an action of $\Gal\left(\Qab / \mbb{Q}\right)$ on $\cl{G; \Qab}$, by taking a class function $f$ to $m.f$ defined by $\left(m.f\right)\left(g\right) = m. \left(f\left(g^{m^{-1}}\right)\right)$.
+We replace $g$ with $g^{m^{-1}}$ ($m$ is invertible), and rewrite this as $\chi_\rho\left(g\right) = m. \left(\chi_\rho\left(g^{m^{-1}}\right)\right)$.
+Similarly to this equality, we can define an action of $\Gal\left(\Qab / \mbb{Q}\right)$ on $\cl{G; \Qab}$, by taking a class function $f$ to $m.f$ defined by $\left(m.f\right)\left(g\right) = m. \left(f\left(g^{m^{-1}}\right)\right)$.
 As we just saw, the characters are in the fixed points $\cl{G; \Qab}^{\Gal\left(\Qab / \mbb{Q}\right)}$.
 Also, since the rationals are fixed by the action of the Galois group, rational linear combinations of characters are in the fixed points.
 We therefore conclude that the character map after tensoring with $\mbb{Q}$ lands in the fixed points, i.e. $\chi \otimes \mbb{Q}: \RG \otimes \mbb{Q} \to \cl{G; \Qab}^{\Gal\left(\Qab / \mbb{Q}\right)}$.
