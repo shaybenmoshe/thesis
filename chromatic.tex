@@ -35,14 +35,14 @@ We will try to recover $\spec R$, as a topological space, from $\Ch{R}$.
 \end{definition}
 
 \begin{example}
-	Consider the case $\mcl{C} = \Chperf{R}$ (e.g. over $\ZZ$, bounded chain complexes of finitely-generated free abelian groups).
+	Consider the case $\mcl{C} = \Chperf{R}$ (e.g. over $\ZZ$, chain complexes quasi-isomorphic to bounded chain complexes of finitely-generated free abelian groups).
 	Let $K \in \Ch{R}$, and define
-	$\mcl{T}_K = \left\{ A \in \Chperf{R} \mid A \otimes K = 0 \right\}$.
+	$\mcl{T}_K = \left\{ A \in \Chperf{R} \mid A \otimes K \cong 0 \right\}$.
 	We claim that $\mcl{T}_K$ is thick.
 	Clearly $0 \in \mcl{T}_K$.
-	Let $A \to B$ be a morphism between two complexes in $\mcl{T}$. The cofiber of $A \to B$ is the pushout $B \times_{A} 0$. Since tensor is left, tensoring the cofiber with $K$ is given by the pushout
-	$\left(B \otimes K\right) \times_{A \otimes K} \left(0 \otimes K\right) = 0 \times_0 0 = 0$, therefore the cofiber is indeed in $\mcl{T}$.
-	Lastly, if $A \to B \to A$ is the identity and $B \otimes K$, we get that $\id[A \otimes K]$ factors through $0$, which implies that $A \otimes K$ is $0$, so that $A \in \mcl{T}$.
+	Let $A \to B$ be a morphism between two complexes in $\mcl{T}$. Since tensor is left, tensoring the cofiber with $K$ is given by
+	$\cofib\left(A \to B\right) \otimes K \cong \cofib\left(A \otimes K \to B \otimes K\right) \cong \cofib\left(0 \to 0\right) \cong 0$, therefore the cofiber is indeed in $\mcl{T}_K$.
+	Lastly, if $A \to B \to A$ is the identity and $B \otimes K \cong 0$, we get that $\id[A \otimes K]$ factors through $0$, which implies that $A \otimes K$ is $0$, so that $A \in \mcl{T}_K$.
 \end{example}
 
 \begin{definition}
@@ -57,7 +57,7 @@ We will try to recover $\spec R$, as a topological space, from $\Ch{R}$.
 
 \begin{example}
 	We continue the example of $\mcl{T}_K$.
-	Clearly if $A \otimes K = 0$ then also $A \otimes B \otimes K = 0$, so it is an ideal.
+	Clearly if $A \otimes K \cong 0$ then also $A \otimes B \otimes K \cong 0$, so it is an ideal.
 	Let $\mfk{p}$ be a prime ideal in $R$ in the usual sense, and take $K = R_\mfk{p}$ (concentrated at degree $0$),
 	then $A \otimes K = A_\mfk{p}$ (level-wise localization).
 	\todo{consider actually proving}
@@ -67,10 +67,10 @@ We will try to recover $\spec R$, as a topological space, from $\Ch{R}$.
 	0
 	= \left(A \otimes B\right)_\mfk{p}
 	= A_\mfk{p} \otimes_{R_\mfk{p}} B_\mfk{p}
-	$
+	$.
 	Assume by negation that $A_\mfk{p}, B_\mfk{p} \neq 0$,
 	i.e. $\left(A_n\right)_\mfk{p}, \left(B_m\right)_\mfk{p} \neq 0$ but $\left(A_n\right)_\mfk{p} \otimes_{R_\mfk{p}} \left(B_m\right)_\mfk{p} = 0$ for some $n,m$.
-	Well, localization of projective is projective, and a projective over a local ring is free, and clearly if the tensor of two free modules vanish then one of them vanishes, so $\left(A_n\right)_\mfk{p} = 0$ or $\left(B_m\right)_\mfk{p} = 0$, which is a contradiction.
+	Since the localization of a projective module is again a projective module, and a projective over a local ring is free, and clearly if the tensor of two free modules vanish then one of them vanishes, it follows that $\left(A_n\right)_\mfk{p} = 0$ or $\left(B_m\right)_\mfk{p} = 0$, which is a contradiction.
 	Therefore $\mcl{T}_\mfk{p}$ is a prime ideal.
 \end{example}
 
@@ -113,7 +113,7 @@ We shall turn this theorem into a definition:
 	$\spec R = \spec\left( \Mod{R}^\mrm{comp} \right)$.
 \end{definition}
 
-A natural question to ask then is what is $\spec \SS$.
+A natural question to ask then is what is the topological space $\spec \SS$.
 Recall that $\Mod{\SS} = \Sp$, the category of spectra, and that the compact objects in spectra are the finite spectra $\Spfin$.
 So, unwinding the definitions, the question can rephrased as finding the prime ideals in $\Spfin$, and their topology.
 Chromatic homotopy theory provides an answer to this question.
