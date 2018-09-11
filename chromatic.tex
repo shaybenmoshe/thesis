@@ -34,7 +34,7 @@ We will try to recover $\spec R$, as a topological space, from $\Ch{R}$.
 	\end{itemize}
 \end{definition}
 
-\begin{example}
+\begin{example}\label{chperf-tk}
 	Consider the case $\mcl{C} = \Chperf{R}$ (e.g. over $\ZZ$, chain complexes quasi-isomorphic to bounded chain complexes of finitely-generated free abelian groups).
 	Let $K \in \Ch{R}$, and define
 	$\mcl{T}_K = \left\{ A \in \Chperf{R} \mid A \otimes K \cong 0 \right\}$.
@@ -331,16 +331,20 @@ To do so we first need some definitions.
 
 \begin{definition}
 	Let $R$ be an evenly graded ring.
-	$R$ is called a \emph{graded field} if every non-zero homogenus element is invertible, equivalently it is a field $F$ concentrated at degree 0, or $F\left[\beta^{\pm1}\right]$ for $\beta$ of positive even degree.
+	$R$ is called a \emph{graded field} if it satisfies one of the equivalent conditions:
+	\begin{itemize}
+		\item every non-zero homogenus element is invertible,
+		\item it is a field $F$ concentrated at degree 0, or $F\left[\beta^{\pm1}\right]$ for $\beta$ of positive even degree.
+	\end{itemize}
 	An $\mbb{A}_\infty$-ring $E$ is a \emph{field} if $E_*$ is a graded field.
 \end{definition}
 
 \begin{example}
-	Clearly $K\left(n\right)$ for $0 \leq n \leq \infty$ is a field.
+	$K\left(n\right)$ is a field for $0 \leq n \leq \infty$.
 \end{example}
 
 \begin{proposition}
-	A field $E$ is has Kunneth, i.e. $E_*\left(X\otimes Y\right)\cong E_*\left(X\right)\otimes_{E_*}E_*\left(Y\right)$ for any spectra X,Y.
+	A field $E$ has Kunneth, i.e. $E_*\left(X\otimes Y\right)\cong E_*\left(X\right)\otimes_{E_*}E_*\left(Y\right)$ for any spectra X,Y.
 \end{proposition}
 
 \begin{proposition}[{\cite[24]{Lur}}]
@@ -350,65 +354,68 @@ To do so we first need some definitions.
 \end{proposition}
 
 \begin{example}
-	As we have seen before mod-$p$ K-theory, $\K/p$, has height exactly $1$ and coefficients $\left(\K/p\right)_* = \mathbb{F}_p \left[\beta^{\pm 1}\right]$.
-	It is also known that $\K$, and $\K/p$, are $A_\infty$ ring spectra, from which it follows that $\K/p$ is a field.
-	Therefore, we deduce that $\K/p$ is a $\K[1]$-module.
+	As we have seen before, mod-$p$ K-theory, $\K/p$, has height exactly $1$ and coefficients $\left(\K/p\right)_* = \mathbb{F}_p \left[\beta^{\pm 1}\right]$.
+	It is also known that $\K$ and $\K/p$, are $A_\infty$ ring spectra, from which it follows that $\K/p$ is a field.
+	We deduce that $\K/p$ is a $\K[1]$-module.
 	Since $\left|\beta\right| = 2$ and $\left|v_1\right| = 2\left(p-1\right)$ it is free of rank $p-1$.
 \end{example}
 
 From this we also deduce some form of uniqueness for Morava K-theory:
 
 \begin{corollary}
-	Let $E$ be a field with $E_* \cong \Fp\left[v_n^{\pm 1}\right]$, which is also complex oriented with height exactly $n$, then $E \cong \K[n]$ (as spectra).
+	Let $E$ be a field with $E_* \cong \Fp\left[v_n^{\pm 1}\right]$, which is also complex oriented of height exactly $n$.
+	Then $E \cong \K[n]$ (as spectra).
 \end{corollary}
 
 
 
 \subsection{\texorpdfstring{$\spec \SS_{\left(p\right)}$}{spec S(p)} and \texorpdfstring{$\spec \SS$}{spec S}}
 
-We are now in a position to state the answer for $\spec \SS$.
+We are now in a position to describe the topological space $\spec \SS$.
 However, it will be easier to state it first for $\spec \SS_{\left(p\right)}$, and then pullback prime ideals.
-We know that $\Mod{\SS_{\left(p\right)}} = \Sp_{\left(p\right)}$, and the compact objects there are $\Spfin_{\left(p\right)}$, the $p$-localizations of finite spectra.
+We know that $\Mod{\SS_{\left(p\right)}} = \Sp_{\left(p\right)}$, and its compact objects are $\Spfin_{\left(p\right)}$, the $p$-localizations of finite spectra.
 
 \begin{proposition}
-	Let
-	$
+	Let $\mcl{T}_E$ be the $E$-acyclics, i.e.
+	$$
 	\mcl{T}_E
 	= \ker E_*
-	= \left\{ X \in \Spfin_{\left(p\right)} \mid E_{*}\left(X\right)=0 \right\}$
-	(equivalently $X \otimes E = 0$) i.e. the $E$-acyclics, then $\mcl{T}_E$ is thick.
+	= \left\{ X \in \Spfin_{\left(p\right)} \mid E_*\left(X\right)=0 \right\}
+	= \left\{ X \in \Spfin_{\left(p\right)} \mid X \otimes E_*=0 \right\}.
+	$$
+	Then $\mcl{T}_E$ is thick.
 \end{proposition}
 
 \begin{proof}
-	The exact same proof from $\Chperf{R}$ works.
+	The proof follows the same lines of \ref{chperf-tk} for the case $\Chperf{R}$.
 \end{proof}
 
 \begin{definition}
 	We define $\mcl{C}_{p, n} = \mcl{T}_{\K[n]}$, the $\K[n]$-acyclics.
-	By the above it is thick.
-	Also, $\mcl{C}_{p, \infty} = \left\{ 0\right\}$ , which are trivially thick.
-	When the prime is clear, we will denote by $\mcl{C}_n$.
+	By the above proposition, it is thick.
+	Also, $\mcl{C}_{p, \infty} = \left\{ 0\right\}$, which is trivially thick.
+	When the prime is clear from the context, we write $\mcl{C}_n$ in place of $\mcl{C}_{p, n}$.
 \end{definition}
 
 \begin{proposition}[{\cite[26]{Lur}}]
-	For $X \in \Spfin_{\left(p\right)}$, if $\K[n]_{*}\left(X\right) = 0$ then $\K[n-1]_*\left(X\right) = 0$.
+	For $X \in \Spfin_{\left(p\right)}$, if $\K[n]_*\left(X\right) = 0$ then $\K[n-1]_*\left(X\right) = 0$.
 \end{proposition}
 
 \begin{definition}
-	We say that a spectrum $X \in \Spfin_{\left(p\right)}$ is of \emph{type} $n$ (possibly $\infty$), if its first non-zero Morava K-theory homology is $\K[n]$.
+	We say that a spectrum $X \in \Spfin_{\left(p\right)}$ is of \emph{type} $n$ (possibly $\infty$) if its first non-zero Morava K-theory homology is $\K[n]$.
 \end{definition}
 
 \begin{corollary}
 	$\mcl{C}_n$ is the full subcategory of finite $p$-local spectra of type $> n$, that is $\mcl{C}_n = \left\{ X \in \Spfin_{\left(p\right)} \mid \forall m \leq n: \K[m]_*\left(X\right) = 0 \right\}$.
-	Thus clearly $\mcl{C}_{n+1} \subseteq \mcl{C}_n$.
+	Thus $\mcl{C}_{n+1} \subseteq \mcl{C}_n$.
 \end{corollary}
 
 \begin{proposition}[\todo{reference}]
-	The inclusions are proper $\mcl{C}_{n+1} \subsetneq \mcl{C}_n$.
+	The inclusions $\mcl{C}_{n+1} \subset \mcl{C}_n$ are proper.
 \end{proposition}
 
 \begin{proposition}
-	If $X \in \Spfin_{\left(p\right)}$ is not contractible, then $X$ has a finite type.
+	If $X \in \Spfin_{\left(p\right)}$ is not contractible, then is of finite type.
 	Therefore $\bigcap_{n < \infty} \mcl{C}_n = \left\{0\right\} = \mcl{C}_\infty$.
 \end{proposition}
 
@@ -418,7 +425,7 @@ We know that $\Mod{\SS_{\left(p\right)}} = \Sp_{\left(p\right)}$, and the compac
 	Let $m$ be the first non-zero degree.
 	Using the universal coefficient theorem and the fact that the spectrum is $p$-local we get that $\left(\HH{\Fp}\right)_m\left(X\right) \neq 0$, thus $\left(\HH{\Fp}\right)_*\left(X\right) \neq 0$.
 	Since $X$ is finite, $\left(\HH{\Fp}\right)_*\left(X\right)$ is bounded.
-	Atiyah-Hirzebruch spectral sequence for $X$ with cohomology $\K[n]$ has $E^2$-page given by
+	The Atiyah-Hirzebruch spectral sequence for $X$ with cohomology $\K[n]$ has $E^2$-page given by
 	$
 	E_{p,q}^2
 	= 
@@ -435,12 +442,17 @@ We know that $\Mod{\SS_{\left(p\right)}} = \Sp_{\left(p\right)}$, and the compac
 \end{proposition}
 
 \begin{proof}
-	For X,Y by Kunneth we have $\K[n-1]_*\left(X \otimes  Y\right) = \K[n-1]_*\left(X\right) \otimes \K[n-1]_*\left(Y\right)$.
-	Therefore, if $X \in \mcl{C}_n$, i.e. the homology vanishes, then so does the homology of $X \otimes Y$, i.e. $X \otimes Y \in \mcl{C}_n$, so $\mcl{C}_n$ is an ideal.
-	If $X \otimes Y\in \mcl{C}_n$ then the homology of the product vanishes, therefore one in the right side must vanish (they are graded vector spaces), so $\mcl{C}_n$ is a prime ideal.
+	For $X,Y \in \Spfin_{\left(p\right)}$, by Kunneth we have 
+	$$
+	\K[n-1]_*\left(X \otimes  Y\right)
+	= \K[n-1]_*\left(X\right) \otimes \K[n-1]_*\left(Y\right).
+	$$
+	Assume that $X \in \mcl{C}_n$, that is $\K[n-1]_*\left(X\right) = 0$.
+	It follows that $\K[n-1]_*\left(X \otimes  Y\right) = 0$, i.e. $X \otimes Y \in \mcl{C}_n$, so $\mcl{C}_n$ is an ideal.
+	Assume that $X \otimes Y\in \mcl{C}_n$, that is $\K[n-1]_*\left(X \otimes  Y\right)$, therefore one of the terms in the RHS of the equation must vanish (since they are graded vector spaces), so $\mcl{C}_n$ is a prime ideal.
 \end{proof}
 
-\begin{theorem}[Thick Subcategory Theorem \cite{HS}]
+\begin{theorem}[Thick Subcategory Theorem \cite{HS}]\label{thick-subcategory-thm}
 	If $\mcl{T}$ is a proper thick subcategory of $\Spfin_{\left(p\right)}$, then $\mcl{T} = \mcl{C}_n$ for some $0 \leq n \leq \infty$.
 \end{theorem}
 
@@ -459,11 +471,11 @@ We know that $\Mod{\SS_{\left(p\right)}} = \Sp_{\left(p\right)}$, and the compac
 	Follows immediately from the previous results.
 \end{proof}
 
-We now want to move to finding $\spec \SS$.
+We now want to describe $\spec \SS$.
 Note that the $p$-localization functor $L_{\left(p\right)}$ is a Bousfield localization.
-As such it is left (its right adjoint is the inclusion), and in particular preserves cofibers.
-It also clearly sends $0$ to $0$, i.e. reduced.
-Now, since $L_{\left(p\right)}$ is smashing, i.e. $L_{\left(p\right)} X = X \otimes \SS_{\left(p\right)}$, we also get that it is symmetric monoidal.
+As such, it is left (its right adjoint is the inclusion), and in particular preserves cofibers.
+It also clearly reduced, i.e. sends $0$ to $0$.
+Now, $L_{\left(p\right)}$ is smashing, that is $L_{\left(p\right)} X = X \otimes \SS_{\left(p\right)}$, so it is also symmetric monoidal.
 As we have seen in \ref{primes-pullback}, under these conditions we can pullback primes.
 Therefore
 $$
@@ -494,14 +506,14 @@ $
 	\mid
 	{\HH{\mbb{Q}}}_*\left(X\right) = 0
 \right\}
-$,
-so it is independent of $p$, and we will denote it by $\Spfintor$.
+$.
+We see that $\mcl{P}_{p, 0}$ is independent of $p$, and we denote it by $\Spfintor$.
 
 \begin{theorem}[\todo{explain/reference}]
 	$
 	\spec \SS
 	= \left\{\Spfintor\right\}
-	\cup \bigcup_p \left\{\mcl{P}_{p, 1}, \dotsc, \mcl{P}_{p, \infty}\right\}
+	\bigcup \left(\bigcup_p \left\{\mcl{P}_{p, 1}, \dotsc, \mcl{P}_{p, \infty}\right\}\right)
 	$,
 	and the closed subsets in the topology are finite unions of chains
 	$\left\{ \mcl{P}_{p, k}, \mcl{P}_{p, k+1}, \dotsc, \mcl{P}_{p, \infty} \right\}$
@@ -509,6 +521,13 @@ so it is independent of $p$, and we will denote it by $\Spfintor$.
 	\todo{diagram}
 \end{theorem}
 \todo{regarding the topology, maybe I should prove that the pullback is also continuous?}
+
+\begin{remark}
+	Thick subcategories are interesting for another reason, unrelated to the Balmer spectrum point of view, namely they give a very powerful proof method.
+	Say we have a property that is satisfied by $0$, and is closed under cofibers and retracts.
+	It follows that the collection of objects that satisfy it is thick.
+	Then, for example, by the thick subcategory theorem \ref{thick-subcategory-thm}, it is enough to find one object in $\mcl{C}_n \setminus \mcl{C}_{n-1}$ that satisfies the property, to show that all objects in $\mcl{C}_n$ satisfy it.
+\end{remark}
 
 
 
