@@ -127,13 +127,13 @@ Throughout this section, let $E$ be a multiplicative cohomology theory (that is,
 Consider the map $S^2 \to \BU[1]$ classifying the universal complex line bundle.
 Concretely, under the identifications $S^2 \cong \CP{1}$ and $\BU[1] \cong \CP{\infty}$, this map can be realized as the inclusion $\CP{1} \subseteq \CP{\infty}$.
 This map induces a map
-$
-\tilde{E}^2\left(\BU[1]\right)
-\to \tilde{E}^2\left(S^2\right)
-\cong \tilde{E}^0\left(S^0\right)
-\cong E^0\left(*\right)
-= E_0
-$.
+$$
+	\tilde{E}^2\left(\BU[1]\right)
+	\to \tilde{E}^2\left(S^2\right)
+	\cong \tilde{E}^0\left(S^0\right)
+	\cong E^0\left(*\right)
+	= E_0.
+$$
 Since $E$ is unital, there is a canonical generator $1 \in E_0$.
 
 \begin{definition}
@@ -149,19 +149,19 @@ Since $E$ is unital, there is a canonical generator $1 \in E_0$.
 	$\HH{R}^*\left(\CP{\infty}\right) \cong R \left[\left[x\right]\right]$,
 	where $\left|x\right| = 2$,
 	and the maps induced by the inclusions of projective spaces maps $x$ to $x$.
-	Therefore we see that $x \in \HH{R}^2\left(\BU[1]\right)$ is mapped to $x \in \HH{R}^2\left(S^2\right) = \ZZ\left\{x\right\}$, which is mapped to the generator of the reduced part of $\HH{R}^0\left(S^0\right) = R \oplus R$.
-	Therefore $x$ is a complex orientation for $\HH{R}$.
+	Therefore we see that $x \in \HH{R}^2\left(\BU[1]\right)$ is mapped to $x \in \HH{R}^2\left(S^2\right) = R\left\{x\right\}$, which is mapped to the generator of the reduced part of $\HH{R}^0\left(S^0\right) = R \oplus R$.
+	Hence, $x$ is a complex orientation for $\HH{R}$.
 \end{example}
 
 \begin{example}\label{cmplx-thy-1}
 	Let $\K$ be complex K-theory, then we know that $\K_* = \ZZ\left[\beta^{\pm 1}\right]$ where $\beta$ is the Bott element, with $\left|\beta\right| = 2$.
-	It is also known (by Atiyah-Hirzebruch spectral sequence) that
+	It is also known (by the Atiyah-Hirzebruch spectral sequence) that
 	$\K^*\left(\CP{n}\right) \cong \K_* \left[t\right] / \left(t^{n+1}\right)$
 	and
 	$\K^*\left(\CP{\infty}\right) \cong \K_* \left[\left[t\right]\right]$
 	(here $\left|t\right| = 0$),
 	where the maps induced by the inclusions of projective spaces maps $t$ to $t$.
-	We deduce that $\beta^{-1} t \in \K^2\left(\BU[1]\right)$ is mapped to $\beta^{-1} t \in \K^2\left(S^2\right) = \ZZ\left\{\beta^{-1} t\right\}$, which is mapped to $t \in \K^0\left(S^0\right) = \ZZ\left\{t\right\}$, which is indeed the generator of the reduced part.
+	We deduce that $\beta^{-1} t \in \K^2\left(\BU[1]\right)$ is mapped to $\beta^{-1} t \in \K^2\left(S^2\right) = \ZZ\left\{\beta^{-1} t\right\}$, and further mapped to $t \in \K^0\left(S^0\right) = \ZZ\left\{t\right\}$, which is indeed the generator of the reduced part.
 	Therefore $x = \beta^{-1} t$ is complex orientation for $\K$.
 	\todo{write the reduced thing more clearly}
 \end{example}
@@ -176,40 +176,43 @@ Since $E$ is unital, there is a canonical generator $1 \in E_0$.
 	$x_{\MU}$ is a complex orientation for $\MU$.
 \end{proposition}
 
-\begin{theorem}
-	$\MU$ is the universal complex oriented cohomology theory:
-	Let $E$ be a multiplicative cohomology theory, then there is a bijection between (homotopy classes of) multiplicative maps $\MU \to E$ and complex orientations on $E$.
+\begin{theorem}[\todo{reference}]
+	$\MU$ is the universal complex oriented cohomology theory, in the following sense:
+	For any multiplicative cohomology theory $E$, then there is a bijection between (homotopy classes of) multiplicative maps $\MU \to E$ and complex orientations on $E$.
 	The bijection is given in one direction by pulling back $x_{\MU}$ along a multiplicative map.
 \end{theorem}
 
 Assume that $E$ is complex oriented with a complex orientation $x$.
 
-\begin{theorem}[{\cite[4.1.4]{Rav86}}]
+\begin{proposition}[{\cite[4.1.4]{Rav86}}]
 	As $E_*$-algebras,
 	$E^*\left(\BU[1]\right) \cong E^*\left[\left[x\right]\right]$
 	and
 	$E^*\left(\BU[1] \times \BU[1]\right) \cong E^*\left[\left[y,z\right]\right]$.
-\end{theorem}
+\end{proposition}
 \todo{maybe indicate the use of AHSS}
 
 The tensor product of complex line bundles is classified by a universal map $\BU[1] \times \BU[1] \to \BU[1]$.
 Therefore we get a map $E^*\left(\BU[1]\right) \to E^*\left(\BU[1] \times \BU[1]\right)$, which is completely determined by the image of $x \in E^*\left[\left[x\right]\right]$ in $E^*\left[\left[y,z\right]\right]$ as above.
-Therefore, a choice of a complex orientation on $E$ gives rise to an element $F_E\left(y,z\right) \in E^*\left[\left[y,z\right]\right]$.
+We conclude that a choice of a complex orientation on $E$ gives rise to an element $F_E\left(y,z\right) \in E^*\left[\left[y,z\right]\right]$.
 
 \begin{proposition}[{\cite[4.1.4]{Rav86}}]
 	$F_E$ is a formal group law on $E_*$.
-	We call the height of $F_E$ the \emph{height} of $E$.
 \end{proposition}
+
+\begin{definition}
+	The \emph{height} of $E$ is simply the height of $F_E$.
+\end{definition}
 
 \begin{example}\label{HR-2}
 	We continue with $\HH{R}$ from \ref{HR-1}.
 	It is known that the tensor of complex line bundles induces the map
-	$
+	$$
 	R\left[\left[x\right]\right]
 	= \HH{R}^*\left(\BU[1]\right)
 	\to \HH{R}^*\left(\BU[1] \times \BU[1]\right)
-	= R\left[\left[y,z\right]\right]
-	$
+	= R\left[\left[y,z\right]\right],
+	$$
 	given by $x \mapsto y + z$.
 	This is the additive formal group law.
 	It is immediate that $\left[p\right] = p x$.
@@ -219,20 +222,26 @@ Therefore, a choice of a complex orientation on $E$ gives rise to an element $F_
 \begin{example}\label{cmplx-thy-2}
 	We return to the example of complex K-theory \ref{cmplx-thy-1}.
 	It is known that the tensor of complex line bundles induces the map
-	$
+	$$
 	\K_*\left[\left[t\right]\right]
 	= \K^*\left(\BU[1]\right)
 	\to \K^*\left(\BU[1] \times \BU[1]\right)
-	= \K_*\left[\left[u,v\right]\right]
-	$
+	= \K_*\left[\left[u,v\right]\right],
+	$$
 	given by $t \mapsto u + v + u v$.
 	Note that to comply with the definition of the formal group law, we should use the isomorphism
 	$\K^*\left(\BU[1]\right) \cong \K_* \left[\left[x\right]\right]$,
 	i.e. the element $x = \beta t$.
-	We get that $x = \beta^{-1} t \mapsto \beta^{-1} u + \beta^{-1} v + \beta^{-1} u v = y + z + \beta y z = F_{\K}\left(y,z\right)$.
+	By multiplying by $\beta^{-1}$ (recall that the map is of $\K_*$-modules) we get that
+	$$
+	x
+	= \beta^{-1} t \mapsto \beta^{-1} u + \beta^{-1} v + \beta^{-1} u v
+	= y + z + \beta y z
+	= F_{\K}\left(y,z\right).
+	$$
 	By induction we prove that the $n$-series is $\left[n\right]\left(x\right) = \beta^{-1} \left(1 + \beta x\right)^n - \beta^{-1}$.
 	This is clear for $n = 1$, and we have:
-	\begin{align*} 
+	\begin{align*}
 		\left[n+1\right]\left(x\right)
 		&= x + \left[n\right]\left(x\right) + \beta x \left[n\right]\left(x\right)\\
 		&= x + \beta^{-1} \left(1 + \beta x\right)^n - \beta^{-1} + x \left(1 + \beta x\right)^n - x\\
@@ -247,12 +256,12 @@ Therefore, a choice of a complex orientation on $E$ gives rise to an element $F_
 	By taking the cofiber of the multiplication-by-$p$ map, we get a spectrum $\K/p$, mod-$p$ K-theory, with coefficients $\left(\K/p\right)_* = \mathbb{F}_p \left[\beta^{\pm 1}\right]$.
 	It is evident that $F_{\K/p}\left(y,z\right) = y + z + \beta y z$ as well.
 	From the result above, it follows that
-	$
+	$$
 	\left[p\right]\left(x\right)
 	= \beta^{-1} \left(1 + \beta x\right)^p - \beta^{-1}
 	= \beta^{-1} \left(1^p + \beta^p x^p\right) - \beta^{-1}
-	= \beta^{p-1} x^p
-	$
+	= \beta^{p-1} x^p,
+	$$
 	which shows that the height is exactly $1$.
 \end{example}
 
@@ -269,25 +278,29 @@ In particular, since $\MU$ is complex oriented, there is a canonical map $L \to 
 
 \subsection{\texorpdfstring{$\BP$}{BP}, Morava K-Theory and Morava E-Theory}
 
-A good principle in homotopy theory (and many other areas in math) is to do study it one prime at a time.
+A good principle in homotopy theory (and in many other areas in math) is to study it one prime at a time.
 This is possible in homotopy theory due to the arithmetic square \todo{reference}.
 So, let us fix a prime $p$.
 We can form $\MU_{\left(p\right)}$, the $p$-localization of $\MU$.
 
 \begin{theorem}[{\cite[II 15]{Ada}}]
-	There exists a map of ring spectra $\varepsilon: \MU_{\left(p\right)} \to \MU_{\left(p\right)}$ (which depends on the prime $p$), which is an idempotent $\varepsilon^2 = \varepsilon$ (moreover, once the action on homotopy groups is specified, it is unique).
+	There exists a unique map of ring spectra $\varepsilon: \MU_{\left(p\right)} \to \MU_{\left(p\right)}$ (depending on the prime $p$) satisfying:
+	\begin{itemize}
+		\item $\varepsilon$ is an idempotent, i.e. $\varepsilon^2 = \varepsilon$,
+		\item $\varepsilon_*$ sends $\left[\CP{n}\right] \in \pi_*\left(\MU_{\left(p\right)}\right)$ to itself if $n = p^r-1$ and to $0$ otherwise.
+	\end{itemize}
 \end{theorem}
 
 The map $\varepsilon: \MU_{\left(p\right)} \to \MU_{\left(p\right)}$ gives a cohomology operation, for every $X$ we have $\varepsilon^*: \MU_{\left(p\right)}^*\left(X\right) \to \MU_{\left(p\right)}^*\left(X\right)$.
 Denote by $\BP_{\left(p\right)}^*\left(X\right)$ the image of $\varepsilon^*$.
 
 \begin{theorem}[{\cite[II 16]{Ada}, \cite[4.1.12]{Rav86}}]
-	$\BP$ is a cohomology theory, represented by an associative commutative ring spectrum $\BP$ (which depends on the prime $p$), which is a retract of $\MU_{\left(p\right)}$.
+	$\BP$ is a cohomology theory, represented by an associative commutative ring spectrum $\BP$ (depending on the prime $p$), which is a retract of $\MU_{\left(p\right)}$.
 	The homotopy groups of $\BP$ are $\BP_* = \ZZ_{\left(p\right)}\left[v_1, v_2, \dotsc\right]$ where $\left|v_n\right| = 2\left(p^n-1\right)$.
 \end{theorem}
 
 For convenience we denote $v_0 = p$ (and indeed $\left|v_0\right| = 2\left(p^0-1\right) = 0$).
-Since $\BP$ is a retract of $\MU$ it comes with a map $\MU \to \BP$, that is a complex orientation.
+Since $\BP$ is a retract of $\MU$, it comes with a map $\MU \to \BP$, that is, a complex orientation.
 
 \begin{proposition}\label{bp-p-series}[\todo{reference}]
 	The $p$-series of the formal group law associated to $\BP$ is
@@ -298,14 +311,14 @@ Once we have $\BP$, we can turn to the definition of Morava K-theory and Morava 
 
 \begin{definition}
 	Let $0 < n < \infty$.
-	\emph{Morava K-theory} at height $n$ and prime $p$, denoted by $\K[p,n]$ or $\K[n]$ when the prime is clear, is the spectrum obtained by killing $p=v_0, \dotsc, v_{n-1}, v_{n+1}, \dotsc$ in $\BP$ and inverting $v_n$.
+	\emph{Morava K-theory} at height $n$ and prime $p$, denoted by $\K[p,n]$ or $\K[n]$ when the prime is clear from the context, is the spectrum obtained by killing $p=v_0, \dotsc, v_{n-1}, v_{n+1}, \dotsc$ in $\BP$ and inverting $v_n$.
 	Therefore $\K[n]_* = \Fp\left[v_n^{\pm 1}\right]$.
 	We also define $\K[0] = \HH{\mbb{Q}}$ and $\K[\infty] = \HH{\Fp}$.
 	Similarly, \emph{Morava E-theory} at height $n$ and prime $p$, denoted by $\E{p,n}$ or $\E{n}$, is the spectrum obtained by killing $v_{n+1}, v_{n+2}, \dotsc$ in $\BP$ and inverting $v_n$.
 	Therefore $\E{n}_* = \ZZ_{\left(p\right)}\left[v_1, \dotsc v_{n-1}, v_n^{\pm 1}\right]$.
 \end{definition}
 
-Since Morava K-theory and E-theory are obtained from $\BP$ by cofibers and filtered colimits, they are equipped with a map from $\BP$, so they are also equipped with a complex orientation.
+Since Morava K-theory and E-theory are obtained from $\BP$ by cofibers and filtered colimits, they are equipped with a map from $\BP$, hence also with a complex orientation.
 Then, from \ref{bp-p-series}, we get:
 
 \begin{corollary}\label{k-e-p-series}
@@ -437,7 +450,7 @@ We know that $\Mod{\SS_{\left(p\right)}} = \Sp_{\left(p\right)}$, and the compac
 
 \begin{corollary}
 	$\spec \SS_{\left(p\right)} = \left\{ \mcl{C}_0, \mcl{C}_1, \dotsc, \mcl{C}_\infty \right\}$,
-	and the topology is such that the closed subsets are chains
+	and the closed subsets in the topology are chains
 	$\left\{ \mcl{C}_k, \mcl{C}_{k+1}, \dotsc, \mcl{C}_\infty \right\}$
 	for some $0 \leq k \leq \infty$.
 \end{corollary}
@@ -453,7 +466,7 @@ It also clearly sends $0$ to $0$, i.e. reduced.
 Now, since $L_{\left(p\right)}$ is smashing, i.e. $L_{\left(p\right)} X = X \otimes \SS_{\left(p\right)}$, we also get that it is symmetric monoidal.
 As we have seen in \ref{primes-pullback}, under these conditions we can pullback primes.
 Therefore
-$
+$$
 \mcl{P}_{p, n}
 = L_{\left(p\right)}^* \mcl{C}_{p, n}
 = \left\{
@@ -461,9 +474,9 @@ $
 	\mid
 	\K[n]_*\left(X_{\left(p\right)}\right) = 0
 \right\}
-$
+$$
 and
-$
+$$
 \mcl{P}_{p, \infty}
 = L_{\left(p\right)}^* \mcl{C}_{p, \infty}
 = \left\{
@@ -471,9 +484,9 @@ $
 	\mid
 	X_{\left(p\right)} = 0
 \right\}
-$
+$$
 are prime ideals.
-Note that ${\HH{\mbb{Q}}}_*\left(X_{\left(p\right)}\right) = 0$ if and only if ${\HH{\mbb{Q}}}_*\left(X\right) = 0$ (this follows from the fact that rationalization and $p$-localization are both smashing, and the rational sphere is obtained from the $p$-local by inverting $p$), therefore
+Note that ${\HH{\mbb{Q}}}_*\left(X_{\left(p\right)}\right) = 0$ if and only if ${\HH{\mbb{Q}}}_*\left(X\right) = 0$ (this follows from the fact that rationalization and $p$-localization are both smashing, and the rational sphere is obtained from the $p$-local by inverting $p$), hence
 $
 \mcl{P}_{p, 0}
 = \left\{
@@ -481,7 +494,7 @@ $
 	\mid
 	{\HH{\mbb{Q}}}_*\left(X\right) = 0
 \right\}
-$
+$,
 so it is independent of $p$, and we will denote it by $\Spfintor$.
 
 \begin{theorem}[\todo{explain/reference}]
@@ -490,7 +503,7 @@ so it is independent of $p$, and we will denote it by $\Spfintor$.
 	= \left\{\Spfintor\right\}
 	\cup \bigcup_p \left\{\mcl{P}_{p, 1}, \dotsc, \mcl{P}_{p, \infty}\right\}
 	$,
-	and the topology is such that the closed subsets finite unions of chains
+	and the closed subsets in the topology are finite unions of chains
 	$\left\{ \mcl{P}_{p, k}, \mcl{P}_{p, k+1}, \dotsc, \mcl{P}_{p, \infty} \right\}$
 	for some $0 \leq k \leq \infty$ (i.e. they may include $\Spfintor$).
 	\todo{diagram}
@@ -504,9 +517,9 @@ so it is independent of $p$, and we will denote it by $\Spfintor$.
 First we will describe, without being precise, another point of view on what chromatic homotopy theory is about.
 
 There is a stack of formal groups with strict isomorphisms, denoted by $\Mfgs$.
-It can be described as the stack that sends a ring $R$ to the groupoid of formal group laws, with isomorphisms between them.
+It can be described as the stack that sends a ring $R$ to the groupoid of formal group laws, with strict isomorphisms between them.
 Quillen theorem \ref{quillen-theorem} tells us that $\MU_*$ is the Lazard ring, that is the universal ring that carries the universal formal group law.
-It turns out that this theorem has a second part, which says that $\left(\MU \otimes \MU\right)_*$ is the universal ring that carries two formal group laws and an isomorphism between them.
+It turns out that this theorem has a second part, which says that $\left(\MU \otimes \MU\right)_*$ is the universal ring that carries two formal group laws and a strict isomorphism between them.
 Therefore, $\Mfgs$ is represented by $\left(\MU_*, \left(\MU \otimes \MU\right)_*\right)$.
 
 The geometric points of the stack $\Mfgs$ are describe precisely the same as $\spec \SS$, that is because for an algebraically closed field of characteristic $0$ there is a unique (up to isomorphism) formal group law which is of height $0$ namely the additive formal group law, and for characteristic $p$ there is a unique (up to isomorphism) formal group law of each height $1 \leq n \leq \infty$.
@@ -539,7 +552,7 @@ One can ask whether the converse is true, namely given a graded ring $R$ and a f
 
 A strategy is to define $\left(E_{R,F}\right)_*\left(X\right) = \MU_*\left(X\right) \otimes_{\MU_*} R$.
 Unfortunately, this is not always a homology theory.
-However there is a condition which one can check which guarantees that it is.
+However there is a condition that one can check, which guarantees that it is.
 
 \begin{definition}
 	$L \to R$ is called \emph{Landweber flat} if for every prime $p$, the image of the sequence $p = v_0, v_1, v_2, \dotsc$ in $R$, which are the coefficients of the $p$-series, is regular.
