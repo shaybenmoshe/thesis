@@ -1,0 +1,25 @@
+\section{HKR Character Theory}
+
+As we have seen in the previous section, Atiyah and Segal gave a description of $\K\left(\BG\right)$ in terms of the representation ring.
+We have also seen in the section on chromatic homotopy theory, that complex K-theory is related to Morava K-theory at height 1 by \ref{k-thy-modp-morava}, and to Morava E-theory at height 1 by \ref{k-thy-comp-defo}.
+Representations can be studies using their characters, and one may wonder if a similar construction can be used to studied higher analogues of K-theory.
+
+Hopkins, Kuhn and Ravenel showed in \cite{HKR} that it is indeed possible.
+Their paper contains a lot of results, but we will concentrate on theorem C.
+Let $E = \E{k, \Gamma}$ be Lubin-Tate spectrum from \ref{lt-spectrum}, for some field $k$ of characteristic $p$, and $\Gamma$ a formal group law over $k$ of height $n$. \todo{they write it specifically for $k = \mbb{F}_{p^n}$, but we don't really need that, right?}
+They then construct some ring $\LE$, and some generalized characters $\cl[n,p]{G, \LE}$, and a character map $\chinpG: E^*\left(\BG\right) \to \cl[n,p]{G, \LE}$.
+This character map has similar formal properties to the ordinary character map, namely, similarly to \ref{char-1}, after tensoring with $\LE$, the character map
+$$
+\chinpG \otimes \LE:
+E^*\left(\BG\right) \otimes \LE
+\to \cl[n,p]{G, \LE}
+$$
+becomes an isomorphism.
+Moreover, similarly to \ref{char-2}, we can only rationalize, which is given by inverting $p$, the source.
+There is an action of $\aut\left(\ZZ_p^n\right) \cong \left(\ZZ_p^\times\right)^n$ on $\cl[n,p]{G, \LE}$, and it turns out that after rationalization the map lands in the fixed points and becomes an isomorphism, that is,
+$$
+p^{-1} \chinpG:
+p^{-1} E^*\left(\BG\right)
+\to \cl[n,p]{G, \LE}^{\aut\left(\ZZ_p^n\right)}
+$$
+is an isomorphism.

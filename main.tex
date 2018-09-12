@@ -72,8 +72,10 @@
 \ncmd{\Wkui}[1][n-1]{\Wk\left[\left[u_1, \dotsc, u_{#1}\right]\right]}
 \ncmd{\Wkuiu}[1][n-1]{\Wkui[#1]\left[u^{\pm 1}\right]}
 \ncmd{\KG}{\K_G}
-\ncmd{\cl}[1]{\mrm{Cl}\left(#1\right)}
+\ncmd{\cl}[2][]{\mrm{Cl}\ifstrempty{#1}{}{_{#1}}\left(#2\right)}
 \ncmd{\Qab}{\mbb{Q}^\mrm{ab}}
+\ncmd{\LE}[1][]{L\ifstrempty{#1}{}{_{#1}}\left(E\right)}
+\ncmd{\chinpG}{\chi_{n,p}^G}
 
 \DeclareMathOperator{\spec}{Spec}
 \DeclareMathOperator{\supp}{Supp}
@@ -94,6 +96,7 @@
 	
 	\input{chromatic.tex}
 	\input{atiyah-segal.tex}
+	\input{hkr.tex}
 	
 	\bibliography{refs}{}
 	\bibliographystyle{alpha}
