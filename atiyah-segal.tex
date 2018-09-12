@@ -127,15 +127,20 @@ $
 $.
 We replace $g$ with $g^{m^{-1}}$ ($m$ is invertible), and rewrite this as $\chi_\rho\left(g\right) = m. \left(\chi_\rho\left(g^{m^{-1}}\right)\right)$.
 Similarly to this equality, we can define an action of $\Gal\left(\Qab / \mbb{Q}\right)$ on $\cl{G; \Qab}$, by taking a class function $f$ to $m.f$ defined by $\left(m.f\right)\left(g\right) = m. \left(f\left(g^{m^{-1}}\right)\right)$.
+
+Let us rewrite this action in another way.
+We note that $G \cong \hom\left(\hat\ZZ, G\right)$, where the $\hom$ denotes the continuous homomorphisms.
+We get an action of $\aut\left(\hat\ZZ\right) \cong {\hat\ZZ}^\times$ on $G$ by pre-composition.
+This action is exactly the action form above, $m \ in {\hat\ZZ}^\times$ sends $g \in G$ to $g^m$.
+Therefore, on $\cl{G; \Qab}$ we have an action in the source and in the target, and the action from before is given by $\left(m.f\right)\left(g\right) = m. \left(f\left(m^{-1}.g\right)\right)$.
+
 As we just saw, the characters are in the fixed points $\cl{G; \Qab}^{\Gal\left(\Qab / \mbb{Q}\right)}$.
 Also, since the rationals are fixed by the action of the Galois group, rational linear combinations of characters are in the fixed points.
 We therefore conclude that the character map after tensoring with $\mbb{Q}$ lands in the fixed points, i.e. $\chi \otimes \mbb{Q}: \RG \otimes \mbb{Q} \to \cl{G; \Qab}^{\Gal\left(\Qab / \mbb{Q}\right)}$.
 Moreover, the second classical theorem is:
 
-\begin{theorem}\label{char-2}
+\begin{theorem}[{\cite[Theorem 25]{Ser}}]\label{char-2}
 	The map $\chi \otimes \mbb{Q}: \RG \otimes \mbb{Q} \to \cl{G; \Qab}^{\Gal\left(\Qab / \mbb{Q}\right)}$ is an isomorphism.
 \end{theorem}
-
-The proof is essentially the same as in \cite[13.1, theorem 29a]{Ser}.
 
 To conclude, \ref{char-1} tells us that $\RG \otimes \Qab \cong \cl{G; \Qab}$, and \ref{char-2} tells us that $\RG \otimes \mbb{Q} \cong \cl{G; \Qab}^{\Gal\left(\Qab / \mbb{Q}\right)}$.
