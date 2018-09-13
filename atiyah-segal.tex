@@ -90,6 +90,68 @@ The proof has 4 steps:
 
 
 
+\subsection{Examples}
+
+We compute a few examples in detail, to make the isomorphism more vivid.
+
+\subsubsection{\texorpdfstring{$\UU[1]$}{U(1)}, the Circle Group}
+
+Take $G = \UU[1]$, the circle group.
+It is known that the irreducible representations are of dimension $1$ and labeled by an integer $m \in \ZZ$, i.e. are homomorphisms $\rho_m = \UU[1] \to \UU[1]$ given by $\rho_m\left(e^{i \theta}\right) = e^{m i \theta}$.
+In particular, $\rho_0 = 1$ is the trivial representation.
+It is then clear that for $m \geq 0$, $\rho_1^{\otimes_m} = \rho_m$, and $\rho_{-1}^{\otimes_{-m}} = \rho_{-m}$.
+Therefore the representation ring generated under (virtual) direct sums and tensor products from $\rho_1$ and $\rho_{-1}$.
+Moreover, $\rho_1 \otimes \rho_{-1} = 1$.
+Therefore we conclude that $\RG[\UU[1]] = \ZZ\left[\rho, \rho^{-1}\right]$.
+
+The augmentation is the homomorphism $\varepsilon: \RG[\UU[1]] \to \ZZ$, which sends $1,\rho,\rho^{-1}$ to $1$.
+Recall that the augmentation ideal is $I = \ker \varepsilon$.
+Denote $t = \rho-1$, which clearly belongs to $I$.
+We can also write then $\RG[\UU[1]] = \ZZ\left[t, \left(1+t\right)^{-1}\right]$.
+Note that $\varepsilon$ factors to a map $\RG[\UU[1]]/\left(t\right) \to \ZZ$, which is already an isomorphism, so from the first isomorphism theorem indeed $I = \left(t\right)$.
+
+We compute the completion $\RGI[{\UU[1]}]$.
+Note that in $\ZZ\left[t\right]/t^n$, $1+t$ is already invertible.
+The reason is that the formal power series for the inverse is finite since large enough powers of $t$ are zero, $\frac{1}{1-\left(-t\right)} = \sum_{m=0}^{n-1} \left(-t\right)^m$ is an inverse.
+Therefore we see that $\RG[\UU[1]]/I^n \cong \ZZ\left[t\right]/t^n$, and clearly the maps the in the limit diagram send $t$ to $t$.
+We get that $\RGI[{\UU[1]}] = \lim \ZZ\left[t\right]/t^n \cong \ZZ\left[\left[t\right]\right]$.
+
+In \cite[proposition 2.24]{VB}, it is shown that $\K\left(\CP{n}\right) \cong \ZZ\left[L\right] / \left(L-1\right)^{n+1}$, where $L$ is the canonical line bundle on $\CP{n}$.
+In \ref{k-thy-oriented} we denoted $t = L-1$ (warning: there we looked at $\K^*$, now we focus on $\K$), which allows us to rewrite this as $\K\left(\CP{n}\right) \cong \ZZ\left[t\right] / t^{n+1}$.
+As we noted, the limit is $\K\left(\CP{\infty}\right) \cong \ZZ\left[\left[t\right]\right]$.
+We thus see that $\K\left(\BU[1]\right) \cong \ZZ\left[\left[t\right]\right]$ where $t = L - 1$ is the canonical line bundle minus $1$.
+
+The identity map $\rho: \UU[1] \to \UU[1]$, is mapped to the identity $\BU[1] \to \BU[1]$ (by functoriality of $\BB$), which tautologically corresponds the universal line bundle $L$ on $\BU[1]$.
+We therefore see that the Atiyah-Segal map $\RG[\UU[1]] \to \K\left(\BU[1]\right)$, sends $\rho$ to $L$, and therefore $t = \rho - 1$ to $t = L - 1$.
+Which indeed shows that the map admits $\K\left(\BU[1]\right) \cong \ZZ\left[\left[t\right]\right]$ as the $I = \left(t\right)$-completion of $\RG[\UU[1]]$.
+
+
+\subsubsection{\texorpdfstring{$\ZZ/2$}{Z/2}, Cyclic Group of Order \texorpdfstring{$2$}{2}}
+
+Take $G = \ZZ/2$.
+Here we have only two irreducible representations, the trivial, and $\rho\left(0\right) = 1, \rho\left(1\right) = -1$.
+Also, it is clear that $\rho \otimes \rho$ is the trivial representation.
+Therefore, $\RG[\ZZ/2] = \ZZ[\rho]/\left(\rho^2-1\right)$.
+Similarly to before, the augmentation $\varepsilon: \RG[\ZZ/2] \to \ZZ$ sends $1,\rho$ to $1$, so clearly $\left(\rho-1\right) \leq I$, and for the same reasoning as in the previous example this is actually an equality.
+We change coordinates to $t = \rho-1$, and we have $\RG[\ZZ/2] = \ZZ[t]/\left(t^2+2t\right)$, and $I = \left(t\right)$.
+
+We move to computing the completion $\RG[\ZZ/2]_I^\wedge$.
+Modulo $t^2+2t$, i.e. $t^2 = -2t$, we have that $t^n = \left(-2\right)^{n-1} t$.
+Thus $I^n = \left(\left(-2\right)^{n-1} t\right) = \left(2^{n-1} t\right)$, so $\RG[\ZZ/2]/I^n = \ZZ[t]/\left(t^2+2t, 2^{n-1} t\right)$.
+We will not describe the ring structure on the completion, but since the forgetful functor from rings to abelian groups is right adjoint, to compute the completion as an abelian group, we can compute the limit in abelian groups.
+As an abelian group, $\RG[\ZZ/2]/I^n$ is isomorphic to $\ZZ \oplus \ZZ/2^{n-1}$.
+It is then clear that as an abelian group, $\RG[\ZZ/2]_I^\wedge$ is isomorphic to $\ZZ \oplus \ZZ_2$.
+
+Using the Atiyah-Segal theorem we conclude that as abelian groups
+$$
+\K\left({\mbb{R}\mrm{P}}^\infty\right)
+= \K\left(\BB{\ZZ/2}\right)
+\cong \ZZ \oplus \ZZ_2.
+$$
+
+
+
+
 \subsection{Recollections from Character Theory}
 
 We restrict ourselves to the case of finite groups $G$.
@@ -132,7 +194,7 @@ Similarly to this equality, we can define an action of $\Gal\left(\Qab / \mbb{Q}
 Let us rewrite this action in another way.
 We note that $G \cong \hom\left(\hat\ZZ, G\right)$, where the $\hom$ denotes the continuous homomorphisms.
 We get an action of $\aut\left(\hat\ZZ\right) \cong {\hat\ZZ}^\times$ on $G$ by pre-composition.
-This action is exactly the action form above, $m \ in {\hat\ZZ}^\times$ sends $g \in G$ to $g^m$.
+This action is exactly the action form above, $m \in {\hat\ZZ}^\times$ sends $g \in G$ to $g^m$.
 Therefore, on $\cl{G; \Qab}$ we have an action in the source and in the target, and the action from before is given by $\left(m.f\right)\left(g\right) = m. \left(f\left(m^{-1}.g\right)\right)$.
 
 As we just saw, the characters are in the fixed points $\cl{G; \Qab}^{\Gal\left(\Qab / \mbb{Q}\right)}$.

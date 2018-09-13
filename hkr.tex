@@ -2,24 +2,41 @@
 
 As we have seen in the previous section, Atiyah and Segal gave a description of $\K\left(\BG\right)$ in terms of the representation ring.
 We have also seen in the section on chromatic homotopy theory, that complex K-theory is related to Morava K-theory at height 1 by \ref{k-thy-modp-morava}, and to Morava E-theory at height 1 by \ref{k-thy-comp-defo}.
-Representations can be studies using their characters, and one may wonder if a similar construction can be used to studied higher analogues of K-theory.
+Representations can be studied using their characters, and one may wonder if a similar construction can be used to studied higher analogues of complex K-theory evaluated at $\BG$.
 
 Hopkins, Kuhn and Ravenel showed in \cite{HKR} that it is indeed possible.
 Their paper contains a lot of results, but we will concentrate on theorem C.
-Let $E = \E{k, \Gamma}$ be Lubin-Tate spectrum from \ref{lt-spectrum}, for some field $k$ of characteristic $p$, and $\Gamma$ a formal group law over $k$ of height $n$. \todo{they write it specifically for $k = \mbb{F}_{p^n}$, but we don't really need that, right?}
-They then construct some ring $\LE$, and some generalized characters $\cl[n,p]{G, \LE}$, and a character map $\chinpG: E^*\left(\BG\right) \to \cl[n,p]{G, \LE}$.
-This character map has similar formal properties to the ordinary character map, namely, similarly to \ref{char-1}, after tensoring with $\LE$, the character map
+Fix some finite group $G$.
+Similarly to the proof Atiyah-Segal theorem, the actual proof of theorem C involves a general construction, even to prove the specific case we are interested, but it will be easier to state it first for the specific case.
+Let $E = \E{k, \Gamma}$ be the Lubin-Tate spectrum from \ref{lt-spectrum}, for some field $k$ of characteristic $p$, and $\Gamma$ a formal group law over $k$ of height $n$. \todo{they write it specifically for $k = \mbb{F}_{p^n}$, but we don't really need that, right?}
+There is some ring $L = L\left(E^*\right)$ (which depends on the spectrum $E$).
+It is then possible define some generalized characters $\cl[n,p]{G, L}$, which are completely algebraic and combinatorial (besides the definition of the ring $L$).
+Lastly, there is a character map $\chinpG: E^*\left(\BG\right) \to \cl[n,p]{G, L}$.
+This character map has similar formal properties to the ordinary character map, namely, similarly to \ref{char-1}, after tensoring with $L$, the character map
 $$
-\chinpG \otimes \LE:
-E^*\left(\BG\right) \otimes \LE
-\to \cl[n,p]{G, \LE}
+\chinpG \otimes L:
+E^*\left(\BG\right) \otimes L
+\to \cl[n,p]{G, L}
 $$
 becomes an isomorphism.
-Moreover, similarly to \ref{char-2}, we can only rationalize, which is given by inverting $p$, the source.
-There is an action of $\aut\left(\ZZ_p^n\right) \cong \left(\ZZ_p^\times\right)^n$ on $\cl[n,p]{G, \LE}$, and it turns out that after rationalization the map lands in the fixed points and becomes an isomorphism, that is,
+Moreover, similarly to \ref{char-2}, we can merely rationalize, which is given by inverting $p$, the source, rather tensoring with $L$.
+There is an action of $\aut\left(\ZZ_p^n\right) \cong \left(\ZZ_p^\times\right)^n$ on $\cl[n,p]{G, L}$, and it turns out that after rationalization the map lands in the fixed points and becomes an isomorphism, that is,
 $$
 p^{-1} \chinpG:
 p^{-1} E^*\left(\BG\right)
-\to \cl[n,p]{G, \LE}^{\aut\left(\ZZ_p^n\right)}
+\to \cl[n,p]{G, L}^{\aut\left(\ZZ_p^n\right)}
 $$
 is an isomorphism.
+
+\todo{write something about the structure of this section}
+
+
+
+\subsection{The Specific Case}
+\todo{better title}
+
+An element $g \in G$ is $p$-power-torsion if $g^{p^a} = e$ for some $a$.
+Note that a conjugation of a $p$-power-torsion element is again $p$-power-torsion.
+Consider the set $\Gnp$ of $n$-tuples $\left(g_1, \dotsc, g_n\right)$ of commuting $p$-power-torsion elements.
+This set has an action of $G$ by conjugating all the elements in a tuple by the same element, i.e. $\gamma \in G$ acts by $\gamma. \left(g_1, \dotsc, g_n\right) = \left(\gamma^-1 g_1 \gamma, \dotsc, \gamma^-1 g_n \gamma\right)$.
+Concretely, for $r$ s.t. every $g \in G$ which is $p$-power-torsion
