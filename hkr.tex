@@ -10,21 +10,21 @@ Fix some finite group $G$.
 Similarly to the proof Atiyah-Segal theorem, the actual proof of theorem C involves a general construction, even to prove the specific case we are interested, but it will be easier to state it first for the specific case.
 Let $E = \E{k, \Gamma}$ be the Lubin-Tate spectrum from \ref{lt-spectrum}, for some field $k$ of characteristic $p$, and $\Gamma$ a formal group law over $k$ of height $n$. \todo{they write it specifically for $k = \mbb{F}_{p^n}$, but we don't really need that, right?}
 There is some ring $L = L\left(E^*\right)$ (which depends on the spectrum $E$).
-It is then possible define some generalized characters $\cl[n,p]{G, L}$, which are completely algebraic and combinatorial (besides the definition of the ring $L$).
-Lastly, there is a character map $\chinpG: E^*\left(\BG\right) \to \cl[n,p]{G, L}$.
+It is then possible define some generalized characters $\cl[n,p]{G; L}$, which are completely algebraic and combinatorial (besides the definition of the ring $L$).
+Lastly, there is a character map $\chinpG: E^*\left(\BG\right) \to \cl[n,p]{G; L}$.
 This character map has similar formal properties to the ordinary character map, namely, similarly to \ref{char-1}, after tensoring with $L$, the character map
 $$
 \chinpG \otimes L:
 E^*\left(\BG\right) \otimes L
-\to \cl[n,p]{G, L}
+\to \cl[n,p]{G; L}
 $$
 becomes an isomorphism.
 Moreover, similarly to \ref{char-2}, we can merely rationalize, which is given by inverting $p$, the source, rather tensoring with $L$.
-There is an action of $\aut\left(\ZZ_p^n\right) \cong \left(\ZZ_p^\times\right)^n$ on $\cl[n,p]{G, L}$, and it turns out that after rationalization the map lands in the fixed points and becomes an isomorphism, that is,
+There is an action of $\aut\left(\ZZ_p^n\right) \cong \left(\ZZ_p^\times\right)^n$ on $\cl[n,p]{G; L}$, and it turns out that after rationalization the map lands in the fixed points and becomes an isomorphism, that is,
 $$
 p^{-1} \chinpG:
 p^{-1} E^*\left(\BG\right)
-\to \cl[n,p]{G, L}^{\aut\left(\ZZ_p^n\right)}
+\to \cl[n,p]{G; L}^{\aut\left(\ZZ_p^n\right)}
 $$
 is an isomorphism.
 
@@ -32,11 +32,32 @@ is an isomorphism.
 
 
 
-\subsection{The Specific Case}
-\todo{better title}
+\subsection{Towards a Definition of the Character Map}
 
-An element $g \in G$ is $p$-power-torsion if $g^{p^a} = e$ for some $a$.
+Following \cite{HKR}, we denote by $\Lambda_r = \left(\ZZ/{p^r}\right)^n$ and $\Lambda = \ZZ_p^n$.
+
+An element $g \in G$ is called \emph{$p$-power-torsion} if $g^{p^a} = e$ for some $a$.
 Note that a conjugation of a $p$-power-torsion element is again $p$-power-torsion.
+We also denote $\exppG \in \mbb{N}$ to be the minimal number s.t. every every $p$-power-torsion element $g$ satisfies $g^{p^r} = e$.
+
 Consider the set $\Gnp$ of $n$-tuples $\left(g_1, \dotsc, g_n\right)$ of commuting $p$-power-torsion elements.
-This set has an action of $G$ by conjugating all the elements in a tuple by the same element, i.e. $\gamma \in G$ acts by $\gamma. \left(g_1, \dotsc, g_n\right) = \left(\gamma^-1 g_1 \gamma, \dotsc, \gamma^-1 g_n \gamma\right)$.
-Concretely, for $r$ s.t. every $g \in G$ which is $p$-power-torsion
+This set has an action of $G$ by conjugating all the elements in a tuple by the same element, i.e. $\gamma \in G$ acts by $\gamma. \left(g_1, \dotsc, g_n\right) = \left(\gamma^{-1} g_1 \gamma, \dotsc, \gamma^{-1} g_n \gamma\right)$.
+Concretely, for $r \geq \exp_p\left(G\right)$, we have $\Gnp = \hom_{\Grp}\left(\Lambda_r, G\right)$, with the $G$-action by conjugation at the values.
+In a similar fashion, $\Gnp = \hom_{\TopGrp}\left(\Lambda, G\right)$ (the homomorphisms are required to be continuous).
+
+For any ring $R$, we define the class functions $\cl[n,p]{G; R} = \hom_{\Set}\left(\Gnp, R\right)^G$, that is functions (recall that $\Gnp$ is just a $G$-set) to $R$ which are invariant under the $G$ action.
+Note that this is a purely algebraic/combinatorial construction, just a copy of $R$ for every orbit of $\Gnp/G$, that is $\cl[n,p]{G; R} \cong \bigoplus_{\left[\alpha\right] \in \Gnp/G} R$.
+
+We would like to construct a character map $E^*\left(\BG\right) \to \cl[n,p]{G; R}$, for some $R$.
+We will try to unravel what this means, and find appropriate $R$'s at the same time.
+By the above, this is a homomorphism $E^*\left(\BG\right) \to \bigoplus_{\left[\alpha\right] \in \Gnp/G} R$.
+That is, for every $\left[\alpha\right] \in \Gnp/G$ we need to provide a homomorphism $E^*\left(\BG\right) \to R$.
+Choose a representative $\alpha \in \Gnp = \hom_{\Grp}\left(\Lambda_r, G\right)$ (for $r \geq \exppG$).
+Since $\BB$ is a functor we get $\BB[\alpha]: \BB[\Lambda_r] \to \BG$, and then we can take $E^*$-cohomology to get a homomorphism $\BB[\alpha]^*: E^*\left(\BG\right) \to E^*\left(\BB[\Lambda_r]\right)$.
+If we had a homomorphism $E^*\left(\BB[\Lambda_r]\right) \to R$, that is independent of the choice of $r$ and $\alpha$, we would indeed get a well-defined character map.
+
+
+
+\subsection{The Rings $L_r\left(E^*\right)$ and $L\left(E^*\right)$}
+
+As we have seen, to construct the character map we needed homomorphisms $R$.
