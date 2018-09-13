@@ -478,6 +478,7 @@ As such, it is left (its right adjoint is the inclusion), and in particular pres
 It also clearly reduced, i.e. sends $0$ to $0$.
 Now, $L_{\left(p\right)}$ is smashing, that is $L_{\left(p\right)} X = X \otimes \SS_{\left(p\right)}$, so it is also symmetric monoidal.
 As we have seen in \ref{primes-pullback}, under these conditions we can pullback primes.
+Since $L_{\left(p\right)}$ is smashing and $\K\left(p,n\right)$ is $p$-local for every $0 \leq n \leq \infty$, we have that $\K[n]_*\left(X_{\left(p\right)}\right) = \K[n]_*\left(X\right)$.
 Therefore
 $$
 \mcl{P}_{p, n}
@@ -485,7 +486,7 @@ $$
 = \left\{
 	X \in \Spfin
 	\mid
-	\K[n]_*\left(X_{\left(p\right)}\right) = 0
+	\K[p,n]_*\left(X\right) = 0
 \right\}
 $$
 and
@@ -499,7 +500,7 @@ $$
 \right\}
 $$
 are prime ideals.
-Note that ${\HH{\mbb{Q}}}_*\left(X_{\left(p\right)}\right) = 0$ if and only if ${\HH{\mbb{Q}}}_*\left(X\right) = 0$ (this follows from the fact that rationalization and $p$-localization are both smashing, and the rational sphere is obtained from the $p$-local by inverting $p$), hence
+Moreover, by definition $\K[p,0] = \HH{\mbb{Q}}$, which implies that
 $
 \mcl{P}_{p, 0}
 = \left\{

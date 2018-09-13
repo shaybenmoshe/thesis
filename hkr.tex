@@ -59,6 +59,23 @@ If we had a homomorphism $E^*\left(\BB[\Lambda_r]\right) \to R$, such that its c
 
 
 
-\subsection{The Rings $L_r\left(E^*\right)$ and $L\left(E^*\right)$}
+\subsection{The Rings \texorpdfstring{$L_r\left(E^*\right)$}{Lr(E*)} and \texorpdfstring{$L\left(E^*\right)$}{L(E*)}}
 
 As we have seen, to construct the character map we needed a ring $R$ together with homomorphisms $E^*\left(\BB[\Lambda_r]\right) \to R$.
+We first define a ring $L_r = L_r\left(E^*\right)$.
+
+Recall that $E^*\left(\BU[1]\right) = E^*\left[\left[x\right]\right]$, where $x$ is the complex orientation.
+For any homomorphism $\alpha: \Lambda_r \to \UU[1]$, we can take $\BB$ and $E^*$ to get $\BB[\alpha]^*: E^*\left(\UU[1]\right) \to E^*\left(\BB[\Lambda_r]\right)$.
+Let $S_r = \left\{ \BB[\alpha]^*\left(x\right) \mid \alpha: \Lambda_r \to \UU[1], \alpha \neq 1 \right\} \subseteq E^*\left(\BB[\Lambda_r]\right)$.
+We define $L_r = S_r^{-1} E^*\left(\BB[\Lambda_r]\right)$.
+Also, $E^*\left(\BB[\Lambda_r]\right)$ clearly has an $\aut\left(\Lambda_r\right)$ action. \todo{pre composition? post composition?}
+This action lifts to an action on $L_r$. \todo{why?}
+
+The projections $\Lambda_{r+1} \to \Lambda_r$ induce maps $E^*\left(\BB[\Lambda_r]\right) \to E^*\left(\BB[\Lambda_{r+1}]\right)$.
+By post-composing with the localization of the target, this map induces a map $E^*\left(\BB[\Lambda_r]\right) \to L_{r+1}$.
+It turns out that this map lifts to a map from the localization of the source $L_r \to L_{r+1}$. \todo{why?}
+Moreover, the projection $\aut\left(\Lambda_{r+1}\right) \to \aut\left(\Lambda_r\right)$ gives a $\aut\left(\Lambda_{r+1}\right)$ action on $L_r$, and the map $L_r \to L_{r+1}$ is equivariant with respect to that action. \todo{why?}
+The colimit of this tower is the desired ring, that is $L = L\left(E^*\right) = \colim L_r$.
+Since it has a compatible $\aut\left(\Lambda_r\right)$ action for all $r$, we get an $\aut\left(\Lambda\right)$ action compatible with all of the $\aut\left(\Lambda_r\right)$ actions.
+
+\todo{we still need to show that this is compatible with the choice of $r$ and $\alpha$ before}
