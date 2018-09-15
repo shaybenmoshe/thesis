@@ -166,6 +166,11 @@ Specifically the character map $\chi: \RG \to \ZZ\left[\chi_{\rho_i}\right]$, de
 We also recall that characters are class functions, that is, they are constant on conjugacy classes.
 Let $L$ be some field containing all the values of all characters.
 Then a natural place to study characters is in the ring of class functions with values in $L$, denote by $\cl{G;L}$.
+Let us phrase this in a way that will be useful in the next section.
+$G$ is equipped with a $G$ action by conjugation, $\gamma.g = \gamma^{-1} g \gamma$.
+Equip $L$ with the trivial $G$ action.
+Then $\cl{G;L} = \hom_{\GSet}\left(G, L\right)$.
+
 We can of course extend the range of the character map to get an injection $\chi: \RG \to \cl{G;L}$.
 The first classical theorem regarding the relationship between characters and class functions is:
 
@@ -196,11 +201,12 @@ $.
 We replace $g$ with $g^{m^{-1}}$ ($m$ is invertible), and rewrite this as $\chi_\rho\left(g\right) = m. \left(\chi_\rho\left(g^{m^{-1}}\right)\right)$.
 Similarly to this equality, we can define an action of $\Gal\left(\Qab / \mbb{Q}\right)$ on $\cl{G; \Qab}$, by taking a class function $f$ to $m.f$ defined by $\left(m.f\right)\left(g\right) = m. \left(f\left(g^{m^{-1}}\right)\right)$.
 
-Let us rewrite this action in another way.
-We note that $G \cong \hom\left(\hat\ZZ, G\right)$, where the $\hom$ denotes the continuous homomorphisms.
+Let us rewrite this action in another way, which will be helpful in the next section.
+We note that $G \cong \hom_{\TopGrp}\left(\hat\ZZ, G\right)$ (continuous homomorphisms).
 We get an action of $\aut\left(\hat\ZZ\right) \cong {\hat\ZZ}^\times$ on $G$ by pre-composition.
-This action is exactly the action form above, $m \in {\hat\ZZ}^\times$ sends $g \in G$ to $g^m$.
-Therefore, on $\cl{G; \Qab}$ we have an action in the source and in the target, and the action from before is given by $\left(m.f\right)\left(g\right) = m. \left(f\left(m^{-1}.g\right)\right)$.
+Concretely, $m \in {\hat\ZZ}^\times$ acts by sending $g \in G$ to $g^m$.
+Since ${\hat\ZZ}^\times$ acts on $\Qab$, we get an action on $\cl{G; \Qab} = \hom_{\GSet}\left(G,  \Qab\right)$ by acting with $m^{-1}$ in the source and with $m$ in the target.
+It is evident that this is the same action from the previous paragraph.
 
 As we just saw, the characters are in the fixed points $\cl{G; \Qab}^{\Gal\left(\Qab / \mbb{Q}\right)}$.
 Also, since the rationals are fixed by the action of the Galois group, rational linear combinations of characters are in the fixed points.
