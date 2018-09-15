@@ -517,7 +517,7 @@ $
 $.
 We see that $\mcl{P}_{p, 0}$ is independent of $p$, and we denote it by $\Spfintor$.
 
-\begin{theorem}[\todo{explain/reference}]
+\begin{theorem}
 	$
 	\spec \SS
 	= \left\{\Spfintor\right\}
@@ -526,8 +526,19 @@ We see that $\mcl{P}_{p, 0}$ is independent of $p$, and we denote it by $\Spfint
 	and the closed subsets in the topology are finite unions of chains
 	$\left\{ \mcl{P}_{p, k}, \mcl{P}_{p, k+1}, \dotsc, \mcl{P}_{p, \infty} \right\}$
 	for some $0 \leq k \leq \infty$ (i.e. they may include $\Spfintor$).
-	\todo{diagram}
+	$$
+	\begin{tikzcd}[row sep=small, column sep=scriptsize]	
+		\mcl{P}_{2, \infty} & \mcl{P}_{3, \infty} & \cdots & \mcl{P}_{p, \infty} & \cdots\\
+		\vdots \arrow[dash]{u}{} & \vdots \arrow[dash]{u}{} &  & \vdots \arrow[dash]{u}{} & \\
+		\mcl{P}_{2, n} \arrow[dash]{u}{} & \mcl{P}_{3, n} \arrow[dash]{u}{} & \cdots & \mcl{P}_{p, n} \arrow[dash]{u}{} & \cdots\\
+		\vdots \arrow[dash]{u}{} & \vdots \arrow[dash]{u}{} &  & \vdots \arrow[dash]{u}{} & \\
+		\mcl{P}_{2, 2} \arrow[dash]{u}{} & \mcl{P}_{3, 2} \arrow[dash]{u}{} & \cdots & \mcl{P}_{p, 2} \arrow[dash]{u}{} & \cdots\\
+		\mcl{P}_{2, 1} \arrow[dash]{u}{} & \mcl{P}_{3, 1} \arrow[dash]{u}{} & \cdots & \mcl{P}_{p, n} \arrow[dash]{u}{} & \cdots\\
+		& & \Spfintor \arrow[dash]{ull}{} \arrow[dash]{ul}{} \arrow[dash]{ur}{}
+	\end{tikzcd}
+	$$
 \end{theorem}
+\todo{explain/reference}
 \todo{regarding the topology, maybe I should prove that the pullback is also continuous?}
 
 \begin{remark}

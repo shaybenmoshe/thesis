@@ -109,15 +109,19 @@ By pre-composing with the diagonal, and doing this for $k$-copies of $\UU[1]$, w
 Let $\varphi: \ZZ/m \to \ZZ/l$ be the homomorphism given by $1 \mapsto k$.
 The composition $\psi_l \circ \varphi$ is given by $1 \mapsto e^{2\pi ik/l}$.
 We then get the commutative diagram below by taking the upper arrow to be the multiplication-by-$k$ map.
-\[\begin{tikzcd}
+$$
+\begin{tikzcd}
 	\UU[1] \arrow{r}{k} & \UU[1] \\
 	\ZZ/m \arrow[hook]{u}{\psi_m} \arrow{r}{\varphi} & \ZZ/l \arrow[hook]{u}{\psi_l}
-\end{tikzcd}\]
+\end{tikzcd}
+$$
 By taking $E^*\left(\BB-\right)$ we get the commutative diagram:
-\[\begin{tikzcd}
+$$
+\begin{tikzcd}
 	E^*\formal{x} \arrow{d}{x \mapsto x} & E^*\formal{x} \arrow{d}{x \mapsto x} \arrow{l}{x \mapsto [k]\left(x\right)} \\
 	E^*\formal{x}/\left(\left[m\right]\left(x\right)\right) & E^*\formal{x}/\left(\left[l\right]\left(x\right)\right) \arrow{l}{}
-\end{tikzcd}\]
+\end{tikzcd}
+$$
 We then see that the bottom map is also given by $x \mapsto [k]\left(x\right)$.
 \todo{does it really follow?}
 
