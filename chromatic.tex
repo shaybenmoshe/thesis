@@ -595,25 +595,6 @@ However there is a condition that one can check, which guarantees that it is.
 	This spectrum is complex oriented, has coefficients $R$ and associated formal group law $F$.
 \end{theorem}
 
-\begin{example}\label{k-thy-comp-left}
-	We return to complex K-theory, from \ref{k-thy-oriented} and \ref{k-thy-fgl}.
-	We can take the completion at the element $p \in \K_*$, which gives the spectrum $\K_p^\wedge$.
-	This spectrum has coefficients
-	$
-	\left(\K_p^\wedge\right)_*
-	= \left(\K_*\right)_p^\wedge
-	= \left(\ZZ\left[\beta^{\pm 1}\right]\right)_p^\wedge
-	= \ZZ_p\left[\beta^{\pm 1}\right]
-	$.
-	The formal group law, as we have seen, is given by $F_{\K_p^\wedge}\left(y,z\right) = y + z + \beta y z$.
-	We claim that $F_{\K_p^\wedge}/\K_p^\wedge$ is Landweber flat.
-	Clearly $p = v_0$ is not a zero divisor in $\ZZ_p\left[\beta^{\pm 1}\right]$.
-	As we have seen in \ref{k-thy-modp-height}, mod-$p$ the $p$-series is $\beta^{p-1} x^p$, so that $v_1 = \beta^{p-1}$ which is not a zero divisor $\Fp\left[\beta^{\pm 1}\right]$.
-	Modulo $v_1$ the ring is already $0$, and we are done.
-	For other primes, by \ref{landweber-flat-helper} we are done.
-	Therefore, by \ref{LEFT-even} we get that $\K_p^\wedge \cong E_{\K_p^\wedge, F_{\K_p^\wedge}}$.
-\end{example}
-
 \begin{example}
 	Morava E-theory is Landweber flat, since by \ref{k-e-p-series}, the $p$-series has coefficients $p = v_0, v_1, \dotsc, v_n$.
 	$p$ is not a zero divisor in $\E{n}_* = \ZZ_{\left(p\right)}\left[v_1, \dotsc v_{n-1}, v_n^{\pm 1}\right]$.
@@ -623,11 +604,11 @@ However there is a condition that one can check, which guarantees that it is.
 \end{example}
 
 \begin{example}
-	Morava K-theory $\K[n]$ for $n > 0$ is not Landweber flat since $p = v_0$ is not invertible in $\K[n]_* = \Fp\left[v_n^{\pm 1}\right]$.
+	Morava K-theory $\K[n]$ for $n > 0$ is not Landweber flat since $p = v_0$ is $0$ in $\K[n]_* = \Fp\left[v_n^{\pm 1}\right]$.
 \end{example}
 
 \begin{example}
-	$\HH{\ZZ}$ is not Landweber flat since although $p = v_0$ is invertible, as we have seen in \ref{HR-2} the $p$-series is $px$, so $v_1$ is $0$ in $\ZZ/p = \Fp$, which is a zero divisor.
+	$\HH{\ZZ}$ is not Landweber flat since although $p = v_0$ is invertible, as we have seen in \ref{HR-2} the $p$-series is $px$, so $v_1$ is $0$ in $\ZZ/p = \Fp$.
 \end{example}
 
 We can also ask the following question: given complex oriented cohomology theory $\MU \to E$, such that $L \to E_*$ is Landweber flat, is $E_{R,F}$ equivalent to $E$?
@@ -646,6 +627,25 @@ The answer is yes, at least in some cases.
 	By \cite[17, theorem 6]{Lur} \todo{does it follow?}, this map lifts to a map of spectra $E_{R,F} \to E$.
 	Since by construction when $X = \SS$ the map above is $E_* \to E_*$ which is an isomorphism, we see that the map $E_{R,F} \to E$ is an equivalence.
 \end{proof}
+
+\begin{example}\label{k-thy-comp-left}
+	We return to complex K-theory, from \ref{k-thy-oriented} and \ref{k-thy-fgl}.
+	We can take the completion at the element $p \in \K_*$, which gives the spectrum $\K_p^\wedge$.
+	This spectrum has coefficients
+	$
+	\left(\K_p^\wedge\right)_*
+	= \left(\K_*\right)_p^\wedge
+	= \left(\ZZ\left[\beta^{\pm 1}\right]\right)_p^\wedge
+	= \ZZ_p\left[\beta^{\pm 1}\right]
+	$.
+	The formal group law, as we have seen, is given by $F_{\K_p^\wedge}\left(y,z\right) = y + z + \beta y z$.
+	We claim that $F_{\K_p^\wedge}/\K_p^\wedge$ is Landweber flat.
+	Clearly $p = v_0$ is not a zero divisor in $\ZZ_p\left[\beta^{\pm 1}\right]$.
+	As we have seen in \ref{k-thy-modp-height}, mod-$p$ the $p$-series is $\beta^{p-1} x^p$, so that $v_1 = \beta^{p-1}$ which is not a zero divisor $\Fp\left[\beta^{\pm 1}\right]$.
+	Modulo $v_1$ the ring is already $0$, and we are done.
+	For other primes, by \ref{landweber-flat-helper} we are done.
+	Therefore, by \ref{LEFT-even} we get that $\K_p^\wedge \cong E_{\K_p^\wedge, F_{\K_p^\wedge}}$.
+\end{example}
 
 
 
