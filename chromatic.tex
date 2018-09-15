@@ -146,7 +146,7 @@ Since $E$ is unital, there is a canonical generator $1 \in E_0$.
 	It is known that
 	$\HH{R}^*\left(\CP{n}\right) \cong R \left[x\right] / \left(x^{n+1}\right)$
 	and
-	$\HH{R}^*\left(\CP{\infty}\right) \cong R \left[\left[x\right]\right]$,
+	$\HH{R}^*\left(\CP{\infty}\right) \cong R \formal{x}$,
 	where $\left|x\right| = 2$,
 	and the maps induced by the inclusions of projective spaces maps $x$ to $x$.
 	Therefore we see that $x \in \HH{R}^2\left(\BU[1]\right)$ is mapped to $x \in \HH{R}^2\left(S^2\right) = R\left\{x\right\}$, which is mapped to the generator of the reduced part of $\HH{R}^0\left(S^0\right) = R \oplus R$.
@@ -158,7 +158,7 @@ Since $E$ is unital, there is a canonical generator $1 \in E_0$.
 	It is also known (by the Atiyah-Hirzebruch spectral sequence) that
 	$\K^*\left(\CP{n}\right) \cong \K_* \left[t\right] / \left(t^{n+1}\right)$
 	and
-	$\K^*\left(\CP{\infty}\right) \cong \K_* \left[\left[t\right]\right]$
+	$\K^*\left(\CP{\infty}\right) \cong \K_* \formal{t}$
 	(here $\left|t\right| = 0$),
 	where the maps induced by the inclusions of projective spaces maps $t$ to $t$.
 	We deduce that $\beta^{-1} t \in \K^2\left(\BU[1]\right)$ is mapped to $\beta^{-1} t \in \K^2\left(S^2\right) = \ZZ\left\{\beta^{-1} t\right\}$, and further mapped to $t \in \K^0\left(S^0\right) = \ZZ\left\{t\right\}$, which is indeed the generator of the reduced part.
@@ -186,15 +186,16 @@ Assume that $E$ is complex oriented with a complex orientation $x$.
 
 \begin{proposition}[{\cite[4.1.4]{Rav86}}]
 	As $E_*$-algebras,
-	$E^*\left(\BU[1]\right) \cong E^*\left[\left[x\right]\right]$
+	$E^*\left(\BU[1]\right) \cong E^*\formal{x}$
 	and
-	$E^*\left(\BU[1] \times \BU[1]\right) \cong E^*\left[\left[y,z\right]\right]$.
+	$E^*\left(\BU[1] \times \BU[1]\right) \cong E^*\formal{y,z}$.
 \end{proposition}
 \todo{maybe indicate the use of AHSS}
 
-The tensor product of complex line bundles is classified by a universal map $\BU[1] \times \BU[1] \to \BU[1]$.
-Therefore we get a map $E^*\left(\BU[1]\right) \to E^*\left(\BU[1] \times \BU[1]\right)$, which is completely determined by the image of $x \in E^*\left[\left[x\right]\right]$ in $E^*\left[\left[y,z\right]\right]$ as above.
-We conclude that a choice of a complex orientation on $E$ gives rise to an element $F_E\left(y,z\right) \in E^*\left[\left[y,z\right]\right]$.
+There is a multiplication map for the group $\UU[1]$, i.e. $\UU[1] \times \UU[1] \to \UU[1]$.
+We can take the $\BB$ of this map, and since it commutes with products we get a map $\BU[1] \times \BU[1] \to \BU[1]$, which is the universal map the classifies the tensor product of vector bundles.
+Therefore we get a map $E^*\left(\BU[1]\right) \to E^*\left(\BU[1] \times \BU[1]\right)$, which is completely determined by the image of $x \in E^*\formal{x}$ in $E^*\formal{y,z}$ as above.
+We conclude that a choice of a complex orientation on $E$ gives rise to an element $F_E\left(y,z\right) \in E^*\formal{y,z}$.
 
 \begin{proposition}[{\cite[4.1.4]{Rav86}}]
 	$F_E$ is a formal group law on $E_*$.
@@ -208,10 +209,10 @@ We conclude that a choice of a complex orientation on $E$ gives rise to an eleme
 	We continue with $\HH{R}$ from \ref{HR-1}.
 	It is known that the tensor of complex line bundles induces the map
 	$$
-	R\left[\left[x\right]\right]
+	R\formal{x}
 	= \HH{R}^*\left(\BU[1]\right)
 	\to \HH{R}^*\left(\BU[1] \times \BU[1]\right)
-	= R\left[\left[y,z\right]\right],
+	= R\formal{y,z},
 	$$
 	given by $x \mapsto y + z$.
 	This is the additive formal group law.
@@ -223,14 +224,14 @@ We conclude that a choice of a complex orientation on $E$ gives rise to an eleme
 	We return to the example of complex K-theory \ref{k-thy-oriented}.
 	It is known that the tensor of complex line bundles induces the map
 	$$
-	\K_*\left[\left[t\right]\right]
+	\K_*\formal{t}
 	= \K^*\left(\BU[1]\right)
 	\to \K^*\left(\BU[1] \times \BU[1]\right)
-	= \K_*\left[\left[u,v\right]\right],
+	= \K_*\formal{u,v},
 	$$
 	given by $t \mapsto u + v + u v$.
 	Note that to comply with the definition of the formal group law, we should use the isomorphism
-	$\K^*\left(\BU[1]\right) \cong \K_* \left[\left[x\right]\right]$,
+	$\K^*\left(\BU[1]\right) \cong \K_* \formal{x}$,
 	i.e. the element $x = \beta t$.
 	By multiplying by $\beta^{-1}$ (recall that the map is of $\K_*$-modules) we get that
 	$$

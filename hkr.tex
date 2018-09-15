@@ -2,7 +2,7 @@
 
 As we have seen in the previous section, Atiyah and Segal gave a description of $\K\left(\BG\right)$ in terms of the representation ring.
 We have also seen in the section on chromatic homotopy theory, that complex K-theory is related to Morava K-theory at height 1 by \ref{k-thy-modp-morava}, and to Morava E-theory at height 1 by \ref{k-thy-comp-defo}.
-Representations can be studied using their characters, and one may wonder if a similar construction can be used to studied higher analogues of complex K-theory evaluated at $\BG$.
+Representations can be studied using their characters, and one may wonder if a similar construction can be used to study higher analogues of complex K-theory evaluated at $\BG$.
 
 Hopkins, Kuhn and Ravenel showed in \cite{HKR} that it is indeed possible.
 Their paper contains a lot of results, but we will concentrate on theorem C.
@@ -39,43 +39,106 @@ Following \cite{HKR}, we denote by $\Lambda_r = \left(\ZZ/{p^r}\right)^n$ and $\
 
 An element $g \in G$ is called \emph{$p$-power-torsion} if $g^{p^a} = e$ for some $a$.
 Note that a conjugation of a $p$-power-torsion element is again $p$-power-torsion.
-We also denote $\exppG \in \mbb{N}$ to be the minimal number s.t. every every $p$-power-torsion element $g$ satisfies $g^{p^r} = e$.
+We also define $r_0 \in \mbb{N}$ to be the minimal $r$ s.t. every $p$-power-torsion element $g$ is $p^{r_0}$-torsion, i.e. satisfies $g^{p^{r_0}} = e$.
 
 Consider the set $\Gnp$ of $n$-tuples $\left(g_1, \dotsc, g_n\right)$ of commuting $p$-power-torsion elements.
 This set has an action of $G$ by conjugating all the elements in a tuple by the same element, i.e. $\gamma \in G$ acts by $\gamma. \left(g_1, \dotsc, g_n\right) = \left(\gamma^{-1} g_1 \gamma, \dotsc, \gamma^{-1} g_n \gamma\right)$.
-Concretely, for $r \geq \exp_p\left(G\right)$, we have $\Gnp = \hom_{\Grp}\left(\Lambda_r, G\right)$, with the $G$-action by conjugation at the values.
+Concretely, for $r \geq r_0$, we have $\Gnp = \hom_{\Grp}\left(\Lambda_r, G\right)$, with the $G$-action by conjugation at the values.
 In a similar fashion, $\Gnp = \hom_{\TopGrp}\left(\Lambda, G\right)$ (the homomorphisms are required to be continuous).
 
-For any ring $R$, we define the class functions $\cl[n,p]{G; R} = \hom_{\Set}\left(\Gnp, R\right)^G$, that is functions (recall that $\Gnp$ is just a $G$-set) to $R$ which are invariant under the $G$ action.
+Let $R$ be a ring.
+Equip it with the trivial $G$-action.
+We define the class functions $\cl[n,p]{G; R} = \hom_{\GSet}\left(\Gnp, R\right)$, that is functions to $R$ which are invariant under the $G$ action.
+This is a ring, by defining the operations point-wise.
 Note that this is a purely algebraic/combinatorial construction, just a copy of $R$ for every orbit of $\Gnp/G$, that is $\cl[n,p]{G; R} \cong \bigoplus_{\left[\alpha\right] \in \Gnp/G} R$.
 
 We would like to construct a character map $E^*\left(\BG\right) \to \cl[n,p]{G; R}$, for some $R$.
 We will try to unravel what this means, and find appropriate $R$'s at the same time.
 By the above, this is a homomorphism $E^*\left(\BG\right) \to \bigoplus_{\left[\alpha\right] \in \Gnp/G} R$.
 That is, for every $\left[\alpha\right] \in \Gnp/G$ we need to provide a homomorphism $E^*\left(\BG\right) \to R$.
-Choose a representative $\alpha \in \Gnp = \hom_{\Grp}\left(\Lambda_r, G\right)$ (for $r \geq \exppG$).
-Since $\BB$ is a functor we get $\BB[\alpha]: \BB[\Lambda_r] \to \BG$, and then we can take $E^*$-cohomology to get a homomorphism $\BB[\alpha]^*: E^*\left(\BG\right) \to E^*\left(\BB[\Lambda_r]\right)$.
+Choose a representative $\alpha \in \Gnp = \hom_{\Grp}\left(\Lambda_r, G\right)$ (for $r \geq r_0$).
+Since $\BB$ is a functor we get $\BB[\alpha]: \BB[\Lambda_r] \to \BG$, and then we can take $E$-cohomology to get a homomorphism $\BB[\alpha]^*: E^*\left(\BG\right) \to E^*\left(\BB[\Lambda_r]\right)$.
 If we had a homomorphism $E^*\left(\BB[\Lambda_r]\right) \to R$, such that its composition with $\BB[\alpha]^*$ is independent of the choice of $r$ and $\alpha$, we would indeed get a well-defined character map.
+
+
+
+\subsection{The \texorpdfstring{$E$}{E}-Cohomology of \texorpdfstring{$\BB[A]$}{BA}}
+
+We postpone the discussion of the rings, to give some properties of $E$-cohomology.
+
+First we wish to describe the $E^*\left(\BB[\ZZ/m]\right)$.
+Let $\psi_m: \ZZ/m \to \UU[1]$ be the homomorphism $\psi\left(1\right) = e^{2\pi i/m}$
+This induces $\BB\psi^*: E^*\left(\BU[1]\right) \to E^*\left(\BB[\ZZ/m]\right)$.
+Denote by $x \in E^2\left(\BB[\ZZ/m]\right)$ the cohomology class $\BB\psi^*\left(x\right)$.
+
+\begin{proposition}[{\cite[5.8]{HKR}}]
+	The $E^*$-cohomology of $\BB[\ZZ/m]$ is given by $E^*\left(\BB[\ZZ/m]\right) = E^*\formal{x} / \left(\left[m\right]\left(x\right)\right)$.
+	Write $m = sp^t$ with $a$ coprime to $p$, then this is a free $E^*$-module of rank $p^{nt}$.
+\end{proposition}
+\todo{I don't understand the proof, try to understand and write here}
+
+\begin{proposition}
+	Let $Y$ be a space s.t. $E^*\left(Y\right)$ is a free $E^*$-module of finite rank.
+	Then $Y$ satisfies Kunneth with respect to any $X$, that is, the map $E^*\left(X\right) \otimes_{E_*} E^*\left(Y\right) \to E^*\left(X \times Y\right)$ is an isomorphism.
+\end{proposition}
+
+\begin{proof}
+	Look at the functors $X \mapsto E^*\left(X\right) \otimes E^*\left(Y\right)$ and $X \mapsto E^*\left(X \times Y\right)$.
+	Both of them are manifestly homotopy invariant.
+	Since $E^*\left(Y\right)$ is free, it is also flat, and so both functors satisfy Mayer-Vietoris.
+	Both functors send arbitrary wedges to arbitrary products, since tensor with a free finite rank modules commutes with arbitrary products.
+	We conclude that they are both cohomology theories.
+	Moreover, they agree on $X = *$, and therefore are isomorphic.
+\end{proof}
+
+Using both propositions we can bootstrap to arbitrary finite abelian groups.
+
+\begin{proposition}[{\cite[5.8]{HKR}}]
+	Let $A$ be an abelian group, and write $\left|A\right| = sp^t$ for $s$ coprime to $p$.
+	Then $E^*\left(\BB[A]\right)$ is a free $E^*$-module of rank $p^t$, and $\BB[A]$ satisfies Kunneth.
+\end{proposition}
+
+\begin{proof}
+	A finite abelian group is the product of finite cyclic groups.
+	Since $\BB$ commutes with products, we can induct on the number of components in the product.
+\end{proof}
+
+Recall that the formal group law on $E_*$ was defined by taking the $E^*\left(\BB-\right)$ to the multiplication map $\UU[1] \times \UU[1] \to \UU[1]$.
+By pre-composing with the diagonal, and doing this for $k$-copies of $\UU[1]$, we see that the multiplication-by-$k$ map $\UU[1] \overset{m}{\to} \UU[1]$ induces the map $E^*\formal{x} \to E^*\formal{x}$ given by $x \mapsto \left[k\right]\left(x\right)$.
+
+Let $\varphi: \ZZ/m \to \ZZ/l$ be the homomorphism given by $1 \mapsto k$.
+The composition $\psi_l \circ \varphi$ is given by $1 \mapsto e^{2\pi ik/l}$.
+We then get the commutative diagram below by taking the upper arrow to be the multiplication-by-$k$ map.
+\[\begin{tikzcd}
+	\UU[1] \arrow{r}{k} & \UU[1] \\
+	\ZZ/m \arrow[hook]{u}{\psi_m} \arrow{r}{\varphi} & \ZZ/l \arrow[hook]{u}{\psi_l}
+\end{tikzcd}\]
+By taking $E^*\left(\BB-\right)$ we get the commutative diagram:
+\[\begin{tikzcd}
+	E^*\formal{x} \arrow{d}{x \mapsto x} & E^*\formal{x} \arrow{d}{x \mapsto x} \arrow{l}{x \mapsto [k]\left(x\right)} \\
+	E^*\formal{x}/\left(\left[m\right]\left(x\right)\right) & E^*\formal{x}/\left(\left[l\right]\left(x\right)\right) \arrow{l}{}
+\end{tikzcd}\]
+We then see that the bottom map is also given by $x \mapsto [k]\left(x\right)$.
+\todo{does it really follow?}
 
 
 
 \subsection{The Rings \texorpdfstring{$L_r\left(E^*\right)$}{Lr(E*)} and \texorpdfstring{$L\left(E^*\right)$}{L(E*)}}
 
 As we have seen, to construct the character map we needed a ring $R$ together with homomorphisms $E^*\left(\BB[\Lambda_r]\right) \to R$.
-We first define a ring $L_r = L_r\left(E^*\right)$.
+It is not too hard to define the rings $L_r = L_r\left(E^*\right)$ and $L = L\left(E^*\right)$ which will be used, but it is harder to show their properties.
+We will give a quick definition, and claim, first without proving, the properties we need.
 
-Recall that $E^*\left(\BU[1]\right) = E^*\left[\left[x\right]\right]$, where $x$ is the complex orientation.
-For any homomorphism $\alpha: \Lambda_r \to \UU[1]$, we can take $\BB$ and $E^*$ to get $\BB[\alpha]^*: E^*\left(\UU[1]\right) \to E^*\left(\BB[\Lambda_r]\right)$.
+Recall that $E^*\left(\BU[1]\right) = E^*\formal{x}$, where $x$ is the complex orientation.
+For any homomorphism $\alpha: \Lambda_r \to \UU[1]$, we can take $E^*\left(\BB-\right)$ to get $\BB[\alpha]^*: E^*\left(\UU[1]\right) \to E^*\left(\BB[\Lambda_r]\right)$.
 Let $S_r = \left\{ \BB[\alpha]^*\left(x\right) \mid \alpha: \Lambda_r \to \UU[1], \alpha \neq 1 \right\} \subseteq E^*\left(\BB[\Lambda_r]\right)$.
 We define $L_r = S_r^{-1} E^*\left(\BB[\Lambda_r]\right)$.
 Also, $E^*\left(\BB[\Lambda_r]\right)$ clearly has an $\aut\left(\Lambda_r\right)$ action. \todo{pre composition? post composition?}
-This action lifts to an action on $L_r$. \todo{why?}
+This action lifts to an action on $L_r$.
 
 The projections $\Lambda_{r+1} \to \Lambda_r$ induce maps $E^*\left(\BB[\Lambda_r]\right) \to E^*\left(\BB[\Lambda_{r+1}]\right)$.
-By post-composing with the localization of the target, this map induces a map $E^*\left(\BB[\Lambda_r]\right) \to L_{r+1}$.
-It turns out that this map lifts to a map from the localization of the source $L_r \to L_{r+1}$. \todo{why?}
-Moreover, the projection $\aut\left(\Lambda_{r+1}\right) \to \aut\left(\Lambda_r\right)$ gives a $\aut\left(\Lambda_{r+1}\right)$ action on $L_r$, and the map $L_r \to L_{r+1}$ is equivariant with respect to that action. \todo{why?}
+By post composing with the localization map, we get $E^*\left(\BB[\Lambda_r]\right) \to L_{r+1}$.
+It turns out that this map lifts to a map from the localization of the source $L_r \to L_{r+1}$.
+Moreover, the projection $\aut\left(\Lambda_{r+1}\right) \to \aut\left(\Lambda_r\right)$ gives a $\aut\left(\Lambda_{r+1}\right)$ action on $L_r$, and the map $L_r \to L_{r+1}$ is equivariant with respect to that action.
 The colimit of this tower is the desired ring, that is $L = L\left(E^*\right) = \colim L_r$.
 Since it has a compatible $\aut\left(\Lambda_r\right)$ action for all $r$, we get an $\aut\left(\Lambda\right)$ action compatible with all of the $\aut\left(\Lambda_r\right)$ actions.
-
-\todo{we still need to show that this is compatible with the choice of $r$ and $\alpha$ before}

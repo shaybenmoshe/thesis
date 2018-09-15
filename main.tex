@@ -6,6 +6,7 @@
 %\usepackage[papersize={11.4cm,8.5cm},top=0.3cm,bottom=0.3cm,left=0.3cm,right=0.3cm]{geometry}
 \usepackage{hyperref}
 \usepackage{polyglossia}
+\usepackage{tikz-cd}
 \setdefaultlanguage{english}
 
 %\usepackage[backend=biber, babel=hyphen, style=authortitle]{biblatex}
@@ -39,6 +40,7 @@
 \ncmd{\todo}[1]{\textbf{TODO #1}}
 
 \ncmd{\prnt}[1]{\ifstrempty{#1}{}{\left(#1\right)}}
+\ncmd{\formal}[1]{\left[\left[#1\right]\right]}
 
 \ncmd{\id}[1][]{\mrm{id}\ifstrempty{#1}{}{_{#1}}}
 
@@ -72,7 +74,6 @@
 \ncmd{\RGI}[1][G]{{\RG[#1]}_I^\wedge}
 
 \ncmd{\Gnp}{G_{n,p}}
-\ncmd{\exppG}{\exp_p\left(G\right)}
 \ncmd{\cl}[2][]{\mrm{Cl}\ifstrempty{#1}{}{_{#1}}\left(#2\right)}
 \ncmd{\chinpG}{\chi_{n,p}^G}
 
