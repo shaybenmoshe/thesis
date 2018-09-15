@@ -19,7 +19,7 @@ The \emph{augmentation ideal} is $I = \ker \varepsilon = \left\{ V - U \in \RG \
 
 Atiyah and Segal showed that one can describe $\K\left(\BG\right)$ in these terms, namely, it is the completion of $\RG$ at the ideal $I$:
 
-\begin{theorem}[{\cite{AS}}]
+\begin{theorem}[{\cite{AS}}]\label{AS-private}
 	$\K\left(\BG\right) \cong \RGI$.
 \end{theorem}
 
@@ -74,10 +74,14 @@ We have the corresponding $2$-periodic version of the augmentation ideal, which 
 They use the Milnor join construction $\EG_n = \underbrace{G * \cdots * G}_{n \text{ times}}$ and $\BG_n = \EG_n/G$, which has the property that $\colim \EG_n \to \colim \BG_n$ is a model for $\EG \to \BG$.
 Then, for any compact $G$-space $X$ there is a similar map to the map above: using $X \times \EG_n \to X$ we get a map $\KG^*\left(X\right) \to \KG^*\left(X \times \EG_n\right)$.
 All of these are $\RgG$-modules, and Atiyah and Segal show that this map factors through the quotient by $\left(I^*\right)^n$, to give a map $\KG^*\left(X\right)/\left(I^*\right)^n \to \KG^*\left(X \times \EG_n\right)$.
-The two sides assemble into pro-rings, and the maps assemble to a map between the pro-rings.
+The two sides assemble into pro-rings, and the maps assemble to a map between the pro-rings:
+$$
+\left\{\KG^*\left(X\right)/\left(I^*\right)^n\right\}_n
+\to \left\{\KG^*\left(X \times \EG_n\right)\right\}_n
+$$
 What they actually prove is the strong form:
 
-\begin{theorem}[{\cite{AS}}]
+\begin{theorem}[{\cite{AS}}]\label{AS-full}
 	If $\KG^*\left(X\right)$ is finite over $\RgG$, then the above map of pro-rings is an isomorphism.
 \end{theorem}
 
@@ -92,6 +96,20 @@ In every step we show the theorem holds for a more general type of group:
 	\item $G = \UU[n]$,
 	\item $G$ a general compact Lie group (this step is proven by $G$ embedding in $\UU[n]$).
 \end{itemize}
+
+We note that the first formulation of the Atiyah-Segal theorem \ref{AS-private}, is indeed a private case of the second formulation \ref{AS-full}.
+Take the case $X = *$.
+By definition, $\KG^*\left(*\right)$ is finite over $\RgG = \KG^*\left(*\right)$, so \ref{AS-full} holds and we have an isomorphism of pro-rings $\left\{\KG^*\left(*\right)/\left(I^*\right)^n\right\}_n \to \left\{\KG^*\left(\EG_n\right)\right\}_n$.
+In particular, after computing the limits $\lim: \pro \Ring \to \Ring$, we get an isomorphism of rings $\KG^*\left(*\right)_{I^*}^\wedge \to \KG^*\left(\EG\right)$.
+Taking only the $0$-th cohomology gives the desired isomorphism:
+$$
+\RG_I^\wedge
+\cong \KG\left(*\right)_I^\wedge
+\to \KG\left(\EG\right)
+\cong \K\left(\EG/G\right)
+= \K\left(\BG\right)
+$$
+
 
 
 
