@@ -77,11 +77,13 @@
 \ncmd{\Gnp}{G_{n,p}}
 \ncmd{\cl}[2][]{\mrm{Cl}\ifstrempty{#1}{}{_{#1}}\left(#2\right)}
 \ncmd{\chinpG}{\chi_{n,p}^G}
+\ncmd{\Fix}[2][n,p]{\mrm{Fix}_{#1}\left(#2\right)}
 
 \ncmd{\CP}[1]{{\mbb{C}\mrm{P}}^{#1}}
 \ncmd{\BB}[1][]{{\mrm{B}#1}}
 \ncmd{\BG}{\BB[G]}
-\ncmd{\EG}{\mrm{EG}}
+\ncmd{\EE}[1][]{{\mrm{E}#1}}
+\ncmd{\EG}{\EE[G]}
 
 \renewcommand{\SS}{\mbb{S}}
 \ncmd{\HH}[1]{\mrm{H}#1}
@@ -105,6 +107,7 @@
 \DeclareMathOperator{\aut}{Aut}
 \DeclareMathOperator{\pro}{Pro}
 \DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\im}{im}
 
 \title{Thesis}
 \author{Shay Ben Moshe}
