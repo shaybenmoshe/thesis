@@ -50,7 +50,7 @@ Let $R$ be a ring.
 Equip it with the trivial $G$-action.
 We define the class functions $\cl[n,p]{G; R} = \hom_{\GSet}\left(\Gnp, R\right)$, that is functions to $R$ which are invariant under the $G$-action.
 This is a ring, by defining the operations point-wise.
-Note that this is a purely algebraic/combinatorial construction, just a copy of $R$ for every orbit of $\Gnp/G$, that is $\cl[n,p]{G; R} \cong \bigoplus_{\left[\alpha\right] \in \Gnp/G} R$.
+Note that this is a purely combinatorial construction, just a copy of $R$ for every orbit of $\Gnp/G$, that is $\cl[n,p]{G; R} \cong \bigoplus_{\left[\alpha\right] \in \Gnp/G} R$.
 
 We would like to construct a character map $E^*\left(\BG\right) \to \cl[n,p]{G; R}$, for some $R$.
 We will try to unravel what this means, and find appropriate $R$'s at the same time.
@@ -205,7 +205,6 @@ Since the $L_r$'s have a compatible $\aut\left(\Lambda\right)$-action, we see th
 \end{proposition}
 
 \todo{Is that true? If it is, prove...}
-\todo{Something about the combinatorial nature of the fixed points (when $X = *$)}
 
 
 
@@ -247,23 +246,22 @@ Before taking the $G$ fixed points, we also see that:
 	&\cong \prod_{\alpha \in \Gnp} \left(L_r \otimes_{E^*} E^*\left(X^{\im \alpha}\right)\right)\label{Lr-Fix}
 \end{align}
 
-We wish to emphasize the algebraic/combinatorial nature of the $G \times \aut \left(\Lambda_r\right)$-action.
+We wish to emphasize the combinatorial nature of the $G \times \aut \left(\Lambda_r\right)$-action.
 Very generally, let $H$ be a finite group, which acts on some indexing set $I$.
 Assume we have a collection $Y_{\left[i\right]}$ i.e. indexed on $I/H$.
 We have an action $\prod_{i \in I} Y_{\left[i\right]}$, where $h \in H$ sends $\left(y_i\right)_{i \in I}$ to $\left(h.y_{h.i}\right)_{i \in I}$ (indeed $y_{h.i} \in Y_{\left[i\right]}$ since $i$ and $h.i$ are in the same orbit).
 Requiring that $\left(y_i\right)_{i \in I}$ is a fixed points amounts to $y_i = h.y_{h.i}$.
 Note that this condition equates $y_i$ only with values which are in the $H$-orbit of $i$.
 Moreover, the value of $y_i$ determines the whole $H$-orbit $y_{h.i}$ (by $h^{-1} y_i$).
-Taking those values for the whole orbit, reduces the condition to $y_i = h. y_i$ when $h.i = i$, i.e. when $h \in \stab\left(i\right)$.
-Therefore, the condition is simply that $y_i \in Y_{\left[i\right]}^{\stab_H\left(\left[i\right]\right)}$.
+Taking those values for the whole orbit, reduces the condition to $y_i = h. y_i$ when $h.i = i$, i.e. when $h$ is in the stabilizer $\stab_H\left(i\right)$.
+Therefore, the condition is simply that $y_i \in Y_{\left[i\right]}^{\stab_H\left(i\right)}$.
 We conclude that:
 \begin{equation}\label{combinatorial-situation}
 	\left(\prod_{i \in I} Y_{\left[i\right]}\right)^H
-	\cong \prod_{\left[i\right] \in I/H} Y_{\left[i\right]}^{\stab_H\left(\left[i\right]\right)}
+	\cong \prod_{\left[i\right] \in I/H} Y_{\left[i\right]}^{\stab_H\left(i\right)}
 \end{equation}
 
-To apply this to our case we will take $G \times \aut \left(\Lambda_r\right)$ in two steps, first by $G$ then by $\aut \left(\Lambda_r\right)$.
-Let's start with $G$.
+To apply this to our case we will take $G \times \aut \left(\Lambda_r\right)$ fixed points in two steps, first by $G$ then by $\aut \left(\Lambda_r\right)$.
 Recall that $L_r$ is fixed by $G$.
 The action on the cohomology part comes from the action on the space, taking $x \in X^{\im \alpha}$ to $\gamma x \in X^{\im \gamma.\alpha}$.
 Since this is invertible, this gives a homeomorphism between $X^{\im \alpha}$ and $X^{\im \gamma.\alpha}$, which shows that $E^*\left(X^{\im \alpha}\right) \cong E^*\left(X^{\im \gamma.\alpha}\right)$.
@@ -271,7 +269,7 @@ Using this isomorphism, we indeed see that $E^*\left(X^{\im \alpha}\right)$ depe
 By using \ref{combinatorial-situation} for \ref{Lr-Fix}, we get:
 \begin{equation}\label{combinatorial-cl}
 	\cl[n,p]{G,X; L_r}
-	\cong \prod_{\left[\alpha\right] \in \Gnp/G} \left(L_r \otimes_{E^*} E^*\left(X^{\im \alpha}\right)^{\stab_G\left(\left[\alpha\right]\right)}\right)
+	\cong \prod_{\left[\alpha\right] \in \Gnp/G} \left(L_r \otimes_{E^*} E^*\left(X^{\im \alpha}\right)^{\stab_G\left(\alpha\right)}\right)
 \end{equation}
 We now have the $\aut \left(\Lambda_r\right)$-action.
 Recall that $\aut \left(\Lambda_r\right)$ didn't act on the space part, since it fixes $\im \alpha$.
@@ -280,8 +278,8 @@ We are then in the situation of \ref{combinatorial-situation} again, and we get:
 	\cl[n,p]{G,X; L_r}^{\aut \left(\Lambda_r\right)}\\
 	\cong \prod_{\left[\alpha\right] \in \Gnp/{\left(G \times \aut \left(\Lambda_r\right)\right)}}
 	\left(
-		L_r^{\stab_{\aut \left(\Lambda_r\right)}\left(\left[\alpha\right]\right)}
-		\otimes_{E^*} E^*\left(X^{\im \alpha}\right)^{\stab_G\left(\left[\alpha\right]\right)}
+		L_r^{\stab_{\aut \left(\Lambda_r\right)}\left(\alpha\right)}
+		\otimes_{E^*} E^*\left(X^{\im \alpha}\right)^{\stab_G\left(\alpha\right)}
 	\right)
 \end{multline}
 Note that when $X = *$, the trivial $G$-space, all fixed points are again trivial, which shows that the $E^*$-cohomology is simply $E^*$, and tensoring with it does nothing.
@@ -294,7 +292,7 @@ Similarly, \ref{combinatorial-cl-fixed} reduces to:
 \begin{equation}\label{combinatorial-cl-pt-fixed}
 	\cl[n,p]{G; L_r}^{\aut \left(\Lambda_r\right)}
 	\cong \prod_{\left[\alpha\right] \in \Gnp/{\left(G \times \aut \left(\Lambda_r\right)\right)}}
-		L_r^{\stab_{\aut \left(\Lambda_r\right)}\left(\left[\alpha\right]\right)}
+		L_r^{\stab_{\aut \left(\Lambda_r\right)}\left(\alpha\right)}
 \end{equation}
 
 
@@ -303,8 +301,8 @@ Similarly, \ref{combinatorial-cl-fixed} reduces to:
 
 We now wish to construct a character map, that also depends on $r$, which is omitted from the notation:
 $$\chinpG: E^*\left(\EG \times_G X\right) \to \cl[n,p]{G,X; L_r}$$
-This map is given by a map $E^*\left(\EG \times_G X\right) \to L_r \otimes_{E^*} E^*\left(\Fix{G,X}\right)$ which lands in the fixed points.
-By \ref{Lr-Fix}, this is equivalently, for every $\alpha \in \Gnp$ a map $E^*\left(\EG \times_G X\right) \to L_r \otimes_{E^*} E^*\left(X^{\im \alpha}\right)$.
+This map is given by a map $E^*\left(\EG \times_G X\right) \to L_r \otimes_{E^*} E^*\left(\Fix{G,X}\right)$ which lands in the $G$ fixed points.
+By \ref{Lr-Fix}, this is the data of a map $E^*\left(\EG \times_G X\right) \to L_r \otimes_{E^*} E^*\left(X^{\im \alpha}\right)$ for every $\alpha \in \Gnp$.
 
 Let $\alpha \in \Gnp$, that is $\alpha: \Lambda_r \to G$.
 By functoriality of $\EE$, this induces a map $\EE[\Lambda_r] \to \EG$.
