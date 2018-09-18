@@ -62,7 +62,7 @@ If we had a homomorphism $E^*\left(\BB[\Lambda_r]\right) \to R$, such that its c
 
 
 
-\subsection{The \texorpdfstring{$E$}{E}-Cohomology of \texorpdfstring{$\BB[A]$}{BA}}
+\subsection{The \texorpdfstring{$E$}{E}-Cohomology of \texorpdfstring{$\BB[A]$}{BA} and Their Maps}
 
 We postpone the discussion of the rings, to give some properties of $E$-cohomology.
 
@@ -93,9 +93,14 @@ Denote by $x \in E^2\left(\BB[\ZZ/m]\right)$ the cohomology class $\BB\psi^*\lef
 
 Using both propositions we can bootstrap to arbitrary finite abelian groups.
 
-\begin{proposition}[{\cite[5.8]{HKR}}]
+\begin{proposition}[{\cite[5.8]{HKR}}]\label{E-B-abelian}
 	Let $A$ be an abelian group, and write $\left|A\right| = sp^t$ for $s$ coprime to $p$.
 	Then $E^*\left(\BB[A]\right)$ is a free $E^*$-module of rank $p^t$, and $\BB[A]$ satisfies Kunneth.
+	Specifically, for $A = \ZZ/m_1 \oplus \cdots \oplus \ZZ/m_l$:
+	$$
+	E^*\left(\BB[\ZZ/m_1] \times \cdots \times \BB[\ZZ/m_l]\right)
+	\cong E^*\formal{x_1, \dotsc, x_l}/\left(\left[m_1\right]\left(x_1\right), \dotsc, \left[m_l\right]\left(x_l\right)\right).
+	$$
 \end{proposition}
 
 \begin{proof}
@@ -103,44 +108,58 @@ Using both propositions we can bootstrap to arbitrary finite abelian groups.
 	Since $\BB$ commutes with products, we can induct on the number of components in the product.
 \end{proof}
 
-Moreover, for the specific case $\Lambda_r$ we also get a very explicit answer immediately by combining the results above.
-
-\begin{proposition}\label{E-B-lambda-r}
-	For $\Lambda_r = \left(\ZZ/{p^r}\right)^n$ we have:
-	$$
-	E^*\left(\BB[\Lambda_r]\right)
-	\cong \bigotimes_n E^*\formal{x}/\left(\left[p^r\right]\left(x\right)\right)
-	\cong E^*\formal{x_1, \dotsc, x_n}/\left(\left[p^r\right]\left(x_1\right), \dotsc, \left[p^r\right]\left(x_n\right)\right).
-	$$
-\end{proposition}
-
 Recall that the formal group law on $E_*$ was defined by taking the $E^*\left(\BB-\right)$ to the multiplication map $\UU[1] \times \UU[1] \to \UU[1]$.
-By pre-composing with the diagonal, and doing this for $k$-copies of $\UU[1]$, we see that the multiplication-by-$k$ map $\UU[1] \overset{m}{\to} \UU[1]$ induces the map $E^*\formal{x} \to E^*\formal{x}$ given by $x \mapsto \left[k\right]\left(x\right)$.
+That is, this map induces the map $x \mapsto F\left(y_1, y_2\right) = y_1 +_F y_2$ on the cohomology.
 
-Let $\varphi: \ZZ/m \to \ZZ/l$ be the homomorphism given by $1 \mapsto k$.
-The composition $\psi_l \circ \varphi$ is given by $1 \mapsto e^{2\pi ik/l}$.
-We then get the commutative diagram below by taking the upper arrow to be the multiplication-by-$k$ map.
+By pre-composing with the diagonal, and doing this for $k$-copies of $\UU[1]$, we see that the multiplication-by-$k$ map $\UU[1] \overset{k}{\to} \UU[1]$ induces the map $E^*\formal{x} \to E^*\formal{y}$ given by $x \mapsto \left[k\right]\left(y\right)$.
+Moreover, it follows that $\left[l\right]\left(x\right) \mapsto \left[kl\right]\left(y\right)$.
+
+Therefore, for a map $\bigoplus_{i=1}^t \UU[1] \to \bigoplus_{j=1}^s \UU[1]$, given on the $i,j$-th coordinate by multiplication-by-$k_{ij}$, induces a map
+$E^*\formal{x_1, \dotsc, x_s} \to E^*\formal{y_1, \dotsc, y_t}$
+given by $x_j \mapsto \sum_F\left[k_{ij}\right]\left(y_i\right)$.
+From this it follows that:
+\begin{align*}
+	\sum_{j,F}\left[l_j\right]\left(x_j\right)
+	&\mapsto \sum_{j,F}\left[l_j\right]\left(\sum_{i,F}\left[k_{ij}\right]\left(y_i\right)\right)\\
+	&= \sum_{j,F}\sum_{i,F}\left[k_{ij} l_j\right]\left(y_i\right)\\
+	&= \sum_{i,F}\left[\sum_j k_{ij} l_j\right]\left(y_i\right)
+\end{align*}
+
+Now, let $k: \bigoplus_{i=1}^t \ZZ/m_i \to \bigoplus_{j=1}^s \ZZ/\mu_j$, given on the $i,j$-th coordinate by multiplication-by-$k_{ij}$.
+Recall the maps $\psi_m: \ZZ/m \to \UU[1]$ given by $1 \mapsto e^{2\pi i/m}$.
+We look at the maps $\bigoplus_{i=1}^t \psi_{m_i}: \bigoplus_{i=1}^t \ZZ/m_i \to \bigoplus_{i=1}^t \UU[1]$, and similarly $\bigoplus_{j=1}^s \psi_{\mu_j}$.
+The composition $\left(\bigoplus_{j=1}^s \psi_{\mu_j}\right) \circ k$ is given on the $i,j$-th coordinate by
+$
+1
+\mapsto k_{ij}
+\mapsto e^{2\pi ik_{ij}/m_j}
+$.
+Define a map $k: \bigoplus_{i=1}^t \UU[1] \to \bigoplus_{j=1}^s \UU[1]$, by letting the $i,j$-th coordinate being the multiplication-by-$k_{ij}$ map.
+We then get the commutative diagram:
 $$
 \begin{tikzcd}
-	\UU[1] \arrow{r}{k} & \UU[1] \\
-	\ZZ/m \arrow[hook]{u}{\psi_m} \arrow{r}{\varphi} & \ZZ/l \arrow[hook]{u}{\psi_l}
+	\bigoplus_{i=1}^t \UU[1] \arrow{r}{k} & \bigoplus_{j=1}^s \UU[1] \\
+	\bigoplus_{i=1}^t \ZZ/m_i \arrow[hook]{u}{\bigoplus_{i=1}^t \psi_{\mu_i}} \arrow{r}{k} & \bigoplus_{j=1}^s \ZZ/\mu_j \arrow[hook]{u}{\bigoplus_{j=1}^s \psi_{\mu_j}}
 \end{tikzcd}
 $$
 By taking $E^*\left(\BB-\right)$ we get the commutative diagram:
 $$
 \begin{tikzcd}
-	E^*\formal{x} \arrow{d}{x \mapsto x} & E^*\formal{x} \arrow{d}{x \mapsto x} \arrow{l}{[k]\left(x\right) \mapsfrom x} \\
-	E^*\formal{x}/\left(\left[m\right]\left(x\right)\right) & E^*\formal{x}/\left(\left[l\right]\left(x\right)\right) \arrow{l}{}
+	E^*\formal{y_1, \dotsc, y_t} \arrow{d}{} & E^*\formal{x_1, \dotsc, x_s} \arrow{d}{} \arrow{l}{} \\
+	E^*\formal{y_1, \dotsc, y_t}/\left(\left[m_i\right]\left(y_i\right)\right) & E^*\formal{x_1, \dotsc, x_s}/\left(\left[\mu_j\right]\left(x_j\right)\right) \arrow{l}{}
 \end{tikzcd}
 $$
-We then conclude:
+Where the vertical maps are given by $y_i \mapsto y_i$ and $x_j \mapsto x_j$.
+We have computed the upper map before, so we conclude:
 
 \begin{proposition}\label{E-B-map-cyclic}
-	The map $\varphi: \ZZ/m \to \ZZ/l$ given by $\varphi\left(1\right) = k$, after taking $E^*\left(\BB-\right)$, induces the map given by $x \mapsto [k]\left(x\right)$.
+	Let $k: \bigoplus_{i=1}^t \ZZ/m_i \to \bigoplus_{j=1}^s \ZZ/\mu_j$ be given on the $i,j$-th coordinate by multiplication-by-$k_{ij}$.
+	After taking $E^*\left(\BB-\right)$, it induces the map given by $x_j \mapsto \sum_F\left[k_{ij}\right]\left(y_i\right)$.
+	Moreover, for integers $l_1, \dotsc, l_s$, it gives $\sum_{j,F}\left[l_j\right]\left(x_j\right) \mapsto \sum_{i,F}\left[\sum_j k_{ij} l_j\right]\left(y_i\right)$.
 \end{proposition}
 
 \begin{remark}
-	Note that the above proposition implies that the value of $[k]\left(x\right)$ in $E^*\formal{x}/\left(\left[m\right]\left(x\right)\right)$ is independent of the lift of $k$ from $\ZZ/l$ to $\ZZ$.
+	Note that the $k_{ij}$'s are determined only modulo $\ZZ/\mu_j$, and the proposition implies that the value is independent of the their lifts to $\ZZ$.
 	\todo{is that true?}
 \end{remark}
 
@@ -155,25 +174,23 @@ For any homomorphism $\alpha: \Lambda_r \to \UU[1]$, we can take $E^*\left(\BB-\
 Let $S_r = \left\{ \BB[\alpha]^*\left(x\right) \mid \alpha: \Lambda_r \to \UU[1], \alpha \neq 1 \right\} \subseteq E^*\left(\BB[\Lambda_r]\right)$.
 We define $L_r = S_r^{-1} E^*\left(\BB[\Lambda_r]\right)$.
 
-Recall that $E^*\left(\BB[\Lambda_r]\right) \cong E^*\formal{x_1, \dotsc, x_n}/\left(\left[p^r\right]\left(x_1\right), \dotsc, \left[p^r\right]\left(x_n\right)\right)$ by \ref{E-B-lambda-r}.
+Recall that $E^*\left(\BB[\Lambda_r]\right) \cong E^*\formal{x_1, \dotsc, x_n}/\left(\left[p^r\right]\left(x_1\right), \dotsc, \left[p^r\right]\left(x_n\right)\right)$ by \ref{E-B-abelian}.
 Let $\Lambda_r \overset{\alpha}{\to} S^1$ be a homomorphism.
-Since it lands in the $p^r$-torsion, it factors as $\Lambda_r \overset{\alpha}{\to} \ZZ/{p^r} \overset{\psi_{p^r}}{\to} \UU[1]$ (where we denoted the first morphism with $\alpha$ as well).
-Note that a morphism $\Lambda_r \overset{\alpha}{\to} \ZZ/{p^r}$ is just a direct sum $\oplus \alpha_i$ for $\alpha_i: \ZZ/{p^r} \to \ZZ/{p^r}$, each of which is determined by $\alpha_i\left(1\right) = k_i$.
-The condition $\alpha \neq 1$ amounts to the condition that $\left(k_1, \dotsc, k_n\right) \neq 0$.
-By \ref{E-B-map-cyclic}, the map $\BB[\alpha_i]^*: E^*\formal{x}/\left(\left[p^r\right]\left(x\right)\right) \to E^*\formal{x_i}/\left(\left[p^r\right]\left(x_i\right)\right)$ is given by $x \mapsto [k_i]\left(x_i\right)$.
-We conclude that $\BB[\alpha]^*\left(x\right) = [k_1]\left(x_1\right) + \cdots + [k_n]\left(x_n\right)$. \todo{explain more?}
-Therefore $S_r = \left\{ [k_1]\left(x_1\right) + \cdots + [k_n]\left(x_n\right) \mid \left(k_1, \dotsc, k_n\right) \neq 0\right\}$.
+Since it lands in the $p^r$-torsion, it factors as $\Lambda_r \overset{k}{\to} \ZZ/{p^r} \overset{\psi_{p^r}}{\to} \UU[1]$, where $k$ is given on the $i$-th coordinate by multiplication-by-$k_i$.
+The condition $\alpha \neq 1$ amounts to the condition $\left(k_1, \dotsc, k_n\right) \neq 0$.
+By \ref{E-B-map-cyclic}, the induced map is given by $\BB[\alpha]^*\left(x\right) = \sum_{i,F} [k_i]\left(x_i\right)$.
+Therefore $S_r = \left\{ \sum_{i,F} [k_i]\left(x_i\right) \mid \left(k_1, \dotsc, k_n\right) \neq 0\right\}$.
 
-The projections $\Lambda_{r+1} \to \Lambda_r$ induce maps $E^*\left(\BB[\Lambda_r]\right) \to E^*\left(\BB[\Lambda_{r+1}]\right)$, given by $x_i \mapsto x_i$.
-Now, any $[k_1]\left(x_1\right) + \cdots + [k_n]\left(x_n\right) \in S^r$ is mapped to $[k_1]\left(x_1\right) + \cdots + [k_n]\left(x_n\right) \in S^{r+1}$.
+The projections $\Lambda_{r+1} \to \Lambda_r$ are given by the multiplication-by-$1$ on each coordinate, so again by \ref{E-B-map-cyclic} they induce the maps $E^*\left(\BB[\Lambda_r]\right) \to E^*\left(\BB[\Lambda_{r+1}]\right)$, given by $x_i \mapsto x_i$.
+Moreover $\sum_{i,F} [k_i]\left(x_i\right) \in S^r$ is mapped to $\sum_{i,F} [k_i]\left(x_i\right) \in S^{r+1}$.
 Therefore, once we invert $S^{r+1}$ in the target, all $S^r$ are mapped to units, so we get a map $L_r \to L_{r+1}$.
 We define $L = L\left(E^*\right) = \colim L_r$.
 
 Also, $E^*\left(\BB[\Lambda_r]\right)$ clearly has an $\aut\left(\Lambda_r\right)$ action.
-Since $\aut\left(\Lambda_r\right) \cong \GL_n\left(\ZZ/{p^r}\right)$, an element is determined by an invertible matrix $\left(\alpha_{ij}\right)$.
-By similar considerations to the above, the corresponding map acts by $x_i \mapsto \sum_j \left[\alpha_{ij}\right]\left(x_j\right)$.
-Similarly, we see that $\sum_i [k_i]\left(x_i\right) \in S^r$ is mapped to $\sum_j \left[\sum_i  \alpha_{ij}k_i\right]\left(x_j\right)$. \todo{explain this}
-Since $\left(k_1, \dotsc, k_n\right) \neq 0$ and the matrix is invertible, $\left(\sum \alpha_{i1} k_i, \dotsc, \sum \alpha_{in} k_i\right) \neq 0$, so the result is in $S^r$ as well.
+Let $k: \Lambda_r \to \Lambda_r$ be a homomorphism given by on the $i,j$-th coordinate by multiplication by $k_{ij}$.
+Once again by \ref{E-B-map-cyclic}, for integers $l_1, \dotsc, l_n$, the induced map sends $\sum_{i,F} [l_i]\left(x_i\right)$ to $\sum_{i,F}\left[\sum_j k_{ij} l_j\right]\left(x_i\right)$.
+Since we consider only $k \in \aut\left(\Lambda_r\right)$, i.e. invertible, the matrix $\left(k_{ij}\right)$ is invertible.
+Therefore, if $\left(l_1, \dotsc, l_n\right) \neq 0$, then also $\left(\sum_j k_{1j} l_j, \dotsc, \sum_j k_{1j} l_j\right) \neq 0$, so if the source is in $S^r$, the result is in $S^r$ as well.
 This shows that action lifts to an action on $L_r$.
 
 Moreover, the projection $\aut\left(\Lambda_{r+1}\right) \to \aut\left(\Lambda_r\right)$ gives a $\aut\left(\Lambda_{r+1}\right)$ action on $L_r$, and the map $L_r \to L_{r+1}$ is equivariant with respect to that action, by similar considerations. \todo{explain more?}
