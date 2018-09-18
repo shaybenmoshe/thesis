@@ -178,17 +178,17 @@ Recall that $E^*\left(\BB[\Lambda_r]\right) \cong E^*\formal{x_1, \dotsc, x_n}/\
 Let $\Lambda_r \overset{\alpha}{\to} S^1$ be a homomorphism.
 Since it lands in the $p^r$-torsion, it factors as $\Lambda_r \overset{k}{\to} \ZZ/{p^r} \overset{\psi_{p^r}}{\to} \UU[1]$, where $k$ is given on the $i$-th coordinate by multiplication-by-$k_i$.
 The condition $\alpha \neq 1$ amounts to the condition $\left(k_1, \dotsc, k_n\right) \neq 0$.
-By \ref{E-B-map-cyclic}, the induced map is given by $\BB[\alpha]^*\left(x\right) = \sum_{i,F} [k_i]\left(x_i\right)$.
-Therefore $S_r = \left\{ \sum_{i,F} [k_i]\left(x_i\right) \mid \left(k_1, \dotsc, k_n\right) \neq 0\right\}$.
+By \ref{E-B-map-cyclic}, the induced map is given by $\BB[\alpha]^*\left(x\right) = \sum_F [k_i]\left(x_i\right)$.
+Therefore $S_r = \left\{ \sum_F [k_i]\left(x_i\right) \mid \left(k_1, \dotsc, k_n\right) \neq 0\right\}$.
 
 The projections $\Lambda_{r+1} \to \Lambda_r$ are given by the multiplication-by-$1$ on each coordinate, so again by \ref{E-B-map-cyclic} they induce the maps $E^*\left(\BB[\Lambda_r]\right) \to E^*\left(\BB[\Lambda_{r+1}]\right)$, given by $x_i \mapsto x_i$.
-Moreover $\sum_{i,F} [k_i]\left(x_i\right) \in S^r$ is mapped to $\sum_{i,F} [k_i]\left(x_i\right) \in S^{r+1}$.
+Moreover $\sum_F [k_i]\left(x_i\right) \in S^r$ is mapped to $\sum_F [k_i]\left(x_i\right) \in S^{r+1}$.
 Therefore, once we invert $S^{r+1}$ in the target, all $S^r$ are mapped to units, so we get a map $L_r \to L_{r+1}$.
 We define $L = L\left(E^*\right) = \colim L_r$.
 
 Also, $E^*\left(\BB[\Lambda_r]\right)$ clearly has an $\aut\left(\Lambda_r\right)$ action.
 Let $k: \Lambda_r \to \Lambda_r$ be a homomorphism given by on the $i,j$-th coordinate by multiplication by $k_{ij}$.
-Once again by \ref{E-B-map-cyclic}, for integers $l_1, \dotsc, l_n$, the induced map sends $\sum_{i,F} [l_i]\left(x_i\right)$ to $\sum_{i,F}\left[\sum_j k_{ij} l_j\right]\left(x_i\right)$.
+Once again by \ref{E-B-map-cyclic}, for integers $l_1, \dotsc, l_n$, the induced map sends $\sum_{j,F} [l_j]\left(x_j\right)$ to $\sum_{i,F}\left[\sum_j k_{ij} l_j\right]\left(x_i\right)$.
 Since we consider only $k \in \aut\left(\Lambda_r\right)$, i.e. invertible, the matrix $\left(k_{ij}\right)$ is invertible.
 Therefore, if $\left(l_1, \dotsc, l_n\right) \neq 0$, then also $\left(\sum_j k_{1j} l_j, \dotsc, \sum_j k_{1j} l_j\right) \neq 0$, so if the source is in $S^r$, the result is in $S^r$ as well.
 This shows that action lifts to an action on $L_r$.
