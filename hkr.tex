@@ -373,10 +373,12 @@ By \ref{Lr-Fix}, this is the data of a map $E^*\left(\EG \times_G X\right) \to L
 
 Let $\alpha \in \Gnp$, that is $\alpha: \Lambda_r \to G$.
 By functoriality of $\EE$, this induces a map $\EE[\Lambda_r] \to \EG$.
-Multiplying by $X$, we get $\EE[\Lambda_r] \times X \to \EG \times X$.
-Since $X$ and $\EG$ admit a $G$-action, the $\Lambda_r \to G$ induces a $\Lambda_r$-action.
-We equip both sides with the diagonal $\Lambda_r$-action, and the map is equivariant w.r.t to it by definition.
-The $\Lambda_r$ orbits of the source are $\BB[\Lambda_r] \times X^{\im \alpha}$. \todo{why}
+Consider the inclusion $X^{\im \alpha} \to X$.
+The multiplication of these maps gives $\EE[\Lambda_r] \times X^{\im \alpha} \to \EG \times X$.
+Since $X$ and $\EG$ have a $G$-action, the map $\alpha: \Lambda_r \to G$ induces a $\Lambda_r$-action.
+Moreover, this $\Lambda_r$-action restricts to a trivial on $X^{\im \alpha}$.
+We equip both sides with the diagonal $\Lambda_r$-action, which makes the map equivariant.
+The $\Lambda_r$ orbits of the source are $\BB[\Lambda_r] \times X^{\im \alpha}$.
 We get a map between the $\Lambda_r$ orbits, and since the action on the target was pulled form the diagonal $G$-action, we can further take the $G$ orbits on the target, to get a map $\BB[\Lambda_r] \times X^{\im \alpha} \to \EG \times_G X$.
 
 Taking $E^*$-cohomology we get $E^*\left(\EG \times_G X\right) \to E^*\left(\BB[\Lambda_r] \times X^{\im \alpha}\right)$.
