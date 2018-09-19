@@ -33,7 +33,7 @@ is an isomorphism.
 
 
 
-\subsection{Towards a Definition of the Character Map}\label{towards-character}
+\subsection{Towards a Definition of the Character Map}
 
 Following \cite{HKR}, we denote by $\Lambda_r = \left(\ZZ/{p^r}\right)^n$ and $\Lambda = \ZZ_p^n$.
 
@@ -41,24 +41,31 @@ An element $g \in G$ is called \emph{$p$-power-torsion} if $g^{p^a} = e$ for som
 Note that a conjugation of a $p$-power-torsion element is again $p$-power-torsion.
 We also define $r_0 \in \mbb{N}$ to be the minimal $r$ s.t. every $p$-power-torsion element $g$ is $p^{r_0}$-torsion, i.e. satisfies $g^{p^{r_0}} = e$.
 
-Consider the set $\Gnp$ of $n$-tuples $\left(g_1, \dotsc, g_n\right)$ of commuting $p$-power-torsion elements.
-This set has an action of $G$ by conjugating all the elements in a tuple by the same element, i.e. $\gamma \in G$ acts by $\gamma. \left(g_1, \dotsc, g_n\right) = \left(\gamma g_1 \gamma^{-1}, \dotsc, \gamma g_n \gamma^{-1}\right)$.
+\begin{definition}
+	We define $\Gnp$ to be the set of $n$-tuples $\left(g_1, \dotsc, g_n\right)$ of commuting $p$-power-torsion elements.
+	It has a $G$-action by conjugation, $\gamma. \left(g_1, \dotsc, g_n\right) = \left(\gamma g_1 \gamma^{-1}, \dotsc, \gamma g_n \gamma^{-1}\right)$.
+\end{definition}
+
 Concretely, for $r \geq r_0$, we have $\Gnp = \hom_{\Grp}\left(\Lambda_r, G\right)$, with the $G$-action by conjugation at the values.
 In a similar fashion, $\Gnp = \hom_{\TopGrp}\left(\Lambda, G\right)$ (the homomorphisms are required to be continuous).
 
 Let $R$ be a ring.
 Equip it with the trivial $G$-action.
-We define the class functions $\cl[n,p]{G; R} = \hom_{\GSet}\left(\Gnp, R\right)$, that is functions to $R$ which are invariant under the $G$-action.
+
+\begin{definition}\label{class-function-*}
+	The \emph{class functions} are $\cl[n,p]{G; R} = \hom_{\GSet}\left(\Gnp, R\right)$, that is functions from $\Gnp$ to $R$ which are invariant under conjugation.
+\end{definition}
+
 This is a ring, by defining the operations point-wise.
 Note that this is a purely combinatorial construction, just a copy of $R$ for every orbit of $\Gnp/G$, that is $\cl[n,p]{G; R} \cong \bigoplus_{\left[\alpha\right] \in \Gnp/G} R$.
 
-We would like to construct a character map $E^*\left(\BG\right) \to \cl[n,p]{G; R}$, for some $R$.
+We would like to construct a character map $E^*\left(\BG\right) \to \cl[n,p]{G; R}$, for some $R$, which depends on $r \geq r_0$.
 We will try to unravel what this means, and find appropriate $R$'s at the same time.
 By the above, this is a homomorphism $E^*\left(\BG\right) \to \bigoplus_{\left[\alpha\right] \in \Gnp/G} R$.
 That is, for every $\left[\alpha\right] \in \Gnp/G$ we need to provide a homomorphism $E^*\left(\BG\right) \to R$.
 Choose a representative $\alpha \in \Gnp = \hom_{\Grp}\left(\Lambda_r, G\right)$ (for $r \geq r_0$).
 Since $\BB$ is a functor we get $\BB[\alpha]: \BB[\Lambda_r] \to \BG$, and then we can take $E^*$-cohomology to get a homomorphism $\BB[\alpha]^*: E^*\left(\BG\right) \to E^*\left(\BB[\Lambda_r]\right)$.
-If we had a homomorphism $E^*\left(\BB[\Lambda_r]\right) \to R$, such that its composition with $\BB[\alpha]^*$ is independent of the choice of $r$ and $\alpha$, we would indeed get a well-defined character map.
+If we had a homomorphism $E^*\left(\BB[\Lambda_r]\right) \to R$, we would indeed get a well-defined character map.
 
 
 
@@ -107,6 +114,8 @@ Using both propositions we can bootstrap to arbitrary finite abelian groups.
 	A finite abelian group is the product of finite cyclic groups.
 	Since $\BB$ commutes with products, we can induct on the number of components in the product.
 \end{proof}
+
+\todo{make the rest of the subsection more readable... maybe give a coordinate-free statement}
 
 Recall that the formal group law on $E_*$ was defined by taking the $E^*\left(\BB-\right)$ to the multiplication map $\UU[1] \times \UU[1] \to \UU[1]$.
 That is, this map induces the map $x \mapsto F\left(y_1, y_2\right) = y_1 +_F y_2$ on the cohomology.
@@ -168,12 +177,19 @@ We have computed the upper map before, so we conclude:
 \subsection{The Rings \texorpdfstring{$L_r\left(E^*\right)$}{Lr(E*)} and \texorpdfstring{$L\left(E^*\right)$}{L(E*)}}
 
 As we have seen, to construct the character map we needed a ring $R$ together with homomorphisms $E^*\left(\BB[\Lambda_r]\right) \to R$.
+We will construct such a ring, $L_r = L_r\left(E^*\right)$.
+Moreover, we will take a colimit to construct a ring $L = L\left(E^*\right)$, which contains the information from all of those together.
 
 Recall that $E^*\left(\BU[1]\right) = E^*\formal{x}$, where $x$ is the complex orientation.
 For any homomorphism $\alpha: \Lambda_r \to \UU[1]$, we can take $E^*\left(\BB-\right)$ to get $\BB[\alpha]^*: E^*\left(\UU[1]\right) \to E^*\left(\BB[\Lambda_r]\right)$.
 Let $S_r = \left\{ \BB[\alpha]^*\left(x\right) \mid \alpha: \Lambda_r \to \UU[1], \alpha \neq 1 \right\} \subseteq E^*\left(\BB[\Lambda_r]\right)$.
-We define $L_r = S_r^{-1} E^*\left(\BB[\Lambda_r]\right)$.
 
+\begin{definition}
+	We define $L_r = S_r^{-1} E^*\left(\BB[\Lambda_r]\right)$.
+	There is indeed a map $E^*\left(\BB[\Lambda_r]\right) \to L_r$, namely the localization map.
+\end{definition}
+
+We wish to describe the above construction with coordinates, to make it more explicit.
 Recall that $E^*\left(\BB[\Lambda_r]\right) \cong E^*\formal{x_1, \dotsc, x_n}/\left(\left[p^r\right]\left(x_1\right), \dotsc, \left[p^r\right]\left(x_n\right)\right)$ by \ref{E-B-abelian}.
 Let $\Lambda_r \overset{\alpha}{\to} S^1$ be a homomorphism.
 Since it lands in the $p^r$-torsion, it factors as $\Lambda_r \overset{k}{\to} \ZZ/{p^r} \overset{\psi_{p^r}}{\to} \UU[1]$, where $k$ is given on the $i$-th coordinate by multiplication-by-$k_i$.
@@ -181,23 +197,45 @@ The condition $\alpha \neq 1$ amounts to the condition $\left(k_1, \dotsc, k_n\r
 By \ref{E-B-map-cyclic}, the induced map is given by $\BB[\alpha]^*\left(x\right) = \sum_F [k_i]\left(x_i\right)$.
 Therefore $S_r = \left\{ \sum_F [k_i]\left(x_i\right) \mid \left(k_1, \dotsc, k_n\right) \neq 0\right\}$.
 
-The projections $\Lambda_{r+1} \to \Lambda_r$ are given by the multiplication-by-$1$ on each coordinate, so again by \ref{E-B-map-cyclic} they induce the maps $E^*\left(\BB[\Lambda_r]\right) \to E^*\left(\BB[\Lambda_{r+1}]\right)$, given by $x_i \mapsto x_i$.
-Moreover $\sum_F [k_i]\left(x_i\right) \in S^r$ is mapped to $\sum_F [k_i]\left(x_i\right) \in S^{r+1}$.
-Therefore, once we invert $S^{r+1}$ in the target, all $S^r$ are mapped to units, so we get a map $L_r \to L_{r+1}$.
-We define $L = L\left(E^*\right) = \colim L_r$.
+\begin{proposition}
+	The map $E^*\left(\BB[\Lambda_r]\right) \to E^*\left(\BB[\Lambda_{r+1}]\right)$ induced by the projection $\Lambda_{r+1} \to \Lambda_r$, lifts to a map $L_r \to L_{r+1}$.
+\end{proposition}
 
-Also, $E^*\left(\BB[\Lambda_r]\right)$ clearly has an $\aut\left(\Lambda_r\right)$-action.
-Let $k: \Lambda_r \to \Lambda_r$ be a homomorphism given by on the $i,j$-th coordinate by multiplication by $k_{ij}$.
-Once again by \ref{E-B-map-cyclic}, for integers $l_1, \dotsc, l_n$, the induced map sends $\sum_{j,F} [l_j]\left(x_j\right)$ to $\sum_{i,F}\left[\sum_j k_{ij} l_j\right]\left(x_i\right)$.
-Since we consider only $k \in \aut\left(\Lambda_r\right)$, i.e. invertible, the matrix $\left(k_{ij}\right)$ is invertible.
-Therefore, if $\left(l_1, \dotsc, l_n\right) \neq 0$, then also $\left(\sum_j k_{1j} l_j, \dotsc, \sum_j k_{1j} l_j\right) \neq 0$, so if the source is in $S^r$, the result is in $S^r$ as well.
-This shows that action lifts to an action on $L_r$.
+\begin{proof}
+	The projection $\Lambda_{r+1} \to \Lambda_r$ is given by the multiplication-by-$1$ on each coordinate, so again by \ref{E-B-map-cyclic} they induce the maps $E^*\left(\BB[\Lambda_r]\right) \to E^*\left(\BB[\Lambda_{r+1}]\right)$, given by $x_i \mapsto x_i$.
+	Moreover $\sum_F [k_i]\left(x_i\right) \in S^r$ is mapped to $\sum_F [k_i]\left(x_i\right) \in S^{r+1}$.
+	Therefore, once we localize the target, the map lifts to the localization of the source.
+\end{proof}
+
+\begin{definition}
+	We define $L = L\left(E^*\right) = \colim L_r$.
+\end{definition}
+
+Clearly $\aut\left(\Lambda_r\right)$ acts on $E^*\left(\BB[\Lambda_r]\right)$, by its action on $\Lambda_r$ and functoriality.
+
+\begin{proposition}
+	The $\aut\left(\Lambda_r\right)$-action lifts to an action on $L_r$.
+\end{proposition}
+
+\begin{proof}
+	Let $k: \Lambda_r \to \Lambda_r$ be an automorphism given by on the $i,j$-th coordinate by multiplication by $k_{ij}$.
+	Once again, by \ref{E-B-map-cyclic}, for integers $l_1, \dotsc, l_n$, the induced map sends $\sum_{j,F} [l_j]\left(x_j\right)$ to $\sum_{i,F}\left[\sum_j k_{ij} l_j\right]\left(x_i\right)$.
+	Since $k$ is an automorphism, the matrix $\left(k_{ij}\right)$ is invertible.
+	Therefore, if $\left(l_1, \dotsc, l_n\right) \neq 0$, then also $\left(\sum_j k_{1j} l_j, \dotsc, \sum_j k_{1j} l_j\right) \neq 0$, so if the source is in $S^r$, the result is in $S^r$ as well.
+	This shows that action lifts to an action on $L_r$.
+\end{proof}
 
 \todo{Don't forget to correct the thesis... I used $\sum$ rather than $\sum_F$.}
 
-Moreover, the projection $\pi_r: \aut\left(\Lambda\right) \to \aut\left(\Lambda_r\right)$ gives an $\aut\left(\Lambda\right)$-action on $L_r$.
+
+Using the projection $\pi_r: \aut\left(\Lambda\right) \to \aut\left(\Lambda_r\right)$ we endow $L_r$ with a $\aut\left(\Lambda\right)$-action.
 By factoring the projection through $\aut\left(\Lambda_{r+1}\right)$, we see that the map $L_r \to L_{r+1}$ is equivariant with respect to that action.
-Since the $L_r$'s have a compatible $\aut\left(\Lambda\right)$-action, we see that $L$ has an $\aut\left(\Lambda\right)$-action.
+Therefore we prove:
+
+\begin{proposition}
+	The rings $L_r$ have an $\aut\left(\Lambda\right)$-action, compatible with the maps $L_r \to L_{r+1}$.
+	Therefore $L$ has an $\aut\left(\Lambda\right)$-action as well.
+\end{proposition}
 
 \begin{proposition}
 	Let $S \leq \aut\left(\Lambda_r\right)$ be a subgroup.
@@ -208,7 +246,7 @@ Since the $L_r$'s have a compatible $\aut\left(\Lambda\right)$-action, we see th
 
 
 
-\subsection{The Generalized Character Ring}
+\subsection{The Generalized Class Functions Ring}
 
 As in the case of Atiyah-Segal, in order to establish Theorem C, that is, the result on the character map described in the introduction to this section, we need to formulate a more general theorem.
 The theorem will also depend on a $G$-space $X$, and the proof will use this freedom in a crucial way.
@@ -217,83 +255,112 @@ To this end, we define the generalized objects we need.
 
 Let $X$ be a finite $G$-CW complex.
 Recall that $r \geq r_0$, we have $\Gnp = \hom_{\Grp}\left(\Lambda_r, G\right)$, with the $G$-action by conjugation.
-We define $\Fix{G,X} = \coprod_{\alpha \in \Gnp} X^{\im \alpha}$.
-This is independent of $r$, since $X^{\im \alpha}$ is simply the fixed points of $X$ at the $n$-tuple $\left(g_1, \dotsc, g_n\right)$ represented by $\alpha$.
+Note that for $\alpha \in \Gnp$, $X^{\im \alpha}$ is simply the fixed points of $X$ at the $n$-tuple $\left(g_1, \dotsc, g_n\right)$ represented by $\alpha$, so the following is independent of $r \geq r_0$.
+
+\begin{definition}
+	The \emph{fixed point space} of $X$ is $\Fix{G,X} = \coprod_{\alpha \in \Gnp} X^{\im \alpha}$.
+	This space has a $G \times \aut \left(\Lambda_r\right)$-action, described below.
+\end{definition}
 
 $\Fix{G,X}$ admits a $G$-action, where $\gamma \in G$ sends $x \in X^{\im \alpha}$ to $\gamma x \in X^{\im \gamma.\alpha}$.
 This is well defined, since $x$ fixed by $\alpha$, means that $g_i x = x$, which implies that $\gamma g_i \gamma^{-1} \gamma x = \gamma x$, so that $\gamma x$ is fixed by $\gamma. \alpha$.
 Moreover, it admits an $\aut\left(\Lambda_r\right)$-action.
 Let $\varphi \in \aut\left(\Lambda_r\right)$, for any $\alpha \in \Gnp$, clearly $\im \alpha = \im \left(\alpha\circ\varphi\right)$, so $x \in X^{\im \alpha}$ is mapped by $\varphi$ to $x \in X^{\im \left(\alpha\circ\varphi\right)}$.
-Together this means that we have a $G \times \aut \left(\Lambda_r\right)$-action.
+Since $G$ acts on $\alpha$ on the target, and $\varphi$ acts on the source, the actions commute, therefore we have a $G \times \aut \left(\Lambda_r\right)$-action.
 
 The action on $\Fix{G,X}$ gives a $G \times \aut \left(\Lambda_r\right)$-action of $E^*$-algebras on $E^*\left(\Fix{G,X}\right)$.
 As we saw, $L_r$ admits an $\aut \left(\Lambda_r\right)$-action, define the trivial $G$-action on it, to get a $G \times \aut \left(\Lambda_r\right)$-action.
 Take the diagonal $G \times \aut \left(\Lambda_r\right)$-action on $L_r \otimes_{E^*} E^*\left(\Fix{G,X}\right)$.
-We then define $\cl[n,p]{G,X; L_r} = \left(L_r \otimes_{E^*} E^*\left(\Fix{G,X}\right)\right)^G$, which still has an $\aut \left(\Lambda_r\right)$-action.
 \todo{we probably need op action somewhere}.
+
+\begin{definition}
+	The \emph{class functions} are:
+	$$
+	\cl[n,p]{G,X; L_r}
+	= \left(L_r \otimes_{E^*} E^*\left(\Fix{G,X}\right)\right)^G
+	$$
+	This algebra still has an $\aut \left(\Lambda_r\right)$-action.
+\end{definition}
 
 Note that for $X = *$, trivial $G$-space, $\Fix{G,*} = \Gnp$ as a $G$-space.
 Hence $E^*\left(\Fix{G,*}\right) \cong \hom_{\Set}\left(\Gnp, E^*\right)$.
 Taking the $G$ fixed points clearly gives $\hom_{\GSet}\left(\Gnp, E^*\right)$.
 In conclusion, we get $\cl[n,p]{G,*; L_r} =  \hom_{\GSet}\left(\Gnp, L_r\right)$.
-Note that this agrees with our definition from \ref{towards-character}.
+Note that this agrees with our previous definition \ref{class-function-*}.
 
-Before taking the $G$ fixed points, we also see that:
-\begin{align}
+We wish to give an alternative description of the algebra before taking the $G$ fixed points.
+Simply by taking the coproduct as a product out of the cohomology, and out of the tensor product, we get:
+
+\begin{proposition}\label{Lr-Fix}
+	$
 	L_r \otimes_{E^*} E^*\left(\Fix{G,X}\right)
-	&\cong L_r \otimes_{E^*} E^*\left(\coprod_{\alpha \in \Gnp} X^{\im \alpha}\right)\nonumber\\
-	&\cong L_r \otimes_{E^*} \left(\prod_{\alpha \in \Gnp} E^*\left(X^{\im \alpha}\right)\right)\nonumber\\
-	&\cong \prod_{\alpha \in \Gnp} \left(L_r \otimes_{E^*} E^*\left(X^{\im \alpha}\right)\right)\label{Lr-Fix}
-\end{align}
+	\cong \prod_{\alpha \in \Gnp} \left(L_r \otimes_{E^*} E^*\left(X^{\im \alpha}\right)\right)
+	$.
+\end{proposition}
 
 We wish to emphasize the combinatorial nature of the $G \times \aut \left(\Lambda_r\right)$-action.
-Very generally, let $H$ be a finite group, which acts on some indexing set $I$.
-Assume we have a collection of $H$-spaces $Y_{\left[i\right]}$ (i.e. indexed on $I/H$).
-We have an action $\prod_{i \in I} Y_{\left[i\right]}$, where $h \in H$ sends $\left(y_i\right)_{i \in I}$ to $\left(h.y_{h.i}\right)_{i \in I}$ (indeed $y_{h.i} \in Y_{\left[i\right]}$ since $i$ and $h.i$ are in the same orbit).
-Requiring that $\left(y_i\right)_{i \in I}$ is a fixed points amounts to $y_i = h.y_{h.i}$.
-Note that this condition equates $y_i$ only with values which are in the $H$-orbit of $i$.
-Moreover, the value of $y_i$ determines the whole $H$-orbit $y_{h.i}$ (by $h^{-1} y_i$).
-Taking those values for the whole orbit, reduces the condition to $y_i = h. y_i$ when $h.i = i$, i.e. when $h$ is in the stabilizer $\stab_H\left(i\right)$.
-Therefore, the condition is simply that $y_i \in Y_{\left[i\right]}^{\stab_H\left(i\right)}$.
-We conclude that:
-\begin{equation}\label{combinatorial-situation}
+To that end, we first formulate a very general combinatorial statement:
+
+\begin{proposition}\label{combinatorial-situation}
+	Let $H$ be a group.
+	Let $I$ be some indexing $H$-set, and let $Y_{\left[i\right]}$ be a collection of $H$-spaces, i.e. indexed by $I/H$.
+	Endow $\prod_{i \in I} Y_{\left[i\right]}$ an $H$-action by
+	$
+	h.\left(y_i\right)_{i \in I}
+	= \left(h.y_{h.i}\right)_{i \in I}
+	$.
+	Then
+	$
 	\left(\prod_{i \in I} Y_{\left[i\right]}\right)^H
 	\cong \prod_{\left[i\right] \in I/H} Y_{\left[i\right]}^{\stab_H\left(i\right)}
-\end{equation}
+	$.
+\end{proposition}
 
-To apply this to our case we will take $G \times \aut \left(\Lambda_r\right)$ fixed points in two steps, first by $G$ then by $\aut \left(\Lambda_r\right)$.
-Recall that $L_r$ is fixed by $G$.
-The action on the cohomology part comes from the action on the space, taking $x \in X^{\im \alpha}$ to $\gamma x \in X^{\im \gamma.\alpha}$.
-Since this is invertible, this gives a homeomorphism between $X^{\im \alpha}$ and $X^{\im \gamma.\alpha}$, which shows that $E^*\left(X^{\im \alpha}\right) \cong E^*\left(X^{\im \gamma.\alpha}\right)$.
-Using this isomorphism, we indeed see that $E^*\left(X^{\im \alpha}\right)$ depends only on the $G$-orbit of $\alpha$.
-By using \ref{combinatorial-situation} for \ref{Lr-Fix}, we get:
-\begin{equation}\label{combinatorial-cl}
-	\cl[n,p]{G,X; L_r}
-	\cong \prod_{\left[\alpha\right] \in \Gnp/G} \left(L_r \otimes_{E^*} E^*\left(X^{\im \alpha}\right)^{\stab_G\left(\alpha\right)}\right)
-\end{equation}
-We now have the $\aut \left(\Lambda_r\right)$-action.
-Recall that $\aut \left(\Lambda_r\right)$ didn't act on the space part, since it fixes $\im \alpha$.
-We are then in the situation of \ref{combinatorial-situation} again, and we get:
-\begin{multline}\label{combinatorial-cl-fixed}
-	\cl[n,p]{G,X; L_r}^{\aut \left(\Lambda_r\right)}\\
-	\cong \prod_{\left[\alpha\right] \in \Gnp/{\left(G \times \aut \left(\Lambda_r\right)\right)}}
-	\left(
+\begin{proof}
+	First, the action is indeed well defined since $y_{h.i} \in Y_{\left[i\right]}$, for $i$ and $h.i$ are in the same orbit.
+	Requiring that $\left(y_i\right)_{i \in I}$ is a fixed points amounts to $y_i = h.y_{h.i}$.
+	Note that this condition equates $y_i$ only with values which are in the $H$-orbit of $i$.
+	Moreover, the value of $y_i$ determines the whole $H$-orbit $y_{h.i}$ (by $h^{-1} y_i$).
+	Taking those values for the whole orbit, reduces the condition to $y_i = h. y_i$ when $h.i = i$, i.e. when $h$ is in the stabilizer $\stab_H\left(i\right)$.
+	Therefore, the condition is simply that $y_i \in Y_{\left[i\right]}^{\stab_H\left(i\right)}$, so the conclusion follows.
+\end{proof}
+
+We now want to apply this to our case, to give a combinatorial description of $\cl[n,p]{G,X; L_r}^{\aut \left(\Lambda_r\right)}$.
+
+\begin{proposition}\label{combinatorial-cl-fixed}
+	We have:
+	\begin{multline}
+		\cl[n,p]{G,X; L_r}^{\aut \left(\Lambda_r\right)}\\
+		\cong \prod_{\left[\alpha\right] \in \Gnp/{\left(G \times \aut \left(\Lambda_r\right)\right)}}
+		\left(
 		L_r^{\stab_{\aut \left(\Lambda_r\right)}\left(\alpha\right)}
 		\otimes_{E^*} E^*\left(X^{\im \alpha}\right)^{\stab_G\left(\alpha\right)}
-	\right)
-\end{multline}
-Note that when $X = *$, the trivial $G$-space, all fixed points are again trivial, which shows that the $E^*$-cohomology is simply $E^*$, and tensoring with it does nothing.
-Therefore, \ref{combinatorial-cl} reduces to:
-\begin{equation}\label{combinatorial-cl-pt}
-	\cl[n,p]{G; L_r}
-	\cong \prod_{\left[\alpha\right] \in \Gnp/G} L_r
-\end{equation}
-Similarly, \ref{combinatorial-cl-fixed} reduces to:
-\begin{equation}\label{combinatorial-cl-pt-fixed}
+		\right)
+	\end{multline}
+	In particular, when $X = *$, we have:
+	$$
 	\cl[n,p]{G; L_r}^{\aut \left(\Lambda_r\right)}
 	\cong \prod_{\left[\alpha\right] \in \Gnp/{\left(G \times \aut \left(\Lambda_r\right)\right)}}
-		L_r^{\stab_{\aut \left(\Lambda_r\right)}\left(\alpha\right)}
-\end{equation}
+	L_r^{\stab_{\aut \left(\Lambda_r\right)}\left(\alpha\right)}
+	$$
+\end{proposition}
+
+\begin{proof}
+	We will take $G \times \aut \left(\Lambda_r\right)$ fixed points of \ref{Lr-Fix} in two steps, first by $G$ then by $\aut \left(\Lambda_r\right)$.
+	Recall that $L_r$ is fixed by $G$.
+	The action on the cohomology part comes from the action on the space, taking $x \in X^{\im \alpha}$ to $\gamma x \in X^{\im \gamma.\alpha}$.
+	Since this is invertible, this gives a homeomorphism between $X^{\im \alpha}$ and $X^{\im \gamma.\alpha}$, which shows that $E^*\left(X^{\im \alpha}\right) \cong E^*\left(X^{\im \gamma.\alpha}\right)$.
+	Using this isomorphism, we indeed see that $E^*\left(X^{\im \alpha}\right)$ depends only on the $G$-orbit of $\alpha$.
+	By using \ref{combinatorial-situation} for \ref{Lr-Fix}, we get:
+	$$
+	\cl[n,p]{G,X; L_r}
+	\cong \prod_{\left[\alpha\right] \in \Gnp/G} \left(L_r \otimes_{E^*} E^*\left(X^{\im \alpha}\right)^{\stab_G\left(\alpha\right)}\right)
+	$$
+	We now have the $\aut \left(\Lambda_r\right)$-action.
+	Recall that $\aut \left(\Lambda_r\right)$ didn't act on the space part, since it fixes $\im \alpha$.
+	We are then in the situation of \ref{combinatorial-situation} again, and the conclusion follows for the general case.
+	Note that when $X = *$, the trivial $G$-space, all fixed points $X^{\im \alpha}$ are again trivial, which shows that the $E^*$-cohomology is simply $E^*$, and tensoring with it does nothing, and the conclusion for the specific case follows.
+\end{proof}
 
 
 
@@ -311,9 +378,11 @@ Since $X$ and $\EG$ admit a $G$-action, the $\Lambda_r \to G$ induces a $\Lambda
 We equip both sides with the diagonal $\Lambda_r$-action, and the map is equivariant w.r.t to it by definition.
 The $\Lambda_r$ orbits of the source are $\BB[\Lambda_r] \times X^{\im \alpha}$. \todo{why}
 We get a map between the $\Lambda_r$ orbits, and since the action on the target was pulled form the diagonal $G$-action, we can further take the $G$ orbits on the target, to get a map $\BB[\Lambda_r] \times X^{\im \alpha} \to \EG \times_G X$.
+
 Taking $E^*$-cohomology we get $E^*\left(\EG \times_G X\right) \to E^*\left(\BB[\Lambda_r] \times X^{\im \alpha}\right)$.
 Since $X$ was assumed to be a finite $G$-CW complex, we have Kunneth for the target by \ref{E-B-abelian}, so the map is equivalently a map $E^*\left(\EG \times_G X\right) \to E^*\left(\BB[\Lambda_r]\right) \otimes_{E^*} E^*\left(X^{\im \alpha}\right)$.
 Using the localization $E^*\left(\BB[\Lambda_r]\right) \to L_r$ we finally get the desired map $E^*\left(\EG \times_G X\right) \to L_r \otimes_{E^*} E^*\left(X^{\im \alpha}\right)$.
+This concludes the construction of the character map.
 
 \begin{proposition}[{\cite[6.9]{HKR}}]
 	The map $E^*\left(\EG \times_G X\right) \to L_r \otimes_{E^*} E^*\left(\Fix{G,X}\right)$ constructed above lands in the $G \times \aut \left(\Lambda_r\right)$ fixed points.
@@ -321,8 +390,15 @@ Using the localization $E^*\left(\BB[\Lambda_r]\right) \to L_r$ we finally get t
 
 Therefore, by taking the $G$ fixed points on the target, we indeed get the desired character map $\chinpG: E^*\left(\EG \times_G X\right) \to \cl[n,p]{G,X; L_r}$, which lands in the $\aut \left(\Lambda_r\right)$ fixed points.
 
-We also note that the character maps are compatible with the maps $\cl[n,p]{G,X; L_r} \to \cl[n,p]{G,X; L_{r+1}}$, coming from the maps $L_r \to L_{r+1}$, since the map for $L_{r+1}$ factors on the target of each $\alpha$ through the construction for $L_r$ via the projection.
-This also implies that we have a character map for $L$, that is $\chinpG: E^*\left(\EG \times_G X\right) \to \cl[n,p]{G,X; L}$, which lands in the $\aut \left(\Lambda\right)$ fixed points.
+\begin{proposition}
+	The character maps are compatible with the maps $\cl[n,p]{G,X; L_r} \to \cl[n,p]{G,X; L_{r+1}}$, coming from the maps $L_r \to L_{r+1}$.
+	Therefore, we have a character map for $L$, that is $\chinpG: E^*\left(\EG \times_G X\right) \to \cl[n,p]{G,X; L}$, which lands in the $\aut \left(\Lambda\right)$ fixed points.
+\end{proposition}
+
+\begin{proof}
+	We constructed the character map, by constructing a map for each $\alpha$.
+	It is then easy to see that by definition these maps are compatible with the maps $L_r \to L_{r+1}$, coming from the projections.
+\end{proof}
 
 \todo{write something about $p$ being invertible in $L_r$, $L$}
 Since $p$ is invertible in $L$, and $\aut \left(\Lambda\right)$ doesn't change $p^{-1}$, it also follows that after inverting $p$, that is, rationalizing, the map $p^{-1} \chinpG: p^{-1} E^*\left(\EG \times_G X\right) \to \cl[n,p]{G,X; L}$ still lands in the $\aut \left(\Lambda\right)$ fixed points.
