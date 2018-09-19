@@ -73,7 +73,7 @@ If we had a homomorphism $E^*\left(\BB[\Lambda_r]\right) \to R$, we would indeed
 
 We postpone the discussion of the rings, to give some properties of $E^*$-cohomology.
 
-First we wish to describe the $E^*\left(\BB[\ZZ/m]\right)$.
+First we describe $E^*\left(\BB[\ZZ/m]\right)$.
 Let $\psi_m: \ZZ/m \to \UU[1]$ be the homomorphism $\psi\left(1\right) = e^{2\pi i/m}$
 This induces $\BB\psi^*: E^*\left(\BU[1]\right) \to E^*\left(\BB[\ZZ/m]\right)$.
 Denote by $x \in E^2\left(\BB[\ZZ/m]\right)$ the cohomology class $\BB\psi^*\left(x\right)$.
@@ -230,10 +230,10 @@ Clearly $\aut\left(\Lambda_r\right)$ acts on $E^*\left(\BB[\Lambda_r]\right)$, b
 
 Using the projection $\pi_r: \aut\left(\Lambda\right) \to \aut\left(\Lambda_r\right)$ we endow $L_r$ with a $\aut\left(\Lambda\right)$-action.
 By factoring the projection through $\aut\left(\Lambda_{r+1}\right)$, we see that the map $L_r \to L_{r+1}$ is equivariant with respect to that action.
-Therefore we prove:
+In conclusion:
 
 \begin{proposition}
-	The rings $L_r$ have an $\aut\left(\Lambda\right)$-action, compatible with the maps $L_r \to L_{r+1}$.
+	The rings $L_r$ have an $\aut\left(\Lambda\right)$-action, and the maps $L_r \to L_{r+1}$ are equivariant with respect to this action.
 	Therefore $L$ has an $\aut\left(\Lambda\right)$-action as well.
 \end{proposition}
 
@@ -279,7 +279,7 @@ Take the diagonal $G \times \aut \left(\Lambda_r\right)$-action on $L_r \otimes_
 	\cl[n,p]{G,X; L_r}
 	= \left(L_r \otimes_{E^*} E^*\left(\Fix{G,X}\right)\right)^G
 	$$
-	This algebra still has an $\aut \left(\Lambda_r\right)$-action.
+	This $E^*$-algebra still has an $\aut \left(\Lambda_r\right)$-action.
 \end{definition}
 
 Note that for $X = *$, trivial $G$-space, $\Fix{G,*} = \Gnp$ as a $G$-space.
@@ -288,8 +288,8 @@ Taking the $G$ fixed points clearly gives $\hom_{\GSet}\left(\Gnp, E^*\right)$.
 In conclusion, we get $\cl[n,p]{G,*; L_r} =  \hom_{\GSet}\left(\Gnp, L_r\right)$.
 Note that this agrees with our previous definition \ref{class-function-*}.
 
-We wish to give an alternative description of the algebra before taking the $G$ fixed points.
-Simply by taking the coproduct as a product out of the cohomology, and out of the tensor product, we get:
+We give an alternative description of the algebra before taking the $G$ fixed points.
+Simply by taking the coproduct out of the cohomology as a product, and out of the tensor product, we get:
 
 \begin{proposition}\label{Lr-Fix}
 	$
@@ -299,7 +299,7 @@ Simply by taking the coproduct as a product out of the cohomology, and out of th
 \end{proposition}
 
 We wish to emphasize the combinatorial nature of the $G \times \aut \left(\Lambda_r\right)$-action.
-To that end, we first formulate a very general combinatorial statement:
+To that end, we first formulate a general combinatorial statement:
 
 \begin{proposition}\label{combinatorial-situation}
 	Let $H$ be a group.
@@ -318,25 +318,25 @@ To that end, we first formulate a very general combinatorial statement:
 
 \begin{proof}
 	First, the action is indeed well defined since $y_{h.i} \in Y_{\left[i\right]}$, for $i$ and $h.i$ are in the same orbit.
-	Requiring that $\left(y_i\right)_{i \in I}$ is a fixed points amounts to $y_i = h.y_{h.i}$.
+	Requiring that $\left(y_i\right)_{i \in I}$ is a fixed point amounts to $y_i = h.y_{h.i}$.
 	Note that this condition equates $y_i$ only with values which are in the $H$-orbit of $i$.
 	Moreover, the value of $y_i$ determines the whole $H$-orbit $y_{h.i}$ (by $h^{-1} y_i$).
 	Taking those values for the whole orbit, reduces the condition to $y_i = h. y_i$ when $h.i = i$, i.e. when $h$ is in the stabilizer $\stab_H\left(i\right)$.
 	Therefore, the condition is simply that $y_i \in Y_{\left[i\right]}^{\stab_H\left(i\right)}$, so the conclusion follows.
 \end{proof}
 
-We now want to apply this to our case, to give a combinatorial description of $\cl[n,p]{G,X; L_r}^{\aut \left(\Lambda_r\right)}$.
+We now want to apply this to our case.
 
 \begin{proposition}\label{combinatorial-cl-fixed}
 	We have:
-	\begin{multline}
+	\begin{multline*}
 		\cl[n,p]{G,X; L_r}^{\aut \left(\Lambda_r\right)}\\
 		\cong \prod_{\left[\alpha\right] \in \Gnp/{\left(G \times \aut \left(\Lambda_r\right)\right)}}
 		\left(
 		L_r^{\stab_{\aut \left(\Lambda_r\right)}\left(\alpha\right)}
 		\otimes_{E^*} E^*\left(X^{\im \alpha}\right)^{\stab_G\left(\alpha\right)}
 		\right)
-	\end{multline}
+	\end{multline*}
 	In particular, when $X = *$, we have:
 	$$
 	\cl[n,p]{G; L_r}^{\aut \left(\Lambda_r\right)}
@@ -366,10 +366,10 @@ We now want to apply this to our case, to give a combinatorial description of $\
 
 \subsection{The General Character Map}
 
-We now wish to construct a character map, that also depends on $r$, which is omitted from the notation:
+We now construct the character map, that also depends on $r$, which is omitted from the notation:
 $$\chinpG: E^*\left(\EG \times_G X\right) \to \cl[n,p]{G,X; L_r}$$
 This map is given by a map $E^*\left(\EG \times_G X\right) \to L_r \otimes_{E^*} E^*\left(\Fix{G,X}\right)$ which lands in the $G$ fixed points.
-By \ref{Lr-Fix}, this is the data of a map $E^*\left(\EG \times_G X\right) \to L_r \otimes_{E^*} E^*\left(X^{\im \alpha}\right)$ for every $\alpha \in \Gnp$.
+By \ref{Lr-Fix}, this is the data of a map $E^*\left(\EG \times_G X\right) \to L_r \otimes_{E^*} E^*\left(X^{\im \alpha}\right)$ for each $\alpha \in \Gnp$.
 
 Let $\alpha \in \Gnp$, that is $\alpha: \Lambda_r \to G$.
 By functoriality of $\EE$, this induces a map $\EE[\Lambda_r] \to \EG$.
@@ -396,8 +396,8 @@ Therefore, by taking the $G$ fixed points on the target, we indeed get the desir
 \end{proposition}
 
 \begin{proof}
-	We constructed the character map, by constructing a map for each $\alpha$.
-	It is then easy to see that by definition these maps are compatible with the maps $L_r \to L_{r+1}$, coming from the projections.
+	We constructed the character map by constructing a map for each $\alpha$.
+	It is easy to see that these maps are compatible with the maps $L_r \to L_{r+1}$, coming from the projections.
 \end{proof}
 
 \todo{write something about $p$ being invertible in $L_r$, $L$}
@@ -418,13 +418,13 @@ This should remind you of \ref{char-1} and \ref{char-2}.
 \end{theorem}
 
 We will not prove the first part, this is \cite[6.8]{HKR}, see also \cite[6.5]{HKR}.
-The second will proven later.
+The second be will proven later.
 
 \begin{proof}[Proof (of the third part)]
 	Look at the isomorphism from the second part,
 	$\chinpG \otimes L: E^*\left(\EG \times_G X\right) \otimes_{E^*} L \to \cl[n,p]{G,X; L}$.
-	Endowing the source with $\aut \left(\Lambda\right)$-action by acting on $L$, makes it equivariant.
-	Therefore, there is an isomorphism also on the fixed points.
+	Endowing the source with $\aut \left(\Lambda\right)$-action by acting only on $L$, makes it equivariant.
+	Therefore, there is an isomorphism on the fixed points.
 	Using $L^{\aut \left(\Lambda\right)} = p^{-1} E^*$, the fixed points on the source are:
 	\begin{align*}
 		\left(E^*\left(\EG \times_G X\right) \otimes_{E^*} L\right)^{\aut \left(\Lambda\right)}
