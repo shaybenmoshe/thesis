@@ -16,7 +16,7 @@ This character map has similar formal properties to the ordinary character map, 
 $$
 \chinpG \otimes L:
 E^*\left(\BG\right) \otimes L
-\to \cl[n,p]{G; L}
+\xrightarrow{\sim} \cl[n,p]{G; L}
 $$
 becomes an isomorphism.
 Similarly to \ref{char-2}, there is an action of $\aut\left(\ZZ_p^n\right) \cong \left(\ZZ_p^\times\right)^n$ on $\cl[n,p]{G; L}$, and it turns out that the character map lands in the fixed points.
@@ -25,7 +25,7 @@ It turns out that after rationalization and restricting the codomain to the fixe
 $$
 p^{-1} \chinpG:
 p^{-1} E^*\left(\BG\right)
-\to \cl[n,p]{G; L}^{\aut\left(\ZZ_p^n\right)}
+\xrightarrow{\sim} \cl[n,p]{G; L}^{\aut\left(\ZZ_p^n\right)}
 $$
 is an isomorphism.
 
@@ -86,7 +86,7 @@ Denote by $x \in E^2\left(\BB[\ZZ/m]\right)$ the cohomology class $\BB\psi^*\lef
 
 \begin{proposition}
 	Let $Y$ be a space s.t. $E^*\left(Y\right)$ is a free $E^*$-module of finite rank.
-	Then $Y$ satisfies Kunneth with respect to any $X$, that is, the map $E^*\left(X\right) \otimes_{E^*} E^*\left(Y\right) \to E^*\left(X \times Y\right)$ is an isomorphism.
+	Then $Y$ satisfies Kunneth with respect to any $X$, that is, the map $E^*\left(X\right) \otimes_{E^*} E^*\left(Y\right) \xrightarrow{\sim} E^*\left(X \times Y\right)$ is an isomorphism.
 \end{proposition}
 
 \begin{proof}
@@ -239,7 +239,7 @@ In conclusion:
 
 \begin{proposition}
 	Let $S \leq \aut\left(\Lambda_r\right)$ be a subgroup.
-	Then, the induced map on fixed points $L_r^S \to L^{\pi_r^{-1}\left(S\right)}$ is an isomorphism.
+	Then, the induced map on fixed points $L_r^S \xrightarrow{\sim} L^{\pi_r^{-1}\left(S\right)}$ is an isomorphism.
 \end{proposition}
 
 \todo{Is that true? If it is, prove...}
@@ -412,10 +412,10 @@ This should remind you of \ref{char-1} and \ref{char-2}.
 \begin{theorem}[{\cite[Theorem C]{HKR}}]\label{theorem-c}
 	First, $L^{\aut \left(\Lambda\right)} = p^{-1} E^*$, and $L$ is faithfully flat over it.
 	Secondly, After tensoring with $L$, the character map
-	$\chinpG \otimes L: E^*\left(\EG \times_G X\right) \otimes_{E^*} L \to \cl[n,p]{G,X; L}$
+	$\chinpG \otimes L: E^*\left(\EG \times_G X\right) \otimes_{E^*} L \xrightarrow{\sim} \cl[n,p]{G,X; L}$
 	becomes an isomorphism.
 	Thirdly, the map
-	$p^{-1}\chinpG: p^{-1} E^*\left(\EG \times_G X\right) \to \cl[n,p]{G,X; L}^{\aut \left(\Lambda\right)}$
+	$p^{-1}\chinpG: p^{-1} E^*\left(\EG \times_G X\right) \xrightarrow{\sim} \cl[n,p]{G,X; L}^{\aut \left(\Lambda\right)}$
 	is an isomorphism.
 \end{theorem}
 
@@ -424,7 +424,7 @@ The second be will proven later.
 
 \begin{proof}[Proof (of the third part)]
 	Look at the isomorphism from the second part,
-	$\chinpG \otimes L: E^*\left(\EG \times_G X\right) \otimes_{E^*} L \to \cl[n,p]{G,X; L}$.
+	$E^*\left(\EG \times_G X\right) \otimes_{E^*} L \xrightarrow{\sim} \cl[n,p]{G,X; L}$.
 	Endowing the source with $\aut \left(\Lambda\right)$-action by acting only on $L$, makes it equivariant.
 	Therefore, there is an isomorphism on the fixed points.
 	Using $L^{\aut \left(\Lambda\right)} = p^{-1} E^*$, the fixed points on the source are:
@@ -434,7 +434,7 @@ The second be will proven later.
 		&= E^*\left(\EG \times_G X\right) \otimes_{E^*} p^{-1} E^*\\
 		&= p^{-1} E^*\left(\EG \times_G X\right)
 	\end{align*}
-	So indeed $p^{-1} E^*\left(\EG \times_G X\right) \to \cl[n,p]{G,X; L}^{\aut \left(\Lambda\right)}$ is an isomorphism.
+	So indeed $p^{-1} E^*\left(\EG \times_G X\right) \xrightarrow{\sim} \cl[n,p]{G,X; L}^{\aut \left(\Lambda\right)}$ is an isomorphism.
 \end{proof}
 
 
@@ -443,7 +443,7 @@ The second be will proven later.
 
 Our next goal is to proof the second part of \ref{theorem-c}.
 That is, for a finite group $G$ and a finite $G$-CW complex $X$, the character map becomes an isomorphism after tensoring with $L$, i.e.
-$\chinpG \otimes L: E^*\left(\EG \times_G X\right) \otimes_{E^*} L \to \cl[n,p]{G,X; L}$
+$\chinpG \otimes L: E^*\left(\EG \times_G X\right) \otimes_{E^*} L \xrightarrow{\sim} \cl[n,p]{G,X; L}$
 is an isomorphism.
 One may wonder why we had to introduce the $G$-space $X$ into the construction, in order to prove the case of interest, $X = *$.
 The reason is, that there is a trick, called \emph{complex oriented descent}, that allows us to reduce to the of $G$-spaces $X$ with \emph{abelian stabilizers}.
@@ -456,13 +456,12 @@ We will consider the character map as a natural transformation between functors 
 	\item Use complex oriented descent to reduce to $X$ with abelian stabilizers,
 	\item Use Mayer-Vietoris to reduce to spaces $X = D^n \times G/A$ with $A$ abelian,
 	\item Use homotopy invariance to reduce to $X = G/A$,
-	\item Use induction to reduce from $\left(G, G/A\right)$ to $\left(A, *\right)$
-	\item Use Kunneth and multiplicativity to reduce to $\left(\ZZ/{q^t}, *\right)$,
-	\item Prove for $\left(\ZZ/{q^t}, *\right)$.
+	\item Use induction to reduce from $\left(G, G/A\right)$ to $\left(A, *\right)$,
+	\item Prove for $\left(A, *\right)$.
 \end{itemize}
 
-We move on to introducing the idea of complex oriented descent.
-We will need some definitions before that.
+This strategy will be formulated as a theorem later, after we introduce complex oriented descent.
+To introduce it, we need some definitions.
 
 \begin{definition}
 	Let $\xi$ be a $d$-dimensional complex vector bundle over a space $X$.
@@ -486,16 +485,86 @@ We note that if $\xi$ is a $G$-vector bundle over the $G$-space $X$, then $F\lef
 We also recall that every finite group $G$ has a faithful finite dimensional complex representation.
 The reason complex oriented descent is useful is the following.
 
-\begin{proposition}
+\begin{proposition}\label{faithful-triv-bundle}
 	Let $X$ be a $G$-space, and let $\rho: G \to V$ be a faithful representations.
-	Then the $G$-space $F\left(X \times V\right) = X \times F\left(V\right)$ has abelian stabilizer.
+	Then the $G$-space $F\left(X \times V\right) \cong X \times F\left(V\right)$ has abelian stabilizer.
 \end{proposition}
 
 \begin{proof}
 	Let $\left(x, \left(\ell_i\right)\right)$ be a point in $X \times F\left(V\right)$.
 	We wish to show that its stabilizer is abelian.
-	Let $g,h \in G$ be two elements which fix the point, that is, $g.x = x = h.x$ and $\rho\left(g\right)\left(\ell_i\right) = \ell_i = \rho\left(h\right)\left(\ell_i\right)$.
-	We see that the linear transformations $\rho\left(g\right): V \to V$ and $\rho\left(h\right): V \to V$ are simultaneously diagonalizable w.r.t to the decomposition $\left(\ell_i\right)$ of $V$.
-	Therefore, by a classical result in linear algebra, they commute, $\rho\left(g\right) \rho\left(h\right) = \rho\left(h\right) \rho\left(g\right)$, i.e. $\rho\left(gh\right) = \rho\left(hg\right)$.
+	Let $g,h \in G$ be two elements which fix the point, that is, $g.x = x = h.x$ and $\rho_g\left(\ell_i\right) = \ell_i = \rho_h\left(\ell_i\right)$.
+	We see that the linear transformations $\rho_g: V \to V$ and $\rho_h: V \to V$ are simultaneously diagonalizable w.r.t to the decomposition $\left(\ell_i\right)$ of $V$.
+	Therefore, by a classical result in linear algebra, they commute, $\rho_g \rho_h = \rho_h \rho_g$, i.e. $\rho_{gh} = \rho_{hg}$.
 	Since $\rho$ is faithful, we get that $gh = hg$.
+\end{proof}
+
+\begin{definition}
+	Let $\mcl{C}$ be the category whose objects are pairs $\left(G, X\right)$ where $G$ is a finite group and $X$ is a finite $G$-CW complex.
+	The morphisms in $\mcl{C}$ are generated from the following:
+	First, the usual morphisms $\left(G, X\right) \to \left(G, Y\right)$.
+	Secondly, for $H < G$ and $Y$, we add a morphism $\left(H, Y\right) \to \left(G, G \times_H Y\right)$.
+\end{definition}
+
+\begin{definition}
+	Let $C^*: \mcl{C}^\op \to \GrAb$, be a contra-variant functor.
+	We define the following properties of $C^*$:
+	\begin{itemize}
+		\item \emph{Homotopy invariance} - $C^*\left(G, -\right)$ is $G$-homotopy invariant, for every $G$.
+		\item \emph{Mayer-Vietories} - $C^*\left(G, -\right)$ satisfies Mayer-Vietories, for every $G$.
+		\item \emph{Complex oriented descent} - $C^*\left(G, -\right)$ satisfies complex oriented descent, for every $G$.
+		\item \emph{Induction} - for every, $H < G$ and $H$-space $Y$, the morphism $\left(H, Y\right) \to \left(G, G \times_H Y\right)$ induces an isomorphism $C^*\left(G, G \times_H Y\right) \xrightarrow{\sim} C^*\left(H, Y\right)$. $G$.
+	\end{itemize}
+\end{definition}
+
+\begin{theorem}
+	Let $C^*, D^*: \mcl{C}^\op \to \GrAb$ be functors satisfying the above properties.
+	Let $\tau: C^* \to D^*$ be a natural transformation between them.
+	Suppose that $\tau$ commutes with connecting morphisms of Mayer-Vietories, and that $\tau\left(A, *\right)$ is an isomorphism for all abelian groups $A$.
+	Then $\tau$ is a natural isomorphism.
+\end{theorem}
+
+\begin{proof}
+	We will follow the steps of the strategy outlined before (although we will describe it in the opposite order).
+	
+	Let $G$ be a group, and $A \leq G$ an abelian subgroup.
+	The morphism $\left(A, *\right) \to \left(G, G \times_A *\right) \cong \left(G, G/A\right)$, by naturality of $\tau$, induces a commutative square:
+	$$
+	\begin{tikzcd}
+		C^*\left(G, G/A\right) \arrow{r}{} \arrow{d}{\tau\left(G, G/A\right)} & C^*\left(A, *\right) \arrow{d}{\tau\left(A, *\right)} \\
+		D^*\left(G, G/A\right) \arrow{r}{} & D^*\left(A, *\right)
+	\end{tikzcd}
+	$$
+	By induction, the horizontal morphisms are isomorphisms.
+	By assumption, $\tau\left(A, *\right)$ is an isomorphism.
+	We conclude that $\tau\left(G, G/A\right)$ is an isomorphism.
+	
+	Since $C^*, D^*$ are homotopy invariant, for every disk $D^n$ equipped with a trivial action, the map $\left(G, G/A \times D^n\right) \to \left(G, G/A\right)$ induces an isomorphism.
+	Similarly to before, by naturality $\tau\left(G, G/A \times D^n\right)$ is an isomorphism.
+	
+	Now, let $X$ a finite $G$-CW complex, s.t. the stabilizer of every point is abelian.
+	All the cells are then of the form $G/A \times D^n$ for some abelian subgroup $A \leq G$ and disk $D^n$.
+	By an induction on the number of cells, using Mayer-Vietories and the fact that $\tau$ commutes with the connecting morphisms, $\left(G, X\right)$ is an isomorphism.
+	
+	Lastly, let $X$ be an arbitrary finite $G$-CW complex.
+	Let $V$ be a faithful $G$ representation, and consider the bundle $X \times V \to V$.
+	By naturality, the diagram $X \leftarrow X \times F\left(V\right) \leftleftarrows X \times F\left(V\right) \times F\left(V\right)$ induces a commutative diagram:
+	$$
+	\begin{tikzcd}
+		C^*\left(X\right) \arrow{r}{f} \arrow{d}{\alpha = \tau\left(G, X\right)}
+		& C^*\left(X \times F\left(V\right)\right) \arrow{r}{} \arrow[shift left]{r}{} \arrow{d}{\beta = \tau\left(G, X \times F\left(V\right)\right)}
+		& C^*\left(X \times F\left(V\right) \times F\left(V\right)\right) \arrow{d}{\tau\left(G, X \times F\left(V\right) \times F\left(V\right)\right)}
+		\\
+		D^*\left(X\right) \arrow{r}{g}
+		& D^*\left(X \times F\left(V\right)\right) \arrow{r}{} \arrow[shift left]{r}{}
+		& D^*\left(X \times F\left(V\right) \times F\left(V\right)\right)
+	\end{tikzcd}
+	$$
+	By complex oriented descent, the two rows are equalizer diagrams.
+	By \ref{faithful-triv-bundle}, $X \times F\left(V\right)$ has abelian stabilizers, hence we already know that $\beta = \tau\left(G, X \times F\left(V\right)\right)$ is an isomorphism.
+	We can then construct the a map $\beta^{-1} g: D^*\left(X\right) \to C^*\left(X \times F\left(V\right)\right)$ making the diagram commute.
+	By the universal property of the equalizer, we get a map $\alpha': D^*\left(X\right) \to C^*\left(X\right)$ s.t. the diagram is commutative.
+	The composition $\alpha' \alpha: C^*\left(X\right) \to C^*\left(X\right)$ makes the diagram commute, and since $C^*\left(X\right)$ is the equalizer, by uniqueness, $\alpha' \alpha = \id_{C^*\left(X\right)}$.
+	Similarly $\alpha \alpha': D^*\left(X\right) \to D^*\left(X\right)$ makes the diagram commute, so $\alpha \alpha' = \id_{D^*\left(X\right)}$.
+	This shows that $\alpha = \tau\left(G, X\right)$, which completes the proof.
 \end{proof}
