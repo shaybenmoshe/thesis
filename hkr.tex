@@ -500,6 +500,22 @@ The reason complex oriented descent is useful is the following.
 \end{proof}
 
 \begin{definition}
+	Let $H \leq G$ be a subgroup, and let $Y$ be an $H$-space.
+	We define the $G$-space $G \times_H Y$ as follows.
+	Define an $H$-action on $G$ by $h.g = gh^{-1}$.
+	This gives a diagonal action on $G \times Y$, i.e. $h.\left(g, y\right) = \left(g h^{-1}, h.y\right)$.
+	The orbits are $G \times_H Y$.
+	This space has a $G$-action by $\gamma. \left(g, y\right) = \left(\gamma g, y\right)$.
+	This is well defined, since
+	$
+	\gamma. \left[g h^{-1}, h.y\right]
+	= \left[\gamma g h^{-1}, h.y\right]
+	= \left[\gamma g, y\right]
+	= \gamma . \left[g, y\right]
+	$.
+\end{definition}
+
+\begin{definition}
 	Let $\mcl{C}$ be the category whose objects are pairs $\left(G, X\right)$ where $G$ is a finite group and $X$ is a finite $G$-CW complex.
 	The morphisms in $\mcl{C}$ are generated from the following:
 	First, the usual morphisms $\left(G, X\right) \to \left(G, Y\right)$.
@@ -513,14 +529,14 @@ The reason complex oriented descent is useful is the following.
 		\item \emph{Homotopy invariance} - $C^*\left(G, -\right)$ is $G$-homotopy invariant, for every $G$.
 		\item \emph{Mayer-Vietories} - $C^*\left(G, -\right)$ satisfies Mayer-Vietories, for every $G$.
 		\item \emph{Complex oriented descent} - $C^*\left(G, -\right)$ satisfies complex oriented descent, for every $G$.
-		\item \emph{Induction} - for every, $H < G$ and $H$-space $Y$, the morphism $\left(H, Y\right) \to \left(G, G \times_H Y\right)$ induces an isomorphism $C^*\left(G, G \times_H Y\right) \xrightarrow{\sim} C^*\left(H, Y\right)$. $G$.
+		\item \emph{Induction} - for every, $H \leq G$ and $H$-space $Y$, the morphism $\left(H, Y\right) \to \left(G, G \times_H Y\right)$ induces an isomorphism $C^*\left(G, G \times_H Y\right) \xrightarrow{\sim} C^*\left(H, Y\right)$. $G$.
 	\end{itemize}
 \end{definition}
 
-\begin{theorem}[{\cite[6.10]{HKR}}]
+\begin{theorem}[{\cite[6.10]{HKR}}]\label{cmplx-oriented-natural-transformation}
 	Let $C^*, D^*: \mcl{C}^\op \to \GrAb$ be functors satisfying the above properties.
 	Let $\tau: C^* \to D^*$ be a natural transformation between them.
-	Suppose that $\tau$ commutes with connecting morphisms of Mayer-Vietories, and that $\tau\left(A, *\right)$ is an isomorphism for all abelian groups $A$.
+	Suppose that $\tau$ commutes with the connecting morphisms of Mayer-Vietories, and that $\tau\left(A, *\right)$ is an isomorphism for all abelian groups $A$.
 	Then $\tau$ is a natural isomorphism.
 \end{theorem}
 
@@ -567,4 +583,147 @@ The reason complex oriented descent is useful is the following.
 	The composition $\alpha' \alpha: C^*\left(X\right) \to C^*\left(X\right)$ makes the diagram commute, and since $C^*\left(X\right)$ is the equalizer, by uniqueness, $\alpha' \alpha = \id_{C^*\left(X\right)}$.
 	Similarly $\alpha \alpha': D^*\left(X\right) \to D^*\left(X\right)$ makes the diagram commute, so $\alpha \alpha' = \id_{D^*\left(X\right)}$.
 	This shows that $\alpha = \tau\left(G, X\right)$, which completes the proof.
+\end{proof}
+
+
+
+\subsection{Proof of the Main Theorem}
+
+We are going to use the previous results to prove the main theorem, \ref{theorem-c}.
+Recall that we have already proved the third part, and we are not going to prove the first.
+Therefore, what is left to prove is that 
+$\chinpG \otimes L: E^*\left(\EG \times_G X\right) \otimes_{E^*} L \xrightarrow{\sim} \cl[n,p]{G,X; L}$
+is an isomorphism.
+We will do this using \ref{cmplx-oriented-natural-transformation}.
+
+Denote $C^*\left(G, X\right) = E^*\left(\EG \times_G X\right) \otimes_{E^*} L$,
+and $D^*\left(G, X\right) = \cl[n,p]{G,X; L} = \left(L_r \otimes_{E^*} E^*\left(\Fix{G,X}\right)\right)^G$.
+Their definition on morphisms $\left(G, X\right) \to \left(G, Y\right)$ is clear, simply by functoriality of all constructions when $G$ is fixed.
+The definition on morphisms for induction will be given below, together with the proof that they satisfy induction.
+We also denote by $\tau\left(G, X\right)$ the character map $\chinpG \otimes L$ for $X$.
+
+\begin{lemma}
+	Both functors $C^*$ and $D^*$ are homotopy invariant.
+\end{lemma}
+
+\begin{proof}
+	This is immediate since $E^*$ is homotopy invariant, the Borel construction $X \mapsto \EG \times_G X$ is $G$-homotopy invariant, and the fixed points of a $G$-CW complex are also $G$-homotopy invariant.
+\end{proof}
+
+\begin{lemma}
+	Both functors $C^*$ and $D^*$ satisfy Mayer-Vietories, and $\tau$ commutes with the connecting morphisms.
+\end{lemma}
+
+\begin{proof}
+	The Borel construction $X \mapsto \EG \times_G X$ is a limit, and so are fixed points, so they commute with pushouts.
+	Therefore, the usual pushouts that induce Mayer-Vietories, give Mayer-Vietories for our functors.
+	Moreover, the definition makes it clear that the character map commutes with the connecting morphisms.
+\end{proof}
+
+\begin{lemma}
+	Both functors $C^*$ and $D^*$ satisfy induction.
+\end{lemma}
+
+\begin{proof}
+	Let $H \leq G$ be a subgroup, and $Y$ an $H$-space.
+	
+	We have $\EG \times_G \left(G \times_H Y\right) \cong \EE[H] \times_H Y$.
+	Taking $E^*$-cohomology and tensoring with $L$ gives an isomorphism $C^*\left(G, G \times_H Y\right) \xrightarrow{\sim} C^*\left(H, Y\right)$, which shows the functoriality for this sort of morphisms, and the fact that it is an isomorphism show that $C^*$ satisfies induction.
+	
+	We now claim that there is a homeomorphism $\Fix{G, G \times_H Y} \xrightarrow{\sim} G \times_H \Fix{H, Y}$.
+	
+	By definition:
+	$$
+	G \times_H \Fix{H, Y}
+	= G \times_H \coprod_{\alpha \in H_{n,p}} Y^{\im \alpha}
+	$$
+	An element here is the data of $g \in G$, $\alpha \in H_{n,p}$ and $y \in Y^{\im \alpha}$.
+	We will denote its $H$-orbit by $\left[g, \alpha, y\right]$.
+	For an $h \in H$, the relation we get is $\left[g, \alpha, y\right] = \left[gh^{-1}, h.\alpha, h.y\right]$.
+	An element $\gamma \in G$ acts by $\gamma. \left[g, \alpha, y\right] = \left[\gamma g, \alpha, y\right]$.
+	
+	Similarly, by definition:
+	$$
+	\Fix{G, G \times_H Y}
+	= \coprod_{\alpha \in G_{n,p}} \left(G \times_H Y\right)^{\im \alpha}
+	$$
+	An element here is the data of $\alpha \in \Gnp$, $\left[g, y\right] \in \left(G \times_H Y\right)^{\im \alpha}$.
+	We will denote this by $\left(\alpha, \left[g, y\right]\right)$.
+	For an $h \in H$, the relation we get is $\left(\alpha, \left[g, y\right]\right) = \left(\alpha, \left[gh^{-1}, hy\right]\right)$.
+	An element $\gamma \in G$ acts by $\gamma. \left(\alpha, \left[g, y\right]\right) = \left(\gamma. \alpha, \left[\gamma g, y\right]\right)$.
+	
+	Define the map $\varphi: G \times_H \Fix{H, Y} \to \Fix{G, G \times_H Y}$ by
+	$\varphi\left(\left[g, \alpha, y\right]\right) = \left(g. \alpha, \left[g, y\right]\right)$.
+	
+	We need to show that it doesn't depend on the $H$-orbit representative in the source, and indeed,
+	\begin{align*}
+		\varphi\left(\left[gh^{-1}, h.\alpha, h.y\right]\right)
+		&= \left(gh^{-1}. h.\alpha, \left[gh^{-1}, h.y\right]\right)\\
+		&= \left(g. \alpha, \left[gh^{-1}, h.y\right]\right)\\
+		&= \left(g. \alpha, \left[g, y\right]\right)\\
+		&=\varphi\left(\left[g, \alpha, y\right]\right).
+	\end{align*}
+	
+	We need to show that the element defined lands in the target, $\left(g. \alpha, \left[g, y\right]\right) \in \Fix{G, G \times_H Y}$, i.e. $\left[g, y\right] \in \left(G \times_H Y\right)^{g. \im \alpha}$.
+	Since $\alpha$ comes from $H_{n,p}$, we have $g. \im \alpha \leq gHg^{-1}$, so let $ghg^{-1} \in \im \alpha$, and we check the $\left[g, y\right]$ is invariant under it (via the $G$-action).
+	Remember the $y \in Y^{\im \alpha}$, and we get,
+	$
+	ghg^{-1}.\left[g, y\right]
+	= \left[ghg^{-1} g, y\right]
+	= \left[gh, y\right]
+	= \left[g, hy\right]
+	= \left[g, y\right].
+	$
+	
+	We show that it is $G$-equivariant.
+	So let $\gamma \in G$, and indeed,
+	\begin{align*}
+		\varphi\left(\gamma. \left[g, \alpha, y\right]\right)
+		&= \varphi\left(\left[\gamma g, \alpha, y\right]\right)\\
+		&= \left(\gamma g. \alpha, \left[\gamma g, y\right]\right)\\
+		&= \gamma. \left(g. \alpha, \left[g, y\right]\right)\\
+		&= \gamma. \varphi\left(\left[g, \alpha, y\right]\right)
+	\end{align*}
+	
+	We show that it is one-to-one.
+	Assume $\varphi\left(\left[g, \alpha, y\right]\right) = \varphi\left(\left[g', \alpha', y'\right]\right)$,
+	i.e. $\left(g. \alpha, \left[g, y\right]\right) = \left(g'. \alpha', \left[g', y'\right]\right)$.
+	In particular, $\left[g, y\right] = \left[g', y'\right]$.
+	It follows that $y' = h.y$ and $g' = gh^{-1}$ for some $h \in H$.
+	Then, $g. \alpha = g'. \alpha' = gh^{-1}. \alpha'$, so $\alpha = h^{-1}. \alpha'$, equivalently $\alpha' = h. \alpha$.
+	We therefore conclude that they are indeed in the same $H$-orbit,
+	$
+	\left[g, \alpha, y\right]
+	= \left[gh^{-1}, h.\alpha, h.y\right]
+	= \left[g', \alpha', y'\right]
+	$.
+	
+	Lastly, we show that it is surjective, which is the only step which is not routine.
+	Let $\left(\alpha, \left[g, y\right]\right)$, i.e. $\alpha \in \Gnp$, $\left[g, y\right] \in \left(G \times_H Y\right)^{\im \alpha}$.
+	We claim that if such a triple exists, i.e. the fixed points are not empty, the necessarily $g^{-1}. \alpha \in H_{n,p}$.
+	Assume by negation that there is some $\gamma \in \im g^{-1}. \alpha$ which is not in $H$.
+	Since it is in $g \gamma g^{-1} \im \alpha$, it fixes $\left[g, y\right]$, but then
+	$
+	\left[g, y\right]
+	= g \gamma g^{-1}. \left[g, y\right]
+	= \left[g \gamma g^{-1} g, y\right]
+	= \left[g \gamma, y\right]
+	$,
+	therefore, for some $h \in H$,
+	$\left(gh^{-1}, hy\right)= \left(g \gamma, y\right)$,
+	in particular $\gamma = h^{-1}$, which contradicts that $g \notin H$.
+	It follows that $g^{-1}. \alpha \in H_{n,p}$.
+	We now claim that $y \in Y^{\im g^{-1}. \alpha}$.
+	So let $\eta \in \im g^{-1}. \alpha$, which we now know is in $H$ as well.
+	Since $\left[g, y\right] \in \left(G \times_H Y\right)^{\im \alpha}$, it is fixed by $g \eta g^{-1}$, i.e. there is some $h \in H$, s.t.
+	$
+	\left(gh^{-1}, hy\right)
+	= g \eta g^{-1}. \left(g, y\right)
+	= \left(g \eta g^{-1} g, y\right)
+	= \left(g \eta, y\right)
+	$,
+	and in particular $y = hy$.
+	In conclusion, we do have a well defined element $\left[g, g^{-1} \alpha, y\right]$, which is mapped to $\left(\alpha, \left[g, y\right]\right)$.
+	
+	It is clear that the map $\varphi$ is continuous, and so is its inverse $\left[g, g^{-1} \alpha, y\right] \mapsto \left(\alpha, \left[g, y\right]\right)$, which shows that indeed $D^*$ satisfies induction.
 \end{proof}
