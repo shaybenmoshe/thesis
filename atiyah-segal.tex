@@ -161,16 +161,25 @@ We change coordinates to $t = \rho-1$, and we have $\RG[\ZZ/2] = \ZZ[t]/\left(t^
 We move to computing the completion $\RG[\ZZ/2]_I^\wedge$.
 Modulo $t^2+2t$, i.e. $t^2 = -2t$, we have that $t^n = \left(-2\right)^{n-1} t$.
 Thus $I^n = \left(\left(-2\right)^{n-1} t\right) = \left(2^{n-1} t\right)$, so $\RG[\ZZ/2]/I^n = \ZZ[t]/\left(t^2+2t, 2^{n-1} t\right)$.
-We will not describe the ring structure on the completion, but since the forgetful functor from rings to abelian groups is right adjoint, to compute the completion as an abelian group, we can compute the limit in abelian groups.
-As an abelian group, $\RG[\ZZ/2]/I^n$ is isomorphic to $\ZZ \oplus \ZZ/2^{n-1}$.
-It is then clear that as an abelian group, $\RG[\ZZ/2]_I^\wedge$ is isomorphic to $\ZZ \oplus \ZZ_2$.
+We first compute the limit of $\RG[\ZZ/2]/I^n$ in abelian groups.
+Since the forgetful functor from rings to abelian groups is right adjoint, it commutes with limits, so this will give us the abelian group structure.
+As an abelian group, $\RG[\ZZ/2]/I^n$ is isomorphic to $\ZZ \oplus \ZZ/2^{n-1}\left\{t\right\}$.
+It is then clear that as an abelian group, $\lim \RG[\ZZ/2]/I^n$ is isomorphic to $\ZZ \oplus \ZZ_2\left\{t\right\}$.
 
-Using the Atiyah-Segal theorem we conclude that as abelian groups
+We now define a multiplication on $\ZZ \oplus \ZZ_2\left\{t\right\}$ abelian group, given by $\left(a+bt\right) * \left(c+dt\right) = ac + (ad+bc-2bd)t$.
+It can be checked that it is associative and commutative.
+We have homomorphisms of groups $\ZZ \oplus \ZZ_2\left\{t\right\} \to \ZZ[t]/\left(t^2+2t, 2^{n-1} t\right)$, admitting it as the limit in groups, which are given by sending $a+bt$ to $a+\left(b \mod 2^{n-1}\right) t$.
+By construction this homomorphism is actually a homomorphism of rings (the $-2bdt$ term is explained by the relation $t^2+2t$).
+Therefore, by the universal property of the limit, we get a map $\ZZ \oplus \ZZ_2\left\{t\right\} \to \lim \RG[\ZZ/2]/I^n$ in rings.
+After taking the forgetful we know that it becomes an isomorphism, but the forgetful reflects isomorphisms, so this is also an isomorphism in rings.
+
+Using the Atiyah-Segal theorem we conclude that
 $$
 \K\left({\mbb{R}\mrm{P}}^\infty\right)
 = \K\left(\BB{\ZZ/2}\right)
-\cong \ZZ \oplus \ZZ_2.
+\cong \ZZ \oplus \ZZ_2\left\{t\right\},
 $$
+with multiplication given by $\left(a+bt\right) * \left(c+dt\right) = ac + (ad+bc-2bd)t$.
 
 
 

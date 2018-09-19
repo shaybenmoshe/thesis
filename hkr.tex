@@ -83,7 +83,7 @@ Denote by $x \in E^2\left(\BB[\ZZ/m]\right)$ the cohomology class $\BB\psi^*\lef
 \end{proposition}
 
 \begin{proof}
-	Look at the functors $X \mapsto E^*\left(X\right) \otimes E^*\left(Y\right)$ and $X \mapsto E^*\left(X \times Y\right)$.
+	Look at the functors $X \mapsto E^*\left(X\right) \otimes_{E^*} E^*\left(Y\right)$ and $X \mapsto E^*\left(X \times Y\right)$.
 	Both of them are manifestly homotopy invariant.
 	Since $E^*\left(Y\right)$ is free, it is also flat, and so both functors satisfy Mayer-Vietoris.
 	Both functors send arbitrary wedges to arbitrary products, since tensor with a free finite rank modules commutes with arbitrary products.
@@ -242,13 +242,13 @@ Before taking the $G$ fixed points, we also see that:
 \begin{align}
 	L_r \otimes_{E^*} E^*\left(\Fix{G,X}\right)
 	&\cong L_r \otimes_{E^*} E^*\left(\coprod_{\alpha \in \Gnp} X^{\im \alpha}\right)\nonumber\\
-	&\cong L_r \otimes_{E^*} \left(\prod_{\alpha \in \Gnp} E^*\left(X^{\im \alpha}\right)\right)\\
+	&\cong L_r \otimes_{E^*} \left(\prod_{\alpha \in \Gnp} E^*\left(X^{\im \alpha}\right)\right)\nonumber\\
 	&\cong \prod_{\alpha \in \Gnp} \left(L_r \otimes_{E^*} E^*\left(X^{\im \alpha}\right)\right)\label{Lr-Fix}
 \end{align}
 
 We wish to emphasize the combinatorial nature of the $G \times \aut \left(\Lambda_r\right)$-action.
 Very generally, let $H$ be a finite group, which acts on some indexing set $I$.
-Assume we have a collection $Y_{\left[i\right]}$ i.e. indexed on $I/H$.
+Assume we have a collection of $H$-spaces $Y_{\left[i\right]}$ (i.e. indexed on $I/H$).
 We have an action $\prod_{i \in I} Y_{\left[i\right]}$, where $h \in H$ sends $\left(y_i\right)_{i \in I}$ to $\left(h.y_{h.i}\right)_{i \in I}$ (indeed $y_{h.i} \in Y_{\left[i\right]}$ since $i$ and $h.i$ are in the same orbit).
 Requiring that $\left(y_i\right)_{i \in I}$ is a fixed points amounts to $y_i = h.y_{h.i}$.
 Note that this condition equates $y_i$ only with values which are in the $H$-orbit of $i$.
