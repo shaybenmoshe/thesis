@@ -417,6 +417,7 @@ This should remind you of \ref{char-1} and \ref{char-2}.
 	Thirdly, the map
 	$p^{-1}\chinpG: p^{-1} E^*\left(\EG \times_G X\right) \xrightarrow{\sim} \cl[n,p]{G,X; L}^{\aut \left(\Lambda\right)}$
 	is an isomorphism.
+	Moreover, all of these statements hold when $L$ is replaced with $L_r$, for $r \geq r_0$.
 \end{theorem}
 
 We will not prove the first part, this is \cite[6.8]{HKR}, see also \cite[6.5]{HKR}.
@@ -435,6 +436,7 @@ The second be will proven later.
 		&= p^{-1} E^*\left(\EG \times_G X\right)
 	\end{align*}
 	So indeed $p^{-1} E^*\left(\EG \times_G X\right) \xrightarrow{\sim} \cl[n,p]{G,X; L}^{\aut \left(\Lambda\right)}$ is an isomorphism.
+	(The exact same proof works when $L$ is replaced with $L_r$, for $r \geq r_0$.)
 \end{proof}
 
 
@@ -444,7 +446,7 @@ The second be will proven later.
 Our next goal is to proof the second part of \ref{theorem-c}.
 That is, for a finite group $G$ and a finite $G$-CW complex $X$, the character map becomes an isomorphism after tensoring with $L$, i.e.
 $\chinpG \otimes L: E^*\left(\EG \times_G X\right) \otimes_{E^*} L \xrightarrow{\sim} \cl[n,p]{G,X; L}$
-is an isomorphism.
+is an isomorphism, and the same with $L$ replace with $L_r$, for $r \geq r_0$.
 One may wonder why we had to introduce the $G$-space $X$ into the construction, in order to prove the case of interest, $X = *$.
 The reason is, that there is a trick, called \emph{complex oriented descent}, that allows us to reduce to the of $G$-spaces $X$ with \emph{abelian stabilizers}.
 Using this and some further ideas we reduce to the case where $G$ is abelian, and $X = *$.
@@ -587,9 +589,10 @@ The reason complex oriented descent is useful is the following.
 
 
 
-\subsection{Proof of the Main Theorem}
+\subsection{Proof of the Main Theorem, \ref{theorem-c}}
 
 We are going to use the previous results to prove the main theorem, \ref{theorem-c}.
+The whole proof will work for $L$ replaced by $L_r$, for $r \geq r_0$, without a change.
 Recall that we have already proved the third part, and we are not going to prove the first.
 Therefore, what is left to prove is that 
 $\chinpG \otimes L: E^*\left(\EG \times_G X\right) \otimes_{E^*} L \xrightarrow{\sim} \cl[n,p]{G,X; L}$
@@ -618,6 +621,25 @@ We also denote by $\tau\left(G, X\right)$ the character map $\chinpG \otimes L$ 
 	The Borel construction $X \mapsto \EG \times_G X$ is a limit, and so are fixed points, so they commute with pushouts.
 	Therefore, the usual pushouts that induce Mayer-Vietories, give Mayer-Vietories for our functors.
 	Moreover, the definition makes it clear that the character map commutes with the connecting morphisms.
+\end{proof}
+
+\begin{lemma}
+	Both functors $C^*$ and $D^*$ satisfy complex oriented descent.
+\end{lemma}
+
+\begin{proof}
+	Hopkins, Kuhn and Ravenel actually prove in \cite[2.5]{HKR} that any complex oriented cohomology theory (and not only the cohomology theories of interest to us, namely Lubin-Tate) satisfies complex oriented descent.
+	\todo{consider proving}
+	
+	Let $\xi$ be a $G$-vector bundle over $X$.
+	
+	Then $\EG \times_G \xi$ is a $G$-vector bundle on $\EG \times_G X$, and it satisfies $F\left(\EG \times_G \xi\right) \cong \EG \times_G F\left(\xi\right)$.
+	Then the fact that $E^*$ satisfies complex oriented descent, and that $L$ is flat, imply that $C^*$ satisfies complex oriented descent.
+	
+	Moreover, in \cite[2.6]{HKR}, they prove that for an abelian subgroup, $A \leq G$, the diagram $X^A \leftarrow F\left(\xi\right)^A \leftleftarrows F\left(\xi\right)^A \times_{X^A} F\left(\xi\right)^A$ gives an equalizer diagram in $E^*$-cohomology.
+	In the situation of $D^*$, we use the result for $A = \im \alpha$ which is indeed abelian by the fact they are $n$-commuting elements (equivalently, by the fact that it is the image of an abelian group).
+	Equalizers, which are limits, commute with limits, and therefore commute with products and taking $G$-fixed points.
+	Using this, and the flatness of $L$ again, we deduce, by \ref{Lr-Fix}, that $D^*$ satisfies complex oriented descent as well.
 \end{proof}
 
 \begin{lemma}
@@ -726,4 +748,45 @@ We also denote by $\tau\left(G, X\right)$ the character map $\chinpG \otimes L$ 
 	In conclusion, we do have a well defined element $\left[g, g^{-1} \alpha, y\right]$, which is mapped to $\left(\alpha, \left[g, y\right]\right)$.
 	
 	It is clear that the map $\varphi$ is continuous, and so is its inverse $\left[g, g^{-1} \alpha, y\right] \mapsto \left(\alpha, \left[g, y\right]\right)$, which shows that indeed $D^*$ satisfies induction.
+\end{proof}
+
+\begin{lemma}
+	$\tau\left(A, *\right)$ is an isomorphism for all abelian groups $A$.
+\end{lemma}
+
+\begin{proof}
+	We need to verify that
+	$
+	\chi_{n,p}^A:
+	E^*\left(\BB[A]\right) \otimes_{E^*} L
+	\to \cl[n,p]{A; L}
+	$
+	is an isomorphism for abelian groups $A$.
+	
+	By \ref{E-B-abelian}, we have Kunneth for $E^*\left(\BB[A]\right)$, so it takes direct sums in the $A$ to tensor products.
+	
+	For an abelian group, the $A$-action on $A_{n,p}$ is trivial (since it is by conjugation).
+	Therefore,
+	$
+	\cl[n,p]{A; L}
+	= \hom_{A\Set}\left(A_{n,p}, L\right)
+	= \hom_{\Set}\left(A_{n,p}, L\right)
+	= \hom_{\Set}\left(\hom_{\Ab}\left(\Lambda, A\right), L\right)
+	$.
+	The $\hom_{\Ab}\left(\Lambda, A\right)$ commutes with direct sums in the second coordinate, and the outer $\hom_{\Set}$ takes them to the tensor product.
+	
+	We see that both functors take direct sums to tensor products, so we by the structure theorem for abelian groups, we reduce to the case $\ZZ/q^k$ for a prime $q$.
+	
+	First we handle the case $q \neq p$.
+	Again by \ref{E-B-abelian}, $E^*\left(\BB[\ZZ/q^k]\right)$ is a free module of rank $1$, so the source of $\chi_{n,p}^{\ZZ/q^k}$ is $L$.
+	Moreover, $\hom_{\Ab}\left(\Lambda, \ZZ/q^k\right)$ has only the trivial homomorphism, so $\cl[n,p]{\ZZ/q^k; L} = L$.
+	It is easy to see that this is indeed an isomorphism then.
+	
+	Now for the case $q = p$.
+	In this case, $\left(\ZZ/p^k\right)_{n,p}$, i.e. $n$-commuting $p$-power-torsion elements, is just $n$ elements, so it is canonically isomorphic to $\left(\ZZ/p^k\right)^n = \Lambda_k$.
+	Then $\chi_{n,p}^{\ZZ/p^k}$ is the canonical morphism $E^*\left(\BB[\Lambda_k]\right) \otimes L \to \hom_{\Set}\left(\Lambda_k, L\right)$.
+\end{proof}
+
+\begin{proof}[Proof (of the second part of \ref{theorem-c})]
+	Follows immediately by combining the previous lemmas and \ref{cmplx-oriented-natural-transformation}.
 \end{proof}
