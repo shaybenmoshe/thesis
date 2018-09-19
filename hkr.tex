@@ -409,7 +409,7 @@ Since $p$ is invertible in $L$, and $\aut \left(\Lambda\right)$ doesn't change $
 We are now in position to state the main theorem.
 This should remind you of \ref{char-1} and \ref{char-2}.
 
-\begin{theorem}[{\cite[Theorem C]{HKR}}]
+\begin{theorem}[{\cite[Theorem C]{HKR}}]\label{theorem-c}
 	First, $L^{\aut \left(\Lambda\right)} = p^{-1} E^*$, and $L$ is faithfully flat over it.
 	Secondly, After tensoring with $L$, the character map
 	$\chinpG \otimes L: E^*\left(\EG \times_G X\right) \otimes_{E^*} L \to \cl[n,p]{G,X; L}$
@@ -435,4 +435,67 @@ The second be will proven later.
 		&= p^{-1} E^*\left(\EG \times_G X\right)
 	\end{align*}
 	So indeed $p^{-1} E^*\left(\EG \times_G X\right) \to \cl[n,p]{G,X; L}^{\aut \left(\Lambda\right)}$ is an isomorphism.
+\end{proof}
+
+
+
+\subsection{The Idea of the Proof and Complex Oriented Descent}
+
+Our next goal is to proof the second part of \ref{theorem-c}.
+That is, for a finite group $G$ and a finite $G$-CW complex $X$, the character map becomes an isomorphism after tensoring with $L$, i.e.
+$\chinpG \otimes L: E^*\left(\EG \times_G X\right) \otimes_{E^*} L \to \cl[n,p]{G,X; L}$
+is an isomorphism.
+One may wonder why we had to introduce the $G$-space $X$ into the construction, in order to prove the case of interest, $X = *$.
+The reason is, that there is a trick, called \emph{complex oriented descent}, that allows us to reduce to the of $G$-spaces $X$ with \emph{abelian stabilizers}.
+Using this and some further ideas we reduce to the case where $G$ is abelian, and $X = *$.
+That is, introducing the space $X$ into the construction, allows us to reduce the statement to abelian groups.
+
+To be more explicit, this is the strategy.
+We will consider the character map as a natural transformation between functors of pairs $\left(G, X\right)$, and then we will follow these steps:
+\begin{itemize}
+	\item Use complex oriented descent to reduce to $X$ with abelian stabilizers,
+	\item Use Mayer-Vietoris to reduce to spaces $X = D^n \times G/A$ with $A$ abelian,
+	\item Use homotopy invariance to reduce to $X = G/A$,
+	\item Use induction to reduce from $\left(G, G/A\right)$ to $\left(A, *\right)$
+	\item Use Kunneth and multiplicativity to reduce to $\left(\ZZ/{q^t}, *\right)$,
+	\item Prove for $\left(\ZZ/{q^t}, *\right)$.
+\end{itemize}
+
+We move on to introducing the idea of complex oriented descent.
+We will need some definitions before that.
+
+\begin{definition}
+	Let $\xi$ be a $d$-dimensional complex vector bundle over a space $X$.
+	The \emph{flag bundle} $F\left(\xi\right) \to X$ is the bundle of complete flags in $\xi$.
+\end{definition}
+
+The fiber over a point can be described as an (ordered) $d$-tuple $\left(\ell_1, \dotsc, \ell_d\right)$ of orthogonal lines.
+To define it precisely, we can take the $d$-fold power of the projective bundle $P\left(\xi\right)$, and restrict to the sub-bundle of orthogonal lines.
+We note that for a trivial bundle $X \times V \to X$, we have $F\left(X \times V\right) \cong X \times F\left(V\right)$, i.e. the flags are computed fiber-wise.
+
+\begin{definition}
+	Let $C^*: \Spaces^\op \to \GrAb$ be a contra-variant functor from spaces to graded abelian groups.
+	$C^*$ is said to satisfy \emph{complex oriented descent},
+	if for every space $X$ and bundle $\xi$ over $X$, the diagram
+	$X \leftarrow F\left(\xi\right) \leftleftarrows F\left(\xi\right) \times_X F\left(\xi\right)$,
+	is sent to an equalizer
+	$C^*\left(X\right) \to C^*\left(F\left(\xi\right)\right) \rightrightarrows C^*\left(F\left(\xi\right) \times_X F\left(\xi\right)\right)$.
+\end{definition}
+
+We note that if $\xi$ is a $G$-vector bundle over the $G$-space $X$, then $F\left(\xi\right) \to X$ is also a $G$-bundle, since $G$ acts unitarily.
+We also recall that every finite group $G$ has a faithful finite dimensional complex representation.
+The reason complex oriented descent is useful is the following.
+
+\begin{proposition}
+	Let $X$ be a $G$-space, and let $\rho: G \to V$ be a faithful representations.
+	Then the $G$-space $F\left(X \times V\right) = X \times F\left(V\right)$ has abelian stabilizer.
+\end{proposition}
+
+\begin{proof}
+	Let $\left(x, \left(\ell_i\right)\right)$ be a point in $X \times F\left(V\right)$.
+	We wish to show that its stabilizer is abelian.
+	Let $g,h \in G$ be two elements which fix the point, that is, $g.x = x = h.x$ and $\rho\left(g\right)\left(\ell_i\right) = \ell_i = \rho\left(h\right)\left(\ell_i\right)$.
+	We see that the linear transformations $\rho\left(g\right): V \to V$ and $\rho\left(h\right): V \to V$ are simultaneously diagonalizable w.r.t to the decomposition $\left(\ell_i\right)$ of $V$.
+	Therefore, by a classical result in linear algebra, they commute, $\rho\left(g\right) \rho\left(h\right) = \rho\left(h\right) \rho\left(g\right)$, i.e. $\rho\left(gh\right) = \rho\left(hg\right)$.
+	Since $\rho$ is faithful, we get that $gh = hg$.
 \end{proof}
