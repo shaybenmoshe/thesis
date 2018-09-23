@@ -211,11 +211,11 @@ The first classical theorem regarding the relationship between characters and cl
 
 By definition the value of a character is the trace of a linear transformation $\chi_\rho\left(g\right) = \tr \rho\left(g\right) = \sum \lambda_i$ where $\lambda_i$ are the eigenvalues (which exist since the representation is unitary).
 Since $g^{\left|G\right|} = e$, we get $\rho\left(g^{\left|G\right|}\right) = \rho\left(e\right) = \id$, but then we get that the eigenvalues of $\rho\left(g^{\left|G\right|}\right)$ are on the one hand $\lambda_i^{\left|G\right|}$ and on the other hand they are all $1$, which means that all the eigenvalues are roots of unity.
-Therefore $L = \mbb{Q}^\mrm{ab} = \mbb{Q}\left(\zeta_\infty\right)$ is always a valid choice for $L$ (regardless of $G$).
+Therefore $L = \QQ^\mrm{ab} = \QQ\left(\zeta_\infty\right)$ is always a valid choice for $L$ (regardless of $G$).
 To be concrete, we will take this choice.
 
-The Galois group of $\mbb{Q}^\mrm{ab}$ is $\Gal\left(\Qab / \mbb{Q}\right) \cong {\hat\ZZ}^\times$.
-For every $m \in {\hat\ZZ}^\times$ we also denote by $m \in \Gal\left(\Qab / \mbb{Q}\right)$ the corresponding element, which can be described as the homomorphism which raises a root of unity to the power of $m$.
+The Galois group of $\QQ^\mrm{ab}$ is $\Gal\left(\Qab / \QQ\right) \cong {\hat\ZZ}^\times$.
+For every $m \in {\hat\ZZ}^\times$ we also denote by $m \in \Gal\left(\Qab / \QQ\right)$ the corresponding element, which can be described as the homomorphism which raises a root of unity to the power of $m$.
 Similarly it acts on $G$ by taking $g$ to $g^m$.
 Then, for every such $m$ and $g$ we have that
 $
@@ -226,7 +226,7 @@ $
 = m. \left(\chi_\rho\left(g\right)\right)
 $.
 We replace $g$ with $g^{m^{-1}}$ ($m$ is invertible), and rewrite this as $\chi_\rho\left(g\right) = m. \left(\chi_\rho\left(g^{m^{-1}}\right)\right)$.
-Similarly to this equality, we can define an action of $\Gal\left(\Qab / \mbb{Q}\right)$ on $\cl{G; \Qab}$, by taking a class function $f$ to $m.f$ defined by $\left(m.f\right)\left(g\right) = m. \left(f\left(g^{m^{-1}}\right)\right)$.
+Similarly to this equality, we can define an action of $\Gal\left(\Qab / \QQ\right)$ on $\cl{G; \Qab}$, by taking a class function $f$ to $m.f$ defined by $\left(m.f\right)\left(g\right) = m. \left(f\left(g^{m^{-1}}\right)\right)$.
 
 Let us rewrite this action in another way, which will be helpful in the next section.
 We note that $G \cong \hom_{\TopGrp}\left(\hat\ZZ, G\right)$ (continuous homomorphisms).
@@ -235,13 +235,13 @@ Concretely, $m \in {\hat\ZZ}^\times$ acts by sending $g \in G$ to $g^m$.
 Since ${\hat\ZZ}^\times$ acts on $\Qab$, we get an action on $\cl{G; \Qab} = \hom_{\GSet}\left(G,  \Qab\right)$ by acting with $m^{-1}$ in the source and with $m$ in the target.
 It is evident that this is the same action from the previous paragraph.
 
-As we just saw, the characters are in the fixed points $\cl{G; \Qab}^{\Gal\left(\Qab / \mbb{Q}\right)}$.
+As we just saw, the characters are in the fixed points $\cl{G; \Qab}^{\Gal\left(\Qab / \QQ\right)}$.
 Also, since the rationals are fixed by the action of the Galois group, rational linear combinations of characters are in the fixed points.
-We therefore conclude that the character map after tensoring with $\mbb{Q}$ lands in the fixed points, i.e. $\chi \otimes \mbb{Q}: \RG \otimes \mbb{Q} \to \cl{G; \Qab}^{\Gal\left(\Qab / \mbb{Q}\right)}$.
+We therefore conclude that the character map after tensoring with $\QQ$ lands in the fixed points, i.e. $\chi \otimes \QQ: \RG \otimes \QQ \to \cl{G; \Qab}^{\Gal\left(\Qab / \QQ\right)}$.
 Moreover, the second classical theorem is:
 
 \begin{theorem}[{\cite[Theorem 25]{Ser}}]\label{char-2}
-	The map $\chi \otimes \mbb{Q}: \RG \otimes \mbb{Q} \xrightarrow{\sim} \cl{G; \Qab}^{\Gal\left(\Qab / \mbb{Q}\right)}$ is an isomorphism.
+	The map $\chi \otimes \QQ: \RG \otimes \QQ \xrightarrow{\sim} \cl{G; \Qab}^{\Gal\left(\Qab / \QQ\right)}$ is an isomorphism.
 \end{theorem}
 
-To conclude, \ref{char-1} tells us that $\RG \otimes \Qab \cong \cl{G; \Qab}$, and \ref{char-2} tells us that $\RG \otimes \mbb{Q} \cong \cl{G; \Qab}^{\Gal\left(\Qab / \mbb{Q}\right)}$.
+To conclude, \ref{char-1} tells us that $\RG \otimes \Qab \cong \cl{G; \Qab}$, and \ref{char-2} tells us that $\RG \otimes \QQ \cong \cl{G; \Qab}^{\Gal\left(\Qab / \QQ\right)}$.

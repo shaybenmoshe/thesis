@@ -227,7 +227,6 @@ Clearly $\aut\left(\Lambda_r\right)$ acts on $E^*\left(\BB[\Lambda_r]\right)$, b
 
 \todo{Don't forget to correct the thesis... I used $\sum$ rather than $\sum_F$.}
 
-
 Using the projection $\pi_r: \aut\left(\Lambda\right) \to \aut\left(\Lambda_r\right)$ we endow $L_r$ with a $\aut\left(\Lambda\right)$-action.
 By factoring the projection through $\aut\left(\Lambda_{r+1}\right)$, we see that the map $L_r \to L_{r+1}$ is equivariant with respect to that action.
 In conclusion:
@@ -236,6 +235,55 @@ In conclusion:
 	The rings $L_r$ have an $\aut\left(\Lambda\right)$-action, and the maps $L_r \to L_{r+1}$ are equivariant with respect to this action.
 	Therefore $L$ has an $\aut\left(\Lambda\right)$-action as well.
 \end{proposition}
+
+One may wonder if the ring $L_r$ is the zero ring.
+An argument in \cite{HKR} shows that this isn't the case, and even more is true.
+
+\begin{proposition}[{\cite[6.5, 6.6, 6.8]{HKR}}]\label{Lr-fixed-points}
+	The element $p$ is invertible in $L$, so $L$ is a $p^{-1} E^*$-module.
+	Furthermore, $L^{\aut \left(\Lambda\right)} = p^{-1} E^*$, and $L$ is faithfully flat over it.
+	Moreover, this holds when $L$ is replaced with $L_r$.
+\end{proposition}
+
+\begin{example}
+	We continue with complex K-theory.
+	Recall from \ref{k-thy-comp-defo} that $\K_p^\wedge \cong \E{\Fp, \Gamma}$, where $\Gamma$ is the multiplicative formal group law, $\Gamma\left(y,z\right) = y + z$.
+	That is, $p$-complete K-theory is a Lubin-Tate spectrum at height $n = 1$, so the the construction above applies to it.
+	The computation that follows should be related to Atiyah-Segal, although there we considered $\K$ itself, and here $\K_p^\wedge$.
+	
+	In \ref{k-thy-comp-left}, we saw that $\left(\K_p^\wedge\right)_* = \ZZ_p\left[\beta^{\pm 1}\right]$.
+	As in the beginning of \ref{k-thy-fgl}, it will be easier to work with the element $t = \beta^{-1} x$ which lives in degree $0$, rather than with $x$, and by the invertibility of $\beta$, this will not affect the result.
+	That is, we are working with the ring $\ZZ_p\left[\beta^{\pm 1}\right]\formal{t}$, and the formal group law $u + v + uv$.
+	The $n$-series then is $\left[n\right]\left(t\right) = \left(1 + t\right)^n - 1$.
+	Since this does not involve $\beta$ anymore, we will only consider the $0$-grading, and the whole ring is obtained by formally adjoining $\beta^{\pm 1}$ at degree $2$.
+	
+	In our case $\Lambda_r = \ZZ/p^r$, and we have
+	$
+	\left(\K_p^\wedge\right)^0\left(\BB[\ZZ/p^r]\right)
+	\cong \ZZ_p\formal{t}/\left(\left[p^r\right]\left(t\right)\right)
+	\cong \ZZ_p\formal{t}/\left(\left(1 + t\right)^{p^r} - 1\right)
+	$.
+	This shows that the homomorphism induced by the inclusion of the same ring with $\formal{t}$ replaced by $\left[t\right]$ is an isomorphism, so the ring is isomorphic to
+	$
+	\ZZ_p\left[t\right]/\left(\left(1 + t\right)^{p^r} - 1\right)
+	\cong \ZZ_p\left[s\right]/\left(s^{p^r} - 1\right)
+	$
+	where we changed variables $s = 1+t$.
+	Under this change of variables, $S_r = \left\{s^k - 1 \mid 0 < k < p^r\right\}$.
+	
+	By \ref{Lr-fixed-points}, $p$ is invertible in the localization, so might as well invert it before inverting $S_r$.
+	We then denote $R = \QQ_p\left[s\right]/\left(s^{p^r} - 1\right)$, and we are trying to compute ${S_r}^{-1} R$.
+	Denote by $\Phi_k\left(s\right)$ the $k$-th cyclotomic polynomial, and by $\zeta_k$ a primitive $k$-th root of unity.
+	We claim that the quotient map $R \to \QQ_p\left[s\right]/\left(\Phi_{p^r}\right) \cong \QQ_p\left(\zeta_{p^r}\right)$, admits the target the $S_r$-localization of the source.
+	First, note that $s^k-1$ is sent to $\zeta_{p^r}^k - 1$, so for $0 < k < p^r$ this is not zero (for $\zeta_{p^r}$ is a primitive root of unity of order $p^r$), and since the target is a field, this is invertible, so there is indeed a map ${S_r}^{-1} R \to \QQ_p\left[s\right]/\left(\Phi_{p^r}\right)$.
+	
+	On the other hand, look at the map $\QQ_p\left[s\right] \to {S_r}^{-1} R$.
+	Recall that $s^{p^r} - 1 = \Phi_{p^r}\left(s\right) \left(s^{p^{r-1}} - 1\right)$, and $\left(s^{p^r} - 1\right)$ is a unit in the target, multiplying by its inverse, we also get that $\Phi_{p^r}\left(s\right)$ is zero in ${S_r}^{-1} R$.
+	Therefore, the map actually factors to a map $\QQ_p\left[s\right]/\left(\Phi_{p^r}\right) \to {S_r}^{-1} R$, which is clearly an inverse to the map above.
+	
+	We conclude that our ring is $\QQ_p\left(\zeta_{p^r}\right)$, at degree $0$, and the whole graded ring is $L_r = \QQ_p\left(\zeta_{p^r}\right)\left[\beta^{\pm 1}\right]$.
+	From this it is also easy to see that $L = \QQ_p\left(\zeta_{p^\infty}\right)\left[\beta^{\pm 1}\right]$.
+\end{example}
 
 
 
@@ -403,25 +451,23 @@ We are now in position to state the main theorem.
 This should remind you of \ref{char-1} and \ref{char-2}.
 
 \begin{theorem}[{\cite[Theorem C]{HKR}}]\label{theorem-c}
-	First, $L^{\aut \left(\Lambda\right)} = p^{-1} E^*$, and $L$ is faithfully flat over it.
-	Secondly, After tensoring with $L$, the character map
+	First, after tensoring with $L$, the character map
 	$\chinpG \otimes L: E^*\left(\EG \times_G X\right) \otimes_{E^*} L \xrightarrow{\sim} \cl[n,p]{G,X; L}$
 	becomes an isomorphism.
-	Thirdly, the map
+	Second, the map
 	$p^{-1}\chinpG: p^{-1} E^*\left(\EG \times_G X\right) \xrightarrow{\sim} \cl[n,p]{G,X; L}^{\aut \left(\Lambda\right)}$
 	is an isomorphism.
-	Moreover, all of these statements hold when $L$ is replaced with $L_r$, for $r \geq r_0$.
+	Moreover, these statements hold when $L$ is replaced with $L_r$, for $r \geq r_0$.
 \end{theorem}
 
-We will not prove the first part, this is \cite[6.8]{HKR}, see also \cite[6.5]{HKR}.
-The second be will proven later.
+The first part will be proven later.
 
-\begin{proof}[Proof (of the third part)]
-	Look at the isomorphism from the second part,
+\begin{proof}[Proof (of the second part)]
+	Using the isomorphism from the first part,
 	$E^*\left(\EG \times_G X\right) \otimes_{E^*} L \xrightarrow{\sim} \cl[n,p]{G,X; L}$.
 	Endowing the source with $\aut \left(\Lambda\right)$-action by acting only on $L$, makes it equivariant.
 	Therefore, there is an isomorphism on the fixed points.
-	Using $L^{\aut \left(\Lambda\right)} = p^{-1} E^*$, the fixed points on the source are:
+	Using $L^{\aut \left(\Lambda\right)} = p^{-1} E^*$, from \ref{Lr-fixed-points}, the fixed points on the source are:
 	\begin{align*}
 		\left(E^*\left(\EG \times_G X\right) \otimes_{E^*} L\right)^{\aut \left(\Lambda\right)}
 		&= E^*\left(\EG \times_G X\right) \otimes_{E^*} L^{\aut \left(\Lambda\right)}\\
@@ -436,7 +482,7 @@ The second be will proven later.
 
 \subsection{The Idea of the Proof and Complex Oriented Descent}
 
-Our next goal is to proof the second part of \ref{theorem-c}.
+Our next goal is to proof the first part of \ref{theorem-c}.
 That is, for a finite group $G$ and a finite $G$-CW complex $X$, the character map becomes an isomorphism after tensoring with $L$, i.e.
 $\chinpG \otimes L: E^*\left(\EG \times_G X\right) \otimes_{E^*} L \xrightarrow{\sim} \cl[n,p]{G,X; L}$
 is an isomorphism, and the same with $L$ replace with $L_r$, for $r \geq r_0$.
@@ -586,7 +632,7 @@ The reason complex oriented descent is useful is the following.
 
 We are going to use the previous results to prove the main theorem, \ref{theorem-c}.
 The whole proof will work for $L$ replaced by $L_r$, for $r \geq r_0$, without a change.
-Recall that we have already proved the third part, and we are not going to prove the first.
+Recall that we have already proved the second part.
 Therefore, what is left to prove is that 
 $\chinpG \otimes L: E^*\left(\EG \times_G X\right) \otimes_{E^*} L \xrightarrow{\sim} \cl[n,p]{G,X; L}$
 is an isomorphism.
@@ -715,7 +761,7 @@ We also denote by $\tau\left(G, X\right)$ the character map $\chinpG \otimes L$ 
 	
 	Lastly, we show that it is surjective, which is the only step which is not routine.
 	Let $\left(\alpha, \left[g, y\right]\right)$, i.e. $\alpha \in \Gnp$, $\left[g, y\right] \in \left(G \times_H Y\right)^{\im \alpha}$.
-	We claim that if such a triple exists, i.e. the fixed points are not empty, the necessarily $g^{-1}. \alpha \in H_{n,p}$.
+	We claim that if such a triple exists, i.e. the fixed points are not empty, then necessarily $g^{-1}. \alpha \in H_{n,p}$.
 	Assume by negation that there is some $\gamma \in \im g^{-1}. \alpha$ which is not in $H$.
 	Since it is in $g \gamma g^{-1} \im \alpha$, it fixes $\left[g, y\right]$, but then
 	$
@@ -780,6 +826,6 @@ We also denote by $\tau\left(G, X\right)$ the character map $\chinpG \otimes L$ 
 	Then $\chi_{n,p}^{\ZZ/p^k}$ is the canonical morphism $E^*\left(\BB[\Lambda_k]\right) \otimes L \to \hom_{\Set}\left(\Lambda_k, L\right)$.
 \end{proof}
 
-\begin{proof}[Proof (of the second part of \ref{theorem-c})]
+\begin{proof}[Proof (of the first part of \ref{theorem-c})]
 	Follows immediately by combining the previous lemmas and \ref{cmplx-oriented-natural-transformation}.
 \end{proof}
