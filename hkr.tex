@@ -9,7 +9,7 @@ Their paper contains a lot of results, but we will concentrate on Theorem C.
 Fix some finite group $G$.
 Similarly to the proof Atiyah-Segal theorem, the actual proof of Theorem C involves a general construction, even to prove the specific case we are interested, but it will be easier to state it first for the specific case.
 Let $E = \E{k, \Gamma}$ be the Lubin-Tate spectrum from \ref{LT-spectrum}, for some field $k$ of characteristic $p$, and $\Gamma$ a formal group law over $k$ of height $n$.
-We will also denote by $F$ the formal group law on $E$ (which is $u \Gamma_U$, as in \ref{LT-spectrum}).
+We will also denote by $F$ the formal group law on $E_*$ (which is $u \Gamma_U$, as in \ref{LT-spectrum}).
 There is some ring $L = L\left(E^*\right)$ (which depends on the spectrum $E$).
 It is then possible define some generalized characters $\cl[n,p]{G; L}$, which are completely algebraic and combinatorial (besides the definition of the ring $L$).
 Lastly, there is a character map $\chinpG: E^*\left(\BG\right) \to \cl[n,p]{G; L}$.
@@ -194,9 +194,9 @@ We wish to describe the above construction with coordinates, to make it more exp
 Recall that $E^*\left(\BB[\Lambda_r]\right) \cong E^*\formal{x_1, \dotsc, x_n}/\left(\left[p^r\right]\left(x_1\right), \dotsc, \left[p^r\right]\left(x_n\right)\right)$ by \ref{E-B-abelian}.
 Let $\Lambda_r \overset{\alpha}{\to} S^1$ be a homomorphism.
 Since it lands in the $p^r$-torsion, it factors as $\Lambda_r \overset{k}{\to} \ZZ/{p^r} \overset{\psi_{p^r}}{\to} \UU[1]$, where $k$ is given on the $i$-th coordinate by multiplication-by-$k_i$.
-The condition $\alpha \neq 1$ amounts to the condition $\left(k_1, \dotsc, k_n\right) \neq 0$.
+The condition $\alpha \neq 1$ amounts to the condition $\left(k_1, \dotsc, k_n\right) \neq 0 \mod p^r$.
 By \ref{E-B-map-cyclic}, the induced map is given by $\BB[\alpha]^*\left(x\right) = \sum_F [k_i]\left(x_i\right)$.
-Therefore $S_r = \left\{ \sum_F [k_i]\left(x_i\right) \mid \left(k_1, \dotsc, k_n\right) \neq 0\right\}$.
+Therefore $S_r = \left\{ \sum_F [k_i]\left(x_i\right) \mid \left(k_1, \dotsc, k_n\right) \neq 0 \mod p^r\right\}$.
 
 \begin{proposition}
 	The map $E^*\left(\BB[\Lambda_r]\right) \to E^*\left(\BB[\Lambda_{r+1}]\right)$ induced by the projection $\Lambda_{r+1} \to \Lambda_r$, lifts to a map $L_r \to L_{r+1}$.
@@ -246,6 +246,33 @@ An argument in \cite{HKR} shows that this isn't the case, and even more is true.
 	Moreover, this holds when $L$ is replaced with $L_r$.
 \end{proposition}
 
+\begin{remark}[Algebro-geometric interpretation of $L_r$]\label{alg-geo-Lr}
+	First we wish to simplify the situation a little bit.
+	Recall from \ref{LT-spectrum} that we have a formal group law $F = u \Gamma_U$ over $\E{k, \Gamma}_* = \Wkuiu$.
+	This came from the computation $\E{k, \Gamma}_*\left(\BU[1]\right) = \E{k, \Gamma}_* \formal{x}$ with $\left|x\right| = 2$.
+	It will be more convenient to work with $t = u^{-1} x$, which lives in degree $0$, similarly to \ref{k-thy-fgl}.
+	On these elements, the formal group law acts the same as $\Gamma_U$.
+	By the invertibility of $u$, we can do the computation of $L_r$ with these elements, and the results will not be affected.
+	Moreover, since everything is defined already over $E^0 = \Wkui$, we can do all the computations over it, which will give the ring $L_r^0$, the $0$-th degree part of $L_r$, and add $u^{\pm 1}$ at the end to get $L_r$.
+	
+	The formal group law $\Gamma_U$ over $E^0$, gives a formal group $\fG = \spf E^0\formal{t}$ with multiplication $\fG \times \fG \to \fG$.
+	By definition, the $p^r$-torision elements in $\fG$, is the scheme-theoretic kernel of the multiplication-by-$p^r$ map $\left[p^r\right]: \fG \to \fG$, that is $\fG\left[p^r\right] = \spec\left(R\formal{t}/\left(\left[p^r\right]\left(t\right)\right)\right) = \spec E^0\left(\BB[\ZZ / p^r]\right)$.
+	Since $\Gamma_U$ is of height $n$, the leading term of the $p^r$-series, has power $p^r$, which shows that the number of points in $\fG\left[p^r\right]$ is $p^r$, so as a group it is just $\ZZ/p^r$. \todo{right?}
+	We now see that $\spec E^0\left(\BB[\Lambda_r]\right) = \left(\fG\left[p^r\right]\right)^n$.
+	
+	Inverting $S_r$ is equivalent to inverting their $0$-th graded analogues $S_r^0 = \left\{ \sum_{\Gamma_U} [k_i]\left(t_i\right) \mid \left(k_1, \dotsc, k_n\right) \neq 0 \mod p^r\right\}$.
+	Algebro-geometrically, this is equivalent to restricting to the open subset where all the functions $\sum_{\Gamma_U} [k_i]\left(t_i\right)$ don't vanish (recall that the value depends only the values of $k_i$ modulo $\ZZ/p^r$).
+	That is, $L_r^0$ is the open subset of $n$-points in $\fG\left[p^r\right]$, that is $p^r$-torsion, which are linearly independent.
+	Since, $\fG\left[p^r\right]$ as a group is $\ZZ/p^r$, this means that the $n$ points are a basis for a group $\Lambda_r$.
+	
+	Moreover, if $\sum_{\Gamma_U} [k_i]\left(t_i\right) = 0$ then also $\sum_{\Gamma_U} [p k_i]\left(t_i\right) = \left[p\right]\left(\sum_{\Gamma_U} [k_i]\left(t_i\right)\right) = 0$.
+	So, if any $p k_i$ is not $0$ modulo $p^r$, inverting $\sum_{\Gamma_U} [p k_i]\left(t_i\right)$ already inverts $\sum_{\Gamma_U} [k_i]\left(t_i\right)$.
+	Well, $p k_i = 0 \mod p^r$ if and only if $k_i = 0 \mod p^{r-1}$, which shows that we can invert only those where $k_i$ is a multiple of $p^{r-1}$.
+	Since there are $n$ $k_i$'s, each of them can take any of $p$ values (numbers which are a multiple of $p^{r-1}$), and not all $0$, we need to invert only $p^n - 1$ elements.
+	
+	The description of $L_r^0$ as a basis for $\Lambda_r$ also shows clearly where the action of $\aut \left(\Lambda_r\right)$ comes from, it just changes by multiplying by an invertible matrix.
+\end{remark}
+
 \begin{example}\label{k-thy-Lr}
 	We continue with complex K-theory.
 	Recall from \ref{k-thy-comp-defo} that $\K_p^\wedge \cong \E{\Fp, \Gamma}$, where $\Gamma$ is the multiplicative formal group law, $\Gamma\left(y,z\right) = y + z$.
@@ -253,10 +280,8 @@ An argument in \cite{HKR} shows that this isn't the case, and even more is true.
 	The computation that follows should be related to Atiyah-Segal, although there we considered $\K$ itself, and here $\K_p^\wedge$.
 	
 	In \ref{k-thy-comp-left}, we saw that $\left(\K_p^\wedge\right)_* = \ZZ_p\left[\beta^{\pm 1}\right]$.
-	As in the beginning of \ref{k-thy-fgl}, it will be easier to work with the element $t = \beta^{-1} x$ which lives in degree $0$, rather than with $x$, and by the invertibility of $\beta$, this will not affect the result.
-	That is, we are working with the ring $\ZZ_p\left[\beta^{\pm 1}\right]\formal{t}$, and the formal group law $u + v + uv$.
+	As in \ref{alg-geo-Lr}, it is easier to work with the element $t = \beta^{-1} x$ and the formal group law $u + v + uv$ over $\left(\K_p^\wedge\right)_0 = \ZZ_p$.
 	The $n$-series then is $\left[n\right]\left(t\right) = \left(1 + t\right)^n - 1$.
-	Since this does not involve $\beta$ anymore, we will only consider the $0$-grading, and the whole ring is obtained by formally adjoining $\beta^{\pm 1}$ at degree $2$.
 	
 	In our case $\Lambda_r = \ZZ/p^r$, and we have
 	$
@@ -265,13 +290,12 @@ An argument in \cite{HKR} shows that this isn't the case, and even more is true.
 	\cong \ZZ_p\formal{t}/\left(\left(1 + t\right)^{p^r} - 1\right)
 	$.
 	This shows that the homomorphism induced by the inclusion of the same ring with $\formal{t}$ replaced by $\left[t\right]$ is an isomorphism, so the ring is isomorphic to
-	$
-	\ZZ_p\left[t\right]/\left(\left(1 + t\right)^{p^r} - 1\right)
-	\cong \ZZ_p\left[s\right]/\left(s^{p^r} - 1\right)
-	$
-	where we changed variables $s = 1+t$.
-	Under this change of variables, $S_r = \left\{s^k - 1 \mid 0 < k < p^r\right\}$.
+	$\ZZ_p\left[t\right]/\left(\left(1 + t\right)^{p^r} - 1\right)$.
+	This is in accordance with the view taken in \ref{alg-geo-Lr}, since the scheme corresponding to this are the points where $\left(1 + t\right)^{p^r} = 1$, i.e. when $1 + t$ is $p^r$-torsion under the multiplication $\left(1+u\right)\left(1+v\right) = 1+u+v+uv$, and this is also clearly isomorphic to $\ZZ/p^r$ as a group.
 	
+	To make the computation easier, we change variable $s = 1+t$, to work with the ring
+	$\ZZ_p\left[s\right]/\left(s^{p^r} - 1\right)$
+	Under this change of variables, $S_r = \left\{s^k - 1 \mid 0 < k < p^r\right\}$.
 	By \ref{Lr-fixed-points}, $p$ is invertible in the localization, so might as well invert it before inverting $S_r$.
 	We then denote $R = \QQ_p\left[s\right]/\left(s^{p^r} - 1\right)$, and we are trying to compute ${S_r}^{-1} R$.
 	Denote by $\Phi_k\left(s\right)$ the $k$-th cyclotomic polynomial, and by $\zeta_k$ a primitive $k$-th root of unity.
@@ -282,7 +306,10 @@ An argument in \cite{HKR} shows that this isn't the case, and even more is true.
 	Recall that $s^{p^r} - 1 = \Phi_{p^r}\left(s\right) \left(s^{p^{r-1}} - 1\right)$, and $\left(s^{p^r} - 1\right)$ is a unit in the target, multiplying by its inverse, we also get that $\Phi_{p^r}\left(s\right)$ is zero in ${S_r}^{-1} R$.
 	Therefore, the map actually factors to a map $\QQ_p\left[s\right]/\left(\Phi_{p^r}\right) \to {S_r}^{-1} R$, which is clearly an inverse to the map above.
 	
-	We conclude that our ring is $\QQ_p\left(\zeta_{p^r}\right)$, at degree $0$, and the whole graded ring is $L_r = \QQ_p\left(\zeta_{p^r}\right)\left[\beta^{\pm 1}\right]$.
+	We conclude that our ring is $L_r^0 = \QQ_p\left(\zeta_{p^r}\right)$.
+	This is again in accordance with \ref{alg-geo-Lr}, where the elements $1+t$ are now taken to be roots of unity, that is, each of them forms a basis for the group $\ZZ/p^r$.
+	
+	The whole graded ring is $L_r = \QQ_p\left(\zeta_{p^r}\right)\left[\beta^{\pm 1}\right]$.
 	From this it is also easy to see that $L = \QQ_p\left(\zeta_{p^\infty}\right)\left[\beta^{\pm 1}\right]$.
 \end{example}
 
