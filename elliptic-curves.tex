@@ -1,0 +1,71 @@
+\section{Elliptic Curves}
+
+At this point, one may wonder how we can find interesting pairs $\left(k, \Gamma\right)$, of a perfect field and a formal group law over it, to obtain Lubin-Tate spectra.
+Two simple examples which have already seen are the additive formal group law over $\Fp$, of height $\infty$, which gives rise to $\HH{\Fp}$, and the multiplicative formal group law over $\Fp$, of height $1$, which gives rise to $\K_p^\wedge$.
+Elliptic curves are another source for formal group laws.
+
+
+
+\subsection{Formal Group Laws From Elliptic Curves}
+
+Let $C$ be an elliptic curve over a ring $R$, with $O$ the point at infinity.
+In \cite[IV]{Sil}, there is a construction of a formal group from $C$, obtained by considering the infinitesimal neighborhood of $O$.
+Choosing coordinates gives coordinates to the formal group, i.e. a formal group law denoted by $\Gamma_C$.
+
+Now, assume that $R = k$ is a finite field of characteristic $p$.
+We denote by $C\left[p^r\right]$ the $p^r$-torsion, i.e. the kernel of the multiplication-by-$p^r$ map.
+By \cite[IV.7.5]{Sil} and \cite[V.3.1]{Sil}, we have:
+
+\begin{proposition}
+	The height of $\Gamma_C$ is either $1$ or $2$.
+	Moreover, the height is $2$ if and only if $C\left[p^r\right] = \left\{ O \right\}$ for all $r \geq 1$.
+\end{proposition}
+
+In fact, there are many more equivalent conditions to the above, and we make this into a definition.
+
+\begin{definition}
+	$C$ is called \emph{supersingular} if $\Gamma_C$ is of height $2$.
+\end{definition}
+
+Similarly to the Lubin-Tate deformation theory of formal group laws described in \ref{LT-def}, there is a deformation theory for elliptic curves.
+Denote by $C_U$ the universal deformation of $C$, which is an elliptic curve over some ring $R_U$.
+This has a corresponding formal group law $\Gamma_{C_U}$.
+We then have the following theorem, implied by the Serre-Tate theorem \cite[1.2.1]{ST}.
+
+\begin{theorem}[``$\Gamma_{C_U} = \left({\Gamma_C}\right)_U$"]
+	The formal group law $\Gamma_{C_U}$ over $R_U$, is a universal deformation of $\Gamma_C$ over $k$, in the sense of \ref{LT-def}.
+\end{theorem}
+
+In this case we get a Lubin-Tate spectrum $E = \E{k, \Gamma_C}$ of height $2$.
+We recall from \ref{LT-spectrum} that the coefficients can be taken to be $E_* = \Wk\formal{u_1}\left[u^{\pm 1}\right]$ where $\left|u\right| = 2$, and the formal group law is $u\left(\Gamma_C\right)_U$, which by Serre-Tate can be described by$u \Gamma_{C_U}$.
+
+
+
+\subsection{The Associated Ring $L_r$}
+
+Recall that for the construction of $L_r$ in \ref{Lr} we considered $E^*\left(\BB[\Lambda_r]\right)$.
+In our case, the height is $n = 2$, and we get
+$
+E^*\left(\BB[\Lambda_r]\right)
+\cong E^*\formal{x_1, x_2}/\left(\left[p^r\right]\left(x_1\right), \left[p^r\right]\left(x_2\right)\right)
+$,
+where $\left[p^r\right]$ can is the $p^r$-series of $u \Gamma_{C_U}$.
+Just as in the case of $p$-complete K-theory we saw in \ref{k-thy-Lr}, we can focus on degree $0$, by using the variable $t = u^{-1} u_1$.
+We get the ring $R = \Wk\formal{t}\formal{x_1, x_2}/\left(\left[p^r\right]\left(x_1\right), \left[p^r\right]\left(x_2\right)\right)$, where $\left[p^r\right]$ is the $p^r$-series of $\Gamma_{C_U}$ (instead of $u \Gamma_{C_U}$), which we will denote by $F$ from now on.
+To get $L_r$ at degree $0$, we need to invert $\left[k_1\right]\left(x_1\right) +_F \left[k_2\right]\left(x_2\right)$ for $k_1, k_2$ not both zero modulo $p^r$.
+
+Let's try to understand this construction algebro-geometrically, to get some intuition.
+Denote by $\fG$ the formal group associated to $F$ over $\Wk\formal{t}$, that is $\fG = \spf\left(\Wk\formal{t}\right)$, and $F$ induces a multiplication map $\fG \times \fG \to \fG$.
+We have the multiplication-by-$p^r$ map $\left[p^r\right]: \fG \to \fG$, whose kernel is $\fG\left[p^r\right] = \spec\left(\Wk\formal{t}\formal{x}/\left(\left[p^r\right]\left(x\right)\right)\right)$, namely the $p^r$-torsion.
+In these terms, the ring $R$ is simply the tensor product of the above ring with itself, that is $\spec R = \fG\left[p^r\right] \times \fG\left[p^r\right]$.
+We see that the ring is the ring that represents two $p^r$-torsion elements.
+
+The next step is to invert the elements $\left[k_1\right]\left(x_1\right) +_F \left[k_2\right]\left(x_2\right)$ for $k_1, k_2 \neq 0 \mod p^r$.
+That is, we are looking at the open set of two elements in $\fG\left[p^r\right] \times \fG\left[p^r\right]$, s.t there is no non-trivial linear dependence.
+
+Now, assume that $\left[k_1\right]\left(x_1\right) +_F \left[k_2\right]\left(x_2\right) = 0$, then also $\left[p k_1\right]\left(x_1\right) +_F \left[p k_2\right]\left(x_2\right) = \left[p\right]\left(\left[k_1\right]\left(x_1\right) +_F \left[k_2\right]\left(x_2\right)\right) = 0$.
+We see that if one of $p k_1, p k_2$ is not $0$ modulo $p^r$, then inverting $\left[p k_1\right]\left(x_1\right) +_F \left[p k_2\right]\left(x_2\right)$ automatically inverts $\left[k_1\right]\left(x_1\right) +_F \left[k_2\right]\left(x_2\right)$ as well.
+Well, for $k \neq 0 \mod p^r$, $pk = 0 \mod p^r$ if and only if $k = 0 \mod p^{r-1}$.
+So to conclude we can simply invert only elements with $k_1, k_2$ which are multiples of $p^{r-1}$, so we need to invert only $p^2 - 1$ elements.
+
+Specifically, for $p = 2$ we need to invert only $\left[2^{r-1}\right]\left(x_1\right), \left[2^{r-1}\right]\left(x_2\right)$ and $\left[2^{r-1}\right]\left(x_1\right) +_F \left[2^{r-1}\right]\left(x_2\right)$.

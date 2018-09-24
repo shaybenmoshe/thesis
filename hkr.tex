@@ -8,7 +8,8 @@ Hopkins, Kuhn and Ravenel showed in \cite{HKR} that it is indeed possible.
 Their paper contains a lot of results, but we will concentrate on Theorem C.
 Fix some finite group $G$.
 Similarly to the proof Atiyah-Segal theorem, the actual proof of Theorem C involves a general construction, even to prove the specific case we are interested, but it will be easier to state it first for the specific case.
-Let $E = \E{k, \Gamma}$ be the Lubin-Tate spectrum from \ref{lt-spectrum}, for some field $k$ of characteristic $p$, and $\Gamma$ a formal group law over $k$ of height $n$. \todo{they write it specifically for $k = \mbb{F}_{p^n}$, but we don't really need that, right?}
+Let $E = \E{k, \Gamma}$ be the Lubin-Tate spectrum from \ref{LT-spectrum}, for some field $k$ of characteristic $p$, and $\Gamma$ a formal group law over $k$ of height $n$.
+We will also denote by $F$ the formal group law on $E$ (which is $u \Gamma_U$, as in \ref{LT-spectrum}).
 There is some ring $L = L\left(E^*\right)$ (which depends on the spectrum $E$).
 It is then possible define some generalized characters $\cl[n,p]{G; L}$, which are completely algebraic and combinatorial (besides the definition of the ring $L$).
 Lastly, there is a character map $\chinpG: E^*\left(\BG\right) \to \cl[n,p]{G; L}$.
@@ -184,7 +185,7 @@ Recall that $E^*\left(\BU[1]\right) = E^*\formal{x}$, where $x$ is the complex o
 For any homomorphism $\alpha: \Lambda_r \to \UU[1]$, we can take $E^*\left(\BB-\right)$ to get $\BB[\alpha]^*: E^*\left(\UU[1]\right) \to E^*\left(\BB[\Lambda_r]\right)$.
 Let $S_r = \left\{ \BB[\alpha]^*\left(x\right) \mid \alpha: \Lambda_r \to \UU[1], \alpha \neq 1 \right\} \subseteq E^*\left(\BB[\Lambda_r]\right)$.
 
-\begin{definition}
+\begin{definition}\label{Lr}
 	We define $L_r = S_r^{-1} E^*\left(\BB[\Lambda_r]\right)$.
 	There is indeed a map $E^*\left(\BB[\Lambda_r]\right) \to L_r$, namely the localization map.
 \end{definition}
@@ -245,7 +246,7 @@ An argument in \cite{HKR} shows that this isn't the case, and even more is true.
 	Moreover, this holds when $L$ is replaced with $L_r$.
 \end{proposition}
 
-\begin{example}
+\begin{example}\label{k-thy-Lr}
 	We continue with complex K-theory.
 	Recall from \ref{k-thy-comp-defo} that $\K_p^\wedge \cong \E{\Fp, \Gamma}$, where $\Gamma$ is the multiplicative formal group law, $\Gamma\left(y,z\right) = y + z$.
 	That is, $p$-complete K-theory is a Lubin-Tate spectrum at height $n = 1$, so the the construction above applies to it.
@@ -628,7 +629,7 @@ The reason complex oriented descent is useful is the following.
 
 
 
-\subsection{Proof of the Main Theorem, \ref{theorem-c}}
+\subsection{Proof of the Main Theorem}
 
 We are going to use the previous results to prove the main theorem, \ref{theorem-c}.
 The whole proof will work for $L$ replaced by $L_r$, for $r \geq r_0$, without a change.

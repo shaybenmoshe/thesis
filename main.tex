@@ -49,7 +49,7 @@
 \ncmd{\Chperf}[1]{\mrm{Ch}_\mrm{perf}\left(#1\right)}
 \ncmd{\Mod}[1]{\mrm{Mod}_{#1}}
 \ncmd{\Sp}{\mrm{Sp}}
-\ncmd{\Spaces}{\mrm{S}}
+\ncmd{\Spaces}{\mcl{S}}
 \ncmd{\GrAb}{\rm{GrAb}}
 \ncmd{\Spfin}{\Sp^\mrm{fin}}
 \ncmd{\Spfintor}{\Spfin_{\mrm{tor}}}
@@ -89,6 +89,7 @@
 \ncmd{\BG}{\BB[G]}
 \ncmd{\EE}[1][]{{\mrm{E}#1}}
 \ncmd{\EG}{\EE[G]}
+\ncmd{\fG}{\mbb{G}}
 
 \renewcommand{\SS}{\mbb{S}}
 \ncmd{\HH}[1]{\mrm{H}#1}
@@ -104,6 +105,7 @@
 \ncmd{\FGL}[1]{\mrm{FGL}\left(#1\right)}
 
 \DeclareMathOperator{\spec}{Spec}
+\DeclareMathOperator{\spf}{Spf}
 \DeclareMathOperator{\supp}{Supp}
 \DeclareMathOperator{\colim}{colim}
 \DeclareMathOperator{\cofib}{cofib}
@@ -129,6 +131,7 @@
 	\input{chromatic.tex}
 	\input{atiyah-segal.tex}
 	\input{hkr.tex}
+	\input{elliptic-curves.tex}
 	
 	\bibliography{refs}{}
 	\bibliographystyle{alpha}
