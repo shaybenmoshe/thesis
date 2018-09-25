@@ -257,13 +257,13 @@ An argument in \cite{HKR} shows that this isn't the case, and even more is true.
 	
 	The formal group law $\Gamma_U$ over $E^0$, gives a formal group $\fG = \spf E^0\formal{t}$ with multiplication $\fG \times \fG \to \fG$.
 	By definition, the $p^r$-torision elements in $\fG$, is the scheme-theoretic kernel of the multiplication-by-$p^r$ map $\left[p^r\right]: \fG \to \fG$, that is $\fG\left[p^r\right] = \spec\left(R\formal{t}/\left(\left[p^r\right]\left(t\right)\right)\right) = \spec E^0\left(\BB[\ZZ / p^r]\right)$.
-	Since $\Gamma_U$ is of height $n$, the leading term of the $p^r$-series, has power $p^r$, which shows that the number of points in $\fG\left[p^r\right]$ is $p^r$, so as a group it is just $\ZZ/p^r$. \todo{right?}
-	We now see that $\spec E^0\left(\BB[\Lambda_r]\right) = \left(\fG\left[p^r\right]\right)^n$.
+	Since $\Gamma_U$ is of height $n$, the leading term of the $p^r$-series, is $t^{p^{rn}}$, which shows that the number of points in $\fG\left[p^r\right]$ is $p^{rn}$.
+	We also see that $\spec E^0\left(\BB[\Lambda_r]\right) = \left(\fG\left[p^r\right]\right)^n$.
 	
 	Inverting $S_r$ is equivalent to inverting their $0$-th graded analogues $S_r^0 = \left\{ \sum_{\Gamma_U} [k_i]\left(t_i\right) \mid \left(k_1, \dotsc, k_n\right) \neq 0 \mod p^r\right\}$.
 	Algebro-geometrically, this is equivalent to restricting to the open subset where all the functions $\sum_{\Gamma_U} [k_i]\left(t_i\right)$ don't vanish (recall that the value depends only the values of $k_i$ modulo $\ZZ/p^r$).
 	That is, $L_r^0$ is the open subset of $n$-points in $\fG\left[p^r\right]$, that is $p^r$-torsion, which are linearly independent.
-	Since, $\fG\left[p^r\right]$ as a group is $\ZZ/p^r$, this means that the $n$ points are a basis for a group $\Lambda_r$.
+	In fact, as a group $\fG\left[p^r\right]$ is $\left(\ZZ/p^r\right)^n = \Lambda_r$, so the this means that the $n$-points are a basis for $\fG\left[p^r\right]$.
 	
 	Moreover, if $\sum_{\Gamma_U} [k_i]\left(t_i\right) = 0$ then also $\sum_{\Gamma_U} [p k_i]\left(t_i\right) = \left[p\right]\left(\sum_{\Gamma_U} [k_i]\left(t_i\right)\right) = 0$.
 	So, if any $p k_i$ is not $0$ modulo $p^r$, inverting $\sum_{\Gamma_U} [p k_i]\left(t_i\right)$ already inverts $\sum_{\Gamma_U} [k_i]\left(t_i\right)$.
