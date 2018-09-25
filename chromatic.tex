@@ -81,10 +81,10 @@ We will try to recover $\spec R$, as a topological space, from $\Ch{R}$.
 \end{theorem}
 \todo{reference}
 
-\begin{proposition}\label{primes-pullback}
-	Prime ideals pullback:
-	Let $F: \mcl{C} \to \mcl{D}$ be a reduced symmetric monoidal functor that preserves cofibers, between two symmetric monoidal stable $\infty$-categories,
-	and let $\mcl{P}$ be a prime ideal in $\mcl{D}$, then $F^*\mcl{P} = \left\{ A \in \mcl{C} \mid F\left(A\right) \in \mcl{P} \right\}$ is a prime ideal.
+\begin{proposition}[Prime ideals pullback]\label{primes-pullback}
+	Let $F: \mcl{C} \to \mcl{D}$ be a reduced symmetric monoidal functor that preserves cofibers, between two symmetric monoidal stable $\infty$-categories, s.t. the essential image $F\left(\mcl{C}\right)$ is not contained in any prime ideal in $\mcl{D}$.
+	Let $\mcl{P} \in \spec \mcl{D}$ be a prime ideal, then $F^*\mcl{P} = F^{-1}\left(\mcl{P}\right) = \left\{ A \in \mcl{C} \mid F\left(A\right) \in \mcl{P} \right\}$ is a prime ideal.
+	Moreover, the function we obtain, $F^*: \spec \mcl{D} \to \spec \mcl{C}$, is continuous.
 \end{proposition}
 
 \begin{proof}
@@ -101,7 +101,21 @@ We will try to recover $\spec R$, as a topological space, from $\Ch{R}$.
 	
 	Let $A \in F^*\mcl{P}, B \in \mcl{C}$, since $F$ is monoidal, $F\left(A \otimes B\right) = F\left(A\right) \otimes F\left(B\right) \in \mcl{P}$, so $A \otimes B \in F^*\mcl{P}$, that is $F^*\mcl{P}$ is an ideal.
 	
-	Lastly, assume that $A \otimes B \in F^*\mcl{P}$, again since $F$ is monoidal, $F\left(A \otimes B\right) = F\left(A\right) \otimes F\left(B\right) \in \mcl{P}$, so $A \in F^*\mcl{P}$ or $B \in F^*\mcl{P}$, that is $F^*\mcl{P}$ is a prime ideal.
+	By assumption, the essential image $F\left(\mcl{C}\right)$ is not contained in $\mcl{P}$, which implies that $F^*\mcl{P}$ is a proper subcategory.
+	
+	Lastly, assume that $A \otimes B \in F^*\mcl{P}$, again since $F$ is monoidal, $F\left(A \otimes B\right) = F\left(A\right) \otimes F\left(B\right) \in \mcl{P}$, so $A \in F^*\mcl{P}$ or $B \in F^*\mcl{P}$, that is $F^*\mcl{P}$ is a prime idea.
+	
+	Now we show that $F^*: \spec \mcl{D} \to \spec \mcl{C}$ is continuous.
+	So let $V\left(S\right) \subseteq \spec \mcl{C}$ be a closed subset.
+	We have:
+	\begin{align*}
+		\left(F^*\right)^{-1}\left(V\left(S\right)\right)
+		&= \left\{ \mcl{P} \in \mcl{D} \mid F^*\mcl{P} \in V\left(S\right) \right\}\\
+		&= \left\{ \mcl{P} \in \mcl{D} \mid F^{-1}\left(\mcl{P}\right) \cap S = \emptyset \right\}\\
+		&= \left\{ \mcl{P} \in \mcl{D} \mid \mcl{P} \cap F\left(S\right) = \emptyset \right\}\\
+		&= V\left(F\left(S\right)\right)
+	\end{align*}
+	So $\left(F^*\right)^{-1}\left(V\left(S\right)\right)$ is indeed also closed, which shows that $F^*$ is continuous.
 \end{proof}
 
 Now, recall that $\Ch{R} \cong \Mod{\HH{R}}$, therefore we can reinterpret the above theorem as $\spec R \cong \spec\left( \Mod{\HH{R}}^\mrm{comp} \right)$ (where the $\mrm{comp}$ denotes the compact objects in the category).
@@ -459,7 +473,7 @@ We know that $\Mod{\SS_{\left(p\right)}} = \Sp_{\left(p\right)}$, and its compac
 	Assume that $X \otimes Y\in \mcl{C}_n$, that is $\K[n-1]_*\left(X \otimes  Y\right)$, therefore one of the terms in the RHS of the equation must vanish (since they are graded vector spaces), so $\mcl{C}_n$ is a prime ideal.
 \end{proof}
 
-\begin{theorem}[Thick Subcategory Theorem \cite{HS}]\label{thick-subcategory-thm}
+\begin{theorem}[{Thick Subcategory Theorem \cite[theorem 11]{HS}}]\label{thick-subcategory-thm}
 	If $\mcl{T}$ is a proper thick subcategory of $\Spfin_{\left(p\right)}$, then $\mcl{T} = \mcl{C}_n$ for some $0 \leq n \leq \infty$.
 \end{theorem}
 
@@ -516,8 +530,10 @@ $
 \right\}
 $.
 We see that $\mcl{P}_{p, 0}$ is independent of $p$, and we denote it by $\Spfintor$.
+Again, by \ref{primes-pullback}, we see that any chain $\left\{ \mcl{P}_{p, k}, \mcl{P}_{p, k+1}, \dotsc, \mcl{P}_{p, \infty} \right\}$ for some $p$ and $0 \leq k \leq \infty$, is closed, hence any finite union of such chain is also closed.
+We then have the following theorem, which says that these are all of the prime ideals and all of the closed subsets.
 
-\begin{theorem}
+\begin{theorem}[{Thick Subcategory Theorem \cite[theorem 11]{HS}, \cite[9.5]{Bal}}]
 	$
 	\spec \SS
 	= \left\{\Spfintor\right\}
@@ -538,8 +554,6 @@ We see that $\mcl{P}_{p, 0}$ is independent of $p$, and we denote it by $\Spfint
 	\end{tikzcd}
 	$$
 \end{theorem}
-\todo{explain/reference}
-\todo{regarding the topology, maybe I should prove that the pullback is also continuous?}
 
 \begin{remark}
 	Thick subcategories are interesting for another reason, unrelated to the Balmer spectrum point of view, namely they give a very powerful proof method.
