@@ -1,8 +1,10 @@
 \section{Overview of Chromatic Homotopy Theory}
 
-Our goal is to motivate the introduction of Morava K-theory $\K[n]$ and Morava E-theory $\E{n}$, and other variants of Morava E-theory $\E{k,\Gamma}$, and their connection to formal group laws.
-There are different views on what chromatic homotopy theory is.
-\todo{write some more}
+Our goal is to give a quick overview of chromatic homotopy theory.
+There are various point of views and approaches to the topic, and we shall highlight some of them.
+One of our main goals is to introduce Morava K-theory $\K[n]$ and Morava E-theory $\E{n}$, and other variants of Morava E-theory $\E{k,\Gamma}$, and their connection to formal group laws.
+Our motivation will be the Balmer spectrum of the sphere spectrum.
+We will follow the construction of Morava K-theory and Morava E-Theory, and other related spectra, from the point of view of formal group laws, and use them to describe the Balmer spectrum of the sphere spectrum.
 
 
 
@@ -10,12 +12,12 @@ There are different views on what chromatic homotopy theory is.
 
 We will start with an algebraic motivation.
 Let $R$ be a noetherian ring.
-Consider the symmetric monoidal stable $\infty$-category $\Ch{R}$ of chain complexes on $R$. \todo{be more specific}
+Consider the symmetric monoidal stable $\infty$-category $\Ch{R}$ of chain complexes on $R$.
 It is then natural to ask how much information about $R$ is encoded in the category $\Ch{R}$.
 We will try to recover $\spec R$, as a topological space, from $\Ch{R}$.
 
 \begin{remark}
-	Balmer's work actually recovers the structure sheaf as well. \todo{reference}
+	Balmer's work \cite[6.3]{BalSpec} actually recovers the structure sheaf as well, but we will not consider the structure sheaf.
 \end{remark}
 
 \begin{definition}
@@ -74,12 +76,11 @@ We will try to recover $\spec R$, as a topological space, from $\Ch{R}$.
 	Therefore $\mcl{T}_\mfk{p}$ is a prime ideal.
 \end{example}
 
-\begin{theorem}
+\begin{theorem}[{\cite[5.6]{BalSpec}}]
 	The map $\spec R \to \spec\left(\Chperf{R}\right)$,
 	given by $\mfk{p} \mapsto \mcl{T}_\mfk{p} = \left\{ A \mid A_\mfk{p} = 0 \right\}$
 	is a homeomorphism.
 \end{theorem}
-\todo{reference}
 
 \begin{proposition}[Prime ideals pullback]\label{primes-pullback}
 	Let $F: \mcl{C} \to \mcl{D}$ be a reduced symmetric monoidal functor that preserves cofibers, between two symmetric monoidal stable $\infty$-categories, s.t. the essential image $F\left(\mcl{C}\right)$ is not contained in any prime ideal in $\mcl{D}$.
@@ -533,7 +534,7 @@ We see that $\mcl{P}_{p, 0}$ is independent of $p$, and we denote it by $\Spfint
 Again, by \ref{primes-pullback}, we see that any chain $\left\{ \mcl{P}_{p, k}, \mcl{P}_{p, k+1}, \dotsc, \mcl{P}_{p, \infty} \right\}$ for some $p$ and $0 \leq k \leq \infty$, is closed, hence any finite union of such chain is also closed.
 We then have the following theorem, which says that these are all of the prime ideals and all of the closed subsets.
 
-\begin{theorem}[{Thick Subcategory Theorem \cite[theorem 11]{HS}, \cite[9.5]{Bal}}]
+\begin{theorem}[{Thick Subcategory Theorem \cite[theorem 11]{HS}, \cite[9.5]{BalSSS}}]
 	$
 	\spec \SS
 	= \left\{\Spfintor\right\}
