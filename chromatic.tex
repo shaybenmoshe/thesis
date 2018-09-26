@@ -83,13 +83,15 @@ We will try to recover $\spec R$, as a topological space, from $\Ch{R}$.
 \end{theorem}
 
 \begin{proposition}[Prime ideals pullback]\label{primes-pullback}
-	Let $F: \mcl{C} \to \mcl{D}$ be a reduced symmetric monoidal functor that preserves cofibers, between two symmetric monoidal stable $\infty$-categories, s.t. the essential image $F\left(\mcl{C}\right)$ is not contained in any prime ideal in $\mcl{D}$.
+	Let $F: \mcl{C} \to \mcl{D}$ be an exact symmetric monoidal functor, between two symmetric monoidal stable $\infty$-categories.
 	Let $\mcl{P} \in \spec \mcl{D}$ be a prime ideal, then $F^*\mcl{P} = F^{-1}\left(\mcl{P}\right) = \left\{ A \in \mcl{C} \mid F\left(A\right) \in \mcl{P} \right\}$ is a prime ideal.
 	Moreover, the function we obtain, $F^*: \spec \mcl{D} \to \spec \mcl{C}$, is continuous.
 \end{proposition}
 
 \begin{proof}
-	Clearly $F\left(0\right) = 0 \in \mcl{P}$ since $F$ is reduced, so $0 \in F^*\mcl{P}$.
+	We first prove that for $\mcl{P} \in \spec \mcl{D}$, $F^*\mcl{P} \in \spec \mcl{C}$.
+	
+	Clearly $F\left(0\right) = 0 \in \mcl{P}$ since $F$ is exact, so $0 \in F^*\mcl{P}$.
 	Since $F$ preserves cofibers, for $A,B \in F^*\mcl{P}$, i.e. $F\left(A\right), F\left(B\right) \in \mcl{P}$, and a map $A \to B$ we get
 	$
 	F\left(\cofib\left(A \to B\right)\right)
@@ -102,7 +104,7 @@ We will try to recover $\spec R$, as a topological space, from $\Ch{R}$.
 	
 	Let $A \in F^*\mcl{P}, B \in \mcl{C}$, since $F$ is monoidal, $F\left(A \otimes B\right) = F\left(A\right) \otimes F\left(B\right) \in \mcl{P}$, so $A \otimes B \in F^*\mcl{P}$, that is $F^*\mcl{P}$ is an ideal.
 	
-	By assumption, the essential image $F\left(\mcl{C}\right)$ is not contained in $\mcl{P}$, which implies that $F^*\mcl{P}$ is a proper subcategory.
+	We claim that $F^*\mcl{P}$ is a proper subcategory, because an ideal is proper if and only if it doesn't contain $1$, and since $F$ is symmetric monoidal it sends $1$ to $1$.
 	
 	Lastly, assume that $A \otimes B \in F^*\mcl{P}$, again since $F$ is monoidal, $F\left(A \otimes B\right) = F\left(A\right) \otimes F\left(B\right) \in \mcl{P}$, so $A \in F^*\mcl{P}$ or $B \in F^*\mcl{P}$, that is $F^*\mcl{P}$ is a prime idea.
 	
