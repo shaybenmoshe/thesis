@@ -290,8 +290,6 @@ In particular, since $\MU$ is complex oriented, there is a canonical map $L \to 
 	The canonical map $L \to \MU_*$ is an isomorphism.
 \end{theorem}
 
-\todo{consider adding something about the $X\left(n\right)$, and the obstruction to lifting to a complex orientation, with obstructions living in odd $E_k$, so even are automatically orientable}
-
 
 
 \subsection{\texorpdfstring{$\BP$}{BP}, Morava K-Theory and Morava E-Theory}
@@ -588,9 +586,9 @@ Since every formal group law is isomorphic to a $p$-typical one, we know that th
 
 It is now reasonable that $\K[n]$, obtained from $\BP$ by killing the $v_m$'s for $m \neq n$ and inverting $v_n$, sees the $n$-th level, and that $\E{n}$ obtained in the same way but only killing $v_m$ for $m > n$, sees the levels $\leq n$.
 
-Let us now claim a precise statement, formalizing this description.
+Let us now claim a precise statement, related to this idea:
 
-\begin{theorem}[\todo{reference}]
+\begin{theorem}[{\cite[23, proposition 2]{Lur}}]
 	$\E{n}$ and $\K[0] \oplus \cdots \oplus \K[n]$ are Bousfield equivalent.
 	That is, they have the same acyclics, locals, and their localization functors are the same.
 \end{theorem}
@@ -797,19 +795,8 @@ Using LEFT \ref{LEFT}, we immediately get:
 \end{example}
 
 This concludes the construction of the Lubin-Tate variant of Morava E-theory.
-To compare this version with the previous, we define another variant of Morava E-theory.
+We can compare the Lubin-Tate spectrum with the previous one, the Johnson-Wilson spectrum.
 
-\begin{definition}
-	Let $I \leq \E{n}_* = \ZZ_{\left(p\right)}\left[v_1, \dotsc v_{n-1}, v_n^{\pm 1}\right]$ be the ideal $I = \left(p = v_0, v_1, \dotsc v_{n-1}\right)$.
-	We define the spectrum $\widehat{\E{n}} = \E{n}_I^\wedge$, called completed Johnson-Wilson spectrum.
-\end{definition}
-
-\begin{theorem}
-	The following three forms of Morava E-theory are Bousfield equivalent:
-	\begin{enumerate}
-		\item Johnson-Wilson $\E{n}$,
-		\item completed Johnson-Wilson $\widehat{\E{n}}$,
-		\item Lubin-Tate $\E{k, \Gamma}$.
-	\end{enumerate}
-\end{theorem}
-\todo{reference Hovey Strickland Morava K-Theories and Localization 5.3}
+\begin{proposition}[{\cite[23, example 1]{Lur}}]
+	The Lubin-Tate spectrum $\E{k, \Gamma}$ and Johnson-Wilson spectrum $\E{n}$ are Bousfield equivalent.
+\end{proposition}
