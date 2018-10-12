@@ -170,7 +170,7 @@ Since $E$ is unital, there is a canonical generator $1 \in E_0$.
 	Hence, $x$ is a complex orientation for $\HH{R}$.
 \end{example}
 
-\begin{example}\label{k-thy-oriented}
+\begin{example}[$\K$-Theory Saga: Complex Orientation]\label{k-thy-oriented}
 	Let $\K$ be complex K-theory, then we know that $\K_* = \ZZ\left[\beta^{\pm 1}\right]$ where $\beta$ is the Bott element, with $\left|\beta\right| = 2$.
 	It is also known (by the Atiyah-Hirzebruch spectral sequence) that
 	$\K^*\left(\CP{n}\right) \cong \K_* \left[t\right] / \left(t^{n+1}\right)$
@@ -207,7 +207,7 @@ Assume that $E$ is complex oriented with a complex orientation $x$.
 	and
 	$E^*\left(\BU[1] \times \BU[1]\right) \cong E^*\formal{y,z}$.
 \end{proposition}
-\todo{maybe indicate the use of AHSS}
+\todo{maybe indicate the use of AHSS, maybe explain that every even is complex orientable}
 
 There is a multiplication map for the group $\UU[1]$, i.e. $\UU[1] \times \UU[1] \to \UU[1]$.
 We can take the $\BB$ of this map, and since it commutes with products we get a map $\BU[1] \times \BU[1] \to \BU[1]$, which is the universal map the classifies the tensor product of vector bundles.
@@ -237,7 +237,7 @@ We conclude that a choice of a complex orientation on $E$ gives rise to an eleme
 	So for $R = \QQ$ we get that the height of $\HH{\QQ}$ is 0, while for $R = \Fp$ we have $p x = 0$ so the height of $\HH{\Fp}$ is $\infty$.
 \end{example}
 
-\begin{example}\label{k-thy-fgl}
+\begin{example}[$\K$-Theory Saga: Formal Group Law]\label{k-thy-fgl}
 	We return to the example of complex K-theory \ref{k-thy-oriented}.
 	It is known that the tensor of complex line bundles induces the map
 	$$
@@ -270,7 +270,7 @@ We conclude that a choice of a complex orientation on $E$ gives rise to an eleme
 
 \todo{consider discussing the computation of $\BU[1]$, maybe as part of complex K-theory example?}
 
-\begin{example}\label{k-thy-modp-height}
+\begin{example}[$\K$-Theory Saga: mod-$p$]\label{k-thy-modp-height}
 	By taking the cofiber of the multiplication-by-$p$ map, we get a spectrum $\K/p$, mod-$p$ K-theory, with coefficients $\left(\K/p\right)_* = \mathbb{F}_p \left[\beta^{\pm 1}\right]$.
 	It is evident that $F_{\K/p}\left(y,z\right) = y + z + \beta y z$ as well.
 	From the result above, it follows that
@@ -375,7 +375,7 @@ To do so we first need some definitions.
 	(Here $0 \leq n \leq \infty$.)
 \end{proposition}
 
-\begin{example}\label{k-thy-modp-morava}
+\begin{example}[K-Theory Saga: Morava K-Theory]\label{k-thy-modp-morava}
 	As we have seen in \ref{k-thy-modp-height}, mod-$p$ K-theory, $\K/p$, has height exactly $1$ and coefficients $\left(\K/p\right)_* = \mathbb{F}_p \left[\beta^{\pm 1}\right]$.
 	It is also known that $\K$ and $\K/p$, are $A_\infty$ ring spectra, from which it follows that $\K/p$ is a field.
 	We deduce that $\K/p$ is a $\K[1]$-module.
@@ -655,7 +655,7 @@ The answer is yes, at least in some cases.
 	Since by construction when $X = \SS$ the map above is $E_* \to E_*$ which is an isomorphism, we see that the map $E_{R,F} \to E$ is an equivalence.
 \end{proof}
 
-\begin{example}\label{k-thy-comp-left}
+\begin{example}[K-Theory Saga: Landweber Flatness]\label{k-thy-comp-left}
 	We return to complex K-theory, from \ref{k-thy-oriented} and \ref{k-thy-fgl}.
 	We can take the completion at the element $p \in \K_*$, which gives the spectrum $\K_p^\wedge$.
 	This spectrum has coefficients
@@ -773,7 +773,7 @@ Using LEFT \ref{LEFT}, we immediately get:
 	There is a complex oriented cohomology theory $\E{k, \Gamma} = E_{\Wkuiu, u \Gamma_U}$, called \emph{Lubin-Tate spectrum}, with coefficients $\E{k, \Gamma}_* = \Wkuiu$ and associated formal group law $u \Gamma_U$.
 \end{corollary}
 
-\begin{example}\label{k-thy-comp-defo}
+\begin{example}[K-Theory Saga: Lubin-Tate]\label{k-thy-comp-defo}
 	We continue the complex K-theory saga from \ref{k-thy-comp-left}.
 	Take the field $k = \Fp$ and the formal group law $\Gamma\left(y, z\right) = y + z + y z$, of height $n = 1$.
 	By the above construction, the ring of the universal deformation is $\WW{\Fp} = \ZZ_p$.

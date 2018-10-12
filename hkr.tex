@@ -206,7 +206,7 @@ Therefore $S_r = \left\{ \sum_F [k_i]\left(x_i\right) \mid \left(k_1, \dotsc, k_
 
 \begin{proof}
 	The projection $\Lambda_{r+1} \to \Lambda_r$ is given by the multiplication-by-$1$ on each coordinate, so again by \ref{E-B-map-cyclic} they induce the maps $E^*\left(\BB[\Lambda_r]\right) \to E^*\left(\BB[\Lambda_{r+1}]\right)$, given by $x_i \mapsto x_i$.
-	Moreover $\sum_F [k_i]\left(x_i\right) \in S^r$ is mapped to $\sum_F [k_i]\left(x_i\right) \in S^{r+1}$.
+	Moreover $\sum_F [k_i]\left(x_i\right) \in S_r$ is mapped to $\sum_F [k_i]\left(x_i\right) \in S_{r+1}$.
 	Therefore, once we localize the target, the map lifts to the localization of the source.
 \end{proof}
 
@@ -224,7 +224,7 @@ Clearly $\aut\left(\Lambda_r\right)$ acts on $E^*\left(\BB[\Lambda_r]\right)$, b
 	Let $k: \Lambda_r \to \Lambda_r$ be an automorphism given by on the $i,j$-th coordinate by multiplication by $k_{ij}$.
 	Once again, by \ref{E-B-map-cyclic}, for integers $l_1, \dotsc, l_n$, the induced map sends $\sum_{j,F} [l_j]\left(x_j\right)$ to $\sum_{i,F}\left[\sum_j k_{ij} l_j\right]\left(x_i\right)$.
 	Since $k$ is an automorphism, the matrix $\left(k_{ij}\right)$ is invertible.
-	Therefore, if $\left(l_1, \dotsc, l_n\right) \neq 0$, then also $\left(\sum_j k_{1j} l_j, \dotsc, \sum_j k_{1j} l_j\right) \neq 0$, so if the source is in $S^r$, the result is in $S^r$ as well.
+	Therefore, if $\left(l_1, \dotsc, l_n\right) \neq 0$, then also $\left(\sum_j k_{1j} l_j, \dotsc, \sum_j k_{1j} l_j\right) \neq 0$, so if the source is in $S_r$, the result is in $S_r$ as well.
 	This shows that action lifts to an action on $L_r$.
 \end{proof}
 
@@ -265,7 +265,7 @@ An argument in \cite{HKR} shows that this isn't the case, and even more is true.
 	Inverting $S_r$ is equivalent to inverting their $0$-th graded analogues $S_r^0 = \left\{ \sum_{\Gamma_U} [k_i]\left(t_i\right) \mid \left(k_1, \dotsc, k_n\right) \neq 0 \mod p^r\right\}$.
 	Algebro-geometrically, this is equivalent to restricting to the open subset where all the functions $\sum_{\Gamma_U} [k_i]\left(t_i\right)$ don't vanish (recall that the value depends only the values of $k_i$ modulo $\ZZ/p^r$).
 	That is, $L_r^0$ is the open subset of $n$-points in $\fG\left[p^r\right]$, that is $p^r$-torsion, which are linearly independent.
-	In fact, as a group $\fG\left[p^r\right]$ is $\left(\ZZ/p^r\right)^n = \Lambda_r$, so the this means that the $n$-points are a basis for $\fG\left[p^r\right]$.
+	In fact, as a group $\fG\left[p^r\right]$ is $\left(\ZZ/p^r\right)^n = \Lambda_r$, so this means that the $n$-points are a basis for $\fG\left[p^r\right]$.
 	
 	Moreover, if $\sum_{\Gamma_U} [k_i]\left(t_i\right) = 0$ then also $\sum_{\Gamma_U} [p k_i]\left(t_i\right) = \left[p\right]\left(\sum_{\Gamma_U} [k_i]\left(t_i\right)\right) = 0$.
 	So, if any $p k_i$ is not $0$ modulo $p^r$, inverting $\sum_{\Gamma_U} [p k_i]\left(t_i\right)$ already inverts $\sum_{\Gamma_U} [k_i]\left(t_i\right)$.
@@ -275,7 +275,7 @@ An argument in \cite{HKR} shows that this isn't the case, and even more is true.
 	The description of $L_r^0$ as a basis for $\Lambda_r$ also shows clearly where the action of $\aut \left(\Lambda_r\right)$ comes from, it just changes by multiplying by an invertible matrix.
 \end{remark}
 
-\begin{example}\label{k-thy-Lr}
+\begin{example}[K-Theory Saga: The Ring $L_r$]\label{k-thy-Lr}
 	We continue with complex K-theory.
 	Recall from \ref{k-thy-comp-defo} that $\K_p^\wedge \cong \E{\Fp, \Gamma}$, where $\Gamma$ is the multiplicative formal group law, $\Gamma\left(y,z\right) = y + z$.
 	That is, $p$-complete K-theory is a Lubin-Tate spectrum at height $n = 1$, so the the construction above applies to it.
@@ -305,7 +305,7 @@ An argument in \cite{HKR} shows that this isn't the case, and even more is true.
 	First, note that $s^k-1$ is sent to $\zeta_{p^r}^k - 1$, so for $0 < k < p^r$ this is not zero (for $\zeta_{p^r}$ is a primitive root of unity of order $p^r$), and since the target is a field, this is invertible, so there is indeed a map ${S_r}^{-1} R \to \QQ_p\left[s\right]/\left(\Phi_{p^r}\right)$.
 	
 	On the other hand, look at the map $\QQ_p\left[s\right] \to {S_r}^{-1} R$.
-	Recall that $s^{p^r} - 1 = \Phi_{p^r}\left(s\right) \left(s^{p^{r-1}} - 1\right)$, and $\left(s^{p^r} - 1\right)$ is a unit in the target, multiplying by its inverse, we also get that $\Phi_{p^r}\left(s\right)$ is zero in ${S_r}^{-1} R$.
+	Recall that $s^{p^r} - 1 = \left(s^{p^{r-1}} - 1\right) \Phi_{p^r}\left(s\right)$, and $\left(s^{p^{r-1}} - 1\right)$ is a unit in the target, multiplying by its inverse, we also get that $\Phi_{p^r}\left(s\right)$ is zero in ${S_r}^{-1} R$.
 	Therefore, the map actually factors to a map $\QQ_p\left[s\right]/\left(\Phi_{p^r}\right) \to {S_r}^{-1} R$, which is clearly an inverse to the map above.
 	
 	We conclude that our ring is $L_r^0 = \QQ_p\left(\zeta_{p^r}\right)$.
@@ -374,7 +374,7 @@ To that end, we first formulate a general combinatorial statement:
 
 \begin{proposition}\label{combinatorial-situation}
 	Let $H$ be a group.
-	Let $I$ be some indexing $H$-set, and let $Y_{\left[i\right]}$ be a collection of $H$-spaces, i.e. indexed by $I/H$.
+	Let $I$ be some indexing $H$-set, and let $Y_{\left[i\right]}$ be a collection of $H$-spaces indexed by $I$ that depend only on the orbit.
 	Endow $\prod_{i \in I} Y_{\left[i\right]}$ an $H$-action by
 	$
 	h.\left(y_i\right)_{i \in I}
@@ -392,7 +392,7 @@ To that end, we first formulate a general combinatorial statement:
 	Requiring that $\left(y_i\right)_{i \in I}$ is a fixed point amounts to $y_i = h.y_{h.i}$.
 	Note that this condition equates $y_i$ only with values which are in the $H$-orbit of $i$.
 	Moreover, the value of $y_i$ determines the whole $H$-orbit $y_{h.i}$ (by $h^{-1} y_i$).
-	Taking those values for the whole orbit, reduces the condition to $y_i = h. y_i$ when $h.i = i$, i.e. when $h$ is in the stabilizer $\stab_H\left(i\right)$.
+	Therefore a fixed point is determined by one element per orbit, $y_i$, that satisfies $y_i = h. y_i$ when $h.i = i$, i.e. when $h$ is in the stabilizer $\stab_H\left(i\right)$.
 	Therefore, the condition is simply that $y_i \in Y_{\left[i\right]}^{\stab_H\left(i\right)}$, so the conclusion follows.
 \end{proof}
 
@@ -489,7 +489,24 @@ This should remind you of \ref{char-1} and \ref{char-2}.
 	Moreover, these statements hold when $L$ is replaced with $L_r$, for $r \geq r_0$.
 \end{theorem}
 
-The first part will be proven later.
+\begin{corollary}
+	Using \ref{combinatorial-cl-fixed}, for the case $X = *$ we get isomorphisms
+	$$
+	E^*\left(\BG\right) \otimes_{E^*} L
+	\cong \cl[n,p]{G; L}
+	\cong \prod_{\left[\alpha\right] \in \Gnp/G} L,
+	$$
+	and
+	$$
+	p^{-1} E^*\left(\BG\right)
+	\cong \cl[n,p]{G; L}^{\aut \left(\Lambda\right)}
+	\cong \prod_{\left[\alpha\right] \in \Gnp/{\left(G \times \aut \left(\Lambda_r\right)\right)}}
+	L_r^{\stab_{\aut \left(\Lambda_r\right)}\left(\alpha\right)},
+	$$
+	and these statements hold when $L$ is replaced with $L_r$, for $r \geq r_0$.
+\end{corollary}
+
+The first part of the theorem will be proven in the remaining of the section.
 
 \begin{proof}[Proof (of the second part)]
 	Using the isomorphism from the first part,
@@ -593,12 +610,12 @@ The reason complex oriented descent is useful is the following.
 \end{definition}
 
 \begin{definition}
-	Let $C^*: \mcl{C}^\op \to \GrAb$, be a contra-variant functor.
+	Let $C^*: \mcl{C}^\op \to \GrAb$ be a contra-variant functor from $\mcl{C}$.
 	We define the following properties of $C^*$:
 	\begin{itemize}
-		\item \emph{Homotopy invariance} - $C^*\left(G, -\right)$ is $G$-homotopy invariant, for every $G$.
-		\item \emph{Mayer-Vietories} - $C^*\left(G, -\right)$ satisfies Mayer-Vietories, for every $G$.
-		\item \emph{Complex oriented descent} - $C^*\left(G, -\right)$ satisfies complex oriented descent, for every $G$.
+		\item \emph{Homotopy invariance} - for every $G$, the functor $C^*\left(G, -\right)$ is $G$-homotopy invariant.
+		\item \emph{Mayer-Vietories} - for every $G$, $C^*\left(G, -\right)$ satisfies Mayer-Vietories.
+		\item \emph{Complex oriented descent} - for every $G$, $C^*\left(G, -\right)$ satisfies complex oriented descent.
 		\item \emph{Induction} - for every, $H \leq G$ and $H$-space $Y$, the morphism $\left(H, Y\right) \to \left(G, G \times_H Y\right)$ induces an isomorphism $C^*\left(G, G \times_H Y\right) \xrightarrow{\sim} C^*\left(H, Y\right)$. $G$.
 	\end{itemize}
 \end{definition}
