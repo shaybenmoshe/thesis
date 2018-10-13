@@ -258,7 +258,7 @@ An argument in \cite{HKR} shows that this isn't the case, and even more is true.
 	Moreover, since everything is defined already over $E^0 = \Wkui$, we can do all the computations over it, which will give the ring $L_r^0$, the $0$-th degree part of $L_r$, and add $u^{\pm 1}$ at the end to get $L_r$.
 	
 	The formal group law $\Gamma_U$ over $E^0$, gives a formal group $\fG = \spf E^0\formal{t}$ with multiplication $\fG \times \fG \to \fG$.
-	By definition, the $p^r$-torision elements in $\fG$, is the scheme-theoretic kernel of the multiplication-by-$p^r$ map $\left[p^r\right]: \fG \to \fG$, that is $\fG\left[p^r\right] = \spec\left(R\formal{t}/\left(\left[p^r\right]\left(t\right)\right)\right) = \spec E^0\left(\BB[\ZZ / p^r]\right)$.
+	By definition, the $p^r$-torsion elements in $\fG$, is the scheme-theoretic kernel of the multiplication-by-$p^r$ map $\left[p^r\right]: \fG \to \fG$, that is $\fG\left[p^r\right] = \spec\left(R\formal{t}/\left(\left[p^r\right]\left(t\right)\right)\right) = \spec E^0\left(\BB[\ZZ / p^r]\right)$.
 	Since $\Gamma_U$ is of height $n$, the leading term of the $p^r$-series, is $t^{p^{rn}}$, which shows that the number of points in $\fG\left[p^r\right]$ is $p^{rn}$.
 	We also see that $\spec E^0\left(\BB[\Lambda_r]\right) = \left(\fG\left[p^r\right]\right)^n$.
 	
@@ -614,7 +614,7 @@ The reason complex oriented descent is useful is the following.
 	We define the following properties of $C^*$:
 	\begin{itemize}
 		\item \emph{Homotopy invariance} - for every $G$, the functor $C^*\left(G, -\right)$ is $G$-homotopy invariant.
-		\item \emph{Mayer-Vietories} - for every $G$, $C^*\left(G, -\right)$ satisfies Mayer-Vietories.
+		\item \emph{Mayer-Vietories} - for every $G$, $C^*\left(G, -\right)$ satisfies Mayer-Vietoris.
 		\item \emph{Complex oriented descent} - for every $G$, $C^*\left(G, -\right)$ satisfies complex oriented descent.
 		\item \emph{Induction} - for every, $H \leq G$ and $H$-space $Y$, the morphism $\left(H, Y\right) \to \left(G, G \times_H Y\right)$ induces an isomorphism $C^*\left(G, G \times_H Y\right) \xrightarrow{\sim} C^*\left(H, Y\right)$. $G$.
 	\end{itemize}
@@ -623,7 +623,7 @@ The reason complex oriented descent is useful is the following.
 \begin{theorem}[{\cite[6.10]{HKR}}]\label{cmplx-oriented-natural-transformation}
 	Let $C^*, D^*: \mcl{C}^\op \to \GrAb$ be functors satisfying the above properties.
 	Let $\tau: C^* \to D^*$ be a natural transformation between them.
-	Suppose that $\tau$ commutes with the connecting morphisms of Mayer-Vietories, and that $\tau\left(A, *\right)$ is an isomorphism for all abelian groups $A$.
+	Suppose that $\tau$ commutes with the connecting morphisms of Mayer-Vietoris, and that $\tau\left(A, *\right)$ is an isomorphism for all abelian groups $A$.
 	Then $\tau$ is a natural isomorphism.
 \end{theorem}
 
@@ -647,7 +647,7 @@ The reason complex oriented descent is useful is the following.
 	
 	Now, let $X$ a finite $G$-CW complex, s.t. the stabilizer of every point is abelian.
 	All the cells are then of the form $G/A \times D^n$ for some abelian subgroup $A \leq G$ and disk $D^n$.
-	By an induction on the number of cells, using Mayer-Vietories and the fact that $\tau$ commutes with the connecting morphisms, $\left(G, X\right)$ is an isomorphism.
+	By an induction on the number of cells, using Mayer-Vietoris and the fact that $\tau$ commutes with the connecting morphisms, $\left(G, X\right)$ is an isomorphism.
 	
 	Lastly, let $X$ be an arbitrary finite $G$-CW complex.
 	Let $V$ be a faithful $G$ representation, and consider the bundle $X \times V \to V$.
@@ -699,12 +699,12 @@ We also denote by $\tau\left(G, X\right)$ the character map $\chinpG \otimes L$ 
 \end{proof}
 
 \begin{lemma}
-	Both functors $C^*$ and $D^*$ satisfy Mayer-Vietories, and $\tau$ commutes with the connecting morphisms.
+	Both functors $C^*$ and $D^*$ satisfy Mayer-Vietoris, and $\tau$ commutes with the connecting morphisms.
 \end{lemma}
 
 \begin{proof}
 	The Borel construction $X \mapsto \EG \times_G X$ is a limit, and so are fixed points, so they commute with pushouts.
-	Therefore, the usual pushouts that induce Mayer-Vietories, give Mayer-Vietories for our functors.
+	Therefore, the usual pushouts that induce Mayer-Vietoris, give Mayer-Vietoris for our functors.
 	Moreover, the definition makes it clear that the character map commutes with the connecting morphisms.
 \end{proof}
 
