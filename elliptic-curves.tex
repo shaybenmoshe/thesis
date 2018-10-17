@@ -9,16 +9,15 @@ Elliptic curves are another source for formal group laws.
 \subsection{Formal Group Laws From Elliptic Curves}
 
 Let $C$ be an elliptic curve over a ring $R$, with $O$ the point at infinity.
-In \cite[IV]{Sil}, there is a construction of a formal group from $C$, obtained by considering the infinitesimal neighborhood of $O$.
-Choosing coordinates gives coordinates to the formal group, i.e. a formal group law denoted by $\Gamma_C$.
+In \cite[IV]{Sil}, there is a construction of a formal group law $\Gamma_C$, which represents a formal group $\fG_C$, obtained by considering the infinitesimal neighborhood of $O$ in $C$.
 
 Now, assume that $R = k$ is a finite field of characteristic $p$.
 We denote by $C\left[p^r\right]$ the $p^r$-torsion, i.e. the kernel of the multiplication-by-$p^r$ map.
 By \cite[IV.7.5]{Sil} and \cite[V.3.1]{Sil}, we have:
 
-\begin{proposition}
+\begin{proposition}\label{height-torsion}
 	The height of $\Gamma_C$ is either $1$ or $2$.
-	Moreover, the height is $2$ if and only if $C\left[p^r\right] = \left\{ O \right\}$ for all $r \geq 1$.
+	Moreover, the height is $2$ if and only if the only point of $C\left[p^r\right]$ is $O$ for all $r \geq 1$.
 \end{proposition}
 
 In fact, there are many more equivalent conditions to the above, and we make this into a definition.
@@ -29,12 +28,70 @@ In fact, there are many more equivalent conditions to the above, and we make thi
 
 Similarly to the Lubin-Tate deformation theory of formal group laws described in \ref{LT-def}, there is a deformation theory for elliptic curves.
 Denote by $C_U$ the universal deformation of $C$, which is an elliptic curve over some ring $R_U$.
-This has a corresponding formal group law $\Gamma_{C_U}$.
+This has a corresponding formal group law $\Gamma_{C_U}$ which represents a formal group $\fG_{C_U}$.
 We then have the following theorem, implied by the Serre-Tate theorem \cite[1.2.1]{ST}.
 
-\begin{theorem}[``$\Gamma_{C_U} = \left({\Gamma_C}\right)_U$"]
+\begin{theorem}[``$\Gamma_{C_U} = \left({\Gamma_C}\right)_U$"]\label{serre-tate}
 	The formal group law $\Gamma_{C_U}$ over $R_U$, is a universal deformation of $\Gamma_C$ over $k$, in the sense of \ref{LT-def}.
 \end{theorem}
 
-In this case we get a Lubin-Tate spectrum $E = \E{k, \Gamma_C}$ of height $2$.
+In this case we get a Lubin-Tate spectrum $E = \E{k, \Gamma_C}$.
 We recall from \ref{LT-spectrum} that the coefficients can be taken to be $E_* = \Wk\formal{u_1}\left[u^{\pm 1}\right]$ where $\left|u\right| = 2$, and the formal group law is $u\left(\Gamma_C\right)_U$, which by Serre-Tate can be described by $u \Gamma_{C_U}$.
+
+
+
+\subsection{HKR From Elliptic Curves}
+
+Recall that the our main goal in HKR theory was to compute $p^{-1} E^*\left(\BG\right)$ for some Lubin-Tate spectrum $E$.
+We shall focus only the $0$-th level, as this is $2$-periodic in the usual way.
+The main result \ref{theorem-c-pt} for us was (stated here only for the $0$-th level, and with $L_r$ for $r \geq r_0$)
+$$
+p^{-1} E^0\left(\BG\right)
+\cong \prod_{\left[\alpha\right] \in \Gnp/{\left(G \times \aut \left(\Lambda_r\right)\right)}}
+\left(L_r^0\right)^{\stab_{\aut \left(\Lambda_r\right)}\left(\alpha\right)}.
+$$
+That is, in order to compute $p^{-1} E^0\left(\BG\right)$, we need to compute $L_r^0$, and various fixed-points sub-rings thereof.
+
+We fix some elliptic curve $C$ over a finite field $k$ of characteristic $p$, of height $n=2$, and consider $E = \E{k, \Gamma_C}$.
+In \ref{alg-geo-Lr}, we have seen that $L_r^0$ can be described as follows.
+First, $\spec E^0\left(\BB[\Lambda_r]\right) = \left(\fG_{C_U}\left[p^r\right]\right)^2$.
+Second, $S_r^0 = \left\{ [k_1]\left(t_1\right) +_{\Gamma_{C_U}} [k_2]\left(t_2\right) \mid \left(k_1, k_2\right) \neq 0 \mod p^r\right\}$.
+And $L_r^0 = \left(S_r^0\right)^{-1} E^0\left(\BB[\Lambda_r]\right)$.
+
+Now, since $\fG_C$ is the formal neighborhood of $O$ in $C$, we have a map $\fG_C \to C$.
+Since the multiplication on $\fG_C$ comes from the multiplication on $C$, we have the commutative square:
+$$
+\begin{tikzcd}
+	\fG_C \arrow{r}{} \arrow{d}{\left[p^r\right]} & C \arrow{d}{\left[p^r\right]} \\
+	\fG_C \arrow{r}{} & C
+\end{tikzcd}
+$$
+Taking the kernels of both vertical maps, we get a map $\fG_C\left[p^r\right] \to C\left[p^r\right]$.
+Since $C$ is supersingular, by \ref{height-torsion}, the only point of $C\left[p^r\right]$ is $O$, i.e. it is a nilpotent thickening of the point $O$, which means that the map $\fG_C\left[p^r\right] \to C\left[p^r\right]$ is an isomorphism.
+
+In the same way as above, we have a map between the $p^r$-torsion of the universal deformations, $\fG_{C_U}\left[p^r\right] \to C_U\left[p^r\right]$.
+Reducing modulo the maximal ideal, i.e. the map $\Wk\formal{u_1} \to k$, gives the map above $\fG_C\left[p^r\right] \to C\left[p^r\right]$, which is an isomorphism.
+By Nakayama's lemma we see that the map $\fG_{C_U}\left[p^r\right] \to C_U\left[p^r\right]$ is also an isomorphism.
+
+This means that in our computations of $L_r^0$, we can use the elliptic curve rather then its formal group law.
+This has the advantage that the operations on the elliptic curve are given by polynomials, rather then formal power series.
+More explicitly, we have that $\spec E^0\left(\BB[\Lambda_r]\right) \cong \left(C_U\left[p^r\right]\right)^2$, i.e. the scheme-theoretic kernel of the multiplication-by-$p^r$ map on the elliptic curve, squared.
+We then need to localize away from the zeros of the functions $[k_1]\left(-\right) +_{C_U} [k_2]\left(-\right)$, for $\left(k_1, k_2\right) \neq 0 \mod p^r$.
+As we have seen in \ref{alg-geo-Lr}, we can actually consider only $k_i$'s which are a multiple of $p^{r-1}$, which means that we need to consider only $p^2-1$ pairs.
+
+
+
+\subsection{Specific Elliptic Curve}
+
+We now restrict ourselves to a special case.
+Take $p = 2$ and $k = \mbb{F}_4$.
+We take $C$ to be the elliptic curve given by the Weierstrass equation $y^2 + y = x^3$.
+It is supersingular as follows from \cite[exercise V.5.7 combined with proposition A.1.1.c]{Sil}.
+Another way to see that is by a direct computation of the terms of the formal group law, which show that the $2$-series $\left[2\right]\left(x\right)$ has $2=0$ as the coefficient of $x$, as in \cite[6.1.4]{Bea}.
+
+Furthermore, $y^2 + u_1 xy + y = x^3$ over $\Wk\formal{u_1} = \ZZ_2\left[\zeta_2\right]\formal{u_1}$ is a universal deformation $C_U$.
+This is proven in \cite[3.5]{LT}.
+Specifically, there the ring $\ZZ_2\left[\zeta_2\right]$ is denoted by $R$, and $u_1$ by $t$.
+It is claimed that the formal group law (up to order 2) is given by $x+y+u_1 xy$.
+Then, by \cite[1.1]{LT}, it is the universal deformation, for $C_2 = \frac{1}{2}\left(\left(x+y\right)^2-x^2-y^2\right)=xy$.
+\todo{I don't even understand why this means that it is a univ defo of the fgl, and especially not why it is for the elliptic curve...}

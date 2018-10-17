@@ -572,21 +572,20 @@ First we will describe, without being precise, another point of view on what chr
 There is a stack of formal groups with strict isomorphisms, denoted by $\Mfgs$.
 It can be described as the stack that sends a ring $R$ to the groupoid of formal group laws, with strict isomorphisms between them.
 Quillen theorem \ref{quillen-theorem} tells us that $\MU_*$ is the Lazard ring, that is the universal ring that carries the universal formal group law.
-It turns out that this theorem has a second part, which says that $\left(\MU \otimes \MU\right)_*$ is the universal ring that carries two formal group laws and a strict isomorphism between them.
+This theorem has a second part, which says that $\left(\MU \otimes \MU\right)_*$ is the universal ring that carries two formal group laws and a strict isomorphism between them.
 Therefore, $\Mfgs$ is represented by $\left(\MU_*, \left(\MU \otimes \MU\right)_*\right)$.
 
-The geometric points of the stack $\Mfgs$ are describe precisely the same as $\spec \SS$, that is because for an algebraically closed field of characteristic $0$ there is a unique (up to isomorphism) formal group law which is of height $0$ namely the additive formal group law, and for characteristic $p$ there is a unique (up to isomorphism) formal group law of each height $1 \leq n \leq \infty$.
+The geometric points of the stack $\Mfgs$ are precisely the same as $\spec \SS$, that is because for an algebraically closed field of characteristic $0$ there is a unique (up to isomorphism) formal group law which is of height $0$ namely the additive formal group law, and for characteristic $p$ there is a unique (up to isomorphism) formal group law of each height $1 \leq n \leq \infty$.
 
 For a spectrum $X$, $\MU_*\left(X\right)$ is a $\left(\MU_*, \left(\MU \otimes \MU\right)_*\right)$-comodule, which is the same as a sheaf over $\Mfgs$.
 From this point of view, chromatic homotopy theory lets us study a spectrum by decomposing it over the stack $\Mfgs$.
 
-We can restrict ourselves to the stack only over rings of characteristic $p$, $\Mfgsp$, which is then represented by $\left(\left(\MU_{\left(p\right)}\right)_*, \left(\MU_{\left(p\right)} \otimes \MU_{\left(p\right)}\right)_*\right)$. \todo{I think it's true, is it?}
-Similarly to $\MU$, $\BP$ is universal ring with the universal $p$-typical formal group law, and $\left(\BP \otimes \BP\right)_*$ is the universal ring with two $p$-typical formal group laws and an isomorphism between them \todo{I didn't say this before}.
-Since every formal group law is isomorphic to a $p$-typical one, we know that the stack $\Mfgsp$ is also represented by $\left(\BP_*, \left(\BP \otimes \BP\right)_*\right)$.
+We can restrict ourselves to the stack only over $p$-local rings, $\Mfgsp$, which is then represented by $\left(\left(\MU_{\left(p\right)}\right)_*, \left(\MU_{\left(p\right)} \otimes \MU_{\left(p\right)}\right)_*\right)$.
+Similarly to $\MU$, $\BP$ is universal ring with the universal $p$-typical formal group law, and $\left(\BP \otimes \BP\right)_*$ is the universal ring with two $p$-typical formal group laws and an strict isomorphism between them.
+Since every formal group law is isomorphic to a unique $p$-typical one, we know that the stack $\Mfgsp$ is also represented by $\left(\BP_*, \left(\BP \otimes \BP\right)_*\right)$.
 
 It is now reasonable that $\K[n]$, obtained from $\BP$ by killing the $v_m$'s for $m \neq n$ and inverting $v_n$, sees the $n$-th level, and that $\E{n}$ obtained in the same way but only killing $v_m$ for $m > n$, sees the levels $\leq n$.
-
-Let us now claim a precise statement, related to this idea:
+Following this point of view, the following theorem can be proven:
 
 \begin{theorem}[{\cite[23, proposition 2]{Lur}}]
 	$\E{n}$ and $\K[0] \oplus \cdots \oplus \K[n]$ are Bousfield equivalent.
