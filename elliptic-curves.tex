@@ -27,16 +27,15 @@ In fact, there are many more equivalent conditions to the above, and we make thi
 \end{definition}
 
 Similarly to the Lubin-Tate deformation theory of formal group laws described in \ref{LT-def}, there is a deformation theory for elliptic curves.
-Denote by $C_U$ the universal deformation of $C$, which is an elliptic curve over some ring $R_U$.
-This has a corresponding formal group law $\Gamma_{C_U}$ which represents a formal group $\fG_{C_U}$.
-We then have the following theorem, implied by the Serre-Tate theorem \cite[1.2.1]{ST}.
+Recall that $\Gamma_C$ over $k$ has a universal deformation.
+The Serre-Tate theorem \cite[2.9.1]{KM} then implies the following:
 
-\begin{theorem}[``$\Gamma_{C_U} = \left({\Gamma_C}\right)_U$"]\label{serre-tate}
-	The formal group law $\Gamma_{C_U}$ over $R_U$, is a universal deformation of $\Gamma_C$ over $k$, in the sense of \ref{LT-def}.
+\begin{theorem}\label{serre-tate}
+	There exists a deformation $C_U$ over $\Wk\formal{u_1}$ of $C$, whose formal group law $\Gamma_{C_U}$ is a universal deformation of $\Gamma_C$.
 \end{theorem}
 
 In this case we get a Lubin-Tate spectrum $E = \E{k, \Gamma_C}$.
-We recall from \ref{LT-spectrum} that the coefficients can be taken to be $E_* = \Wk\formal{u_1}\left[u^{\pm 1}\right]$ where $\left|u\right| = 2$, and the formal group law is $u\left(\Gamma_C\right)_U$, which by Serre-Tate can be described by $u \Gamma_{C_U}$.
+We recall from \ref{LT-spectrum} that the coefficients can be taken to be $E_* = \Wk\formal{u_1}\left[u^{\pm 1}\right]$ where $\left|u\right| = 2$, and the formal group law is $u\left(\Gamma_C\right)_U$, which by the above can be described by $u \Gamma_{C_U}$.
 
 
 
@@ -50,9 +49,10 @@ p^{-1} E^0\left(\BG\right)
 \cong \prod_{\left[\alpha\right] \in \Gnp/{\left(G \times \aut \left(\Lambda_r\right)\right)}}
 \left(L_r^0\right)^{\stab_{\aut \left(\Lambda_r\right)}\left(\alpha\right)}.
 $$
-That is, in order to compute $p^{-1} E^0\left(\BG\right)$, we need to compute $L_r^0$, and various fixed-points sub-rings thereof.
+That is, in order to compute $p^{-1} E^0\left(\BG\right)$, we need to compute $L_r^0$, as defined in \ref{Lr}, and various fixed-points sub-rings thereof.
 
 We fix some elliptic curve $C$ over a finite field $k$ of characteristic $p$, of height $n=2$, and consider $E = \E{k, \Gamma_C}$.
+As we saw in \ref{serre-tate}, we can use the deformation $C_U$ to describe the universal deformation of the formal group.
 In \ref{alg-geo-Lr}, we have seen that $L_r^0$ can be described as follows.
 First, $\spec E^0\left(\BB[\Lambda_r]\right) = \left(\fG_{C_U}\left[p^r\right]\right)^2$.
 Second, $S_r^0 = \left\{ [k_1]\left(t_1\right) +_{\Gamma_{C_U}} [k_2]\left(t_2\right) \mid \left(k_1, k_2\right) \neq 0 \mod p^r\right\}$.
@@ -69,7 +69,7 @@ $$
 Taking the kernels of both vertical maps, we get a map $\fG_C\left[p^r\right] \to C\left[p^r\right]$.
 Since $C$ is supersingular, by \ref{height-torsion}, the only point of $C\left[p^r\right]$ is $O$, i.e. it is a nilpotent thickening of the point $O$, which means that the map $\fG_C\left[p^r\right] \to C\left[p^r\right]$ is an isomorphism.
 
-In the same way as above, we have a map between the $p^r$-torsion of the universal deformations, $\fG_{C_U}\left[p^r\right] \to C_U\left[p^r\right]$.
+In the same way as above, we have a map between the $p^r$-torsion of the deformations, $\fG_{C_U}\left[p^r\right] \to C_U\left[p^r\right]$.
 Reducing modulo the maximal ideal, i.e. the map $\Wk\formal{u_1} \to k$, gives the map above $\fG_C\left[p^r\right] \to C\left[p^r\right]$, which is an isomorphism.
 By Nakayama's lemma we see that the map $\fG_{C_U}\left[p^r\right] \to C_U\left[p^r\right]$ is also an isomorphism.
 
@@ -89,9 +89,19 @@ We take $C$ to be the elliptic curve given by the Weierstrass equation $y^2 + y 
 It is supersingular as follows from \cite[exercise V.5.7 combined with proposition A.1.1.c]{Sil}.
 Another way to see that is by a direct computation of the terms of the formal group law, which show that the $2$-series $\left[2\right]\left(x\right)$ has $2=0$ as the coefficient of $x$, as in \cite[6.1.4]{Bea}.
 
-Furthermore, $y^2 + u_1 xy + y = x^3$ over $\Wk\formal{u_1} = \ZZ_2\left[\zeta_2\right]\formal{u_1}$ is a universal deformation $C_U$.
-This is proven in \cite[3.5]{LT}.
+Furthermore, denote by $C_U$ the elliptic curve given by $y^2 + u_1 xy + y = x^3$ over $\Wk\formal{u_1} = \ZZ_2\left[\zeta_3\right]\formal{u_1}$.
+It is clear that modulo $\left(2, \zeta_3\right)$, this reduces to $C$.
+Furthermore, in \cite[3.5]{LT}, it is proven that the formal group law of $C_U$ is indeed a universal deformation of that of $C$.
 Specifically, there the ring $\ZZ_2\left[\zeta_2\right]$ is denoted by $R$, and $u_1$ by $t$.
 It is claimed that the formal group law (up to order 2) is given by $x+y+u_1 xy$.
-Then, by \cite[1.1]{LT}, it is the universal deformation, for $C_2 = \frac{1}{2}\left(\left(x+y\right)^2-x^2-y^2\right)=xy$.
-\todo{I don't even understand why this means that it is a univ defo of the fgl, and especially not why it is for the elliptic curve...}
+Then, by \cite[1.1]{LT}, it is the universal deformation, because $C_2 = \frac{1}{2}\left(\left(x+y\right)^2-x^2-y^2\right)=xy$.
+
+Our next goal is to compute the ring $L_r^0$ corresponding to $E = \E{\mbb{F}_4, \Gamma_C}$.
+To that end we first need to compute $E^0\left(\BB[\Lambda_r]\right)$, which as we saw is given by $\OO\left(\left(C_U\left[2^r\right]\right)^2\right) = \left(\OO\left(C_U\left[2^r\right]\right)\right)^{\otimes 2}$.
+We then need to localize away from the zeros of $[k_1]\left(-\right) +_{C_U} [k_2]\left(-\right)$.
+We have only $2^2-1=3$ pairs, which are $\left(2^{r-1},0\right), \left(0,2^{r-1}\right), \left(2^{r-1},2^{r-1}\right)$.
+Note that the first two are symmetric, and can be computed even before taking the tensor product.
+That is, $L_r^0$ is given by computing $\OO\left(C_U\left[2^r\right]\right)$ (i.e. $2^r$-torsion), localizing away from $[2^{r-1}]\left(-\right)$ (to get the points of order exactly $2^r$), tensoring with itself (to get pairs of such points), and localizing away from $[2^{r-1}]\left(-\right) +_{C_U} [2^{r-1}]\left(-\right)$ (to get such pairs that span).
+
+Furthermore, we recall that by \ref{Lr-fixed-points}, $2$ is invertible in $L_r^0$, so the whole computation can be carried with $C_U$ base changed to $\QQ_2\left[\zeta_3\right]\formal{u_1}$, and we will obtain the same result.
+Moreover, we note that the elliptic curve, and all the operations described above, are defined already over $\QQ\left[u_1\right]$, so we can carry the whole computation over $\QQ\left[u_1\right]$, and tensor in the end with $\QQ_2\left[\zeta_3\right]\formal{u_1}$ to get $L_r^0$.
