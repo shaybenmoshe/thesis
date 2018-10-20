@@ -104,13 +104,13 @@ Note that the first two are symmetric, and can be computed even before taking th
 That is, $L_r^0$ is given by computing $\OO\left(C_U\left[2^r\right]\right)$ (i.e. $2^r$-torsion), localizing away from $[2^{r-1}]\left(-\right)$ (to get the points of order exactly $2^r$), tensoring with itself (to get pairs of such points), and localizing away from $[2^{r-1}]\left(-\right) +_{C_U} [2^{r-1}]\left(-\right)$ (to get such pairs that span).
 
 Furthermore, we recall that by \ref{Lr-fixed-points}, $2$ is invertible in $L_r^0$, so the whole computation can be carried with $C_U$ base changed to $\QQ_2\left[\zeta_3\right]\formal{u_1}$, and we will obtain the same result.
-Moreover, we note that the elliptic curve, and all the operations described above, are defined already over $\QQ\left[u_1\right]$, so we can carry the whole computation over $\QQ\left[u_1\right]$, and tensor in the end with $\QQ_2\left[\zeta_3\right]\formal{u_1}$ to get $L_r^0$.
+Moreover, we note that the elliptic curve, and all the operations described above, are defined already over $R = \QQ\left[u_1\right]$, so we can carry the whole computation over $R$, and tensor in the end with $\QQ_2\left[\zeta_3\right]\formal{u_1}$ to get $L_r^0$.
 
 
 
 \subsection{Concrete Computations}
 
-We describe a way to do the calculation described above, namely over $\QQ\left[u_1\right]$.
+We describe a way to do the calculation described above, namely over $R = \QQ\left[u_1\right]$.
 We will display this along the Macaulay 2 code, that carries out the computation.
 
 The basic operation on the elliptic curve are developed in projective coordinates.
@@ -121,9 +121,21 @@ This point will be useful to give a computation of the addition map, and more sp
 
 The code is given below, and what follows is an explanation of the code.
 
-\subsubsection{General Remarks}
+\subsubsection{General Remarks}\label{degree-considerations}
 
 We will use in the code matrices (rather then other data types which store a list of values), as Macaulay 2 has the best support for matrices.
+
+We note that we know a priori the degrees \todo{is that term?} of all the constructions over $R$.
+Specifically, the points of $C_U\left[p^r\right]$ are isomorphic to $\Lambda_r = \left(\ZZ/p^r\right)^2$, so is of degree $p^{2r}$.
+The points of order exactly $p^r$ are then of degree $p^{2r}-p^{2\left(r-1\right)}$.
+The points of $L_r^0$ are of degree $p^{4\left(r-1\right)}\left(p^2-1\right)\left(p^2-p\right)$.
+To see this, we note that they have a transitive free action of $\aut\left(\Lambda_r\right) = \GL\left(2, \ZZ/p^r\right)$ (since we pick two elements that generate $\Lambda_r$).
+Being invertible is equivalent to having an invertible determinant, and an element is invertible in $\ZZ/p^r$ if and only if it is non-zero modulo $p$, so we can choose a matrix over $\ZZ/p$ and lift the elements, and there are $p^{4\left(r-1\right)}$ lifts.
+Lastly, $\GL\left(2, \ZZ/p\right)$ has $\left(p^2-1\right)\left(p^2-p\right)$, since the first column can be any non-zero vector, and the second must be linearly independent of it.
+
+Knowing the degrees will be useful later on.
+First and foremost, as some of our constructions will involve arbitrary choices, which might lead to a result which is too large, but having the correct degree guarantees that our choice is valid.
+Second, this is a useful sanity-check to verify our results. 
 
 \subsubsection{Basic Objects}
 
@@ -168,6 +180,38 @@ Specifically, we take $Q$ to be the removed point $\left[0;0;1\right]$.
 At this point we can introduce \texttt{Mul2} simply by $P+P$.
 We further define the function \texttt{MulNTwoDiv} which computes $\left[n\right]$ by expanding $n$ in binary form (if it is divisible by $2$, then $\left[n\right] = \left[2\right]\left[\frac{n}{2}\right]$, otherwise $\left[n\right] = \left[n-1\right]+\id$).
 This gives us $\left[p^{r-1}\right],\left[p^r\right]$ denoted by \texttt{Mulprm1} and \texttt{Mulpr} respectively.
+
+\subsection{Order Exactly $p^r$}
+
+The next step is to compute $\OO\left(C_U\left[p^r\right]\right)$, and its localization away from $[p^{r-1}]\left(-\right)$.
+\todo{explain well why we can work in $Y = 1$}
+Then $\OO\left(C_U\left[p^r\right]\right)$ is described as the quotient of $R\left[x, z\right]$ (where $R = \QQ\left[u_1\right]$) by some ideal.
+First, we need to be on the curve, which gives $F\left(x,1,z\right)$, this explains the first element appended to \texttt{quoPr}.
+Second, we want to be $p^r$-torsion, that $\left[p^r\right]\left(x,1,z\right) = O$.
+As $O = \left[0;1;0\right]$, this is equivalent to requiring that the first and last coordinates of $\left[p^r\right]\left(x,1,z\right)$ are $0$, this explains the second and third element appended to \texttt{quoPr}.
+
+Next, we actually wish our points to be of order exactly $p^r$ (and not just $p^r$ torsion).
+However, to require this, we want that $\left[p^{r-1}\right]\left(x,1,z\right) \neq O$.
+This means that we to ensure that two values (the first and last coordinates) are not $0$ together.
+Note that if they vanish together, then any linear combination them vanishes as well, but the other direction is not immediate.
+However, since there are only finitely many points, the number of different values attained is finite, and there are infinitely many different linear combinations over $R$, so there are linear combinations that vanish if and only if the two vanish together.
+We can then choose an arbitrary linear combination, and the result might be too large, but if the degree is correct then our choice was valid.
+Since we a priori know the degrees, as described in \ref{degree-considerations}, we can verify this.
+It turns out that here taking the sum of the first and last coordinates works.
+Now, inverting an element $x \in S$ is equivalent to adding a formal element $d$ and requiring to be its inverse, i.e. $x^{-1} S = S\left[d\right]/(1 - dx)$.
+This explains the last element appended to \texttt{quoPr}.
+
+We then define \texttt{IPr}, which is the ideal spanned by those elements, i.e. the quotient by it gives the points of order exactly $p^r$.
+Furthermore, \texttt{gbIPr} is a Gr\"{o}bner basis for it.
+The \texttt{MonomialOrder} used in the definition of \texttt{BasePr} was found experimentally to yield faster computations (the heuristic is that $x$ appears with the highest power, and it determines $z$ so $z$ it will be a polynomial in $x$, and $d$ will be a polynomial in $x,z$).
+
+\subsubsection{Spanning Pairs}
+
+Here we compute $L_r^0$.
+First we just take the tensor product of the previous with itself, which is given simply by duplicating all the variables to \texttt{x1,z1,x2,z2,d1,d2}, and all the relations (we use the Gr\"{o}bner basis for faster computation).
+Then, we need to localize away from the kernel of $\left[p^{r-1}\right]\left(x_1,1,z_1\right) +_{C_U} \left[p^{r-1}\right]\left(x_2,1,z_2\right) \neq O$.
+We use the same trick, it turns out that here the sum is a again a valid linear combination, and we add another variable \texttt{d3}, and require it to be its inverse.
+The \texttt{MonomialOrder} used in the definition of \texttt{BaseLr0} was found experimentally to yield faster computations (the heuristic is similar to the previous).
 
 \subsubsection{The Code}
 
@@ -236,7 +280,7 @@ Mulpr = MulNTwoDiv(p^r);
 
 
 
--------- Exactly p^r Torsion --------
+-------- Order Exactly p^r --------
 
 BasePr = R[x,z,d, MonomialOrder=>{Weights => {1, 1000 ,1000000}, Lex}];
 p0 = matrix{{x, 1, z}};
@@ -261,24 +305,25 @@ gbIPr = flatten entries gens gb IPr;
 
 -------- Spanning Pairs --------
 
-BaseLr0 = R[x1,z1,x2,z2,d1,d2,d3, MonomialOrder=>{Weights => {1,1000,1,1000,1000000,1000000,1000000}, Lex}];
+BaseLr0 = R[x1,z1,x2,z2,d1,d2,d3, MonomialOrder=>{Weights => {1,1000,1,1000,1000000,1000000,3000000}, Lex}];
 p01d = matrix{{x1, z1, d1}};
 p02d = matrix{{x2, z2, d2}};
 p1 = matrix{{x1, 1, z1}};
 p2 = matrix{{x2, 1, z2}};
 
-quo = {};
+quoLr0 = {};
 
-quo = quo | (flatten entries sub(matrix{gbIPr}, p01d));
-quo = quo | (flatten entries sub(matrix{gbIPr}, p02d));
+quoLr0 = quoLr0 | (flatten entries sub(matrix{gbIPr}, p01d));
+quoLr0 = quoLr0 | (flatten entries sub(matrix{gbIPr}, p02d));
 
 Mulprm1 = MulNTwoDiv(p^(r-1));
 
 mulprm11 = sub(Mulprm1, p1);
 mulprm12 = sub(Mulprm1, p2);
 addMulprm11and2 = sub(Add, mulprm11|mulprm12)
-quo = append(quo, 1 - d3 * (addMulprm11and2_(0,0) + addMulprm11and2_(0,2)));
+quoLr0 = append(quoLr0, 1 - d3 * (addMulprm11and2_(0,0) + addMulprm11and2_(0,2)));
 
-I = ideal quo
+ILr0 = ideal quoLr0;
+
+gbILr0 = flatten entries gens gb ILr0;
 \end{lstlisting}
-Here \texttt{A3} is where affine patches of the elliptic curve will be defined.
