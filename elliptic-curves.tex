@@ -55,7 +55,7 @@ We fix some elliptic curve $C$ over a finite field $k$ of characteristic $p$, of
 As we saw in \ref{serre-tate}, we can use the deformation $C_U$ to describe the universal deformation of the formal group.
 In \ref{alg-geo-Lr}, we have seen that $L_r^0$ can be described as follows.
 First, $\spec E^0\left(\BB[\Lambda_r]\right) = \left(\fG_{C_U}\left[p^r\right]\right)^2$.
-Second, $S_r^0 = \left\{ [k_1]\left(t_1\right) +_{\Gamma_{C_U}} [k_2]\left(t_2\right) \mid \left(k_1, k_2\right) \neq 0 \mod p^r\right\}$.
+Second, $S_r^0 = \left\{ [k_1]\left(t\right) +_{\Gamma_{C_U}} [k_2]\left(s\right) \mid \left(k_1, k_2\right) \neq 0 \mod p^r\right\}$.
 And $L_r^0 = \left(S_r^0\right)^{-1} E^0\left(\BB[\Lambda_r]\right)$.
 
 Now, since $\fG_C$ is the formal neighborhood of $O$ in $C$, we have a map $\fG_C \to C$.
@@ -105,3 +105,180 @@ That is, $L_r^0$ is given by computing $\OO\left(C_U\left[2^r\right]\right)$ (i.
 
 Furthermore, we recall that by \ref{Lr-fixed-points}, $2$ is invertible in $L_r^0$, so the whole computation can be carried with $C_U$ base changed to $\QQ_2\left[\zeta_3\right]\formal{u_1}$, and we will obtain the same result.
 Moreover, we note that the elliptic curve, and all the operations described above, are defined already over $\QQ\left[u_1\right]$, so we can carry the whole computation over $\QQ\left[u_1\right]$, and tensor in the end with $\QQ_2\left[\zeta_3\right]\formal{u_1}$ to get $L_r^0$.
+
+
+
+\subsection{Concrete Computations}
+
+We describe a way to do the calculation described above, namely over $\QQ\left[u_1\right]$.
+We will display this along the Macaulay 2 code, that carries out the computation.
+
+The basic operation on the elliptic curve are developed in projective coordinates.
+Therefore, we homogenize the elliptic curve above to $X^3 = Y^2 Z + u_1 X Y Z + Y Z^2$.
+When we need to compute the ring, we will work with the affine patch where $Y = 1$, which contains the origin $O = \left[0;1;0\right]$.
+Note that in this patch we remove exactly one points from the patch, for if $Y = 0$, then $X^3 = 0 + 0 + 0 = 0$, i.e. $X = 0$, so we remove only the point $\left[0;0;1\right]$.
+This point will be useful to give a computation of the addition map, and more specifically for the multiplication-by-$2^r$ map.
+
+The code is given below, and what follows is an explanation of the code.
+
+\subsubsection{General Remarks}
+
+We will use in the code matrices (rather then other data types which store a list of values), as Macaulay 2 has the best support for matrices.
+
+\subsubsection{Basic Objects}
+
+We define the basic objects concerning the computation.
+Note that \texttt{r = 2} can be replaced in principal by any value.	
+Moreover, we can change \texttt{R = QQ[u1]} to \texttt{QQ} or even \texttt{GF(p)} if we want to work over them, and then we also need to remove the \texttt{u1 * X * Y * Z} term from \texttt{F}.
+
+In the code \texttt{RemovedP} is the point described above which is not in the affine patch we will be using ($Y = 1$).
+
+\subsubsection{Util Functions}
+
+The function \texttt{DivideGcd} has a matrix as its input, which will always be a list of polynomials, and outputs the matrix divided by the $\GCD$ of all of the elements.
+The function \texttt{comp} receives two matrices of polynomials, and computes the composition by substituting the variables.
+It also divides by the $\GCD$, which does not affect the function in projective coordinates, but is essential in some instances to get the correct affine functions.
+
+\subsubsection{Functions on the Elliptic Curve}
+
+The first function calculated is what we call \texttt{Star}.
+This operation is used to define the addition (as explained below), and it satisfies $P_1 \star P_2 = - \left(P_1 + P_2\right)$, in other words, $\left(P_1 \star P_2\right) + P_1 + P_2 = O$.
+Geometrically, $P_1 \star P_2$ is the third intersection point of the line through $P_1$ and $P_2$ and the elliptic curve.
+Equivalently, projectively, the line is given by $t P_1 + s P_2$, and we are looking for the places where $F\left(t P_1 + s P_2\right) = 0$.
+The two trivial solutions are where $t = 0$ or $s = 0$.
+We think of $F\left(t P_1 + s P_2\right)$ as a polynomial in $t,s$.
+Since $F$ is homogenus of degree $3$, all terms will have total degree $3$.
+The cubic terms $t^3$ and $s^3$ are then precisely those that are in $F\left(t P_1\right) + F\left(s P_2\right)$.
+We assumed that $P_1,P_2$ are on the curve, so we can subtract this, and look for the solution for the solution of $F\left(t P_1 + s P_2\right) - F\left(t P_1\right) - F\left(s P_2\right)$.
+This is now a homogenus polynomial of degree $3$ without $t^3$ and $s^3$, that is, it is of the form $t s \left(c_t t + c_s s\right)$.
+Therefore a solution is for $t = -c_s$ and $s = c_t$, i.e. $P_1 \star P_2 = -c_s P_1 + c_t P_2$.
+
+Now, taking $P_1 = P, P_2 = O$ we get $\left(P \star O\right) + P + O = O$, so $P \star O = -P$.
+This explains the introduction of \texttt{Neg}.
+
+Now that we have \texttt{Star} and \texttt{Neg} we can define the addition by $-\left(P_1 \star P_2\right)$.
+We call this \texttt{AddCalc}, as this is not quiet the addition function we will be using.
+This function has a problem, it vanishes on the diagonal $P_1 = P_2$, which is precisely what we need to multiply by $2$.
+The reason is that already the function we denoted by \texttt{Star} vanishes on the diagonal, because when $P_1 = P_2$, the line through the points $t P_1 + s P_2$ is singular and we just get the point.
+However, this function is defined everywhere else.
+Luckily we can use the following trick, $P_1 + P_2 = \left(P_1 - Q\right) + \left(P_2 + Q\right)$.
+Specifically, we take $Q$ to be the removed point $\left[0;0;1\right]$.
+\todo{why does this actually work then? do we use the fact that we only care about points in the formal neighborhood of $O$?}
+
+At this point we can introduce \texttt{Mul2} simply by $P+P$.
+We further define the function \texttt{MulNTwoDiv} which computes $\left[n\right]$ by expanding $n$ in binary form (if it is divisible by $2$, then $\left[n\right] = \left[2\right]\left[\frac{n}{2}\right]$, otherwise $\left[n\right] = \left[n-1\right]+\id$).
+This gives us $\left[p^{r-1}\right],\left[p^r\right]$ denoted by \texttt{Mulprm1} and \texttt{Mulpr} respectively.
+
+\subsubsection{The Code}
+
+\begin{lstlisting}
+-------- Basic Objects --------
+
+p = 2;
+r = 2;
+R = QQ[u1];
+
+A3 = R[X,Y,Z];
+A33 = R[X1,Y1,Z1,X2,Y2,Z2];
+A332 = A33[t,s];
+
+F = X^3 - (Y^2 * Z + u1 * X * Y * Z + Y * Z^2);
+
+Mt = matrix{{t}};
+Ms = matrix{{s}};
+
+O = matrix{{0, 1, 0}};
+P = matrix{{X, Y, Z}};
+P1 = matrix{{X1, Y1, Z1}};
+P2 = matrix{{X2, Y2, Z2}};
+RemovedP = matrix{{0, 0, 1}};
+
+
+
+-------- Util Functions --------
+
+DivideGcd = mat -> (
+	g := gcd flatten entries mat;
+	matrix {(flatten entries mat) // g}
+);
+
+comp = (a, b) -> (
+	DivideGcd(sub(a, b))
+);
+
+
+
+-------- Functions on the Elliptic Curve --------
+
+StarCalc = sub(F, Mt * P1 + Ms * P2) - sub(F, Mt * P1) - sub(F, Ms * P2);
+StarCt = StarCalc_(t^2 * s);
+StarCs = StarCalc_(t * s^2);
+Star = -StarCs * P1 + StarCt * P2;
+
+Neg = comp(Star, P|O);
+
+AddCalc = comp(Neg, sub(Star, P1|P2));
+MovedP1 = comp(AddCalc, P1|sub(Neg, RemovedP));
+MovedP2 = comp(AddCalc, P2|RemovedP);
+Add = comp(AddCalc, MovedP1|MovedP2);
+
+Mul2 = comp(Add, P|P);
+
+MulNTwoDiv = n -> (
+	if n == 1 then P
+	else if n % 2 == 0 then comp(Mul2, MulNTwoDiv(n / 2))
+	else comp(Add, P|MulNTwoDiv(n-1))
+);
+
+Mulprm1 = MulNTwoDiv(p^(r-1));
+
+Mulpr = MulNTwoDiv(p^r);
+
+
+
+-------- Exactly p^r Torsion --------
+
+BasePr = R[x,z,d, MonomialOrder=>{Weights => {1, 1000 ,1000000}, Lex}];
+p0 = matrix{{x, 1, z}};
+
+quoPr = {};
+
+quoPr = append(quoPr, sub(F, p0));
+
+mulpr = sub(Mulpr, p0);
+quoPr = append(quoPr, mulpr_(0,0));
+quoPr = append(quoPr, mulpr_(0,2));
+
+mulprm1 = sub(Mulprm1, p0);
+
+quoPr = append(quoPr, 1 - d * (mulprm1_(0,0) + mulprm1_(0,2)));
+
+IPr = ideal quoPr;
+
+gbIPr = flatten entries gens gb IPr;
+
+
+
+-------- Spanning Pairs --------
+
+BaseLr0 = R[x1,z1,x2,z2,d1,d2,d3, MonomialOrder=>{Weights => {1,1000,1,1000,1000000,1000000,1000000}, Lex}];
+p01d = matrix{{x1, z1, d1}};
+p02d = matrix{{x2, z2, d2}};
+p1 = matrix{{x1, 1, z1}};
+p2 = matrix{{x2, 1, z2}};
+
+quo = {};
+
+quo = quo | (flatten entries sub(matrix{gbIPr}, p01d));
+quo = quo | (flatten entries sub(matrix{gbIPr}, p02d));
+
+Mulprm1 = MulNTwoDiv(p^(r-1));
+
+mulprm11 = sub(Mulprm1, p1);
+mulprm12 = sub(Mulprm1, p2);
+addMulprm11and2 = sub(Add, mulprm11|mulprm12)
+quo = append(quo, 1 - d3 * (addMulprm11and2_(0,0) + addMulprm11and2_(0,2)));
+
+I = ideal quo
+\end{lstlisting}
+Here \texttt{A3} is where affine patches of the elliptic curve will be defined.
