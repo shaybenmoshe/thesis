@@ -62,7 +62,6 @@ We will try to recover $\spec R$, as a topological space, from $\Ch{R}$.
 	Clearly if $A \otimes K \cong 0$ then also $A \otimes B \otimes K \cong 0$, so it is an ideal.
 	Let $\mfk{p}$ be a prime ideal in $R$ in the usual sense, and take $K = R_\mfk{p}$ (concentrated at degree $0$),
 	then $A \otimes K = A_\mfk{p}$ (level-wise localization).
-	\todo{consider actually proving}
 	We will omit the proof that $\mcl{T}_K$ is a prime, but we shall prove something weaker, namely only the case where $A,B$ are bounded complexes of finitely generate projective modules (and not merely quasi-isomorphic to such complexes).
 	Assume then that
 	$
@@ -166,8 +165,8 @@ Since $E$ is unital, there is a canonical generator $1 \in E_0$.
 	$\HH{R}^*\left(\CP{\infty}\right) \cong R \formal{x}$,
 	where $\left|x\right| = 2$,
 	and the maps induced by the inclusions of projective spaces maps $x$ to $x$.
-	Therefore we see that $x \in \HH{R}^2\left(\BU[1]\right)$ is mapped to $x \in \HH{R}^2\left(S^2\right) = R\left\{x\right\}$, which is mapped to the generator of the reduced part of $\HH{R}^0\left(S^0\right) = R \oplus R$.
-	Hence, $x$ is a complex orientation for $\HH{R}$.
+	Therefore we see that $x \in \HH{R}^2\left(\BU[1]\right)$ is mapped to $x \in \HH{R}^2\left(S^2\right) = R\left\{x\right\}$, which is mapped to $1 \in \HH{R}_0 = R$.
+	Hence, $x$ is a complex orientation.
 \end{example}
 
 \begin{example}[$\K$-Theory Saga: Complex Orientation]\label{k-thy-oriented}
@@ -178,9 +177,8 @@ Since $E$ is unital, there is a canonical generator $1 \in E_0$.
 	$\K^*\left(\CP{\infty}\right) \cong \K_* \formal{t}$
 	(here $\left|t\right| = 0$),
 	where the maps induced by the inclusions of projective spaces maps $t$ to $t$.
-	We deduce that $\beta^{-1} t \in \K^2\left(\BU[1]\right)$ is mapped to $\beta^{-1} t \in \K^2\left(S^2\right) = \ZZ\left\{\beta^{-1} t\right\}$, and further mapped to $t \in \K^0\left(S^0\right) = \ZZ\left\{t\right\}$, which is indeed the generator of the reduced part.
+	We deduce that $\beta^{-1} t \in \K^2\left(\BU[1]\right)$ is mapped to $\beta^{-1} t \in \K^2\left(S^2\right) = \ZZ\left\{\beta^{-1} t\right\}$, which is indeed the generator.
 	Therefore $x = \beta^{-1} t$ is complex orientation for $\K$.
-	\todo{write the reduced thing more clearly}
 \end{example}
 
 \begin{example}
@@ -193,7 +191,7 @@ Since $E$ is unital, there is a canonical generator $1 \in E_0$.
 	$x_{\MU}$ is a complex orientation for $\MU$.
 \end{proposition}
 
-\begin{theorem}[\todo{reference}]
+\begin{theorem}[{\cite[4.1.13]{Rav86}}]
 	$\MU$ is the universal complex oriented cohomology theory, in the following sense:
 	For any multiplicative cohomology theory $E$, then there is a bijection between (homotopy classes of) multiplicative maps $\MU \to E$ and complex orientations on $E$.
 	The bijection is given in one direction by pulling back $x_{\MU}$ along a multiplicative map.
@@ -249,7 +247,7 @@ We conclude that a choice of a complex orientation on $E$ gives rise to an eleme
 	given by $t \mapsto u + v + u v$.
 	Note that to comply with the definition of the formal group law, we should use the isomorphism
 	$\K^*\left(\BU[1]\right) \cong \K_* \formal{x}$,
-	i.e. the element $x = \beta t$.
+	i.e. the element $x = \beta^{-1	} t$.
 	By multiplying by $\beta^{-1}$ (recall that the map is of $\K_*$-modules) we get that
 	$$
 	x
@@ -267,8 +265,6 @@ We conclude that a choice of a complex orientation on $E$ gives rise to an eleme
 		&= \beta^{-1} \left(1 + \beta x\right)^{n+1} - \beta^{-1}
 	\end{align*}
 \end{example}
-
-\todo{consider discussing the computation of $\BU[1]$, maybe as part of complex K-theory example?}
 
 \begin{example}[$\K$-Theory Saga: mod-$p$]\label{k-thy-modp-height}
 	By taking the cofiber of the multiplication-by-$p$ map, we get a spectrum $\K/p$, mod-$p$ K-theory, with coefficients $\left(\K/p\right)_* = \mathbb{F}_p \left[\beta^{\pm 1}\right]$.
@@ -295,7 +291,7 @@ In particular, since $\MU$ is complex oriented, there is a canonical map $L \to 
 \subsection{\texorpdfstring{$\BP$}{BP}, Morava K-Theory and Morava E-Theory}
 
 A good principle in homotopy theory (and in many other areas in math) is to study it one prime at a time.
-This is possible in homotopy theory due to the arithmetic square \todo{reference}.
+This is possible in homotopy theory due to the arithmetic square.
 So, let us fix a prime $p$.
 We can form $\MU_{\left(p\right)}$, the $p$-localization of $\MU$.
 
@@ -318,7 +314,7 @@ Denote by $\BP_{\left(p\right)}^*\left(X\right)$ the image of $\varepsilon^*$.
 For convenience we denote $v_0 = p$ (and indeed $\left|v_0\right| = 2\left(p^0-1\right) = 0$).
 Since $\BP$ is a retract of $\MU$, it comes with a map $\MU \to \BP$, that is, a complex orientation.
 
-\begin{proposition}\label{bp-p-series}[\todo{reference}]
+\begin{proposition}[{\cite[4.1.12 combined with A2.1.25 and A2.2.4]{Rav86}}]\label{bp-p-series}
 	The $p$-series of the formal group law associated to $\BP$ is
 	$\left[p\right]\left(x\right) = \sum v_n x^{p^n}$.
 \end{proposition}
@@ -429,12 +425,17 @@ We know that $\Mod{\SS_{\left(p\right)}} = \Sp_{\left(p\right)}$, and its compac
 
 \begin{corollary}
 	$\mcl{C}_n$ is the full subcategory of finite $p$-local spectra of type $> n$, that is $\mcl{C}_n = \left\{ X \in \Spfin_{\left(p\right)} \mid \forall m \leq n: \K[m]_*\left(X\right) = 0 \right\}$.
-	Thus $\mcl{C}_{n+1} \subseteq \mcl{C}_n$.
+	Therefore, we also conclude that $\mcl{C}_{n+1} \subseteq \mcl{C}_n$.
 \end{corollary}
 
-\begin{proposition}[\todo{reference}]
+\begin{proposition}
 	The inclusions $\mcl{C}_{n+1} \subset \mcl{C}_n$ are proper.
 \end{proposition}
+
+\begin{remark}
+	The modern proof of this result relies on the periodicity theorem \cite[1.5.4]{Rav92}.
+	Using it, we can construct generalized Moore spectra, which give an example of spectra of type $n$ for every $n$.
+\end{remark}
 
 \begin{proposition}
 	If $X \in \Spfin_{\left(p\right)}$ is not contractible, then is of finite type.
@@ -599,7 +600,7 @@ Following this point of view, the following theorem can be proven:
 \subsection{Landweber Exact Functor Theorem}
 
 As we have seen, a complex orientation on a cohomology theory, which is described by a map $\MU \to E$, has an associated formal group law, which is described by the map $L = \MU_* \to E_*$.
-Note that this formal group law is of degree $-2$, by virtue of the grading on $L = \MU_*$ \todo{say more?}.
+Note that this formal group law is of degree $-2$, by virtue of the grading on $L = \MU_*$.
 One can ask whether the converse is true, namely given a graded ring $R$ and a formal group law $F$ of degree $-2$ given by $L \to R$, is there a complex oriented cohomology theory whose coefficients are $R$ and the associated formal group law is $F$.
 
 A strategy is to define $\left(E_{R,F}\right)_*\left(X\right) = \MU_*\left(X\right) \otimes_{\MU_*} R$.
