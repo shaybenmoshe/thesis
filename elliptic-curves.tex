@@ -126,24 +126,24 @@ This will be useful to give a computation of the addition map, and more specific
 
 The code is given below, and what follows is an explanation of the code.
 
-\subsubsection{General Remarks}\label{degree-considerations}
+\subsubsection{General Remarks}\label{rank-considerations}
 
 We will use in the code matrices (rather then other data types which store a list of values), as Macaulay 2 has the best support for matrices.
 
-We note that we know a priori the degrees of all the constructions over $R$.
+We note that we know a priori the ranks of all the constructions over $R$.
 \begin{itemize}
-	\item The points of $C_U\left[p^r\right]$ are isomorphic to $\Lambda_r = \left(\ZZ/p^r\right)^2$, so this is of degree $p^{2r}$.
-	\item The points of order exactly $p^r$ are then of degree $p^{2r}-p^{2\left(r-1\right)}$.
+	\item The points of $C_U\left[p^r\right]$ are isomorphic to $\Lambda_r = \left(\ZZ/p^r\right)^2$, so this is of rank $p^{2r}$.
+	\item The points of order exactly $p^r$ are then of rank $p^{2r}-p^{2\left(r-1\right)}$.
 	\item
-		The points of $L_r^0$ are of degree $p^{4\left(r-1\right)}\left(p^2-1\right)\left(p^2-p\right)$.
+		The points of $L_r^0$ are of rank $p^{4\left(r-1\right)}\left(p^2-1\right)\left(p^2-p\right)$.
 		To see this, we note that they have a transitive free action of $\aut\left(\Lambda_r\right) = \GL\left(2, \ZZ/p^r\right)$ (since we pick two elements that generate $\Lambda_r$).
 		Being invertible is equivalent to having an invertible determinant, and an element is invertible in $\ZZ/p^r$ if and only if it is non-zero modulo $p$.
 		There are $p^{r-1}$ ways to lift a non-zero number in $\ZZ/p$ to $\ZZ/p^r$, so there are $p^{4\left(r-1\right)}$ lifts to an invertible matrix.
 		Lastly, $\GL\left(2, \ZZ/p\right)$ has $\left(p^2-1\right)\left(p^2-p\right)$, since the first column can be any non-zero vector, and the second must be linearly independent of it.
 \end{itemize}
 
-Knowing the degrees will be useful later on.
-First and foremost, as some of our constructions will involve arbitrary choices, which might lead to a result which is too large, but having the correct degree guarantees that our choice is valid.
+Knowing the ranks will be useful later on.
+First and foremost, as some of our constructions will involve arbitrary choices, which might lead to a result which is too large, but having the correct rank guarantees that our choice is valid.
 Second, this is a useful sanity-check to verify our results. 
 
 \subsubsection{Basic Objects}
@@ -204,8 +204,8 @@ To require this, we want that $\left[p^{r-1}\right]\left(x,1,z\right) \neq O$.
 This means that we to ensure that two values (the first and last coordinates) are not $0$ together, so we can't simply invert both of them (as this requires that both are non-zero, we only need one of them to be non-zero).
 Note that if they vanish together, then any linear combination them vanishes as well, but the other direction is not immediate.
 However, since there are only finitely many points, the number of different values attained is finite, and there are infinitely many different linear combinations over $R$, so there are linear combinations that vanish if and only if the two vanish together.
-We can then choose an arbitrary linear combination, and the result might be too large, but if the degree is correct then our choice was valid.
-Since we a priori know the degrees, as described in \ref{degree-considerations}, we can verify this.
+We can then choose an arbitrary linear combination, and the result might be too large, but if the rank is correct then our choice was valid.
+Since we a priori know the ranks, as described in \ref{rank-considerations}, we can verify this.
 It turns out that here taking the sum of the first and last coordinates works.
 Now, inverting an element $x \in S$ is equivalent to adding a formal element $d$ and requiring to be its inverse, i.e. $x^{-1} S = S\left[d\right]/(1 - dx)$.
 This explains the last element appended to \texttt{quoPr}.
