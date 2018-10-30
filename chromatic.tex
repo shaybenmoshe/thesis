@@ -95,7 +95,6 @@ We will try to recover $\spec R$, as a topological space, from $\Ch{R}$.
 	$
 	F\left(\cofib\left(A \to B\right)\right)
 	= \cofib\left(F\left(A\right) \to F\left(B\right)\right)
-	= \cofib\left(F\left(A\right) \to F\left(B\right)\right)
 	\in \mcl{P}
 	$.
 	Let $A \to B \to A$ be a retract, that is the composition is the identity, s.t. $B \in F^*\mcl{P}$. We know that $F\left(A\right) \to F\left(B\right) \to F\left(A\right)$ is also a retract by functoriality, thus $F\left(A\right) \in \mcl{P}$, that is $A \in F^*\mcl{P}$.
@@ -194,7 +193,7 @@ Since $E$ is unital, there is a canonical generator $1 \in E_0$.
 
 \begin{theorem}[{\cite[4.1.13]{Rav86}}]
 	$\MU$ is the universal complex oriented cohomology theory, in the following sense:
-	For any multiplicative cohomology theory $E$, then there is a bijection between (homotopy classes of) multiplicative maps $\MU \to E$ and complex orientations on $E$.
+	For any multiplicative cohomology theory $E$, there is a bijection between (homotopy classes of) multiplicative maps $\MU \to E$ and complex orientations on $E$.
 	The bijection is given in one direction by pulling back $x_{\MU}$ along a multiplicative map.
 \end{theorem}
 
@@ -209,7 +208,7 @@ Assume that $E$ is complex oriented with a complex orientation $x$.
 \todo{maybe indicate the use of AHSS, maybe explain that every even is complex orientable}
 
 There is a multiplication map for the group $\UU[1]$, i.e. $\UU[1] \times \UU[1] \to \UU[1]$.
-We can take the $\BB$ of this map, and since it commutes with products we get a map $\BU[1] \times \BU[1] \to \BU[1]$, which is the universal map the classifies the tensor product of vector bundles.
+We can take the $\BB$ of this map, and since it commutes with products we get a map $\BU[1] \times \BU[1] \to \BU[1]$, which is the universal map that classifies the tensor product of vector bundles.
 Therefore we get a map $E^*\left(\BU[1]\right) \to E^*\left(\BU[1] \times \BU[1]\right)$, which is completely determined by the image of $x \in E^*\formal{x}$ in $E^*\formal{y,z}$ as above.
 We conclude that a choice of a complex orientation on $E$ gives rise to an element $F_E\left(y,z\right) \in E^*\formal{y,z}$.
 
@@ -232,7 +231,7 @@ We conclude that a choice of a complex orientation on $E$ gives rise to an eleme
 	$$
 	given by $x \mapsto y + z$.
 	This is the additive formal group law.
-	It is immediate that $\left[p\right] = p x$.
+	It is immediate that $\left[p\right]\left(x\right) = p x$.
 	So for $R = \QQ$ we get that the height of $\HH{\QQ}$ is 0, while for $R = \Fp$ we have $p x = 0$ so the height of $\HH{\Fp}$ is $\infty$.
 \end{example}
 
@@ -325,7 +324,7 @@ Since $\BP$ is a retract of $\MU$, it comes with a map $\MU \to \BP$, that is, a
 	Moreover, the idempotent $\varepsilon: \MU_{\left(p\right)} \to \MU_{\left(p\right)}$ induces an idempotent on homotopy groups, which can be described as the map that takes a formal group law to the canonical $p$-typical formal group law isomorphic to it.
 \end{remark}
 
-Once we have $\BP$, we can turn to the definition of Morava K-theory and Morava E-theory
+Once we have $\BP$, we can turn to the definition of Morava K-theory and Morava E-theory.
 
 \begin{definition}
 	Let $0 < n < \infty$.
@@ -342,7 +341,7 @@ Then, from \ref{bp-p-series}, we get:
 \begin{corollary}\label{k-e-p-series}
 	The $p$-series associated to the formal group laws of $\K[n]$ and $\E{n}$ are $v_n x^{p^n}$ and $v_0 x + \dotsc v_n x^{p^n}$ respectively.
 	Therefore the height of $\K[n]$ is exactly $n$.
-	(Note that by the example of $\HH{R}$, this is also true for $\K[0]$ and $\K[\infty]$.)
+	(Note that by \ref{HR-2}, this is also true for $\K[0]$ and $\K[\infty]$.)
 \end{corollary}
 
 We want to describe some properties of Morava K-theory.
@@ -374,7 +373,7 @@ To do so we first need some definitions.
 
 \begin{example}[K-Theory Saga: Morava K-Theory]\label{k-thy-modp-morava}
 	As we have seen in \ref{k-thy-modp-height}, mod-$p$ K-theory, $\K/p$, has height exactly $1$ and coefficients $\left(\K/p\right)_* = \mathbb{F}_p \left[\beta^{\pm 1}\right]$.
-	It is also known that $\K$ and $\K/p$, are $A_\infty$ ring spectra, from which it follows that $\K/p$ is a field.
+	It is also known that $\K$ and $\K/p$, are $\mbb{A}_\infty$-ring spectra, from which it follows that $\K/p$ is a field.
 	We deduce that $\K/p$ is a $\K[1]$-module.
 	Since $\left|\beta\right| = 2$ and $\left|v_1\right| = 2\left(p-1\right)$ it is free of rank $p-1$.
 \end{example}
@@ -394,13 +393,13 @@ We are now in a position to describe the topological space $\spec \SS$.
 However, it will be easier to state it first for $\spec \SS_{\left(p\right)}$, and then pullback prime ideals.
 We know that $\Mod{\SS_{\left(p\right)}} = \Sp_{\left(p\right)}$, and its compact objects are $\Spfin_{\left(p\right)}$, the $p$-localizations of finite spectra.
 
-\begin{proposition}
+\begin{proposition}\label{T_E-thick}
 	Let $\mcl{T}_E$ be the $E$-acyclics, i.e.
 	$$
 	\mcl{T}_E
 	= \ker E_*
 	= \left\{ X \in \Spfin_{\left(p\right)} \mid E_*\left(X\right)=0 \right\}
-	= \left\{ X \in \Spfin_{\left(p\right)} \mid X \otimes E_*=0 \right\}.
+	= \left\{ X \in \Spfin_{\left(p\right)} \mid X \otimes E=0 \right\}.
 	$$
 	Then $\mcl{T}_E$ is thick.
 \end{proposition}
@@ -439,7 +438,7 @@ We know that $\Mod{\SS_{\left(p\right)}} = \Sp_{\left(p\right)}$, and its compac
 \end{remark}
 
 \begin{proposition}
-	If $X \in \Spfin_{\left(p\right)}$ is not contractible, then is of finite type.
+	If $X \in \Spfin_{\left(p\right)}$ is not contractible, then it is of finite type.
 	Therefore $\bigcap_{n < \infty} \mcl{C}_n = \left\{0\right\} = \mcl{C}_\infty$.
 \end{proposition}
 
@@ -451,14 +450,14 @@ We know that $\Mod{\SS_{\left(p\right)}} = \Sp_{\left(p\right)}$, and its compac
 	Since $X$ is finite, $\left(\HH{\Fp}\right)_*\left(X\right)$ is bounded.
 	The Atiyah-Hirzebruch spectral sequence for $X$ with cohomology $\K[n]$ has $E^2$-page given by
 	$
-	E_{p,q}^2
+	E_{t,s}^2
 	= 
-	H_p\left(X; \K[n]_q\right)
+	H_t\left(X; \K[n]_s\right)
 	$.
-	Since $\K[n]_q = \Fp$ for $q = 0 \mod 2\left(p^n-1\right)$ and $0$ otherwise,
-	we see that the rows $q = 0 \mod 2\left(p^n-1\right)$ are $\left(\HH{\Fp}\right)_*\left(X\right)$, and the others are $0$.
+	Since $\K[n]_s = \Fp$ for $s = 0 \mod 2\left(p^n-1\right)$ and $0$ otherwise,
+	we see that the rows $s = 0 \mod 2\left(p^n-1\right)$ are $\left(\HH{\Fp}\right)_*\left(X\right)$, and the others are $0$.
 	Therefore if we take $n$ such that the period $2\left(p^n-1\right)$ is larger then the bound on $\left(\HH{\Fp}\right)_*\left(X\right)$, then all differentials have either source or target $0$.
-	Thus, the spectral sequence collapses at the $E^2$-page, and since $\left(\HH{\Fp}\right)_*\left(X\right) \neq 0$, we get that $\K[n]\left(X\right) \neq 0$, i.e. $X$ has type $<n$.
+	Thus, the spectral sequence collapses at the $E^2$-page, and since $\left(\HH{\Fp}\right)_*\left(X\right) \neq 0$, we get that $\K[n]\left(X\right) \neq 0$, i.e. $X$ has type $\leq n$.
 \end{proof}
 
 \begin{proposition}
@@ -466,17 +465,18 @@ We know that $\Mod{\SS_{\left(p\right)}} = \Sp_{\left(p\right)}$, and its compac
 \end{proposition}
 
 \begin{proof}
+	Recall from \ref{T_E-thick} that we already know that it is thick.
 	For $X,Y \in \Spfin_{\left(p\right)}$, by K\"unneth we have 
 	$$
-	\K[n-1]_*\left(X \otimes  Y\right)
-	= \K[n-1]_*\left(X\right) \otimes \K[n-1]_*\left(Y\right).
+	\K[n]_*\left(X \otimes  Y\right)
+	= \K[n]_*\left(X\right) \otimes \K[n]_*\left(Y\right).
 	$$
-	Assume that $X \in \mcl{C}_n$, that is $\K[n-1]_*\left(X\right) = 0$.
-	It follows that $\K[n-1]_*\left(X \otimes  Y\right) = 0$, i.e. $X \otimes Y \in \mcl{C}_n$, so $\mcl{C}_n$ is an ideal.
-	Assume that $X \otimes Y\in \mcl{C}_n$, that is $\K[n-1]_*\left(X \otimes  Y\right)$, therefore one of the terms in the RHS of the equation must vanish (since they are graded vector spaces), so $\mcl{C}_n$ is a prime ideal.
+	Assume that $X \in \mcl{C}_n$, that is $\K[n]_*\left(X\right) = 0$.
+	It follows that $\K[n]_*\left(X \otimes  Y\right) = 0$, i.e. $X \otimes Y \in \mcl{C}_n$, so $\mcl{C}_n$ is an ideal.
+	Assume that $X \otimes Y\in \mcl{C}_n$, that is $\K[n]_*\left(X \otimes  Y\right) = 0$, therefore one of the terms in the RHS of the equation must vanish (since they are graded vector spaces), so $\mcl{C}_n$ is a prime ideal.
 \end{proof}
 
-\begin{theorem}[{Thick Subcategory Theorem \cite[theorem 11]{HS}}]\label{thick-subcategory-thm}
+\begin{theorem}[{Thick Subcategory Theorem \cite[theorem 7]{HS}}]\label{thick-subcategory-thm}
 	If $\mcl{T}$ is a proper thick subcategory of $\Spfin_{\left(p\right)}$, then $\mcl{T} = \mcl{C}_n$ for some $0 \leq n \leq \infty$.
 \end{theorem}
 
@@ -498,7 +498,7 @@ We know that $\Mod{\SS_{\left(p\right)}} = \Sp_{\left(p\right)}$, and its compac
 We now want to describe $\spec \SS$.
 Note that the $p$-localization functor $L_{\left(p\right)}$ is a Bousfield localization.
 As such, it is left (its right adjoint is the inclusion), and in particular preserves cofibers.
-It also clearly reduced, i.e. sends $0$ to $0$.
+It is also reduced, i.e. sends $0$ to $0$.
 Now, $L_{\left(p\right)}$ is smashing, that is $L_{\left(p\right)} X = X \otimes \SS_{\left(p\right)}$, so it is also symmetric monoidal.
 As we have seen in \ref{primes-pullback}, under these conditions we can pullback primes.
 Since $L_{\left(p\right)}$ is smashing and $\K\left(p,n\right)$ is $p$-local for every $0 \leq n \leq \infty$, we have that $\K[n]_*\left(X_{\left(p\right)}\right) = \K[n]_*\left(X\right)$.
@@ -536,7 +536,7 @@ We see that $\mcl{P}_{p, 0}$ is independent of $p$, and we denote it by $\Spfint
 Again, by \ref{primes-pullback}, we see that any chain $\left\{ \mcl{P}_{p, k}, \mcl{P}_{p, k+1}, \dotsc, \mcl{P}_{p, \infty} \right\}$ for some $p$ and $0 \leq k \leq \infty$, is closed, hence any finite union of such chain is also closed.
 We then have the following theorem, which says that these are all of the prime ideals and all of the closed subsets.
 
-\begin{theorem}[{Thick Subcategory Theorem \cite[theorem 11]{HS}, \cite[9.5]{BalSSS}}]
+\begin{theorem}[{Thick Subcategory Theorem, \cite[9.5]{BalSSS}}]
 	$
 	\spec \SS
 	= \left\{\Spfintor\right\}
@@ -545,8 +545,14 @@ We then have the following theorem, which says that these are all of the prime i
 	and the closed subsets in the topology are finite unions of chains
 	$\left\{ \mcl{P}_{p, k}, \mcl{P}_{p, k+1}, \dotsc, \mcl{P}_{p, \infty} \right\}$
 	for some $0 \leq k \leq \infty$ (i.e. they may include $\Spfintor$).
+\end{theorem}
+
+\begin{remark}
+	The following diagram shows the structure of $\spec \SS$.
+	Each $\mcl{P}_{p,n}$, and $\Spfintor$, is a point.
+	A line represents that the closure of the point at the bottom contains the point at the top.
 	$$
-	\begin{tikzcd}[row sep=small, column sep=scriptsize]	
+		\begin{tikzcd}[row sep=small, column sep=scriptsize]	
 		\mcl{P}_{2, \infty} & \mcl{P}_{3, \infty} & \cdots & \mcl{P}_{p, \infty} & \cdots\\
 		\vdots \arrow[dash]{u}{} & \vdots \arrow[dash]{u}{} &  & \vdots \arrow[dash]{u}{} & \\
 		\mcl{P}_{2, n} \arrow[dash]{u}{} & \mcl{P}_{3, n} \arrow[dash]{u}{} & \cdots & \mcl{P}_{p, n} \arrow[dash]{u}{} & \cdots\\
@@ -556,13 +562,13 @@ We then have the following theorem, which says that these are all of the prime i
 		& & \Spfintor \arrow[dash]{ull}{} \arrow[dash]{ul}{} \arrow[dash]{ur}{}
 	\end{tikzcd}
 	$$
-\end{theorem}
+\end{remark}
 
 \begin{remark}
 	Thick subcategories are interesting for another reason, unrelated to the Balmer spectrum point of view, namely they give a very powerful proof method.
 	Say we have a property that is satisfied by $0$, and is closed under cofibers and retracts.
 	It follows that the collection of objects that satisfy it is thick.
-	Then, for example, by the thick subcategory theorem \ref{thick-subcategory-thm}, it is enough to find one object in $\mcl{C}_n \setminus \mcl{C}_{n-1}$ that satisfies the property, to show that all objects in $\mcl{C}_n$ satisfy it.
+	Then, for example, by the thick subcategory theorem \ref{thick-subcategory-thm}, it is enough to find one object in $\mcl{C}_n \setminus \mcl{C}_{n+1}$ that satisfies the property, to show that all objects in $\mcl{C}_n$ satisfy it.
 \end{remark}
 
 
@@ -583,7 +589,7 @@ For a spectrum $X$, $\MU_*\left(X\right)$ is a $\left(\MU_*, \left(\MU \otimes \
 From this point of view, chromatic homotopy theory lets us study a spectrum by decomposing it over the stack $\Mfgs$.
 
 We can restrict ourselves to the stack only over $p$-local rings, $\Mfgsp$, which is then represented by $\left(\left(\MU_{\left(p\right)}\right)_*, \left(\MU_{\left(p\right)} \otimes \MU_{\left(p\right)}\right)_*\right)$.
-Similarly to $\MU$, $\BP$ is universal ring with the universal $p$-typical formal group law, and $\left(\BP \otimes \BP\right)_*$ is the universal ring with two $p$-typical formal group laws and an strict isomorphism between them.
+Similarly to $\MU$, $\BP$ is universal ring with the universal $p$-typical formal group law, and $\left(\BP \otimes \BP\right)_*$ is the universal ring with two $p$-typical formal group laws and a strict isomorphism between them.
 Since every formal group law is isomorphic to a unique $p$-typical one, we know that the stack $\Mfgsp$ is also represented by $\left(\BP_*, \left(\BP \otimes \BP\right)_*\right)$.
 
 It is now reasonable that $\K[n]$, obtained from $\BP$ by killing the $v_m$'s for $m \neq n$ and inverting $v_n$, sees the $n$-th level, and that $\E{n}$ obtained in the same way but only killing $v_m$ for $m > n$, sees the levels $\leq n$.
@@ -600,7 +606,7 @@ Following this point of view, the following theorem can be proven:
 
 \subsection{Landweber Exact Functor Theorem}
 
-As we have seen, a complex orientation on a cohomology theory, which is described by a map $\MU \to E$, has an associated formal group law, which is described by the map $L = \MU_* \to E_*$.
+As we have seen, a complex orientation on a cohomology theory, which is given by a map $\MU \to E$, has an associated formal group law, which is given by the map $L = \MU_* \to E_*$.
 Note that this formal group law is of degree $-2$, by virtue of the grading on $L = \MU_*$.
 One can ask whether the converse is true, namely given a graded ring $R$ and a formal group law $F$ of degree $-2$ given by $L \to R$, is there a complex oriented cohomology theory whose coefficients are $R$ and the associated formal group law is $F$.
 
@@ -726,7 +732,7 @@ Lubin and Tate \cite{LT} considered a moduli problem associated to $\Gamma/k$, d
 	$,
 	which shows that $\Def[\varphi]\left(G, i\right)$ is a deformation to $\left(S, \mfk{n}\right)$.
 	
-	For a $\star$-isomorphism $f: \left(G_1, i\right) \to \left(G_2, i\right)$, which is the data of an isomorphism $f: G_1 \to G_2$ such that $\pi_R^* f = \id[i^*\Gamma]$ is the identity, we need to define a $\star$-isomorphism $\Def[\varphi]\left(G, i_1\right) \to \Def[\varphi]\left(G, i_2\right)$.
+	For a $\star$-isomorphism $f: \left(G_1, i_1\right) \to \left(G_2, i_2\right)$, which is the data of an isomorphism $f: G_1 \to G_2$ such that $\pi_R^* f = \id[i^*\Gamma]$ is the identity, we need to define a $\star$-isomorphism $\Def[\varphi]\left(G, i_1\right) \to \Def[\varphi]\left(G, i_2\right)$.
 	Take it to be the isomorphism $\varphi^* f: \varphi^* G_1 \to \varphi^* G_2$, which satisfies
 	$
 	\pi_S^* \varphi^* f
@@ -786,7 +792,7 @@ Using LEFT \ref{LEFT}, we immediately get:
 	= y + z + u y z
 	$.
 	It is then clear that the isomorphism $\ZZ_p\left[u^{\pm1}\right] \to \ZZ_p\left[\beta^{\pm1}\right]$, sends $u\Gamma_U$ to $F_{\K_p^\wedge}$.
-	It follows that
+	It follows by \ref{LEFT-even} that
 	$
 	\K_p^\wedge
 	\cong E_{\K_p^\wedge, F_{\K_p^\wedge}}
