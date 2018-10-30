@@ -28,15 +28,15 @@ We will not prove the theorem, but we will indicate some of the key ingredients.
 First of all, to show that objects are isomorphic, we need a map.
 Before giving the map actually used in the proof, we describe an easier way to see where this map comes from.
 Recall that $\K\left(X\right) \cong \left[X, \BU \times \ZZ\right]$.
-The data of a representation of $G$ is the same thing as a homomorphism $G \to \UU[n]$.
+The data of an $n$-dimensional representation of $G$ is the same thing as a homomorphism $G \to \UU[n]$.
 Since $\BB$ is a functor, we get a map $\BG \to \BU[n]$, and by composing with the injection $\BU[n] \cong \BU[n] \times \left\{n\right\} \to \BU \times \ZZ$, we get a map $\BG \to \BU \times \ZZ$, that is, an element of $\K\left(\BG\right)$.
 Therefore we get a map $\RG \to \K\left(\BG\right)$.
 The theorem shows that it is a ring homomorphism which exhibits $\K\left(\BG\right)$ as the completion of $\RG$ at $I$.
 
 There is an alternative description of this map.
-In \cite{Seg}, Segal described a variant of $\K$ theory, called equivariant K-theory $\KG$.
+In \cite{Seg}, Segal described a variant of $\K$-theory, called equivariant K-theory $\KG$.
 This variant assigns to a $G$-space the ring of virtual $G$-bundles, that is, bundles equipped with an action of $G$ which is compatible with the action on the base $G$-space.
-Note that $\K_G$ is no longer homotopy invariant, since it also takes into account the action of $G$.
+Note that $\K_G$ is no longer homotopy invariant, since it also takes into account the $G$-action.
 First we note the following:
 
 \begin{proposition}
@@ -94,7 +94,7 @@ In every step we show the theorem holds for a more general type of group:
 	\item $G = \UU[1]$ (circle group),
 	\item $G = \UU[1]^n$ (torus group),
 	\item $G = \UU[n]$,
-	\item $G$ a general compact Lie group (this step is proven by $G$ embedding in $\UU[n]$).
+	\item $G$ a general compact Lie group (this step is proven by embedding $G$ in $\UU[n]$).
 \end{itemize}
 
 We note that the first formulation of the Atiyah-Segal theorem \ref{AS-private}, is indeed a private case of the second formulation \ref{AS-full}.
@@ -122,10 +122,10 @@ We compute a few examples in detail, to make the isomorphism more vivid.
 Take $G = \UU[1]$, the circle group.
 It is known that the irreducible representations are of dimension $1$ and labeled by an integer $m \in \ZZ$, i.e. they are homomorphisms $\rho_m = \UU[1] \to \UU[1]$ given by $\rho_m\left(e^{i \theta}\right) = e^{m i \theta}$.
 In particular, $\rho_0 = 1$ is the trivial representation.
-It is then clear that for $m \geq 0$, $\rho_1^{\otimes_m} = \rho_m$ and $\rho_{-1}^{\otimes_{-m}} = \rho_{-m}$.
+It is then clear that for $m \geq 0$, $\rho_1^{\otimes m} = \rho_m$ and $\rho_{-1}^{\otimes -m} = \rho_{-m}$.
 Therefore the representation ring generated under (virtual) direct sums and tensor products by $\rho_1$ and $\rho_{-1}$.
 Moreover, $\rho_1 \otimes \rho_{-1} = 1$.
-Therefore we conclude that $\RG[\UU[1]] = \ZZ\left[\rho, \rho^{-1}\right]$.
+Denote $\rho = \rho_1$, and we conclude that $\RG[\UU[1]] = \ZZ\left[\rho, \rho^{-1}\right]$.
 
 The augmentation map is the homomorphism $\varepsilon: \RG[\UU[1]] \to \ZZ$ which sends $1,\rho$ and $\rho^{-1}$ to $1$.
 Recall that the augmentation ideal is $I = \ker \varepsilon$.
@@ -136,7 +136,7 @@ Note that $\varepsilon$ factors to a map $\RG[\UU[1]]/\left(t\right) \to \ZZ$, w
 We compute the completion $\RGI[{\UU[1]}]$.
 Note that in $\ZZ\left[t\right]/t^n$, $1+t$ is already invertible.
 The reason is that the formal power series for the inverse is finite since large enough powers of $t$ are zero, $\frac{1}{1-\left(-t\right)} = \sum_{m=0}^{n-1} \left(-t\right)^m$ is an inverse.
-Therefore we see that $\RG[\UU[1]]/I^n \cong \ZZ\left[t\right]/t^n$, and clearly the maps the in the limit diagram send $t$ to $t$.
+Therefore we see that $\RG[\UU[1]]/I^n \cong \ZZ\left[t\right]/t^n$, and clearly the maps in the limit diagram send $t$ to $t$.
 We get that $\RGI[{\UU[1]}] = \lim \ZZ\left[t\right]/t^n \cong \ZZ\formal{t}$.
 
 In \cite[proposition 2.24]{VB}, it is shown that $\K\left(\CP{n}\right) \cong \ZZ\left[L\right] / \left(L-1\right)^{n+1}$, where $L$ is the canonical line bundle on $\CP{n}$.
@@ -166,10 +166,10 @@ Since the forgetful functor from rings to abelian groups is right adjoint, it co
 As an abelian group, $\RG[\ZZ/2]/I^n$ is isomorphic to $\ZZ \oplus \ZZ/2^{n-1}\left\{t\right\}$.
 It is then clear that as an abelian group, $\lim \RG[\ZZ/2]/I^n$ is isomorphic to $\ZZ \oplus \ZZ_2\left\{t\right\}$.
 
-We now define a multiplication on $\ZZ \oplus \ZZ_2\left\{t\right\}$ abelian group, given by $\left(a+bt\right) * \left(c+dt\right) = ac + (ad+bc-2bd)t$.
+We now define a multiplication on $\ZZ \oplus \ZZ_2\left\{t\right\}$, given by $\left(a+bt\right) * \left(c+dt\right) = ac + (ad+bc-2bd)t$.
 It can be checked that it is associative and commutative.
 We have homomorphisms of groups $\ZZ \oplus \ZZ_2\left\{t\right\} \to \ZZ[t]/\left(t^2+2t, 2^{n-1} t\right)$, admitting it as the limit in groups, which are given by sending $a+bt$ to $a+\left(b \mod 2^{n-1}\right) t$.
-By construction this homomorphism is actually a homomorphism of rings (the $-2bdt$ term is explained by the relation $t^2+2t$).
+By construction this homomorphism is actually a homomorphism of rings (the $-2bdt$ term is explained by the relation $t^2+2t = 0$).
 Therefore, by the universal property of the limit, we get a map $\ZZ \oplus \ZZ_2\left\{t\right\} \to \lim \RG[\ZZ/2]/I^n$ in rings.
 After taking the forgetful we know that it becomes an isomorphism, but the forgetful reflects isomorphisms, so this is also an isomorphism in rings.
 
@@ -220,7 +220,7 @@ Similarly it acts on $G$ by taking $g$ to $g^m$.
 Then, for every such $m$ and $g$ we have that
 $
 \chi_\rho\left(g^m\right)
-= \tr \rho\left(g\right)
+= \tr \rho\left(g^m\right)
 = \sum \lambda_i^m
 = m. \left(\sum \lambda_i\right)
 = m. \left(\chi_\rho\left(g\right)\right)
