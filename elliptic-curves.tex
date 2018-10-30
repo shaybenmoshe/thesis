@@ -115,10 +115,10 @@ Moreover, we note that the elliptic curve, and all the operations described abov
 \subsection{Concrete Computations}
 
 We describe a way to do the calculation described above, namely over $R = \QQ\left[u_1\right]$.
-We will display this along the Macaulay 2 code, that carries out the computation.
-The code will be at times more general then this specific example, but not completely general.
+We will display this along with the Macaulay 2 code, that carries out the computation.
+Note that the code will be at times more general then this specific example, but not at all times.
 
-The basic operation on the elliptic curve are developed in projective coordinates.
+The basic operations on the elliptic curve are developed in projective coordinates.
 Therefore, we homogenize the elliptic curve above to $X^3 = Y^2 Z + u_1 X Y Z + Y Z^2$.
 When we need to compute the steps described above, we will work with the affine patch where $Y = 1$, which contains the origin $O = \left[0;1;0\right]$.
 We note that in this patch we remove exactly one point from the curve, for if $Y = 0$, then $X^3 = 0 + 0 + 0 = 0$, i.e. $X = 0$, so we remove only the point $\left[0;0;1\right]$.
@@ -139,7 +139,7 @@ We note that we know a priori the ranks of all the constructions over $R$.
 		To see this, we note that they have a transitive free action of $\aut\left(\Lambda_r\right) = \GL\left(2, \ZZ/p^r\right)$ (since we pick two elements that generate $\Lambda_r$).
 		Being invertible is equivalent to having an invertible determinant, and an element is invertible in $\ZZ/p^r$ if and only if it is non-zero modulo $p$.
 		There are $p^{r-1}$ ways to lift a non-zero number in $\ZZ/p$ to $\ZZ/p^r$, so there are $p^{4\left(r-1\right)}$ lifts to an invertible matrix.
-		Lastly, $\GL\left(2, \ZZ/p\right)$ has $\left(p^2-1\right)\left(p^2-p\right)$, since the first column can be any non-zero vector, and the second must be linearly independent of it.
+		Lastly, $\GL\left(2, \ZZ/p\right)$ has $\left(p^2-1\right)\left(p^2-p\right)$ elements, since the first column can be any non-zero vector, and the second must be linearly independent of it.
 \end{itemize}
 
 Knowing the ranks will be useful later on.
@@ -202,17 +202,17 @@ As $O = \left[0;1;0\right]$, this is equivalent to requiring that the first and 
 Next, we actually wish our points to be of order exactly $p^r$ (and not just $p^r$-torsion).
 To require this, we want that $\left[p^{r-1}\right]\left(x,1,z\right) \neq O$.
 This means that we to ensure that two values (the first and last coordinates) are not $0$ together, so we can't simply invert both of them (as this requires that both are non-zero, we only need one of them to be non-zero).
-Note that if they vanish together, then any linear combination them vanishes as well, but the other direction is not immediate.
+Note that if they vanish together, then any linear combination of them vanishes as well, but the other direction is not immediate.
 However, since there are only finitely many points, the number of different values attained is finite, and there are infinitely many different linear combinations over $R$, so there are linear combinations that vanish if and only if the two vanish together.
 We can then choose an arbitrary linear combination, and the result might be too large, but if the rank is correct then our choice was valid.
 Since we a priori know the ranks, as described in \ref{rank-considerations}, we can verify this.
 It turns out that here taking the sum of the first and last coordinates works.
-Now, inverting an element $x \in S$ is equivalent to adding a formal element $d$ and requiring to be its inverse, i.e. $x^{-1} S = S\left[d\right]/(1 - dx)$.
+Now, inverting an element $x \in S$ is equivalent to adding a formal element $d$ and requiring it to be its inverse, i.e. $x^{-1} S = S\left[d\right]/(1 - dx)$.
 This explains the last element appended to \texttt{quoPr}.
 
 We then define \texttt{IPr}, which is the ideal spanned by those elements, i.e. the quotient by it gives the points of order exactly $p^r$.
 Furthermore, \texttt{gbIPr} is a Gr\"{o}bner basis for it.
-The \texttt{MonomialOrder} used in the definition of \texttt{BasePr} was found experimentally to yield faster computations (the heuristic is that $x$ appears with the highest power, and it determines $z$ so $z$ it will be a polynomial in $x$, and $d$ will be a polynomial in $x,z$).
+The \texttt{MonomialOrder} used in the definition of \texttt{BasePr} was found experimentally to yield faster computations (the heuristic is that $x$ appears with the highest power, and it determines $z$ so $z$ will be a polynomial in $x$, and $d$ will be a polynomial in $x,z$).
 
 \subsubsection{Spanning Pairs}
 
