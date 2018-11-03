@@ -60,19 +60,18 @@ We will try to recover $\spec R$, as a topological space, from $\Ch{R}$.
 \begin{example}
 	We continue the example of $\mcl{T}_K$.
 	Clearly if $A \otimes K \cong 0$ then also $A \otimes B \otimes K \cong 0$, so it is an ideal.
-	Let $\mfk{p}$ be a prime ideal in $R$ in the usual sense, and take $K = R_\mfk{p}$ (concentrated at degree $0$),
-	then $A \otimes K = A_\mfk{p}$ (level-wise localization).
-	We will omit the proof that $\mcl{T}_K$ is a prime, but we shall prove something weaker, namely only the case where $A,B$ are bounded complexes of finitely generate projective modules (and not merely quasi-isomorphic to such complexes).
-	Assume then that
-	$
-	0
-	= \left(A \otimes B\right)_\mfk{p}
-	= A_\mfk{p} \otimes_{R_\mfk{p}} B_\mfk{p}
-	$.
-	Assume by negation that $A_\mfk{p}, B_\mfk{p} \neq 0$,
-	i.e. $\left(A_n\right)_\mfk{p}, \left(B_m\right)_\mfk{p} \neq 0$ but $\left(A_n\right)_\mfk{p} \otimes_{R_\mfk{p}} \left(B_m\right)_\mfk{p} = 0$ for some $n,m$.
-	Since the localization of a projective module is again a projective module, and a projective over a local ring is free, and clearly if the tensor of two free modules vanish then one of them vanishes, it follows that $\left(A_n\right)_\mfk{p} = 0$ or $\left(B_m\right)_\mfk{p} = 0$, which is a contradiction.
-	Therefore $\mcl{T}_\mfk{p}$ is a prime ideal.
+	
+	Let $\mfk{p}$ be a prime ideal in $R$ in the usual sense, and take $K = R_\mfk{p}$ (concentrated at degree $0$), and we wish to show that $\mcl{T}_{R_\mfk{p}}$ is a prime ideal.
+	Let $A,B$ be complexes such that $A \otimes B \in \mcl{T}_{R_\mfk{p}}$, that is $A \otimes B \otimes R_\mfk{p}$ is quasi-isomorphic to $0$.
+	We need to show that one of $A \otimes R_\mfk{p}$ and $B \otimes R_\mfk{p}$ is quasi-isomorphic to $0$.
+	Note that $A \otimes B \otimes R_\mfk{p} = \left(A \otimes R_\mfk{p}\right) \otimes_{R_\mfk{p}} \left(B \otimes R_\mfk{p}\right)$.
+	Denote $S = R_\mfk{p}$, which is a local ring with maximal ideal $\mfk{m} = \mfk{p} R_\mfk{p}$ and residue field $k = S/\mfk{m}$, and $X = A \otimes R_\mfk{p}, Y = B \otimes R_\mfk{p}$ are complexes of $S$-modules, and by the above $H_*\left(X \otimes_S Y\right) = 0$.
+	In particular, $0 = H_*\left(X \otimes_S Y\right)/\mfk{m} = H_*\left(\left(X \otimes_S Y\right)/\mfk{m}\right) = H_*\left(X/\mfk{m} \otimes_k Y/\mfk{m}\right)$.
+	The last term is the homology of a complex over the field $k$, so by K\"unneth, $0 = H_*\left(X/\mfk{m}\right) \otimes_k H_*\left(Y/\mfk{m}\right)$, from which it follows that one of them is $0$, and without loss of generality we assume $0 = H_*\left(X/\mfk{m}\right) = H_*\left(X\right)/\mfk{m}$.
+	Now, recall that we consider perfect complexes (and that $- \otimes R_\mfk{p}$ preserves that property), so $X$ is quasi-isomorphic to a bounded complex of finitely-generated projective $S$-modules $X'$, so $H_*\left(X\right) \cong H_*\left(X'\right)$.
+	In particular, $0 = H_*\left(X'\right)/\mfk{m}$.
+	Furthermore, a projective module over a local ring is free, so the modules in $X'$ are finitely-generated free modules, which implies that each $H_i\left(X'\right)$ is a finitely-generated free module (because it is a quotient of such a module).
+	We know that $0 = H_i\left(X'\right)/\mfk{m}$, and so Nakayama's lemma implies that $0 = H_i\left(X'\right) \cong H_i\left(X\right) = H_i\left(A \otimes R_\mfk{p}\right)$, and the conclusion follows.
 \end{example}
 
 \begin{theorem}[{\cite[5.6]{BalSpec}}]
