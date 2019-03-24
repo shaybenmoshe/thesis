@@ -184,7 +184,6 @@ The reason is that already the function we denoted by \texttt{Star} vanishes on 
 However, this function is defined everywhere else.
 Luckily we can use the following trick, $P_1 + P_2 = \left(P_1 - Q\right) + \left(P_2 + Q\right)$.
 Specifically, we take $Q$ to be the removed point $\left[0;0;1\right]$.
-\todo{why does this actually work then? do we use the fact that we only care about points in the formal neighborhood of $O$?}
 
 At this point we can introduce \texttt{Mul2} simply by $P+P$.
 We further define the function \texttt{MulNTwoDiv} which computes $\left[n\right]$ by expanding $n$ in binary form (if it is divisible by $2$, then $\left[n\right] = \left[2\right]\left[\frac{n}{2}\right]$, otherwise $\left[n\right] = \left[n-1\right]+\id$).
@@ -193,7 +192,6 @@ This gives us $\left[p^{r-1}\right],\left[p^r\right]$ denoted by \texttt{Mulprm1
 \subsubsection{Order Exactly $p^r$}
 
 The next step is to compute $\OO\left(C_U\left[p^r\right]\right)$, and its localization away from $[p^{r-1}]\left(-\right)$.
-\todo{explain well why we can work in $Y = 1$}
 Then $\OO\left(C_U\left[p^r\right]\right)$ is described as the quotient of $R\left[x, z\right]$ (where $R = \QQ\left[u_1\right]$) by some ideal.
 First, we want to restrict to the curve, which gives $F\left(x,1,z\right)$, this explains the first element appended to \texttt{quoPr}.
 Second, we want only $p^r$-torsion points, that is $\left[p^r\right]\left(x,1,z\right) = O$.
