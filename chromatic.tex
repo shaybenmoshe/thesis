@@ -632,12 +632,12 @@ However there is a condition that one can check, which guarantees that it is.
 \end{definition}
 
 \begin{remark}
-	Recall that for the formal group law over $\BP$ we have $\left[p\right]\left(x\right) = \sum^F v_n x^{p^n}$.
-	Seemingly $v_n$ is a coefficient in a complicated sum involving $F$ itself, however, modulo $\left(v_0, v_1, \dotsc, v_{n-1}\right)$ (which is all we need for Landweber flatness), in fact $v_n$ is simply the coefficient of $x^{p^n}$ in the $p$-series expanded to a usual power series.
+	Recall from \cref{bp-p-series} that for the formal group law over $\BP$ we have $\left[p\right]\left(x\right) = \sum^F v_n x^{p^n}$.
+	Seemingly $v_n$ is a coefficient in a complicated sum involving $F$ itself, however, modulo $\left(v_0, v_1, \dotsc, v_{n-1}\right)$ (which is all we need for Landweber flatness) $v_n$ is equal to the coefficient of $x^{p^n}$ in the $p$-series expanded to a usual power series, which may be much easier to compute.
 	To see this, first of all note that
 	$
 	\sum^F v_k x^{p^k}
-	= F\left(\sum_{k \leq n}^F v_k x^{p^k}, \sum_{k > n}^F v_k x^{p^k}\right)
+	= \sum_{k \leq n}^F v_k x^{p^k} +_F \sum_{k > n}^F v_k x^{p^k}
 	$.
 	The second term may contribute only powers higher than $p^n$.
 	Moreover, the first term modulo $\left(v_0, v_1, \dotsc, v_{n-1}\right)$ is simply $v_n x^{p^n}$, and the conclusion follows.
