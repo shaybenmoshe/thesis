@@ -2,7 +2,7 @@
 
 Our goal is to give a quick overview of chromatic homotopy theory.
 There are various point of views and approaches to the topic, and we shall highlight some of them.
-One of our main goals is to introduce Morava K-theory $\K[n]$ and Morava E-theory $\E{n}$, and other variants of Morava E-theory $\E{k,\Gamma}$, and their connection to formal group laws.
+One of our main goals is to introduce Morava K-theory $\K[n]$ and Morava E-theory of different flavors $\E{n}$ and $\E{k,\Gamma}$, and their connection to formal group laws.
 Our motivation will be the Balmer spectrum of the sphere spectrum.
 We will follow the construction of Morava K-theory and Morava E-Theory, and other related spectra, from the point of view of formal group laws, and use them to describe the Balmer spectrum of the sphere spectrum.
 
@@ -338,14 +338,14 @@ Since $\BP$ is a retract of $\MU$, it comes with a map $\MU \to \BP$, that is, a
 	Moreover, the idempotent $\varepsilon: \MU_{\left(p\right)} \to \MU_{\left(p\right)}$ induces an idempotent on homotopy groups, which can be described as the map that takes a formal group law to the canonical $p$-typical formal group law isomorphic to it.
 \end{remark}
 
-Once we have $\BP$, we can turn to the definition of Morava K-theory and Morava E-theory.
+Once we have $\BP$, we can turn to the definition of Morava K-theory and Johnson-Wilson spectrum (a variant of Morava E-theory).
 
 \begin{definition}
 	Let $0 < n < \infty$.
 	\emph{Morava K-theory} at height $n$ and prime $p$, denoted by $\K[p,n]$ or $\K[n]$ when the prime is clear from the context, is the spectrum obtained by killing $p=v_0, \dotsc, v_{n-1}, v_{n+1}, \dotsc$ in $\BP$ and inverting $v_n$.
 	Therefore $\K[n]_* = \Fp\left[v_n^{\pm 1}\right]$.
 	We also define $\K[0] = \HH{\QQ}$ and $\K[\infty] = \HH{\Fp}$.
-	Similarly, \emph{Morava E-theory} at height $n$ and prime $p$, denoted by $\E{p,n}$ or $\E{n}$, is the spectrum obtained by killing $v_{n+1}, v_{n+2}, \dotsc$ in $\BP$ and inverting $v_n$.
+	Similarly, \emph{Johnson-Wilson spectrum} (sometimes also called Morava E-theory) at height $n$ and prime $p$, denoted by $\E{p,n}$ or $\E{n}$, is the spectrum obtained by killing $v_{n+1}, v_{n+2}, \dotsc$ in $\BP$ and inverting $v_n$.
 	Therefore $\E{n}_* = \ZZ_{\left(p\right)}\left[v_1, \dotsc v_{n-1}, v_n^{\pm 1}\right]$.
 \end{definition}
 
@@ -654,7 +654,7 @@ However there is a condition that one can check, which guarantees that it is.
 \end{theorem}
 
 \begin{example}
-	Morava E-theory is Landweber flat, since by \ref{k-e-p-series}, the $p$-series has coefficients $p = v_0, v_1, \dotsc, v_n$.
+	Johnson-Wilson spectrum $\E{n}$ is Landweber flat, since by \ref{k-e-p-series}, the $p$-series has coefficients $p = v_0, v_1, \dotsc, v_n$.
 	$p$ is not a zero divisor in $\E{n}_* = \ZZ_{\left(p\right)}\left[v_1, \dotsc v_{n-1}, v_n^{\pm 1}\right]$.
 	Then $v_i$ is not a zero divisor in $\E{n}_*/\left(p, v_1, \dotsc, v_{i-1}\right) \cong \Fp\left[v_i, \dotsc v_{n-1}, v_n^{\pm 1}\right]$.
 	After $v_n$ the ring becomes $0$ and we are done.
@@ -709,9 +709,9 @@ The answer is yes, at least in some cases.
 
 \subsection{Lubin-Tate Deformation Theory}\label{LT-def}
 
-The Morava E-theory we have considered until now $\E{n}$, also called Johnson-Wilson spectrum was constructed from $\BP$.
+The Johnson-Wilson spectrum $\E{n}$, a variant of Morava E-theory we have considered until now was constructed from $\BP$.
 As we noted, it is Landweber flat, which indicates that there is another approach to constructing it.
-Indeed there is a way to construct a related spectrum, which will be called the Lubin-Tate spectrum.
+Indeed there is a way to construct a related spectrum, which will be called the Lubin-Tate spectrum, also a variant of Morava E-theory.
 
 To that end, we first define the category $\mrm{CompRing}$ as the category of complete local rings.
 The objects are complete local rings $\left(R, \mfk{m}\right)$, we also denote by $\pi: R \to R/\mfk{m}$ the projection.
