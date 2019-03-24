@@ -330,7 +330,7 @@ Since $\BP$ is a retract of $\MU$, it comes with a map $\MU \to \BP$, that is, a
 
 \begin{proposition}[{\cite[4.1.12 combined with A2.1.25 and A2.2.4]{Rav86}}]\label{bp-p-series}
 	The $p$-series of the formal group law associated to $\BP$ is
-	$\left[p\right]\left(x\right) = \sum v_n x^{p^n}$.
+	$\left[p\right]\left(x\right) = \sum^F v_n x^{p^n}$ (note that the sum on the right hand side is in the formal group law).
 \end{proposition}
 
 \begin{remark}[{\cite[B.5]{Rav92}}]
@@ -353,7 +353,7 @@ Since Morava K-theory and E-theory are obtained from $\BP$ by cofibers and filte
 Then, from \ref{bp-p-series}, we get:
 
 \begin{corollary}\label{k-e-p-series}
-	The $p$-series associated to the formal group laws of $\K[n]$ and $\E{n}$ are $v_n x^{p^n}$ and $v_0 x + \dotsc v_n x^{p^n}$ respectively.
+	The $p$-series associated to the formal group laws of $\K[n]$ and $\E{n}$ are $v_n x^{p^n}$ and $v_0 x +_F \dotsc +_F v_n x^{p^n}$ respectively.
 	Therefore the height of $\K[n]$ is exactly $n$.
 	(Note that by \ref{HR-2}, this is also true for $\K[0]$ and $\K[\infty]$.)
 \end{corollary}
@@ -627,12 +627,24 @@ Unfortunately, this is not always a homology theory.
 However there is a condition that one can check, which guarantees that it is.
 
 \begin{definition}
-	$L \to R$ is called \emph{Landweber flat} if for every prime $p$, the image of the sequence $p = v_0, v_1, v_2, \dotsc$ in $R$, which are the coefficients of the $p$-series, is regular.
-	That is, for each $p$ and $n \geq 0$, $v_n$ is not a zero divisor in $R/\left(v_0, v_1, \dotsc, v_{n-1}\right)$.
+	$L \to R$ is called \emph{Landweber flat} if for every prime $p$, the image of the sequence $p = v_0, v_1, v_2, \dotsc$ in $R$, is regular.
+	That is, for every prime $p$ and $n \geq 0$, $v_n$ is not a zero divisor in $R/\left(v_0, v_1, \dotsc, v_{n-1}\right)$.
 \end{definition}
 
+\begin{remark}
+	Recall that for the formal group law over $\BP$ we have $\left[p\right]\left(x\right) = \sum^F v_n x^{p^n}$.
+	Seemingly $v_n$ is a coefficient in a complicated sum involving $F$ itself, however, modulo $\left(v_0, v_1, \dotsc, v_{n-1}\right)$ (which is all we need for Landweber flatness), in fact $v_n$ is simply the coefficient of $x^{p^n}$ in the $p$-series expanded to a usual power series.
+	To see this, first of all note that
+	$
+	\sum^F v_k x^{p^k}
+	= F\left(\sum_{k \leq n}^F v_k x^{p^k}, \sum_{k > n}^F v_k x^{p^k}\right)
+	$.
+	The second term may contribute only powers higher than $p^n$.
+	Moreover, the first term modulo $\left(v_0, v_1, \dotsc, v_{n-1}\right)$ is simply $v_n x^{p^n}$, and the conclusion follows.
+\end{remark}
+
 \begin{remark}\label{landweber-flat-helper}
-	If $p$ is invertible in $R$, then $p$ is invertible, and $R/p$ is already $0$, so we don't need to check $v_1, v_2, \dotsc$.
+	If $p$ is invertible in $R$, then $p = v_0$ is invertible, and $R/p$ is already $0$, so we don't need to check $v_1, v_2, \dotsc$.
 \end{remark}
 
 \begin{theorem}[{Landweber Exact Functor Theorem (LEFT), \cite[15, 16]{Lur}}]\label{LEFT}
