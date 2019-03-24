@@ -65,13 +65,29 @@ We will try to recover $\spec R$, as a topological space, from $\Ch{R}$.
 	Let $A,B$ be complexes such that $A \otimes B \in \mcl{T}_{R_\mfk{p}}$, that is $A \otimes B \otimes R_\mfk{p}$ is quasi-isomorphic to $0$.
 	We need to show that one of $A \otimes R_\mfk{p}$ and $B \otimes R_\mfk{p}$ is quasi-isomorphic to $0$.
 	Note that $A \otimes B \otimes R_\mfk{p} = \left(A \otimes R_\mfk{p}\right) \otimes_{R_\mfk{p}} \left(B \otimes R_\mfk{p}\right)$.
-	Denote $S = R_\mfk{p}$, which is a local ring with maximal ideal $\mfk{m} = \mfk{p} R_\mfk{p}$ and residue field $k = S/\mfk{m}$, and $X = A \otimes R_\mfk{p}, Y = B \otimes R_\mfk{p}$ are complexes of $S$-modules, and by the above $H_*\left(X \otimes_S Y\right) = 0$.
-	In particular, $0 = H_*\left(X \otimes_S Y\right)/\mfk{m} = H_*\left(\left(X \otimes_S Y\right)/\mfk{m}\right) = H_*\left(X/\mfk{m} \otimes_k Y/\mfk{m}\right)$.
-	The last term is the homology of a complex over the field $k$, so by K\"unneth, $0 = H_*\left(X/\mfk{m}\right) \otimes_k H_*\left(Y/\mfk{m}\right)$, from which it follows that one of them is $0$, and without loss of generality we assume $0 = H_*\left(X/\mfk{m}\right) = H_*\left(X\right)/\mfk{m}$.
-	Now, recall that we consider perfect complexes (and that $- \otimes R_\mfk{p}$ preserves that property), so $X$ is quasi-isomorphic to a bounded complex of finitely-generated projective $S$-modules $X'$, so $H_*\left(X\right) \cong H_*\left(X'\right)$.
-	In particular, $0 = H_*\left(X'\right)/\mfk{m}$.
-	Furthermore, a projective module over a local ring is free, so the modules in $X'$ are finitely-generated free modules, which implies that each $H_i\left(X'\right)$ is a finitely-generated free module (because it is a quotient of such a module).
-	We know that $0 = H_i\left(X'\right)/\mfk{m}$, and so Nakayama's lemma implies that $0 = H_i\left(X'\right) \cong H_i\left(X\right) = H_i\left(A \otimes R_\mfk{p}\right)$, and the conclusion follows.
+	Denote $S = R_\mfk{p}$, which is a local ring with maximal ideal $\mfk{m} = \mfk{p} R_\mfk{p}$ and residue field $k = S/\mfk{m}$, we are then reduced to showing that for $X = A \otimes R_\mfk{p}, Y = B \otimes R_\mfk{p}$ bounded complexes of finitely generated $S$-modules, such that $H_*\left(X \otimes_S Y\right) = 0$, either $H_*\left(X\right) = 0$ or $H_*\left(Y\right) = 0$.
+	
+	Note that if we base-change to $k$, this statement is trivial since by K\"unneth, $0 = H_*\left(X/\mfk{m} \otimes_k Y/\mfk{m}\right) = H_*\left(X/\mfk{m}\right) \otimes_k H_*\left(Y/\mfk{m}\right)$, and the tensor product of vector spaces is $0$ if and only if one of them is $0$.
+	Therefore, it suffices to prove that for $Z$, a bounded complex of finitely generated $S$-modules, $H_*\left(Z\right) = 0$ if and only if $H_*\left(Z/\mfk{m}\right) = 0$.
+	
+	For the first direction, if $Z$ is quasi-isomorphic to $0$, then the (derived) tensor product $Z \otimes_S k = Z/\mfk{m}$ is also quasi-isomorphic to $0$.
+	
+	For the other direction, assume that $Z/\mfk{m}$ is quasi-isomorphic to $0$.
+	Recall that $Z$ is bounded, that is it can be written as
+	$$
+	Z = \cdots \to 0 \to Z_1 \xrightarrow{d_1} \cdots \xrightarrow{d_{n-2}} Z_{n-1} \xrightarrow{d_{n-1}} Z_n \to 0 \to \cdots,
+	$$
+	and that over a local ring, a finitely-generate projective module is free, therefore the modules $Z_i$ are free.
+	We will show that $Z$ is quasi-isomorphic to a complex with only $n-1$ non-trivial terms, and by induction we conclude that $Z$ is indeed quasi-isomorphic to $0$.
+	We are given that $H_*\left(Z/\mfk{m}\right) = 0$, so in particular it is exact at $Z_{n-1}/\mfk{m} \xrightarrow{d_{n-1}} Z_n/\mfk{m} \to 0$, i.e. $Z_{n-1}/\mfk{m} \xrightarrow{d_{n-1}} Z_n/\mfk{m}$ is surjective.
+	That is, we know that $\im d_{n-1} = Z_n \mod \mfk{m}Z_n$, so by Nakayama's lemma we conclude that $\im d_{n-1} = Z_n$, i.e. $Z_{n-1} \xrightarrow{d_{n-1}} Z_n$ is surjective.
+	By the freeness, we conclude that $Z_{n-1} \cong M \oplus Z_n$, under which $d_{n-1} = 0 \oplus \id_{Z_n}$.
+	Since $d_{n-1} d_{n-2} = 0$, the image of $d_{n-1}$ must land in $M$.
+	Therefore, $Z$ is quasi-isomorphic to
+	$$
+	\cdots \to 0 \to Z_1 \xrightarrow{d_1} \cdots \xrightarrow{d_{n-2}} M \to 0 \to 0 \to \cdots,
+	$$
+	which has only $n-1$ non-trivial terms, and we are done.
 \end{example}
 
 \begin{theorem}[{\cite[5.6]{BalSpec}}]
