@@ -235,7 +235,7 @@ We conclude that a choice of a complex orientation on $E$ gives rise to an eleme
 \end{definition}
 
 \begin{example}\label{HR-2}
-	We continue with $\HH{R}$ from \ref{HR-1}.
+	We continue with $\HH{R}$ from \cref{HR-1}.
 	It is known that the tensor of complex line bundles induces the map
 	$$
 	R\formal{x}
@@ -250,7 +250,7 @@ We conclude that a choice of a complex orientation on $E$ gives rise to an eleme
 \end{example}
 
 \begin{example}[$\K$-Theory Saga: Formal Group Law]\label{k-thy-fgl}
-	We return to the example of complex K-theory \ref{k-thy-oriented}.
+	We return to complex K-theory from \cref{k-thy-oriented}.
 	It is known that the tensor of complex line bundles induces the map
 	$$
 	\K_*\formal{t}
@@ -350,12 +350,12 @@ Once we have $\BP$, we can turn to the definition of Morava K-theory and Johnson
 \end{definition}
 
 Since Morava K-theory and E-theory are obtained from $\BP$ by cofibers and filtered colimits, they are equipped with a map from $\BP$, hence also with a complex orientation.
-Then, from \ref{bp-p-series}, we get:
+Then, from \cref{bp-p-series}, we get:
 
 \begin{corollary}\label{k-e-p-series}
 	The $p$-series associated to the formal group laws of $\K[n]$ and $\E{n}$ are $v_n x^{p^n}$ and $v_0 x +_F \dotsc +_F v_n x^{p^n}$ respectively.
 	Therefore the height of $\K[n]$ is exactly $n$.
-	(Note that by \ref{HR-2}, this is also true for $\K[0]$ and $\K[\infty]$.)
+	(Note that by \cref{HR-2}, this is also true for $\K[0]$ and $\K[\infty]$.)
 \end{corollary}
 
 We want to describe some properties of Morava K-theory.
@@ -386,7 +386,7 @@ To do so we first need some definitions.
 \end{proposition}
 
 \begin{example}[K-Theory Saga: Morava K-Theory]\label{k-thy-modp-morava}
-	As we have seen in \ref{k-thy-modp-height}, mod-$p$ K-theory, $\K/p$, has height exactly $1$ and coefficients $\left(\K/p\right)_* = \mathbb{F}_p \left[\beta^{\pm 1}\right]$.
+	As we have seen in \cref{k-thy-modp-height}, mod-$p$ K-theory, $\K/p$, has height exactly $1$ and coefficients $\left(\K/p\right)_* = \mathbb{F}_p \left[\beta^{\pm 1}\right]$.
 	It is also known that $\K$ and $\K/p$, are $\mbb{A}_\infty$-ring spectra, from which it follows that $\K/p$ is a field.
 	We deduce that $\K/p$ is a $\K[1]$-module.
 	Since $\left|\beta\right| = 2$ and $\left|v_1\right| = 2\left(p-1\right)$ it is free of rank $p-1$.
@@ -419,7 +419,7 @@ We know that $\Mod{\SS_{\left(p\right)}} = \Sp_{\left(p\right)}$, and its compac
 \end{proposition}
 
 \begin{proof}
-	The proof follows the same lines of \ref{chperf-tk} for the case $\Chperf{R}$.
+	The proof follows the same lines of \cref{chperf-tk} for the case $\Chperf{R}$.
 \end{proof}
 
 \begin{definition}
@@ -479,7 +479,7 @@ We know that $\Mod{\SS_{\left(p\right)}} = \Sp_{\left(p\right)}$, and its compac
 \end{proposition}
 
 \begin{proof}
-	Recall from \ref{T_E-thick} that we already know that it is thick.
+	Recall from \cref{T_E-thick} that we already know that it is thick.
 	For $X,Y \in \Spfin_{\left(p\right)}$, by K\"unneth we have 
 	$$
 	\K[n]_*\left(X \otimes  Y\right)
@@ -514,7 +514,7 @@ Note that the $p$-localization functor $L_{\left(p\right)}$ is a Bousfield local
 As such, it is left (its right adjoint is the inclusion), and in particular preserves cofibers.
 It is also reduced, i.e. sends $0$ to $0$.
 Now, $L_{\left(p\right)}$ is smashing, that is $L_{\left(p\right)} X = X \otimes \SS_{\left(p\right)}$, so it is also symmetric monoidal.
-As we have seen in \ref{primes-pullback}, under these conditions we can pullback primes.
+As we have seen in \cref{primes-pullback}, under these conditions we can pullback primes.
 Since $L_{\left(p\right)}$ is smashing and $\K\left(p,n\right)$ is $p$-local for every $0 \leq n \leq \infty$, we have that $\K[n]_*\left(X_{\left(p\right)}\right) = \K[n]_*\left(X\right)$.
 Therefore
 $$
@@ -547,7 +547,7 @@ $
 \right\}
 $.
 We see that $\mcl{P}_{p, 0}$ is independent of $p$, and we denote it by $\Spfintor$.
-Again, by \ref{primes-pullback}, we see that any chain $\left\{ \mcl{P}_{p, k}, \mcl{P}_{p, k+1}, \dotsc, \mcl{P}_{p, \infty} \right\}$ for some $p$ and $0 \leq k \leq \infty$, is closed, hence any finite union of such chain is also closed.
+Again, by \cref{primes-pullback}, we see that any chain $\left\{ \mcl{P}_{p, k}, \mcl{P}_{p, k+1}, \dotsc, \mcl{P}_{p, \infty} \right\}$ for some $p$ and $0 \leq k \leq \infty$, is closed, hence any finite union of such chain is also closed.
 We then have the following theorem, which says that these are all of the prime ideals and all of the closed subsets.
 
 \begin{theorem}[{Thick Subcategory Theorem, \cite[9.5]{BalSSS}}]
@@ -654,11 +654,11 @@ However there is a condition that one can check, which guarantees that it is.
 \end{theorem}
 
 \begin{example}
-	Johnson-Wilson spectrum $\E{n}$ is Landweber flat, since by \ref{k-e-p-series}, the $p$-series has coefficients $p = v_0, v_1, \dotsc, v_n$.
+	Johnson-Wilson spectrum $\E{n}$ is Landweber flat, since by \cref{k-e-p-series}, the $p$-series has coefficients $p = v_0, v_1, \dotsc, v_n$.
 	$p$ is not a zero divisor in $\E{n}_* = \ZZ_{\left(p\right)}\left[v_1, \dotsc v_{n-1}, v_n^{\pm 1}\right]$.
 	Then $v_i$ is not a zero divisor in $\E{n}_*/\left(p, v_1, \dotsc, v_{i-1}\right) \cong \Fp\left[v_i, \dotsc v_{n-1}, v_n^{\pm 1}\right]$.
 	After $v_n$ the ring becomes $0$ and we are done.
-	For other primes, by \ref{landweber-flat-helper} we are done.
+	For other primes, by \cref{landweber-flat-helper} we are done.
 \end{example}
 
 \begin{example}
@@ -666,7 +666,7 @@ However there is a condition that one can check, which guarantees that it is.
 \end{example}
 
 \begin{example}
-	$\HH{\ZZ}$ is not Landweber flat since although $p = v_0$ is invertible, as we have seen in \ref{HR-2} the $p$-series is $px$, so $v_1$ is $0$ in $\ZZ/p = \Fp$.
+	$\HH{\ZZ}$ is not Landweber flat since although $p = v_0$ is invertible, as we have seen in \cref{HR-2} the $p$-series is $px$, so $v_1$ is $0$ in $\ZZ/p = \Fp$.
 \end{example}
 
 We can also ask the following question: given complex oriented cohomology theory $\MU \to E$, such that $L \to E_*$ is Landweber flat, is $E_{R,F}$ equivalent to $E$?
@@ -687,7 +687,7 @@ The answer is yes, at least in some cases.
 \end{proof}
 
 \begin{example}[K-Theory Saga: Landweber Flatness]\label{k-thy-comp-left}
-	We return to complex K-theory, from \ref{k-thy-oriented} and \ref{k-thy-fgl}.
+	We return to complex K-theory, from \cref{k-thy-oriented} and \cref{k-thy-fgl}.
 	We can take the completion at the element $p \in \K_*$, which gives the spectrum $\K_p^\wedge$.
 	This spectrum has coefficients
 	$
@@ -699,10 +699,10 @@ The answer is yes, at least in some cases.
 	The formal group law, as we have seen, is given by $F_{\K_p^\wedge}\left(y,z\right) = y + z + \beta y z$.
 	We claim that $F_{\K_p^\wedge}/\K_p^\wedge$ is Landweber flat.
 	Clearly $p = v_0$ is not a zero divisor in $\ZZ_p\left[\beta^{\pm 1}\right]$.
-	As we have seen in \ref{k-thy-modp-height}, mod-$p$ the $p$-series is $\beta^{p-1} x^p$, so that $v_1 = \beta^{p-1}$ which is not a zero divisor $\Fp\left[\beta^{\pm 1}\right]$.
+	As we have seen in \cref{k-thy-modp-height}, mod-$p$ the $p$-series is $\beta^{p-1} x^p$, so that $v_1 = \beta^{p-1}$ which is not a zero divisor $\Fp\left[\beta^{\pm 1}\right]$.
 	Modulo $v_1$ the ring is already $0$, and we are done.
-	For other primes, by \ref{landweber-flat-helper} we are done.
-	Therefore, by \ref{LEFT-even} we get that $\K_p^\wedge \cong E_{\K_p^\wedge, F_{\K_p^\wedge}}$.
+	For other primes, by \cref{landweber-flat-helper} we are done.
+	Therefore, by \cref{LEFT-even} we get that $\K_p^\wedge \cong E_{\K_p^\wedge, F_{\K_p^\wedge}}$.
 \end{example}
 
 
@@ -805,7 +805,7 @@ Using LEFT \ref{LEFT}, we immediately get:
 \end{corollary}
 
 \begin{example}[K-Theory Saga: Lubin-Tate]\label{k-thy-comp-defo}
-	We continue the complex K-theory saga from \ref{k-thy-comp-left}.
+	We continue the complex K-theory saga from \cref{k-thy-comp-left}.
 	Take the field $k = \Fp$ and the formal group law $\Gamma\left(y, z\right) = y + z + y z$, of height $n = 1$.
 	By the above construction, the ring of the universal deformation is $\WW{\Fp} = \ZZ_p$.
 	The universal formal group law of the universal deformation can be taken to be $\Gamma_U \left(y, z\right) = y + z + y z$ (this follows from the proof at \cite[5.10]{Rez}, since here $n=1$ so there are no $u_i$'s).
@@ -816,7 +816,7 @@ Using LEFT \ref{LEFT}, we immediately get:
 	= y + z + u y z
 	$.
 	It is then clear that the isomorphism $\ZZ_p\left[u^{\pm1}\right] \to \ZZ_p\left[\beta^{\pm1}\right]$, sends $u\Gamma_U$ to $F_{\K_p^\wedge}$.
-	It follows by \ref{LEFT-even} that
+	It follows by \cref{LEFT-even} that
 	$
 	\K_p^\wedge
 	\cong E_{\K_p^\wedge, F_{\K_p^\wedge}}

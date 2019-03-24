@@ -1,26 +1,26 @@
-\section{HKR Character Theory}
+\section{HKR Generalized Character Theory}
 
 As we have seen in the previous section, Atiyah and Segal gave a description of $\K\left(\BG\right)$ in terms of the representation ring.
-We have also seen in the section on chromatic homotopy theory, that complex K-theory is related to Morava K-theory at height 1 by \ref{k-thy-modp-morava}, and to Morava E-theory at height 1 by \ref{k-thy-comp-defo}.
+We have also seen in the section on chromatic homotopy theory, that complex K-theory is related to Morava K-theory at height 1 by \cref{k-thy-modp-morava}, and to Morava E-theory at height 1 by \cref{k-thy-comp-defo}.
 Representations can be studied using their characters, and one may wonder if a similar construction can be used to study higher analogues of complex K-theory evaluated at $\BG$.
 
 Hopkins, Kuhn and Ravenel showed in \cite{HKR} that it is indeed possible.
 Their paper contains a lot of results, but we will concentrate on Theorem C.
 Fix some finite group $G$.
 Similarly to the proof of Atiyah-Segal theorem, the actual proof of Theorem C involves a general construction, even to prove the specific case we are interested in, but it will be easier to state it first for the specific case.
-Let $E = \E{k, \Gamma}$ be the Lubin-Tate spectrum from \ref{LT-spectrum}, for some perfect field $k$ of characteristic $p$, and $\Gamma$ a formal group law over $k$ of height $n$.
-We will also denote by $F$ the formal group law on $E_*$ (which is $u \Gamma_U$, as in \ref{LT-spectrum}).
+Let $E = \E{k, \Gamma}$ be the Lubin-Tate spectrum from \cref{LT-spectrum}, for some perfect field $k$ of characteristic $p$, and $\Gamma$ a formal group law over $k$ of height $n$.
+We will also denote by $F$ the formal group law on $E_*$ (which is $u \Gamma_U$, as in \cref{LT-spectrum}).
 There is some ring $L = L\left(E^*\right)$ (which depends on the spectrum $E$).
 It is then possible define some generalized class functions $\cl[n,p]{G; L}$, which are completely algebraic and combinatorial (besides the definition of the ring $L$).
 Lastly, there is a character map $\chinpG: E^*\left(\BG\right) \to \cl[n,p]{G; L}$.
-This character map has similar formal properties to the ordinary character map, namely, similarly to \ref{char-1}, after tensoring with $L$, the character map
+This character map has similar formal properties to the ordinary character map, namely, similarly to \cref{char-1}, after tensoring with $L$, the character map
 $$
 \chinpG \otimes L:
 E^*\left(\BG\right) \otimes L
 \xrightarrow{\sim} \cl[n,p]{G; L}
 $$
 becomes an isomorphism.
-Similarly to \ref{char-2}, there is an action of $\aut\left(\ZZ_p^n\right) \cong \left(\ZZ_p^\times\right)^n$ on $\cl[n,p]{G; L}$, and it turns out that the character map lands in the fixed points.
+Similarly to \cref{char-2}, there is an action of $\aut\left(\ZZ_p^n\right) \cong \left(\ZZ_p^\times\right)^n$ on $\cl[n,p]{G; L}$, and it turns out that the character map lands in the fixed points.
 Moreover, we can merely rationalize, which is given by inverting $p$, the source, rather tensoring with $L$.
 The target is already rational.
 It turns out that after rationalization and restricting the codomain to the fixed points, the map becomes an isomorphism, that is
@@ -32,7 +32,7 @@ $$
 is an isomorphism.
 
 We will first define some of the objects above, to make things more precise, and we will see what exactly we need to construct the rest.
-Once we understand that, we will give a more general and detailed construction, which will allow us to state formally the main theorem \ref{theorem-c}, which is a stronger version of the results written above.
+Once we understand that, we will give a more general and detailed construction, which will allow us to state formally the main theorem, \cref{theorem-c}, which is a stronger version of the results written above.
 After that we will introduce the idea of complex oriented descent, and prove the theorem.
 
 
@@ -190,11 +190,11 @@ Let $S_r = \left\{ \BB[\alpha]^*\left(x\right) \mid \alpha: \Lambda_r \to \UU[1]
 \end{definition}
 
 We wish to describe the above construction with coordinates, to make it more explicit.
-Recall that $E^*\left(\BB[\Lambda_r]\right) \cong E^*\formal{x_1, \dotsc, x_n}/\left(\left[p^r\right]\left(x_1\right), \dotsc, \left[p^r\right]\left(x_n\right)\right)$ by \ref{E-B-abelian}.
+Recall that $E^*\left(\BB[\Lambda_r]\right) \cong E^*\formal{x_1, \dotsc, x_n}/\left(\left[p^r\right]\left(x_1\right), \dotsc, \left[p^r\right]\left(x_n\right)\right)$ by \cref{E-B-abelian}.
 Let $\Lambda_r \overset{\alpha}{\to} \UU[1]$ be a homomorphism.
 Since it lands in the $p^r$-torsion, it factors as $\Lambda_r \overset{k}{\to} \ZZ/{p^r} \overset{\psi_{p^r}}{\to} \UU[1]$, where $k$ is given on the $i$-th coordinate by multiplication-by-$k_i$.
 The condition $\alpha \neq 1$ amounts to the condition $\left(k_1, \dotsc, k_n\right) \neq 0 \mod p^r$.
-By \ref{E-B-map-cyclic}, the induced map is given by $\BB[\alpha]^*\left(x\right) = \sum_F [k_i]\left(x_i\right)$.
+By \cref{E-B-map-cyclic}, the induced map is given by $\BB[\alpha]^*\left(x\right) = \sum_F [k_i]\left(x_i\right)$.
 Therefore $S_r = \left\{ \sum_F [k_i]\left(x_i\right) \mid \left(k_1, \dotsc, k_n\right) \neq 0 \mod p^r\right\}$.
 
 \begin{proposition}
@@ -202,7 +202,7 @@ Therefore $S_r = \left\{ \sum_F [k_i]\left(x_i\right) \mid \left(k_1, \dotsc, k_
 \end{proposition}
 
 \begin{proof}
-	The projection $\Lambda_{r+1} \to \Lambda_r$ is given by the multiplication-by-$1$ on each coordinate, so again by \ref{E-B-map-cyclic} they induce the maps $E^*\left(\BB[\Lambda_r]\right) \to E^*\left(\BB[\Lambda_{r+1}]\right)$, given by $x_i \mapsto x_i$.
+	The projection $\Lambda_{r+1} \to \Lambda_r$ is given by the multiplication-by-$1$ on each coordinate, so again by \cref{E-B-map-cyclic} they induce the maps $E^*\left(\BB[\Lambda_r]\right) \to E^*\left(\BB[\Lambda_{r+1}]\right)$, given by $x_i \mapsto x_i$.
 	Moreover $\sum_F [k_i]\left(x_i\right) \in S_r$ is mapped to $\sum_F [k_i]\left(x_i\right) \in S_{r+1}$.
 	Therefore, once we invert $S_{r+1}$ in the target, clearly $S_r$ are sent to invertibles, so the map lifts to the localization of the source.
 \end{proof}
@@ -219,7 +219,7 @@ By definition, $\aut\left(\Lambda_r\right)$ acts on $\Lambda_r$, so by functoria
 
 \begin{proof}
 	Let $k: \Lambda_r \to \Lambda_r$ be an automorphism given by on the $i,j$-th coordinate by multiplication by $k_{ij}$.
-	Once again, by \ref{E-B-map-cyclic}, for integers $l_1, \dotsc, l_n$, the induced map sends $\sum_{j,F} [l_j]\left(x_j\right)$ to $\sum_{i,F}\left[\sum_j k_{ij} l_j\right]\left(x_i\right)$.
+	Once again, by \cref{E-B-map-cyclic}, for integers $l_1, \dotsc, l_n$, the induced map sends $\sum_{j,F} [l_j]\left(x_j\right)$ to $\sum_{i,F}\left[\sum_j k_{ij} l_j\right]\left(x_i\right)$.
 	Since $k$ is an automorphism, the matrix $\left(k_{ij}\right)$ is invertible.
 	Therefore, if $\left(l_1, \dotsc, l_n\right) \neq 0$, then also $\left(\sum_j k_{1j} l_j, \dotsc, \sum_j k_{1j} l_j\right) \neq 0$, so if the source is in $S_r$, the result is in $S_r$ as well.
 	This shows that action lifts to an action on $L_r$.
@@ -247,9 +247,9 @@ An argument in \cite{HKR} shows that this isn't the case, and even more is true.
 \subsubsection{Algebro-Geometric Interpretation}\label{alg-geo-Lr}
 
 First we wish to simplify the situation a little bit.
-Recall from \ref{LT-spectrum} that we have a formal group law $F = u \Gamma_U$ over $\E{k, \Gamma}_* = \Wkuiu$.
+Recall from \cref{LT-spectrum} that we have a formal group law $F = u \Gamma_U$ over $\E{k, \Gamma}_* = \Wkuiu$.
 This came from the computation $\E{k, \Gamma}^*\left(\BU[1]\right) = \E{k, \Gamma}^* \formal{x}$ with $\left|x\right| = -2$.
-It will be more convenient to work with $t = u^{-1} x$, which lives in degree $0$, similarly to \ref{k-thy-fgl}.
+It will be more convenient to work with $t = u^{-1} x$, which lives in degree $0$, similarly to \cref{k-thy-fgl}.
 On these elements, the formal group law acts the same as $\Gamma_U$.
 By the invertibility of $u$, we can do the computation of $L_r$ with these elements, and the results will not be affected.
 Moreover, since everything is defined already over $E^0 = \Wkui$, we can do all the computations over it, which will give the ring $L_r^0$, the $0$-th degree part of $L_r$, and add $u^{\pm 1}$ at the end to get $L_r$.
@@ -273,12 +273,12 @@ The description of $L_r^0$ as a basis for $\Lambda_r$ also shows where the $\aut
 
 \begin{example}[K-Theory Saga: The Ring $L_r$]\label{k-thy-Lr}
 	We continue with complex K-theory.
-	Recall from \ref{k-thy-comp-defo} that $\K_p^\wedge \cong \E{\Fp, \Gamma}$, where $\Gamma$ is the multiplicative formal group law, $\Gamma\left(y,z\right) = y + z + yz$.
+	Recall from \cref{k-thy-comp-defo} that $\K_p^\wedge \cong \E{\Fp, \Gamma}$, where $\Gamma$ is the multiplicative formal group law, $\Gamma\left(y,z\right) = y + z + yz$.
 	That is, $p$-complete K-theory is a Lubin-Tate spectrum at height $n = 1$, so the the construction above applies to it.
 	It is worth noting that the computation here should be related to Atiyah-Segal, although there we considered $\K$ itself, and here $\K_p^\wedge$, and as we will see we will indeed get that $L$ is a natural place to study characters in a $p$-complete situation.
 	
-	In \ref{k-thy-comp-left}, we saw that $\left(\K_p^\wedge\right)_* = \ZZ_p\left[\beta^{\pm 1}\right]$.
-	As in \ref{alg-geo-Lr}, it is easier to work with the element $t = \beta^{-1} x$ and the formal group law $u + v + uv$ over $\left(\K_p^\wedge\right)_0 = \ZZ_p$.
+	In \cref{k-thy-comp-left}, we saw that $\left(\K_p^\wedge\right)_* = \ZZ_p\left[\beta^{\pm 1}\right]$.
+	As in \cref{alg-geo-Lr}, it is easier to work with the element $t = \beta^{-1} x$ and the formal group law $u + v + uv$ over $\left(\K_p^\wedge\right)_0 = \ZZ_p$.
 	The $n$-series then is $\left[n\right]\left(t\right) = \left(1 + t\right)^n - 1$.
 	
 	In our case $\Lambda_r = \ZZ/p^r$, and we have
@@ -291,10 +291,10 @@ The description of $L_r^0$ as a basis for $\Lambda_r$ also shows where the $\aut
 	To make the computation easier, we change variable $s = 1+t$, to work with the ring
 	$\ZZ_p\left[s\right]/\left(s^{p^r} - 1\right)$.
 	
-	We note that this is in accordance with the algebro-geometric point of view from \ref{alg-geo-Lr}, as the spectrum of this ring is isomorphic as a group scheme to the group of roots of unity of order $p^r$.
+	We note that this is in accordance with the algebro-geometric point of view from \cref{alg-geo-Lr}, as the spectrum of this ring is isomorphic as a group scheme to the group of roots of unity of order $p^r$.
 	
 	Under this change of variables, $S_r = \left\{s^k - 1 \mid 0 < k < p^r\right\}$.
-	By \ref{Lr-fixed-points}, $p$ is invertible in the localization, so might as well invert it before inverting $S_r$.
+	By \cref{Lr-fixed-points}, $p$ is invertible in the localization, so might as well invert it before inverting $S_r$.
 	We then denote $R = \QQ_p\left[s\right]/\left(s^{p^r} - 1\right)$, and our goal is to compute ${S_r}^{-1} R$.
 	Denote by $\Phi_k\left(s\right)$ the $k$-th cyclotomic polynomial, and by $\zeta_k$ a primitive $k$-th root of unity.
 	Recall that $s^{p^r} - 1 = \left(s^{p^{r-1}} - 1\right) \Phi_{p^r}\left(s\right)$
@@ -308,7 +308,7 @@ The description of $L_r^0$ as a basis for $\Lambda_r$ also shows where the $\aut
 	Therefore, the map actually factors to a map $\QQ_p\left[s\right]/\left(\Phi_{p^r}\right) \to {S_r}^{-1} R$, which is clearly an inverse to the map above.
 	
 	We conclude that our ring is $L_r^0 = \QQ_p\left(\zeta_{p^r}\right)$.
-	This is again in accordance with \ref{alg-geo-Lr}, since the points now are primitive roots of unity, that is each points forms a basis for the group of roots of unity.
+	This is again in accordance with \cref{alg-geo-Lr}, since the points now are primitive roots of unity, that is each points forms a basis for the group of roots of unity.
 	
 	The whole graded ring is $L_r = \QQ_p\left(\zeta_{p^r}\right)\left[\beta^{\pm 1}\right]$.
 	From this it is also easy to see that $L = \QQ_p\left(\zeta_{p^\infty}\right)\left[\beta^{\pm 1}\right]$.
@@ -324,7 +324,7 @@ Moreover, the proof will rely on passing to other subgroups as well, although un
 To this end, we define the generalized objects we need.
 
 Let $X$ be a finite $G$-CW complex.
-Recall from \ref{towards-character-map} that for $r \geq r_0$, we have $\Gnp = \hom_{\Grp}\left(\Lambda_r, G\right)$, with the $G$-action by conjugation.
+Recall from \cref{towards-character-map} that for $r \geq r_0$, we have $\Gnp = \hom_{\Grp}\left(\Lambda_r, G\right)$, with the $G$-action by conjugation.
 Note that for $\alpha \in \Gnp$, $X^{\im \alpha}$ is simply the fixed points of $X$ at the $n$-tuple $\left(g_1, \dotsc, g_n\right)$ which is represented by $\alpha$, so the following definition is independent of $r \geq r_0$.
 
 \begin{definition}
@@ -356,7 +356,7 @@ Note that for $X = *$, trivial $G$-space, $\Fix{G,*} = \Gnp$ as a $G$-space.
 Hence $E^*\left(\Fix{G,*}\right) \cong \hom_{\Set}\left(\Gnp, E^*\right)$.
 Taking the $G$ fixed points gives $\hom_{\GSet}\left(\Gnp, E^*\right)$ (note that this $\hom$ is in $\GSet$).
 In conclusion, we get $\cl[n,p]{G,*; L_r} =  \hom_{\GSet}\left(\Gnp, L_r\right)$.
-This agrees with our previous definition \ref{class-function-*}.
+This agrees with \cref{class-function-*}.
 
 We give an alternative description of the algebra before taking the $G$ fixed points.
 Simply by taking the coproduct out of the cohomology as a product, and out of the tensor product, we get:
@@ -416,18 +416,18 @@ We now want to apply this to our case.
 \end{proposition}
 
 \begin{proof}
-	We will take $G \times \aut \left(\Lambda_r\right)$ fixed points of \ref{Lr-Fix} in two steps, first by $G$ then by $\aut \left(\Lambda_r\right)$.
+	We will take $G \times \aut \left(\Lambda_r\right)$ fixed points of \cref{Lr-Fix} in two steps, first by $G$ then by $\aut \left(\Lambda_r\right)$.
 	Recall that $L_r$ is fixed by $G$.
 	The action on the cohomology part comes from the action on the space, taking $x \in X^{\im \alpha}$ to $\gamma x \in X^{\im \gamma.\alpha}$.
 	Since this is invertible, this gives a homeomorphism between $X^{\im \alpha}$ and $X^{\im \gamma.\alpha}$, which shows that $E^*\left(X^{\im \alpha}\right) \cong E^*\left(X^{\im \gamma.\alpha}\right)$.
-	Using this isomorphism, we see that $E^*\left(X^{\im \alpha}\right)$ depends only on the $G$-orbit of $\alpha$, so we can employ \ref{combinatorial-situation} for \ref{Lr-Fix} with $H = G$ and $I = \Gnp$, to get:
+	Using this isomorphism, we see that $E^*\left(X^{\im \alpha}\right)$ depends only on the $G$-orbit of $\alpha$, so we can employ \cref{combinatorial-situation} for \cref{Lr-Fix} with $H = G$ and $I = \Gnp$, to get:
 	$$
 	\cl[n,p]{G,X; L_r}
 	\cong \prod_{\left[\alpha\right] \in \Gnp/G} \left(L_r \otimes_{E^*} E^*\left(X^{\im \alpha}\right)^{\stab_G\left(\alpha\right)}\right)
 	$$
 	We now have the $\aut \left(\Lambda_r\right)$-action.
 	Recall that $\aut \left(\Lambda_r\right)$ didn't act on the space part, since it fixes $\im \alpha$.
-	We are then in the situation of \ref{combinatorial-situation} again, for $H = \aut \left(\Lambda_r\right)$ and $I = \Gnp/G$, and the general case follows.
+	We are then in the situation of \cref{combinatorial-situation} again, for $H = \aut \left(\Lambda_r\right)$ and $I = \Gnp/G$, and the general case follows.
 	
 	When $X = *$, all fixed points $X^{\im \alpha}$ are again trivial, which shows that the $E^*$-cohomology is simply $E^*$, and tensoring with it over $E^*$ does nothing, and the specific case follows.
 \end{proof}
@@ -439,7 +439,7 @@ We now want to apply this to our case.
 We now construct the character map, that also depends on $r$, which is omitted from the notation:
 $$\chinpG: E^*\left(\EG \times_G X\right) \to \cl[n,p]{G,X; L_r}$$
 This map is given by a map $E^*\left(\EG \times_G X\right) \to L_r \otimes_{E^*} E^*\left(\Fix{G,X}\right)$ which lands in the $G$ fixed points.
-By \ref{Lr-Fix}, this is the data of a map $E^*\left(\EG \times_G X\right) \to L_r \otimes_{E^*} E^*\left(X^{\im \alpha}\right)$ for each $\alpha \in \Gnp$.
+By \cref{Lr-Fix}, this is the data of a map $E^*\left(\EG \times_G X\right) \to L_r \otimes_{E^*} E^*\left(X^{\im \alpha}\right)$ for each $\alpha \in \Gnp$.
 
 Let $\alpha \in \Gnp$, that is $\alpha: \Lambda_r \to G$.
 By functoriality of $\EE$, this induces a map $\EE[\Lambda_r] \to \EG$.
@@ -452,7 +452,7 @@ The $\Lambda_r$ orbits of the source are $\BB[\Lambda_r] \times X^{\im \alpha}$.
 Since the action on the target was pulled form the diagonal $G$-action, we can further take the $G$ orbits on the target, to get a map $\BB[\Lambda_r] \times X^{\im \alpha} \to \EG \times_G X$.
 
 Taking $E^*$-cohomology we get $E^*\left(\EG \times_G X\right) \to E^*\left(\BB[\Lambda_r] \times X^{\im \alpha}\right)$.
-Since $X$ was assumed to be a finite $G$-CW complex, we have K\"unneth for the target by \ref{E-B-abelian}, so the map is equivalently a map $E^*\left(\EG \times_G X\right) \to E^*\left(\BB[\Lambda_r]\right) \otimes_{E^*} E^*\left(X^{\im \alpha}\right)$.
+Since $X$ was assumed to be a finite $G$-CW complex, we have K\"unneth for the target by \cref{E-B-abelian}, so the map is equivalently a map $E^*\left(\EG \times_G X\right) \to E^*\left(\BB[\Lambda_r]\right) \otimes_{E^*} E^*\left(X^{\im \alpha}\right)$.
 Using the localization map $E^*\left(\BB[\Lambda_r]\right) \to L_r$ we finally get the desired map $E^*\left(\EG \times_G X\right) \to L_r \otimes_{E^*} E^*\left(X^{\im \alpha}\right)$.
 This concludes the construction of the data of the character map.
 
@@ -472,10 +472,10 @@ Therefore, by taking the $G$ fixed points on the target, we indeed get the desir
 	It is easy to see that these maps are compatible with the maps $L_r \to L_{r+1}$, coming from the projections.
 \end{proof}
 
-Since $p$ is invertible in $L$ by \ref{Lr-fixed-points}, and $\aut \left(\Lambda\right)$ doesn't change $p^{-1}$, it also follows that after inverting $p$, that is, rationalizing, the map $p^{-1} \chinpG: p^{-1} E^*\left(\EG \times_G X\right) \to \cl[n,p]{G,X; L}$ still lands in the $\aut \left(\Lambda\right)$ fixed points (and the same is true for $L_r$ in place of $L$).
+Since $p$ is invertible in $L$ by \cref{Lr-fixed-points}, and $\aut \left(\Lambda\right)$ doesn't change $p^{-1}$, it also follows that after inverting $p$, that is, rationalizing, the map $p^{-1} \chinpG: p^{-1} E^*\left(\EG \times_G X\right) \to \cl[n,p]{G,X; L}$ still lands in the $\aut \left(\Lambda\right)$ fixed points (and the same is true for $L_r$ in place of $L$).
 
 We are now in position to state the main theorem.
-This should remind you of \ref{char-1} and \ref{char-2}.
+This should remind you of \cref{char-1} and \cref{char-2}.
 
 \begin{theorem}[{\cite[Theorem C]{HKR}}]\label{theorem-c}
 	First, after tensoring with $L$, the character map
@@ -488,7 +488,7 @@ This should remind you of \ref{char-1} and \ref{char-2}.
 \end{theorem}
 
 \begin{corollary}\label{theorem-c-pt}
-	Using \ref{combinatorial-cl-fixed}, for the case $X = *$ we get isomorphisms
+	Using \cref{combinatorial-cl-fixed}, for the case $X = *$ we get isomorphisms
 	$$
 	E^*\left(\BG\right) \otimes_{E^*} L
 	\cong \cl[n,p]{G; L}
@@ -511,7 +511,7 @@ The first part of the theorem will be proven in the remaining of the section.
 	$E^*\left(\EG \times_G X\right) \otimes_{E^*} L \xrightarrow{\sim} \cl[n,p]{G,X; L}$.
 	Endowing the source with $\aut \left(\Lambda\right)$-action by acting only on $L$, makes it equivariant.
 	Therefore, there is an isomorphism on the fixed points.
-	Using $L^{\aut \left(\Lambda\right)} = p^{-1} E^*$, from \ref{Lr-fixed-points}, the fixed points on the source are:
+	Using $L^{\aut \left(\Lambda\right)} = p^{-1} E^*$, from \cref{Lr-fixed-points}, the fixed points on the source are:
 	\begin{align*}
 		\left(E^*\left(\EG \times_G X\right) \otimes_{E^*} L\right)^{\aut \left(\Lambda\right)}
 		&= E^*\left(\EG \times_G X\right) \otimes_{E^*} L^{\aut \left(\Lambda\right)}\\
@@ -526,7 +526,7 @@ The first part of the theorem will be proven in the remaining of the section.
 
 \subsection{The Idea of the Proof and Complex Oriented Descent}
 
-Our next goal is to prove the first part of \ref{theorem-c}.
+Our next goal is to prove the first part of \cref{theorem-c}.
 That is, for a finite group $G$ and a finite $G$-CW complex $X$, the character map becomes an isomorphism after tensoring with $L$, i.e.
 $\chinpG \otimes L: E^*\left(\EG \times_G X\right) \otimes_{E^*} L \xrightarrow{\sim} \cl[n,p]{G,X; L}$
 is an isomorphism, and the same with $L$ replaced with $L_r$, for $r \geq r_0$.
@@ -662,7 +662,7 @@ The reason complex oriented descent is useful is the following.
 	\end{tikzcd}
 	$$
 	By complex oriented descent, the two rows are equalizer diagrams.
-	By \ref{faithful-triv-bundle}, $X \times F\left(V\right)$ has abelian stabilizers, hence we already know that $\beta = \tau\left(G, X \times F\left(V\right)\right)$ is an isomorphism.
+	By \cref{faithful-triv-bundle}, $X \times F\left(V\right)$ has abelian stabilizers, hence we already know that $\beta = \tau\left(G, X \times F\left(V\right)\right)$ is an isomorphism.
 	We can then construct the map $\beta^{-1} g: D^*\left(X\right) \to C^*\left(X \times F\left(V\right)\right)$, which by definitions makes the diagram commute.
 	By the universal property of the equalizer, we get a map $\alpha': D^*\left(X\right) \to C^*\left(X\right)$ s.t. the diagram is commutative.
 	The composition $\alpha' \alpha: C^*\left(X\right) \to C^*\left(X\right)$ makes the diagram commute, and since $C^*\left(X\right)$ is the equalizer, by uniqueness, $\alpha' \alpha = \id_{C^*\left(X\right)}$.
@@ -674,13 +674,13 @@ The reason complex oriented descent is useful is the following.
 
 \subsection{Proof of the Main Theorem}
 
-We are going to use the previous results to prove the main theorem, \ref{theorem-c}.
+We are going to use the previous results to prove the main theorem, \cref{theorem-c}.
 Almost all of the whole proof will work with $L$ replaced by $L_r$, for $r \geq r_0$, without a change, so we state everything for $L$ except for the end where there is a difference.
 Recall that we have already proved the second part.
 Therefore, what is left to prove is that 
 $\chinpG \otimes L: E^*\left(\EG \times_G X\right) \otimes_{E^*} L \xrightarrow{\sim} \cl[n,p]{G,X; L}$
 is an isomorphism.
-We will do this using \ref{cmplx-oriented-natural-transformation}.
+We will do this using \cref{cmplx-oriented-natural-transformation}.
 
 Denote $C^*\left(G, X\right) = E^*\left(\EG \times_G X\right) \otimes_{E^*} L$,
 and $D^*\left(G, X\right) = \cl[n,p]{G,X; L} = \left(L_r \otimes_{E^*} E^*\left(\Fix{G,X}\right)\right)^G$.
@@ -716,12 +716,12 @@ We also denote by $\tau\left(G, X\right)$ the character map $\chinpG \otimes L$ 
 	Let $\xi$ be a $G$-vector bundle over $X$.
 	
 	$\EG \times_G \xi$ is a $G$-vector bundle on $\EG \times_G X$, and it satisfies $F\left(\EG \times_G \xi\right) \cong \EG \times_G F\left(\xi\right)$.
-	Then the fact that $E^*$ satisfies complex oriented descent, and that $L$ is flat (see \ref{Lr-fixed-points}), imply that $C^*$ satisfies complex oriented descent.
+	Then the fact that $E^*$ satisfies complex oriented descent, and that $L$ is flat (see \cref{Lr-fixed-points}), imply that $C^*$ satisfies complex oriented descent.
 	
 	Moreover, in \cite[2.6]{HKR}, they prove that for an abelian subgroup, $A \leq G$, the diagram $X^A \leftarrow F\left(\xi\right)^A \leftleftarrows F\left(\xi\right)^A \times_{X^A} F\left(\xi\right)^A$ gives an equalizer diagram in $E^*$-cohomology.
 	In the situation of $D^*$, we use the result for $A = \im \alpha$ which is indeed abelian by the fact they are $n$ commuting elements (equivalently, by the fact that it is the image of an abelian group).
 	Equalizers, which are limits, commute with limits, and therefore commute with products and taking $G$-fixed points.
-	Using this, and the flatness of $L$ again, we deduce, by \ref{Lr-Fix}, that $D^*$ satisfies complex oriented descent as well.
+	Using this, and the flatness of $L$ again, we deduce, by \cref{Lr-Fix}, that $D^*$ satisfies complex oriented descent as well.
 \end{proof}
 
 \begin{lemma}
@@ -845,7 +845,7 @@ We also denote by $\tau\left(G, X\right)$ the character map $\chinpG \otimes L$ 
 	$
 	is an isomorphism for abelian groups $A$.
 	
-	By \ref{E-B-abelian}, we have K\"unneth for $E^*\left(\BB[A]\right)$, so it takes direct sums in $A$ to tensor products.
+	By \cref{E-B-abelian}, we have K\"unneth for $E^*\left(\BB[A]\right)$, so it takes direct sums in $A$ to tensor products.
 	
 	For an abelian group, the $A$-action on $A_{n,p}$ is trivial (since it is by conjugation).
 	Therefore,
@@ -860,7 +860,7 @@ We also denote by $\tau\left(G, X\right)$ the character map $\chinpG \otimes L$ 
 	Both functors take direct sums to tensor products, so by the structure theorem for abelian groups, we reduce to the case $\ZZ/q^k$ for a prime $q$.
 	
 	First we handle the case $q \neq p$.
-	Again by \ref{E-B-abelian}, $E^*\left(\BB[\ZZ/q^k]\right)$ is a free module of rank $1$, so the source of $\chi_{n,p}^{\ZZ/q^k}$ is $L$.
+	Again by \cref{E-B-abelian}, $E^*\left(\BB[\ZZ/q^k]\right)$ is a free module of rank $1$, so the source of $\chi_{n,p}^{\ZZ/q^k}$ is $L$.
 	Moreover, $\hom_{\Ab}\left(\Lambda, \ZZ/q^k\right)$ has only the trivial homomorphism, so $\cl[n,p]{\ZZ/q^k; L} = L$.
 	It is easy to see that this is indeed an isomorphism then.
 	
@@ -872,14 +872,14 @@ We also denote by $\tau\left(G, X\right)$ the character map $\chinpG \otimes L$ 
 	Now $\left(\ZZ/p^k\right)_{n,p}$, i.e. $n$ commuting $p$-power-torsion elements, is just $n$ elements, so it is canonically isomorphic to $\left(\ZZ/p^k\right)^n = \Lambda_k$.
 	The character map $\chi_{n,p}^{\ZZ/p^k}$ is then a morphism $E^*\left(\BB[\ZZ/p^k]\right) \otimes_{E^*} L_r \to \hom_{\Set}\left(\Lambda_k, L_r\right)$.
 	
-	By \ref{E-B-abelian}, the source of the character map is isomorphic to $E^*\formal{x}/\left(\left[p^k\right]\left(x\right)\right) \otimes_{E^*} L_r$.
+	By \cref{E-B-abelian}, the source of the character map is isomorphic to $E^*\formal{x}/\left(\left[p^k\right]\left(x\right)\right) \otimes_{E^*} L_r$.
 	Using the exponential rule, and the adjunction between the forgetful from $L_r$-modules to $E^*$-modules and $- \otimes_{E^*} L_r$, we get that the character map is the same data as a map
 	$\phi: \Lambda_k \to \hom_{L_r}\left(L_r\formal{x}/\left(\left[p^k\right]\left(x\right)\right), L_r\right)$.
 	
 	In \cite{HKR} the proof ends here, since they have an alternative definition of $L_r$ as a ring representing some functor, which makes the above map an isomorphism almost immediately.
 	We didn't take this route, so we make the connection here more explicit.
 	
-	Recall the definition of $L_r$ from \ref{Lr}, and the definition of the character map.
+	Recall the definition of $L_r$ from \cref{Lr}, and the definition of the character map.
 	Chasing the definitions, we see that for $0 \neq \left(l_i\right) \in \Lambda_k$, $\phi\left(\left(l_i\right)\right)$ is the homomorphism which sends $x$ to $\sum_F \left[l_i\right]\left(x_i\right) \in L_r$.
 	Since $r \geq r_0 = k$, the last element is in $S_r$, and in particular invertible in $L_r$.
 	We now finish the proof by applying \cite[6.2]{HKR} to $\phi$, which shows that in this case indeed the character map is an isomorphism.
@@ -887,6 +887,6 @@ We also denote by $\tau\left(G, X\right)$ the character map $\chinpG \otimes L$ 
 	Moreover, they denote by $\Lambda_r^*$ the Pontryagin dual, which is isomorphic to $\Lambda_r$, and $\phi\left(\alpha\right)$ in their notation really means the value at $x$ (as can be seen in \cite[5.5]{HKR}).
 \end{proof}
 
-\begin{proof}[Proof (of the first part of \ref{theorem-c})]
-	Follows immediately by combining the previous lemmas and \ref{cmplx-oriented-natural-transformation}.
+\begin{proof}[Proof (of the first part of \cref{theorem-c})]
+	Follows immediately by combining the previous lemmas and \cref{cmplx-oriented-natural-transformation}.
 \end{proof}

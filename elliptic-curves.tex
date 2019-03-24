@@ -29,7 +29,7 @@ In fact, there are many more equivalent conditions to the above, which can be fo
 
 From now on we assume that our elliptic curve is supersingular.
 
-Similarly to the Lubin-Tate deformation theory of formal group laws described in \ref{LT-def}, there is a deformation theory for elliptic curves.
+Similarly to the Lubin-Tate deformation theory of formal group laws described in \cref{LT-def}, there is a deformation theory for elliptic curves.
 Recall that $\Gamma_C$ over $k$ has a universal deformation.
 The Serre-Tate theorem \cite[2.9.1]{KM} then implies the following:
 
@@ -38,7 +38,7 @@ The Serre-Tate theorem \cite[2.9.1]{KM} then implies the following:
 \end{theorem}
 
 In this case we get a Lubin-Tate spectrum $E = \E{k, \Gamma_C}$.
-We recall from \ref{LT-spectrum} that the coefficients can be taken to be $E_* = \Wk\formal{u_1}\left[u^{\pm 1}\right]$ where $\left|u\right| = 2$, and the formal group law is $u\left(\Gamma_C\right)_U$, which by the above can be described by $u \Gamma_{C_U}$.
+We recall from \cref{LT-spectrum} that the coefficients can be taken to be $E_* = \Wk\formal{u_1}\left[u^{\pm 1}\right]$ where $\left|u\right| = 2$, and the formal group law is $u\left(\Gamma_C\right)_U$, which by the above can be described by $u \Gamma_{C_U}$.
 
 
 
@@ -46,17 +46,17 @@ We recall from \ref{LT-spectrum} that the coefficients can be taken to be $E_* =
 
 Recall that the our main goal in HKR theory was to compute $p^{-1} E^*\left(\BG\right)$ for some Lubin-Tate spectrum $E$.
 We shall focus only the $0$-th level, as this is $2$-periodic in the usual way.
-The main result \ref{theorem-c-pt} for us was (stated here only for the $0$-th level, and with $L_r$ for $r \geq r_0$)
+The main result for us was \cref{theorem-c-pt} (stated here only for the $0$-th level, and with $L_r$ for $r \geq r_0$)
 $$
 p^{-1} E^0\left(\BG\right)
 \cong \prod_{\left[\alpha\right] \in \Gnp/{\left(G \times \aut \left(\Lambda_r\right)\right)}}
 \left(L_r^0\right)^{\stab_{\aut \left(\Lambda_r\right)}\left(\alpha\right)}.
 $$
-That is, in order to compute $p^{-1} E^0\left(\BG\right)$, we need to compute $L_r^0$, as defined in \ref{Lr}, and various fixed-points sub-rings thereof.
+That is, in order to compute $p^{-1} E^0\left(\BG\right)$, we need to compute $L_r^0$, as in \cref{Lr}, and various fixed-points sub-rings thereof.
 
 Recall that we fixed some supersingular elliptic curve $C$ over a finite field $k$ of characteristic $p$, so that $\Gamma_C$ is of height $n=2$, and we consider $E = \E{k, \Gamma_C}$.
-As we saw in \ref{serre-tate}, we can use the deformation $C_U$ to describe the universal deformation of the formal group.
-In \ref{alg-geo-Lr}, we have seen that $L_r^0$ can be described as follows.
+As we saw in \cref{serre-tate}, we can use the deformation $C_U$ to describe the universal deformation of the formal group.
+In \cref{alg-geo-Lr}, we have seen that $L_r^0$ can be described as follows.
 First, $\spec E^0\left(\BB[\Lambda_r]\right) = \left(\fG_{C_U}\left[p^r\right]\right)^2$.
 Second, $S_r^0 = \left\{ [k_1]\left(t\right) +_{\Gamma_{C_U}} [k_2]\left(s\right) \mid \left(k_1, k_2\right) \neq 0 \mod p^r\right\}$.
 And $L_r^0 = \left(S_r^0\right)^{-1} E^0\left(\BB[\Lambda_r]\right)$.
@@ -70,7 +70,7 @@ $$
 \end{tikzcd}
 $$
 Taking the kernels of both vertical maps, we get a map $\fG_C\left[p^r\right] \to C\left[p^r\right]$.
-Since $C$ is supersingular, by \ref{height-torsion}, the only point of $C\left[p^r\right]$ is $O$, i.e. it is a nilpotent thickening of the point $O$, which means that the map $\fG_C\left[p^r\right] \to C\left[p^r\right]$ is an isomorphism of schemes, since $\fG_C$ is the formal neighborhood of $O$.
+Since $C$ is supersingular, by \cref{height-torsion}, the only point of $C\left[p^r\right]$ is $O$, i.e. it is a nilpotent thickening of the point $O$, which means that the map $\fG_C\left[p^r\right] \to C\left[p^r\right]$ is an isomorphism of schemes, since $\fG_C$ is the formal neighborhood of $O$.
 Since the group structure on $\fG_C$ is inherited from that of $C$, this is also an isomorphism of group schemes.
 
 In the same way as above, we have a map between the $p^r$-torsion of the deformations, $\fG_{C_U}\left[p^r\right] \to C_U\left[p^r\right]$.
@@ -81,7 +81,7 @@ This means that in our computations of $L_r^0$, we can use the elliptic curve $C
 This has the advantage that the operations on the elliptic curve are given by polynomials, rather then formal power series.
 More explicitly, we have that $\spec E^0\left(\BB[\Lambda_r]\right) \cong \left(C_U\left[p^r\right]\right)^2$, i.e. the scheme-theoretic kernel of the multiplication-by-$p^r$ map on the elliptic curve, squared.
 We then need to localize away from the zeros of the functions $[k_1]\left(-\right) +_{C_U} [k_2]\left(-\right)$, for $\left(k_1, k_2\right) \neq 0 \mod p^r$.
-As we have seen in \ref{alg-geo-Lr}, we can actually consider only $k_i$'s which are a multiple of $p^{r-1}$, which means that we need to consider only $p^2-1$ pairs.
+As we have seen in \cref{alg-geo-Lr}, we can actually consider only $k_i$'s which are a multiple of $p^{r-1}$, which means that we need to consider only $p^2-1$ pairs.
 
 
 
@@ -107,7 +107,7 @@ We have only $2^2-1=3$ pairs, which are $\left(2^{r-1},0\right), \left(0,2^{r-1}
 Note that the first two are symmetric, and can be computed even before taking the tensor product.
 That is, $L_r^0$ is given by computing $\OO\left(C_U\left[2^r\right]\right)$ (to get the $2^r$-torsion), localizing away from $[2^{r-1}]\left(-\right)$ (to get the points of order exactly $2^r$), tensoring with itself (to get pairs of such points), and localizing away from $[2^{r-1}]\left(-\right) +_{C_U} [2^{r-1}]\left(-\right)$ (to get such pairs that span).
 
-Furthermore, we recall that by \ref{Lr-fixed-points}, $2$ is invertible in $L_r^0$, so the whole computation can be carried with $C_U$ base changed to $\QQ_2\left[\zeta_3\right]\formal{u_1}$, and we will obtain the same result.
+Furthermore, we recall that by \cref{Lr-fixed-points}, $2$ is invertible in $L_r^0$, so the whole computation can be carried with $C_U$ base changed to $\QQ_2\left[\zeta_3\right]\formal{u_1}$, and we will obtain the same result.
 Moreover, we note that the elliptic curve, and all the operations described above, are defined already over $R = \QQ\left[u_1\right]$, so we can carry the whole computation over $R$, and tensor in the end with $\QQ_2\left[\zeta_3\right]\formal{u_1}$ to get $L_r^0$.
 
 
@@ -203,7 +203,7 @@ This means that we to ensure that two values (the first and last coordinates) ar
 Note that if they vanish together, then any linear combination of them vanishes as well, but the other direction is not immediate.
 However, since there are only finitely many points, the number of different values attained is finite, and there are infinitely many different linear combinations over $R$, so there are linear combinations that vanish if and only if the two vanish together.
 We can then choose an arbitrary linear combination, and the result might be too large, but if the rank is correct then our choice was valid.
-Since we a priori know the ranks, as described in \ref{rank-considerations}, we can verify this.
+Since we a priori know the ranks, as described in \cref{rank-considerations}, we can verify this.
 It turns out that here taking the sum of the first and last coordinates works.
 Now, inverting an element $x \in S$ is equivalent to adding a formal element $d$ and requiring it to be its inverse, i.e. $x^{-1} S = S\left[d\right]/(1 - dx)$.
 This explains the last element appended to \texttt{quoPr}.
