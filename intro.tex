@@ -1,25 +1,30 @@
 \section{Introduction}
 
-Chromatic homotopy theory is a theory which describes the global structure of the category of spectra.
-A key player in this theory is Morava E-theory, which is an higher height analogue of complex K-theory.
-In \cite{AS}, Atiyah and Segal show that the complex K-theory of classifying spaces of groups, are deeply connected to their representations, therefore it can be studied using character theory.
+Chromatic homotopy theory describes the global structure of the category of spectra.
+A key player in this theory is Morava E-theory, which is a higher height analogue of ($p$-complete) complex K-theory.
+In \cite{AS}, Atiyah and Segal show that the complex K-theory of classifying spaces of groups, is deeply connected to their representations. Therefore it can be studied using character theory.
 In \cite{HKR}, Hopkins, Kuhn and Ravenel develop a generalized character theory, which can be used to study the Morava E-theory of classifying spaces of finite groups.
 Over the last years, there have been numerous applications of elliptic curves to chromatic homotopy theory.
-We give another such application, in the form of concrete computations of HKR generalized character theory at height $2$ using elliptic curves.
+We give another such application, in the form of concrete computations of HKR generalized character theory at height $2$.
+
+
+
+\subsection*{Organization}
 
 \cref{sec:chromatic} sets up the theory of chromatic homotopy theory.
-We recall many of the basic results of the topic, omitting most of the proofs, with the goal of introducing Morava K-theory and different flavors of Morava E-theory.
+We recall many of the basic results in the field, omitting most of the proofs, with the goal of introducing Morava K-theory and different flavors of Morava E-theory.
 
-\cref{sec:AS} recalls the Atiyah-Segal theorem \ref{AS-private}, and explain its connection to character theory.
-This section, although not logically necessary for what follows, it will serve as motivation and a basic example.
+\cref{sec:AS} recalls the Atiyah-Segal theorem (\cref{AS-private}), and explains its connection to character theory.
+This section, although not logically necessary for what follows, will serve as a motivation and as a basic example.
 
 \cref{sec:HKR} gives an account of HKR generalized character theory.
-The main result of the theory for us, which appears in the original paper as \cite[Theorem C]{HKR}, is recalled in \cref{theorem-c}.
-We give most of the details of the proof, emphasizing and elaborating on some parts, in hope to clarify the original account, and to relate it to the other parts of this paper.
+The main result for us, which appears in the original paper as \cite[Theorem C]{HKR}, is recalled in \cref{theorem-c}.
+We give most of the details of the proof, emphasizing and elaborating on some parts.
+We hope that this will clarify the original account, and relate it to the other parts of this work.
 
-\cref{sec:ell} focuses on HKR at height $2$.
-The main contribution of this paper is the explanation of the usage of elliptic curves to carry out explicit computations of HKR.
-We conclude with the development of some code that implements parts of this strategy.
+\cref{sec:ell} focuses on height $2$.
+The main contribution of this work is the explanation of the usage of elliptic curves to carry out explicit computations of HKR.
+We conclude with the development of some computer code, in Macaulay2, that implements parts of this strategy.\footnote{We conjecture that Macaulay3 is necessary for computations at height $3$.}
 
 
 
