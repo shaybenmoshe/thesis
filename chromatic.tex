@@ -42,7 +42,7 @@ We will try to recover $\spec R$, as a topological space, from $\Ch{R}$.
 	$\mcl{T}_K = \left\{ A \in \Chperf{R} \mid A \otimes K \cong 0 \right\}$.
 	We claim that $\mcl{T}_K$ is thick.
 	Clearly $0 \in \mcl{T}_K$.
-	Let $A \to B$ be a morphism between two complexes in $\mcl{T}$. Since tensor is left, tensoring the cofiber with $K$ is given by
+	Let $A \to B$ be a morphism between two complexes in $\mcl{T}$. Since tensor is a left adjoint, tensoring the cofiber with $K$ is given by
 	$\cofib\left(A \to B\right) \otimes K \cong \cofib\left(A \otimes K \to B \otimes K\right) \cong \cofib\left(0 \to 0\right) \cong 0$, therefore the cofiber is indeed in $\mcl{T}_K$.
 	Lastly, if $A \to B \to A$ is the identity and $B \otimes K \cong 0$, we get that $\id[A \otimes K]$ factors through $0$, which implies that $A \otimes K$ is $0$, so that $A \in \mcl{T}_K$.
 \end{example}
@@ -106,7 +106,7 @@ We will try to recover $\spec R$, as a topological space, from $\Ch{R}$.
 	We first prove that for $\mcl{P} \in \spec \mcl{D}$, $F^*\mcl{P} \in \spec \mcl{C}$.
 	
 	Clearly $F\left(0\right) = 0 \in \mcl{P}$ since $F$ is exact, so $0 \in F^*\mcl{P}$.
-	Since $F$ preserves cofibers, for $A,B \in F^*\mcl{P}$, i.e. $F\left(A\right), F\left(B\right) \in \mcl{P}$, and a map $A \to B$ we get
+	Since $F$ preserves cofibers, for $A,B \in F^*\mcl{P}$, i.e. $F\left(A\right), F\left(B\right) \in \mcl{P}$, and a map $A \to B$, we get
 	$
 	F\left(\cofib\left(A \to B\right)\right)
 	= \cofib\left(F\left(A\right) \to F\left(B\right)\right)
@@ -206,7 +206,7 @@ Since $E$ is unital, there is a canonical generator $1 \in E_0$.
 	$x_{\MU}$ is a complex orientation for $\MU$.
 \end{proposition}
 
-\begin{theorem}[{\cite[4.1.13]{Rav86}}]
+\begin{theorem}[{\cite[4.1.13]{Rav86}}]\label{mu-universal}
 	$\MU$ is the universal complex oriented cohomology theory, in the following sense:
 	For any multiplicative cohomology theory $E$, there is a bijection between (homotopy classes of) multiplicative maps $\MU \to E$ and complex orientations on $E$.
 	The bijection is given in one direction by pulling back $x_{\MU}$ along a multiplicative map.
@@ -318,7 +318,7 @@ We can form $\MU_{\left(p\right)}$, the $p$-localization of $\MU$.
 \end{theorem}
 
 The map $\varepsilon: \MU_{\left(p\right)} \to \MU_{\left(p\right)}$ gives a cohomology operation, for every $X$ we have $\varepsilon^*: \MU_{\left(p\right)}^*\left(X\right) \to \MU_{\left(p\right)}^*\left(X\right)$.
-Denote by $\BP_{\left(p\right)}^*\left(X\right)$ the image of $\varepsilon^*$.
+Denote by $\BP^*\left(X\right)$ the image of $\varepsilon^*$.
 
 \begin{theorem}[{\cite[II 16]{Ada}, \cite[4.1.12]{Rav86}}]
 	$\BP$ is a cohomology theory, represented by an associative commutative ring spectrum $\BP$ (depending on the prime $p$), which is a retract of $\MU_{\left(p\right)}$.
@@ -330,7 +330,7 @@ Since $\BP$ is a retract of $\MU$, it comes with a map $\MU \to \BP$, that is, a
 
 \begin{proposition}[{\cite[4.1.12 combined with A2.1.25 and A2.2.4]{Rav86}}]\label{bp-p-series}
 	The $p$-series of the formal group law associated to $\BP$ is
-	$\left[p\right]\left(x\right) = \sum^F v_n x^{p^n}$ (note that the sum on the right hand side is in the formal group law).
+	$\left[p\right]\left(x\right) = \sum_F v_n x^{p^n}$ (note that the sum on the right hand side is in the formal group law).
 \end{proposition}
 
 \begin{remark}[{\cite[B.5]{Rav92}}]
@@ -375,7 +375,7 @@ To do so we first need some definitions.
 	$K\left(n\right)$ is a field for $0 \leq n \leq \infty$.
 \end{example}
 
-\begin{proposition}
+\begin{proposition}\label{field-kunneth}
 	A field $E$ has K\"unneth, i.e. $E_*\left(X\otimes Y\right)\cong E_*\left(X\right)\otimes_{E_*}E_*\left(Y\right)$ for any spectra X,Y.
 \end{proposition}
 
@@ -480,7 +480,7 @@ We know that $\Mod{\SS_{\left(p\right)}} = \Sp_{\left(p\right)}$, and its compac
 
 \begin{proof}
 	Recall from \cref{T_E-thick} that we already know that it is thick.
-	For $X,Y \in \Spfin_{\left(p\right)}$, by K\"unneth we have 
+	For $X,Y \in \Spfin_{\left(p\right)}$, by \cref{field-kunneth} we have 
 	$$
 	\K[n]_*\left(X \otimes  Y\right)
 	= \K[n]_*\left(X\right) \otimes \K[n]_*\left(Y\right).
@@ -511,7 +511,7 @@ We know that $\Mod{\SS_{\left(p\right)}} = \Sp_{\left(p\right)}$, and its compac
 
 We now want to describe $\spec \SS$.
 Note that the $p$-localization functor $L_{\left(p\right)}$ is a Bousfield localization.
-As such, it is left (its right adjoint is the inclusion), and in particular preserves cofibers.
+As such, it is a left adjoint (its right adjoint is the inclusion), and in particular preserves cofibers.
 It is also reduced, i.e. sends $0$ to $0$.
 Now, $L_{\left(p\right)}$ is smashing, that is $L_{\left(p\right)} X = X \otimes \SS_{\left(p\right)}$, so it is also symmetric monoidal.
 As we have seen in \cref{primes-pullback}, under these conditions we can pullback primes.
@@ -572,7 +572,7 @@ We then have the following theorem, which says that these are all of the prime i
 		\mcl{P}_{2, n} \arrow[dash]{u}{} & \mcl{P}_{3, n} \arrow[dash]{u}{} & \cdots & \mcl{P}_{p, n} \arrow[dash]{u}{} & \cdots\\
 		\vdots \arrow[dash]{u}{} & \vdots \arrow[dash]{u}{} &  & \vdots \arrow[dash]{u}{} & \\
 		\mcl{P}_{2, 2} \arrow[dash]{u}{} & \mcl{P}_{3, 2} \arrow[dash]{u}{} & \cdots & \mcl{P}_{p, 2} \arrow[dash]{u}{} & \cdots\\
-		\mcl{P}_{2, 1} \arrow[dash]{u}{} & \mcl{P}_{3, 1} \arrow[dash]{u}{} & \cdots & \mcl{P}_{p, n} \arrow[dash]{u}{} & \cdots\\
+		\mcl{P}_{2, 1} \arrow[dash]{u}{} & \mcl{P}_{3, 1} \arrow[dash]{u}{} & \cdots & \mcl{P}_{p, 1} \arrow[dash]{u}{} & \cdots\\
 		& & \Spfintor \arrow[dash]{ull}{} \arrow[dash]{ul}{} \arrow[dash]{ur}{}
 	\end{tikzcd}
 	$$
@@ -597,13 +597,14 @@ Quillen theorem \ref{quillen-theorem} tells us that $\MU_*$ is the Lazard ring, 
 This theorem has a second part, which says that $\left(\MU \otimes \MU\right)_*$ is the universal ring that carries two formal group laws and a strict isomorphism between them.
 Therefore, $\Mfgs$ is represented by $\left(\MU_*, \left(\MU \otimes \MU\right)_*\right)$.
 
-The geometric points of the stack $\Mfgs$ are precisely the same as $\spec \SS$, that is because for an algebraically closed field of characteristic $0$ there is a unique (up to isomorphism) formal group law which is of height $0$ namely the additive formal group law, and for characteristic $p$ there is a unique (up to isomorphism) formal group law of each height $1 \leq n \leq \infty$.
+The geometric points of the stack $\Mfgs$ are precisely the same as $\spec \SS$.
+That is because for an algebraically closed field of characteristic $0$ there is a unique (up to strict isomorphism) formal group law which is of height $0$, namely the additive formal group law, and for characteristic $p$ there is a unique (up to strict isomorphism) formal group law of each height $1 \leq n \leq \infty$.
 
 For a spectrum $X$, $\MU_*\left(X\right)$ is a $\left(\MU_*, \left(\MU \otimes \MU\right)_*\right)$-comodule, which is the same as a sheaf over $\Mfgs$.
 From this point of view, chromatic homotopy theory lets us study a spectrum by decomposing it over the stack $\Mfgs$.
 
 We can restrict ourselves to the stack only over $p$-local rings, $\Mfgsp$, which is then represented by $\left(\left(\MU_{\left(p\right)}\right)_*, \left(\MU_{\left(p\right)} \otimes \MU_{\left(p\right)}\right)_*\right)$.
-Similarly to $\MU$, $\BP$ is universal ring with the universal $p$-typical formal group law, and $\left(\BP \otimes \BP\right)_*$ is the universal ring with two $p$-typical formal group laws and a strict isomorphism between them.
+Similarly to $\MU$, $\BP_*$ is the universal ring with the universal $p$-typical formal group law, and $\left(\BP \otimes \BP\right)_*$ is the universal ring with two $p$-typical formal group laws and a strict isomorphism between them.
 Since every formal group law is isomorphic to a unique $p$-typical one, we know that the stack $\Mfgsp$ is also represented by $\left(\BP_*, \left(\BP \otimes \BP\right)_*\right)$.
 
 It is now reasonable that $\K[n]$, obtained from $\BP$ by killing the $v_m$'s for $m \neq n$ and inverting $v_n$, sees the $n$-th level, and that $\E{n}$ obtained in the same way but only killing $v_m$ for $m > n$, sees the levels $\leq n$.
@@ -618,7 +619,7 @@ Following this point of view, the following theorem can be proven:
 
 \subsection{Landweber Exact Functor Theorem}
 
-As we have seen, a complex orientation on a cohomology theory, which is given by a map $\MU \to E$, has an associated formal group law, which is given by the map $L = \MU_* \to E_*$.
+As we have seen, a complex orientation on a cohomology theory, which by \cref{mu-universal} is given by a map $\MU \to E$, has an associated formal group law, which is given by the map $L = \MU_* \to E_*$.
 Note that this formal group law is of degree $-2$, by virtue of the grading on $L = \MU_*$.
 One can ask whether the converse is true, namely given a graded ring $R$ and a formal group law $F$ of degree $-2$ given by $L \to R$, is there a complex oriented cohomology theory whose coefficients are $R$ and the associated formal group law is $F$.
 
@@ -632,12 +633,13 @@ However there is a condition that one can check, which guarantees that it is.
 \end{definition}
 
 \begin{remark}
-	Recall from \cref{bp-p-series} that for the formal group law over $\BP$ we have $\left[p\right]\left(x\right) = \sum^F v_n x^{p^n}$.
-	Seemingly $v_n$ is a coefficient in a complicated sum involving $F$ itself, however, modulo $\left(v_0, v_1, \dotsc, v_{n-1}\right)$ (which is all we need for Landweber flatness) $v_n$ is equal to the coefficient of $x^{p^n}$ in the $p$-series expanded to a usual power series, which may be much easier to compute.
+	Recall from \cref{bp-p-series} that for the formal group law over $\BP$ we have $\left[p\right]\left(x\right) = \sum_F v_n x^{p^n}$.
+	Seemingly $v_n$ is a coefficient in a complicated sum involving $F$ itself.
+	However, modulo $\left(v_0, v_1, \dotsc, v_{n-1}\right)$ (which is all we need for Landweber flatness) $v_n$ is equal to the coefficient of $x^{p^n}$ in the $p$-series expanded to a usual power series, which may be much easier to compute.
 	To see this, first of all note that
 	$
-	\sum^F v_k x^{p^k}
-	= \sum_{k \leq n}^F v_k x^{p^k} +_F \sum_{k > n}^F v_k x^{p^k}
+	\sum_F v_k x^{p^k}
+	= \sum_{k \leq n, F} v_k x^{p^k} +_F \sum_{k > n, F} v_k x^{p^k}
 	$.
 	The second term may contribute only powers higher than $p^n$.
 	Moreover, the first term modulo $\left(v_0, v_1, \dotsc, v_{n-1}\right)$ is simply $v_n x^{p^n}$, and the conclusion follows.
@@ -650,7 +652,7 @@ However there is a condition that one can check, which guarantees that it is.
 \begin{theorem}[{Landweber Exact Functor Theorem (LEFT), \cite[15, 16]{Lur}}]\label{LEFT}
 	If $L \to R$ is Landweber flat, then $E_{R,F}$ defined above is a homology theory.
 	Moreover, there are no phantom maps between such spectra, so $E_{R,F}$ is represented by a spectrum.
-	This spectrum is complex oriented, has coefficients $R$ and associated formal group law $F$.
+	This spectrum is complex oriented, has coefficients $R$, and associated formal group law $F$.
 \end{theorem}
 
 \begin{example}
@@ -709,7 +711,7 @@ The answer is yes, at least in some cases.
 
 \subsection{Lubin-Tate Deformation Theory}\label{LT-def}
 
-The Johnson-Wilson spectrum $\E{n}$, a variant of Morava E-theory we have considered until now was constructed from $\BP$.
+The Johnson-Wilson spectrum $\E{n}$, a variant of Morava E-theory we have considered until now, was constructed from $\BP$.
 As we noted, it is Landweber flat, which indicates that there is another approach to constructing it.
 Indeed there is a way to construct a related spectrum, which will be called the Lubin-Tate spectrum, also a variant of Morava E-theory.
 
@@ -718,13 +720,13 @@ The objects are complete local rings $\left(R, \mfk{m}\right)$, we also denote b
 Morphisms $\varphi: \left(R, \mfk{m}\right) \to \left(S, \mfk{n}\right)$ are local homomorphisms, i.e. a homomorphism $\varphi: R \to S$ s.t. $\varphi\left(\mfk{m}\right) \subseteq \mfk{n}$.
 In particular it induces a homomorphism $\varphi/\mfk{m}: R/\mfk{m} \to S/\mfk{n}$, which satisfies $\varphi/\mfk{m} \circ \pi_R = \pi_S \circ \varphi$.
 
-We fix $k$ be a perfect field of characteristic $p$ (i.e. the Frobenius is an isomorphism), and $\Gamma$ a formal group law over $k$ of height $n < \infty$.
+We fix $k$ to be a perfect field of characteristic $p$ (i.e. the Frobenius is an isomorphism), and $\Gamma$ a formal group law over $k$ of height $n < \infty$.
 Lubin and Tate \cite{LT} considered a moduli problem associated to $\Gamma/k$, described by a functor $\Def: \mrm{CompRing} \to \mrm{Grpds}$.
 
 \begin{definition}
 	Let $\left(R, \mfk{m}\right)$ be a complete local ring and denote by $\pi: R \to R/\mfk{m}$ the quotient.
 	A \emph{deformation} of $\Gamma/k$ to $\left(R, \mfk{m}\right)$, is $\left(G, i\right)$, where $G$ is a formal group law over $R$, $i: k \to R/\mfk{m}$ is a homomorphism of fields, such that $i^* \Gamma = \pi^* G$.
-	A \emph{$\star$-isomorphism} between two deformations to $\left(R, \mfk{m}\right)$, $f: \left(G_1, i_1\right) \to \left(G_2, i_2\right)$, is defined only when $i_1 = i_2$, and consists of an isomorphism $f: G_1 \to G_2$, such that $\pi^* f: i^*\Gamma = \pi^* G_1 \to \pi^* G_2 \to i^*\Gamma$ is the identity, i.e. $f\left(x\right) = x \mod \mfk{m}$.
+	A \emph{$\star$-isomorphism} between two deformations to $\left(R, \mfk{m}\right)$, $f: \left(G_1, i_1\right) \to \left(G_2, i_2\right)$, is defined only when $i_1 = i_2 = i$, and consists of an isomorphism $f: G_1 \to G_2$, such that $\pi^* f: i^*\Gamma = \pi^* G_1 \to \pi^* G_2 \to i^*\Gamma$ is the identity, i.e. $f\left(x\right) = x \mod \mfk{m}$.
 	These assemble to a groupoid $\Def[R, \mfk{m}]$, whose objects are deformations to $\left(R, \mfk{m}\right)$, and morphisms are $\star$-isomorphisms.
 \end{definition}
 
@@ -783,7 +785,7 @@ Lubin and Tate \cite{LT} considered a moduli problem associated to $\Gamma/k$, d
 
 Let us unravel what that means.
 First note that the quotient of $\Wkui$ by the maximal ideal $\left(p, u_1, \dotsc, u_{n-1}\right)$ is $k$.
-The universal deformation can be chosen such that the formal group law over it $\Gamma_U$ over $\Wkui$ satisfies $\pi^* \Gamma_U$ is $\Gamma$.
+The universal deformation can be chosen such that the formal group law $\Gamma_U$ over $\Wkui$ satisfies $\pi^* \Gamma_U = \Gamma$.
 The universality means that for $\left(R, \mfk{m}\right)$, the assignment
 $$
 \hom_{\mrm{CompRing}}\left(\Wkui, R\right) \to \Def[R, \mfk{m}], \quad
@@ -803,6 +805,14 @@ Using LEFT \ref{LEFT}, we immediately get:
 \begin{corollary}\label{LT-spectrum}
 	There is a complex oriented cohomology theory $\E{k, \Gamma} = E_{\Wkuiu, u \Gamma_U}$, called \emph{Lubin-Tate spectrum}, with coefficients $\E{k, \Gamma}_* = \Wkuiu$ and associated formal group law $u \Gamma_U$.
 \end{corollary}
+
+This concludes the construction of the Lubin-Tate variant of Morava E-theory.
+It is usually called Morava E-theory of height $n$, and denoted by $\mrm{E}_n$, when the field is $k = \mbb{F}_{p^n}$ and the formal group law is the Honda formal group law of height $n$.
+We can compare the Lubin-Tate spectrum with the previous one, the Johnson-Wilson spectrum.
+
+\begin{proposition}[{\cite[23, example 1]{Lur}}]
+The Lubin-Tate spectrum $\E{k, \Gamma}$ and Johnson-Wilson spectrum $\E{n}$ are Bousfield equivalent.
+\end{proposition}
 
 \begin{example}[K-Theory Saga: Lubin-Tate]\label{k-thy-comp-defo}
 	We continue the complex K-theory saga from \cref{k-thy-comp-left}.
@@ -824,10 +834,3 @@ Using LEFT \ref{LEFT}, we immediately get:
 	$,
 	i.e. $p$-complete K-theory $\K_p^\wedge$ is a Lubin-Tate spectrum at height $1$.
 \end{example}
-
-This concludes the construction of the Lubin-Tate variant of Morava E-theory.
-We can compare the Lubin-Tate spectrum with the previous one, the Johnson-Wilson spectrum.
-
-\begin{proposition}[{\cite[23, example 1]{Lur}}]
-	The Lubin-Tate spectrum $\E{k, \Gamma}$ and Johnson-Wilson spectrum $\E{n}$ are Bousfield equivalent.
-\end{proposition}

@@ -7,7 +7,7 @@ Atiyah and Segal \cite{AS} gave a description of this, and more, in the case tha
 
 From now we fix a compact Lie group $G$.
 Also, a representation means a finite dimensional unitary representation.
-We should also note that beyond this part, we will be mostly interested in finite groups.
+We should also note that beyond this section, we will be mostly interested in finite groups.
 
 
 
@@ -89,7 +89,7 @@ Their proof has another interesting aspect.
 Although it is a statement about the $\K_G$ of some class of $G$-spaces, for one specific group $G$, their proof involves the $\K_G$'s of several groups.
 In particular, to prove the result for example for a finite group, their proof involves more general compact Lie groups.
 The proof consists of four steps.
-In every step we show the theorem holds for a more general type of group:
+In every step they show that the theorem holds for a more general type of group:
 \begin{itemize}
 	\item $G = \UU[1]$ (circle group),
 	\item $G = \UU[1]^n$ (torus group),
@@ -122,7 +122,7 @@ We compute a few examples in detail, to make the isomorphism more vivid.
 Take $G = \UU[1]$, the circle group.
 It is known that the irreducible representations are of dimension $1$ and labeled by an integer $m \in \ZZ$, i.e. they are homomorphisms $\rho_m = \UU[1] \to \UU[1]$ given by $\rho_m\left(e^{i \theta}\right) = e^{m i \theta}$.
 In particular, $\rho_0 = 1$ is the trivial representation.
-It is then clear that for $m \geq 0$, $\rho_1^{\otimes m} = \rho_m$ and $\rho_{-1}^{\otimes -m} = \rho_{-m}$.
+It is then clear that for $m \geq 0$, $\rho_1^{\otimes m} = \rho_m$ and $\rho_{-1}^{\otimes m} = \rho_{-m}$.
 Therefore the representation ring generated under (virtual) direct sums and tensor products by $\rho_1$ and $\rho_{-1}$.
 Moreover, $\rho_1 \otimes \rho_{-1} = 1$.
 Denote $\rho = \rho_1$, and we conclude that $\RG[\UU[1]] = \ZZ\left[\rho, \rho^{-1}\right]$.
@@ -146,7 +146,7 @@ We thus see that $\K\left(\BU[1]\right) \cong \ZZ\formal{t}$ where $t = L - 1$ i
 
 The identity map $\rho: \UU[1] \to \UU[1]$, is mapped to the identity $\BU[1] \to \BU[1]$ (by functoriality of $\BB$), which tautologically corresponds the universal line bundle $L$ on $\BU[1]$.
 We therefore see that the Atiyah-Segal map $\RG[\UU[1]] \to \K\left(\BU[1]\right)$, sends $\rho$ to $L$, and therefore $t = \rho - 1$ to $t = L - 1$.
-Which indeed shows that the map admits $\K\left(\BU[1]\right) \cong \ZZ\formal{t}$ as the $I = \left(t\right)$-completion of $\RG[\UU[1]]$.
+This shows that the map admits $\K\left(\BU[1]\right) \cong \ZZ\formal{t}$ as the $I = \left(t\right)$-completion of $\RG[\UU[1]]$.
 
 
 \subsubsection{\texorpdfstring{$\ZZ/2$}{Z/2}, Cyclic Group of Order \texorpdfstring{$2$}{2}}
@@ -155,14 +155,14 @@ Take $G = \ZZ/2$.
 Here we have only two irreducible representations, the trivial, and $\rho\left(0\right) = 1, \rho\left(1\right) = -1$.
 Also, it is clear that $\rho \otimes \rho$ is the trivial representation.
 Therefore, $\RG[\ZZ/2] = \ZZ[\rho]/\left(\rho^2-1\right)$.
-Similarly to before, the augmentation $\varepsilon: \RG[\ZZ/2] \to \ZZ$ sends $1,\rho$ to $1$, so clearly $\left(\rho-1\right) \subseteq I$, and for the same reasoning as in the previous example this is actually an equality.
+Similarly to before, the augmentation $\varepsilon: \RG[\ZZ/2] \to \ZZ$ sends $1$ and $\rho$ to $1$, so clearly $\left(\rho-1\right) \subseteq I$, and for the same reasoning as in the previous example this is actually an equality.
 We change coordinates to $t = \rho-1$, and we have $\RG[\ZZ/2] = \ZZ[t]/\left(t^2+2t\right)$, and $I = \left(t\right)$.
 
 We move to computing the completion $\RG[\ZZ/2]_I^\wedge$.
 Modulo $t^2+2t$, i.e. $t^2 = -2t$, we have that $t^n = \left(-2\right)^{n-1} t$.
 Thus $I^n = \left(\left(-2\right)^{n-1} t\right) = \left(2^{n-1} t\right)$, so $\RG[\ZZ/2]/I^n = \ZZ[t]/\left(t^2+2t, 2^{n-1} t\right)$.
 We first compute the limit of $\RG[\ZZ/2]/I^n$ in abelian groups.
-Since the forgetful functor from rings to abelian groups is right adjoint, it commutes with limits, so this will give us the abelian group structure.
+Since the forgetful functor from rings to abelian groups is a right adjoint, it commutes with limits, so this will give us the abelian group structure.
 As an abelian group, $\RG[\ZZ/2]/I^n$ is isomorphic to $\ZZ \oplus \ZZ/2^{n-1}\left\{t\right\}$.
 It is then clear that as an abelian group, $\lim \RG[\ZZ/2]/I^n$ is isomorphic to $\ZZ \oplus \ZZ_2\left\{t\right\}$.
 

@@ -96,7 +96,7 @@ Denote by $x \in E^2\left(\BB[\ZZ/m]\right)$ the cohomology class $\BB\psi_m^*\l
 	Look at the functors $X \mapsto E^*\left(X\right) \otimes_{E^*} E^*\left(Y\right)$ and $X \mapsto E^*\left(X \times Y\right)$.
 	Both of them are manifestly homotopy invariant.
 	Since $E^*\left(Y\right)$ is free, it is also flat, and so both functors satisfy Mayer-Vietoris.
-	Both functors send arbitrary wedges to arbitrary products, since tensor with a free finite rank modules commutes with arbitrary products.
+	Both functors send arbitrary wedges to arbitrary products, since tensor with a free finite rank module commutes with arbitrary products.
 	We conclude that they are both cohomology theories.
 	Moreover, they agree on $X = *$, and therefore are isomorphic.
 \end{proof}
@@ -118,12 +118,13 @@ Using both propositions we can bootstrap to arbitrary finite abelian groups.
 	Since $\BB$ commutes with products, we can induct on the number of components in the product, and the proof follows by the two previous propositions.
 \end{proof}
 
-Recall that the formal group law on $E_*$ was defined by taking the $E^*\left(\BB-\right)$ to the multiplication map $\UU[1] \times \UU[1] \to \UU[1]$.
+Recall that the formal group law on $E_*$ was defined by taking the $E^*\left(\BB-\right)$ of the multiplication map $\UU[1] \times \UU[1] \to \UU[1]$.
 That is, this map induces the map $x \mapsto F\left(y, z\right) = y +_F z$ on the cohomology.
 
 By pre-composing with the diagonal, and doing this for $k$-copies of $\UU[1]$, we see that the multiplication-by-$k$ map $\UU[1] \overset{k}{\to} \UU[1]$ induces the map $E^*\formal{x} \to E^*\formal{y}$ given by $x \mapsto \left[k\right]\left(y\right)$.
 
-Let $k: \bigoplus_{i=1}^t \UU[1] \to \bigoplus_{j=1}^s \UU[1]$ be the map given on the $i,j$-th coordinate by multiplication-by-$k_{ij}$, it induces a map
+Let $k: \bigoplus_{i=1}^t \UU[1] \to \bigoplus_{j=1}^s \UU[1]$ be the map given on the $i,j$-th coordinate by multiplication-by-$k_{ij}$.
+Taking $E^*\left(\BB-\right)$ gives a map
 $E^*\formal{x_1, \dotsc, x_s} \to E^*\formal{y_1, \dotsc, y_t}$
 given by $x_j \mapsto \sum_F\left[k_{ij}\right]\left(y_i\right)$.
 From this it follows that:
@@ -221,7 +222,7 @@ By definition, $\aut\left(\Lambda_r\right)$ acts on $\Lambda_r$, so by functoria
 	Let $k: \Lambda_r \to \Lambda_r$ be an automorphism given by on the $i,j$-th coordinate by multiplication by $k_{ij}$.
 	Once again, by \cref{E-B-map-cyclic}, for integers $l_1, \dotsc, l_n$, the induced map sends $\sum_{j,F} [l_j]\left(x_j\right)$ to $\sum_{i,F}\left[\sum_j k_{ij} l_j\right]\left(x_i\right)$.
 	Since $k$ is an automorphism, the matrix $\left(k_{ij}\right)$ is invertible.
-	Therefore, if $\left(l_1, \dotsc, l_n\right) \neq 0$, then also $\left(\sum_j k_{1j} l_j, \dotsc, \sum_j k_{1j} l_j\right) \neq 0$, so if the source is in $S_r$, the result is in $S_r$ as well.
+	Therefore, if $\left(l_1, \dotsc, l_n\right) \neq 0$, then also $\left(\sum_j k_{1j} l_j, \dotsc, \sum_j k_{nj} l_j\right) \neq 0$, so if the source is in $S_r$, the result is in $S_r$ as well.
 	This shows that action lifts to an action on $L_r$.
 \end{proof}
 
@@ -252,7 +253,7 @@ This came from the computation $\E{k, \Gamma}^*\left(\BU[1]\right) = \E{k, \Gamm
 It will be more convenient to work with $t = u^{-1} x$, which lives in degree $0$, similarly to \cref{k-thy-fgl}.
 On these elements, the formal group law acts the same as $\Gamma_U$.
 By the invertibility of $u$, we can do the computation of $L_r$ with these elements, and the results will not be affected.
-Moreover, since everything is defined already over $E^0 = \Wkui$, we can do all the computations over it, which will give the ring $L_r^0$, the $0$-th degree part of $L_r$, and add $u^{\pm 1}$ at the end to get $L_r$.
+Moreover, since everything is defined already over $E^0 = \Wkui$, we can do all the computations over it, which will give the ring $L_r^0$, the $0$-th degree part of $L_r$, and add $u^{\pm 1}$ at the end to get back $L_r$.
 
 The formal group law $\Gamma_U$ over $E^0$, gives a formal group $\fG = \spf E^0\formal{t}$ with multiplication $\fG \times \fG \to \fG$.
 By definition, the $p^r$-torsion elements in $\fG$, is the scheme-theoretic kernel of the multiplication-by-$p^r$ map $\left[p^r\right]: \fG \to \fG$, that is $\fG\left[p^r\right] = \spec\left(E^0\formal{t}/\left(\left[p^r\right]\left(t\right)\right)\right) = \spec E^0\left(\BB[\ZZ / p^r]\right)$.
@@ -261,7 +262,7 @@ We also see that $\spec E^0\left(\BB[\Lambda_r]\right) = \left(\fG\left[p^r\righ
 
 Inverting $S_r$ is equivalent to inverting their $0$-th graded analogues $S_r^0 = \left\{ \sum_{\Gamma_U} [k_i]\left(t_i\right) \mid \left(k_1, \dotsc, k_n\right) \neq 0 \mod p^r\right\}$.
 Algebro-geometrically, this is equivalent to restricting to the open subset where all the functions $\sum_{\Gamma_U} [k_i]\left(t_i\right)$ don't vanish.
-That is, $L_r^0$ is the open subset of $n$-tuple of points in $\fG\left[p^r\right]$, i.e. $n$ points in the $p^r$-torsion, which are linearly independent.
+That is, $\spec L_r^0$ is the open subset of $n$-tuple of points in $\fG\left[p^r\right]$, i.e. $n$ points in the $p^r$-torsion, which are linearly independent.
 In fact, the points of $\fG\left[p^r\right]$, as a group, are isomorphic (non-canonically) to $\left(\ZZ/p^r\right)^n = \Lambda_r$, so this means that the $n$ points are not only linearly independent, but also span, that is they form a basis.
 
 Moreover, if $\sum_{\Gamma_U} [k_i]\left(t_i\right) = 0$ then also $\sum_{\Gamma_U} [p k_i]\left(t_i\right) = \left[p\right]\left(\sum_{\Gamma_U} [k_i]\left(t_i\right)\right) = 0$.
@@ -269,7 +270,7 @@ So, if any $p k_i$ is not $0$ modulo $p^r$, inverting $\sum_{\Gamma_U} [p k_i]\l
 Well, $p k_i = 0 \mod p^r$ if and only if $k_i = 0 \mod p^{r-1}$, which shows that we can invert only those where all $k_i$'s are a multiple of $p^{r-1}$.
 Since there are $n$ $k_i$'s, each of them can take any of $p$ values (numbers which are a multiple of $p^{r-1}$), and not all $0$, we need to invert only $p^n - 1$ elements.
 
-The description of $L_r^0$ as a basis for $\Lambda_r$ also shows where the $\aut \left(\Lambda_r\right)$ action comes from, it just changes the basis by multiplying by an invertible matrix.
+The description of $\spec L_r^0$ as a basis for $\Lambda_r$ also shows where the $\aut \left(\Lambda_r\right)$ action comes from, it just changes the basis by multiplying by an invertible matrix.
 
 \begin{example}[K-Theory Saga: The Ring $L_r$]\label{k-thy-Lr}
 	We continue with complex K-theory.
@@ -294,21 +295,21 @@ The description of $L_r^0$ as a basis for $\Lambda_r$ also shows where the $\aut
 	We note that this is in accordance with the algebro-geometric point of view from \cref{alg-geo-Lr}, as the spectrum of this ring is isomorphic as a group scheme to the group of roots of unity of order $p^r$.
 	
 	Under this change of variables, $S_r = \left\{s^k - 1 \mid 0 < k < p^r\right\}$.
-	By \cref{Lr-fixed-points}, $p$ is invertible in the localization, so might as well invert it before inverting $S_r$.
+	By \cref{Lr-fixed-points}, $p$ is invertible in the localization, so we might as well invert it before inverting $S_r$.
 	We then denote $R = \QQ_p\left[s\right]/\left(s^{p^r} - 1\right)$, and our goal is to compute ${S_r}^{-1} R$.
 	Denote by $\Phi_k\left(s\right)$ the $k$-th cyclotomic polynomial, and by $\zeta_k$ a primitive $k$-th root of unity.
-	Recall that $s^{p^r} - 1 = \left(s^{p^{r-1}} - 1\right) \Phi_{p^r}\left(s\right)$
+	Recall that $s^{p^r} - 1 = \left(s^{p^{r-1}} - 1\right) \Phi_{p^r}\left(s\right)$.
 	Therefore we have a quotient map $R \to \QQ_p\left[s\right]/\left(\Phi_{p^r}\right) \cong \QQ_p\left(\zeta_{p^r}\right)$, and we claim that it admits the target as the $S_r$-localization of the source.
 	
 	First, note that $s^k-1 \in S_r$ is sent to $\zeta_{p^r}^k - 1$, and since $0 < k < p^r$, this is not zero.
 	Since the codomain is a field, this is invertible, so by the universal property of localization, we get a map ${S_r}^{-1} R \to \QQ_p\left[s\right]/\left(\Phi_{p^r}\right)$.
 	
 	Second, look at the map $\QQ_p\left[s\right] \to {S_r}^{-1} R$ (the composition of the quotient and localization maps).
-	We took the quotient by $s^{p^r} - 1$, and inverted $s^{p^{r-1}} - 1$, so $\Phi_{p^r}\left(s\right)$ is zero in ${S_r}^{-1} R$ as well.
-	Therefore, the map actually factors to a map $\QQ_p\left[s\right]/\left(\Phi_{p^r}\right) \to {S_r}^{-1} R$, which is clearly an inverse to the map above.
+	We took the quotient by $s^{p^r} - 1$, and inverted $s^{p^{r-1}} - 1$, so $\Phi_{p^r}\left(s\right) = \frac{s^{p^r} - 1}{s^{p^{r-1}} - 1}$ is zero in ${S_r}^{-1} R$ as well.
+	Thus, the map factors to a map $\QQ_p\left[s\right]/\left(\Phi_{p^r}\right) \to {S_r}^{-1} R$, which is clearly an inverse to the map above.
 	
 	We conclude that our ring is $L_r^0 = \QQ_p\left(\zeta_{p^r}\right)$.
-	This is again in accordance with \cref{alg-geo-Lr}, since the points now are primitive roots of unity, that is each points forms a basis for the group of roots of unity.
+	This is again in accordance with \cref{alg-geo-Lr}, since the points are primitive roots of unity, that is each point forms a basis for the group of roots of unity.
 	
 	The whole graded ring is $L_r = \QQ_p\left(\zeta_{p^r}\right)\left[\beta^{\pm 1}\right]$.
 	From this it is also easy to see that $L = \QQ_p\left(\zeta_{p^\infty}\right)\left[\beta^{\pm 1}\right]$.
@@ -325,7 +326,7 @@ To this end, we define the generalized objects we need.
 
 Let $X$ be a finite $G$-CW complex.
 Recall from \cref{towards-character-map} that for $r \geq r_0$, we have $\Gnp = \hom_{\Grp}\left(\Lambda_r, G\right)$, with the $G$-action by conjugation.
-Note that for $\alpha \in \Gnp$, $X^{\im \alpha}$ is simply the fixed points of $X$ at the $n$-tuple $\left(g_1, \dotsc, g_n\right)$ which is represented by $\alpha$, so the following definition is independent of $r \geq r_0$.
+Note that for $\alpha \in \Gnp$, $X^{\im \alpha}$ is the fixed points of $X$ at the $n$-tuple $\left(g_1, \dotsc, g_n\right)$ which is represented by $\alpha$, so the following definition is independent of $r \geq r_0$.
 
 \begin{definition}
 	The \emph{fixed point space} of $X$ is $\Fix{G,X} = \coprod_{\alpha \in \Gnp} X^{\im \alpha}$.
@@ -560,7 +561,7 @@ We note that for a trivial bundle $X \times V \to X$, we have $F\left(X \times V
 \begin{definition}
 	Let $C^*: \Spaces^\op \to \GrAb$ be a contra-variant functor from spaces to graded abelian groups.
 	$C^*$ is said to satisfy \emph{complex oriented descent},
-	if for every space $X$ and bundle $\xi$ over $X$, $F$ sends the diagram
+	if for every space $X$ and bundle $\xi$ over $X$, $C^*$ sends the diagram
 	$X \leftarrow F\left(\xi\right) \leftleftarrows F\left(\xi\right) \times_X F\left(\xi\right)$,
 	to an equalizer diagram
 	$C^*\left(X\right) \to C^*\left(F\left(\xi\right)\right) \rightrightarrows C^*\left(F\left(\xi\right) \times_X F\left(\xi\right)\right)$.
@@ -572,7 +573,7 @@ The reason complex oriented descent is useful is the following.
 
 \begin{proposition}\label{faithful-triv-bundle}
 	Let $X$ be a $G$-space, and let $\rho: G \to V$ be a faithful representations.
-	Then the $G$-space $F\left(X \times V\right) \cong X \times F\left(V\right)$ has abelian stabilizer.
+	Then the $G$-space $F\left(X \times V\right) \cong X \times F\left(V\right)$ has abelian stabilizers.
 \end{proposition}
 
 \begin{proof}
@@ -675,7 +676,7 @@ The reason complex oriented descent is useful is the following.
 \subsection{Proof of the Main Theorem}
 
 We are going to use the previous results to prove the main theorem, \cref{theorem-c}.
-Almost all of the whole proof will work with $L$ replaced by $L_r$, for $r \geq r_0$, without a change, so we state everything for $L$ except for the end where there is a difference.
+Almost all of the proof will work with $L$ replaced by $L_r$, for $r \geq r_0$, without a change, so we state everything for $L$ except for the end where there is a difference.
 Recall that we have already proved the second part.
 Therefore, what is left to prove is that 
 $\chinpG \otimes L: E^*\left(\EG \times_G X\right) \otimes_{E^*} L \xrightarrow{\sim} \cl[n,p]{G,X; L}$
